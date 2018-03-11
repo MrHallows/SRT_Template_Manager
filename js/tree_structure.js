@@ -115,7 +115,7 @@ $('.tree-tabs').each(function() {
 /*var noteId = 0;//ls.get("Notes:index");
 $('.tree-item[item-type=note]').each(function() {
 	this.id = 'note-' + ++noteId;
-});
+});*/
 
 var emailId = 0;//ls.get("Email:index");
 $('.tree-item[item-type=email]').each(function() {
@@ -125,7 +125,7 @@ $('.tree-item[item-type=email]').each(function() {
 var contactId = 0;//ls.get("Contacts:index");
 $('.tree-item[item-type=contact]').each(function() {
 	this.id = 'contact-' + ++contactId;
-});*/
+});
 
 
 // Tree Components
