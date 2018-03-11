@@ -52,7 +52,7 @@ var notification = (function() {
 			$notification.removeClass('hide');
 			$notification.addClass('show');
 			$notification.show();
-		}, +1);
+		}, 3000);
     };
 
     // Close the notification
