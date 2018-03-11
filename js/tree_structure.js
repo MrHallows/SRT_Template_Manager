@@ -62,7 +62,6 @@ ls.set('SRTTM_State', JSON.stringify(state));*/
 
 
 var state = state || {};
-//var state = [] || {};
 
 // Tabs
 $('.tree-tabs').each(function() {
@@ -99,7 +98,6 @@ $('.tree-tabs').each(function() {
 		$content.show();
 
 		// Save active tab state
-		//var state = state || {};
 		state.tab = $(this).attr('href');
 		ls.set("SRTTM_State", JSON.stringify(state));
 
@@ -323,7 +321,7 @@ $('.tree').on('click', '.tree-row', function() {
 	log("Selected: " + $lbl.text());
 
 	// Save active item state
-	state.item = $par.id; //$('.tree-row[select="true"]');
+	state.item = $par.id;
 	ls.set("SRTTM_State", JSON.stringify(state));
 
 	//log($('.tree-row').not(this).parent('.tree-item'));
@@ -340,7 +338,7 @@ $('.tree').on('contextmenu', '.tree-row', function() {
 	log("Selected: " + $lbl.text());
 
 	// Save active item state
-	state.item = $par.id; //$('.tree-row[select="true"]');
+	state.item = $par.id;
 	ls.set("SRTTM_State", JSON.stringify(state));
 
 	//log($('.tree-row').not(this).parent('.tree-item'));
