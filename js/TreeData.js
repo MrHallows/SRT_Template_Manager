@@ -330,6 +330,23 @@ Tree.buildTree = function(dest, data) {
                 tree_item.setAttribute('id', result.type + "-" + result.id);
                 tree_item.setAttribute('expanded', result.expanded);
                 tree_item.setAttribute('select', result.selected);
+
+                if (!children) {
+                    if (children[index].type == 'folder') {
+                        tree_item.setAttribute('has-children', false);
+                        tree_row.setAttribute('has-children', false);
+                        
+                        notification.open({
+                            severity: 'info',
+                            content: result.type + " " + result.label + " has no children."
+                        });
+                    }
+                } else {
+                    if (children[index].type == 'folder') {
+                        tree_item.setAttribute('has-children', true);
+                        tree_row.setAttribute('has-children', true);
+                    }
+                }
         
             var tree_row = document.createElement('div'); // <div class="tree-row" has-children="true" may-have-children="" select="false"></div>
                 tree_row.classList.add('tree-row');
