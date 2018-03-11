@@ -545,7 +545,7 @@ input[type=radio] {
 }*/
 #note-view .body pre {
     display: inline-flex; /* inline-table; /* default: inline-flex */
-    padding: 4px 10px 10px 89px; /* 0px 10px; /* 10px 40px; */
+    padding: 0; /* 4px 10px 10px 89px; /* 0px 10px; /* 10px 40px; */
     white-space: pre-wrap;
     word-wrap: break-word;
 }
@@ -568,7 +568,7 @@ input[type=radio] {
 }
 #contact-view .comments pre {
     display: inline-flex; /* inline-table; /* default: inline-flex */
-    padding: 4px 10px 10px 89px; /* 0px 10px; /* 10px 40px; */
+    padding: 0; /* 4px 10px 10px 89px; /* 0px 10px; /* 10px 40px; */
     white-space: pre-wrap;
     word-wrap: break-word;
 }
