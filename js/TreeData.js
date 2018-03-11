@@ -332,7 +332,7 @@ Tree.buildTree = function(dest, data) {
                 tree_item.setAttribute('select', result.selected);
 
                 if (!children) {
-                    if (result.type == 'folder') {
+                    if (children[index].type == 'folder') {
                         tree_item.setAttribute('has-children', false);
                         tree_row.setAttribute('has-children', false);
 
@@ -342,7 +342,7 @@ Tree.buildTree = function(dest, data) {
                         });
                     }
                 } else {
-                    if (result.type == 'folder') {
+                    if (children[index].type == 'folder') {
                         tree_item.setAttribute('has-children', true);
                         tree_row.setAttribute('has-children', true);
 
