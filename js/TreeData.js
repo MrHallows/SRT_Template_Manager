@@ -311,12 +311,12 @@ Tree.buildTree = function(dest, data) {
     //log("dest: ", dest);
 
     // Parse through data (i.e., Tree.notes)
-    for(let index in data) {
+    for(var index in data) {
         if(data.hasOwnProperty(index)) {
             log("index: ", index);
 
             //var result = null;
-            let result = data[index];
+            var result = data[index];
             log("result: ", result);
     
             const root = document.querySelector(dest);
