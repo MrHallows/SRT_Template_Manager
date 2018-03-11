@@ -1,0 +1,97 @@
+/* notification.css */
+/* css/notification/css */
+
+
+@-webkit-keyframes fadein {
+    from {top: 0; opacity: 0;} 
+    to {top: 60px; opacity: 1;}
+}
+@keyframes fadein {
+    from {top: 0; opacity: 0;}
+    to {top: 60px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {top: 60px; opacity: 1;} 
+    to {top: 0; opacity: 0;}
+}
+@keyframes fadeout {
+    from {top: 60px; opacity: 1;}
+    to {top: 0; opacity: 0;}
+}
+
+
+#notification {
+	position: fixed;
+	visibility: hidden;
+	background-color: #333;
+	/* border: 1px solid #888; */
+	border-radius: 0;
+	font-size: 11px;
+	color: #fff;
+	text-align: center;
+	min-width: fit-content; /* default: 896px; */
+	width: 40%;
+	height: 36px;
+	left: 30%;
+	/* top: -30px; */
+	padding: 8px;
+	margin: 0 auto;
+	/* margin-left: -125px; */
+	box-shadow: 0 2px 5px 1px rgba(12,13,14,0.8);
+	z-index: 1;
+	/* -webkit-animation: /*fadein 0.5s, /fadeout 0.5s /*2.5s; */
+}
+#notification.hide {
+    visibility: hidden;
+    -webkit-animation: /*fadein 0.5s, */fadeout 0.5s /*2.5s*/;
+    animation: /*fadein 0.5s, */fadeout 0.5s /*2.5s*/;
+}
+#notification.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s/*, fadeout 0.5s /*2.5s*/;
+    animation: fadein 0.5s/*, fadeout 0.5s /*2.5s*/;
+}
+
+.notification-severity {
+	color: #fff;
+	width: auto; /* default: 29px; */
+	height: 20px;
+	padding: 0 6px;
+	line-height: 20px;
+	float: left;
+}
+.notification-severity.success {
+	background: #1da362; /* #7ff2a9 */
+}
+.notification-severity.info {
+	background: #007acc; /* #1fb9f5; /* #7289da; hover: #677bc4; */
+}
+.notification-severity.warning {
+	background: #ffd22d;
+}
+.notification-severity.error {
+	background: #e15353;
+}
+
+.notification-content {
+	display: inline-block;
+	width: fit-content;
+	height: 20px;
+	line-height: 20px;
+}
+
+#notification .close {
+	position: relative;
+	background: url(../images/tree_icons.png) no-repeat 0px -188px;
+	width: 16px;
+	height: 16px;
+	margin: 2px;
+	float: right;
+	opacity: 1;
+}
+#notification .close:hover {
+	background: url(../images/tree_icons.png) no-repeat 0px -205px;
+	cursor: default;
+	opacity: 1;
+}
