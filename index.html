@@ -1,0 +1,618 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title> SRT Template Manager </title>
+
+	<!-- Favicon -->
+	<!--<link rel="shortcut icon" type="image/x-icon" href="https://images.fedex.com/images/c/s1/fx-favicon.ico">-->
+	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
+
+	<!-- Fonts -->
+	<link type="text/css" rel="stylesheet" href="css/fonts.css">
+
+	<!-- Libraries: CSS -->
+	<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+	<!-- CSS -->
+	<!--<link type="text/css" rel="stylesheet" href="css/hs-menu.css">-->
+	<link type="text/css" rel="stylesheet" href="css/date_picker.css">
+	<link type="text/css" rel="stylesheet" href="css/modal.css">
+	<link type="text/css" rel="stylesheet" href="css/notification.css">
+	<link type="text/css" rel="stylesheet" href="css/tree.css">
+	<!--<link type="text/css" rel="stylesheet" href="css/menu.css">-->
+	<link type="text/css" rel="stylesheet" href="css/tooltip.css">
+	<link type="text/css" rel="stylesheet" href="css/contextmenu.css">
+	<link type="text/css" rel="stylesheet" href="css/main.css">
+	<!--<link type="text/css" rel="stylesheet" href="css/.css">-->
+
+	<!-- Libraries: JavaScript -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<!--<script src="js/lib/jquery-3.3.1.min.js"></script>-->
+	<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+	<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+
+	<!-- JavaScript -->
+	<script type="text/javascript" src="js/opal.js"></script>
+	<!--<script type="text/javascript" src="js/.js"></script>-->
+
+</head>
+
+<body>
+
+	<!-- Navbar -->
+	<nav class="menubar panel-top unselectable" role="navigation">
+
+		<div class="menubar-left">
+			<span id="menu-title" class=""> SRT Template Manager </span>
+		</div>
+		<div class="menubar-middle">
+			<input type="search" id="menu-search" class="textbox" placeholder="Search..">
+			<span class="ui-icon ui-search" tip="Search here for file_tree items."></span>
+		</div>
+		<div class="menubar-right">
+			<!--
+			<a class="gb_b" href="#">
+				<svg class="gb_be" focusable="false" viewBox="0 0 24 24">
+					<path d="M4 8h4V4H4v4zm6 12h4v-4h-4v4zm-6 0h4v-4H4v4zm0-6h4v-4H4v4zm6 0h4v-4h-4v4zm6-10v4h4V4h-4zm-6 4h4V4h-4v4zm6 6h4v-4h-4v4zm0 6h4v-4h-4v4z"></path>
+				</svg>
+			</a>
+			-->
+			<span style="color: #4d90fe;">Press <kbd>Ctrl+S</kbd> to save!</span>
+			<button id="btnClearCookies" class="button btn-cancel">Clear Cookies</button>
+			<button id="btnSettings" class="button btn-std">Settings</button>
+			<button id="btnTools" class="button btn-std tooltip tooltip-sw" aria-label="Helpful tools!">Tools</button>
+		</div>
+
+	</nav>
+
+	<!-- Main -->
+
+	<main>
+
+		<section class="panel-left unselectable">
+
+			<!-- Tree -->
+
+			<div class="tree">
+
+
+				<!-- Header -->
+
+				<div class="tree-header unselectable">
+					<span class="label"> Template Files </span>
+				</div>
+
+
+				<!-- Tabs -->
+
+				<ul class="tree-tabs unselectable">
+
+					<li class="tree-tab"><a href="#tab-notes"> Notes </a>
+					</li>
+					<li class="tree-tab"><a href="#tab-email"> Email </a>
+					</li>
+					<li class="tree-tab"><a href="#tab-contacts"> Contacts </a>
+					</li>
+
+				</ul>
+
+
+				<!-- Tree: Notes -->
+
+				<div id="tab-notes" class="tree-tab-content" item-type="note">
+
+
+					<!-- Tree Body -->
+
+					<div id="tree-body-notes" class="tree-body">
+
+						<div class="tree-item" item-type="folder" expanded="false" has-children="true">
+
+							<div class="tree-row" has-children="true" may-have-children="" select="false">
+								<span class="expand-icon"></span>
+								<span class="tree-label">Alcohol Enrollment</span>
+							</div>
+
+							<div class="tree-children" expanded="false" select="false">
+
+								<div class="tree-item" item-type="note" has-children="false">
+									<div class="tree-row" has-children="false" select="false">
+										<span class="tree-label">Sent Initial Email</span>
+									</div>
+								</div>
+
+								<div class="tree-item" item-type="note" has-children="false">
+									<div class="tree-row" has-children="false" select="false">
+										<span class="tree-label">Submitted Customer's Documentation</span>
+									</div>
+								</div>
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+
+				<!-- Tree: Email -->
+
+				<div id="tab-email" class="tree-tab-content" item-type="email">
+
+
+					<!-- Tree Body -->
+
+					<div class="tree-body">
+
+						<div id="email-root" class="tree-item" item-type="folder" expanded="false">
+							<div class="tree-row" has-children="true" may-have-children="" select="false">
+								<span class="expand-icon"></span>
+								<span class="tree-label">_root</span>
+							</div>
+							<div class="tree-children" expanded="false" select="false">
+							</div>
+						</div>
+
+						<!-- -->
+						<div class="tree-item" item-type="folder" expanded="false">
+
+							<div class="tree-row" has-children="true" may-have-children="" select="false">
+								<span class="expand-icon"></span>
+								<span class="tree-label">SmartPost</span>
+							</div>
+
+							<div class="tree-children" expanded="false" select="false">
+
+								<div class="tree-item" item-type="email" expanded="false" has-children="false">
+
+									<div class="tree-row" has-children="false" select="false">
+										<span class="tree-label">SmartPost Online Enable</span>
+									</div>
+
+								</div>
+
+								<div class="tree-item" item-type="email" expanded="false" has-children="true">
+
+									<div class="tree-row" has-children="false" select="false">
+										<span class="tree-label">BSI Response</span>
+									</div>
+
+								</div>
+
+							</div>
+
+						</div>
+						<!-- -->
+
+					</div>
+
+				</div>
+
+
+				<!-- Tree: Contacts -->
+
+				<div id="tab-contacts" class="tree-tab-content" item-type="contact">
+
+
+					<!-- Tree Body -->
+
+					<div class="tree-body">
+
+						<div class="tree-item" item-type="folder" expanded="false">
+
+							<div class="tree-row" has-children="true" may-have-children="" select="false">
+								<span class="expand-icon"></span>
+								<span class="tree-label">Customers</span>
+							</div>
+
+							<div class="tree-children" expanded="false" select="false">
+
+								<div class="tree-item" item-type="contact" expanded="false" has-children="false">
+
+									<div class="tree-row" has-children="false" select="false">
+										<span class="tree-label">Tim Watson</span>
+									</div>
+
+								</div>
+
+								<div class="tree-item" item-type="contact" expanded="false" has-children="true">
+
+									<div class="tree-row" has-children="false" select="false">
+										<span class="tree-label">Thomas Creery</span>
+									</div>
+
+								</div>
+
+								<div class="tree-item" item-type="contact" expanded="false" has-children="false">
+
+									<div class="tree-row" has-children="false" select="false">
+										<span class="tree-label">Dave Johnson</span>
+									</div>
+
+								</div>
+
+								<div class="tree-item" item-type="contact" expanded="false" has-children="true">
+
+									<div class="tree-row" has-children="false" select="false">
+										<span class="tree-label">James McAvoy</span>
+									</div>
+
+								</div>
+
+							</div>
+
+						</div>
+
+						<div class="tree-item" item-type="folder" expanded="false">
+
+							<div class="tree-row" has-children="true" may-have-children="" select="false">
+								<span class="expand-icon"></span>
+								<span class="tree-label">FedEx</span>
+							</div>
+
+							<div class="tree-children" expanded="false" select="false">
+
+								<div class="tree-item" item-type="contact" expanded="false" has-children="false">
+
+									<div class="tree-row" has-children="false" select="false">
+										<span class="tree-label">Chris Raebel</span>
+									</div>
+
+								</div>
+
+								<div class="tree-item" item-type="contact" expanded="false" has-children="true">
+
+									<div class="tree-row" has-children="false" select="false">
+										<span class="tree-label">Seneca Mitchell</span>
+									</div>
+
+								</div>
+
+								<div class="tree-item" item-type="contact" expanded="false" has-children="true">
+
+									<div class="tree-row" has-children="false" select="false">
+										<span class="tree-label">Celeste Marshall</span>
+									</div>
+
+								</div>
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</section>
+
+		<!--<div class="result">Test</div>-->
+
+		<section class="panel-mid">
+			<!--<textarea id="format-js" class="modal-input" style="width: 600px; height: 400px;"></textarea>-->
+			<!--<div id="template-test" class="textbox"></div>-->
+			<div id="template-view" class="">
+
+				<div id="note-view" class="" style="display: none;">
+					<div class="name">
+						<label>Name: </label>
+						<span></span>
+					</div>
+					<div class="body">
+						<label>Body: </label>
+						<pre></pre>
+					</div>
+				</div>
+
+				<div id="email-view" class="" style="display: none;">
+					<div class="name">
+						<label>Name: </label>
+						<span></span>
+					</div>
+					<div class="to">
+						<label>To: </label>
+						<span></span>
+					</div>
+					<div class="cc">
+						<label>Cc: </label>
+						<span></span>
+					</div>
+					<div class="subject">
+						<label>Subject: </label>
+						<span></span>
+					</div>
+					<div class="attachments">
+						<label>Attachments: </label>
+						<span></span>
+					</div>
+					<div class="body">
+						<label>Body: </label>
+						<pre></pre>
+					</div>
+				</div>
+
+				<div id="contact-view" class="" style="display: none;">
+					<div class="firstname">
+						<label>First Name: </label>
+						<span></span>
+					</div>
+					<div class="lastname">
+						<label>Last Name: </label>
+						<span></span>
+					</div>
+					<div class="fullname">
+						<label>Full Name: </label>
+						<span></span>
+					</div>
+					<div class="phone">
+						<label>Phone: </label>
+						<span></span>
+					</div>
+					<div class="email">
+						<label>Email: </label>
+						<span></span>
+					</div>
+					<div class="business">
+						<label>Business: </label>
+						<span></span>
+					</div>
+					<div class="ean">
+						<label>EAN: </label>
+						<span></span>
+					</div>
+					<div class="comments">
+						<label>Comments: </label>
+						<pre></pre>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="right-shelf-cage">
+				<div class="right-shelf">
+					<ul>
+						<li>
+							<a href="">
+								<img src="images/tools.png" alt="Tools" class="right-shelf-icon">
+								<span>Tools</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+				
+				<div class="right-shelf">
+					<ul>
+						<li>
+							<a href="">
+								<img src="images/print.png" alt="Utilities" class="right-shelf-icon">
+								<span>Utilities</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="right-shelf">
+					<ul>
+						<li>
+							<a href="">
+								<img src="images/import.png" alt="Clear Cookies" class="right-shelf-icon">
+								<span>Clear Cookies</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="right-shelf">
+					<ul>
+						<li>
+							<a href="">
+								<img src="images/export.png" alt="Settings" class="right-shelf-icon">
+								<span>Settings</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+		</section>
+
+		<section class="panel-right unselectable">
+			<div id="colour-pallette">
+				<div id="cp-gradient" class="cp-panel">
+					<p>#cp-gradient</p>
+				</div>
+
+				<div class="divider"></div>
+
+				<div id="cp-settings" class="cp-panel">
+					<p>#cp-settings</p>
+				</div>
+
+				<div class="divider"></div>
+
+				<div id="cp-tiles" class="cp-panel">
+					<div id="" class="cp-tile" tip="#e93060" style="background-color: #e93060;"></div>
+					<div id="" class="cp-tile" tip="#ed174b" style="background-color: #ed174b;"></div>
+					<div id="" class="cp-tile" tip="#990000" style="background-color: #990000;"></div>
+					<div id="" class="cp-tile" tip="#ffeb8c" style="background-color: #ffeb8c;"></div>
+					<div id="" class="cp-tile" tip="#ebf5e4" style="background-color: #ebf5e4;"></div>
+					<div id="" class="cp-tile" tip="#7fffd4" style="background-color: #7fffd4;"></div>
+					<div id="" class="cp-tile" tip="#99dc62" style="background-color: #99dc62;"></div>
+					<div id="" class="cp-tile" tip="#42f485" style="background-color: #42f485;"></div>
+					<div id="" class="cp-tile" tip="#40a8ff" style="background-color: #40a8ff;"></div>
+					<div id="" class="cp-tile" tip="#4d90fe" style="background-color: #4d90fe;"></div>
+					<div id="" class="cp-tile" tip="#3778c7" style="background-color: #3778c7;"></div>
+					<div id="" class="cp-tile" tip="#b88cff" style="background-color: #b88cff;"></div>
+				</div>
+			</div>
+		</section>
+
+
+		<!-- VanillaTree.js Example 
+        <script>
+            const main = document.querySelector('main');
+            const info = document.querySelector('footer');
+            const tree = new VanillaTree(main,{
+                contextmenu: [{
+                    label: 'Hey',
+                    action: function(id) {
+                        alert('Hey ' + id);
+                    }
+                }, {
+                    label: 'Blah',
+                    action: function(id) {
+                        alert('Blah ' + id);
+                    }
+                }]
+            });
+
+            tree.add({
+                label: 'Label A',
+                id: 'a',
+                opened: true
+            });
+
+            tree.add({
+                label: 'Label B',
+                id: 'b'
+            });
+
+            tree.add({
+                label: 'Label A.A',
+                parent: 'a',
+                id: 'a.a',
+                opened: true,
+                selected: true
+            });
+
+            tree.add({
+                label: 'Label A.A.A',
+                parent: 'a.a'
+            });
+
+            tree.add({
+                label: 'Label A.A.B',
+                parent: 'a.a'
+            });
+
+            tree.add({
+                label: 'Label B.A',
+                parent: 'b'
+            });
+
+            main.addEventListener('vtree-open', function(evt) {
+                info.innerHTML = evt.detail.id + ' is opened';
+            });
+
+            main.addEventListener('vtree-close', function(evt) {
+                info.innerHTML = evt.detail.id + ' is closed';
+            });
+
+            main.addEventListener('vtree-select', function(evt) {
+                info.innerHTML = evt.detail.id + ' is selected';
+            });
+        </script>
+        <script src="http://static.jsbin.com/js/render/edit.js?4.1.2"></script>
+        -->
+
+	</main>
+
+
+	<!-- Custom Context Menu -->
+
+	<!--<div class="context-menu">
+		<span id="cm-rename" class="menu-item"><a href="#">Rename</a>
+		</span>
+		<span id="cm-edit" class="menu-item"><a href="#">Edit</a>
+		</span>
+		<span id="cm-delete" class="menu-item"><a href="#">Delete</a>
+		</span>
+		<span id="cm-new-item" class="menu-item"><a href="#">New Item</a>
+		</span>
+		<span id="cm-new-folder" class="menu-item"><a href="#">New Folder</a>
+		</span>
+	</div>-->
+
+
+	<!-- Custom Tree Context Menu -->
+
+	<div class="context-menu unselectable">
+		<div id="cm-rename" class="menu-item">
+			<img src="images/rename.png" class="cm-icon">
+			<span>Rename</span>
+		</div>
+		<div id="cm-edit" class="menu-item">
+			<img src="images/message.png" class="cm-icon">
+			<span>Edit</span>
+		</div>
+		<div id="cm-delete" class="menu-item">
+			<img src="images/delete.png" class="cm-icon">
+			<span>Delete</span>
+		</div>
+		<div id="cm-new-item" class="menu-item">
+			<img src="images/new_item.png" class="cm-icon">
+			<span>New Item</span>
+		</div>
+		<div id="cm-new-folder" class="menu-item">
+			<img src="images/new_folder.png" class="cm-icon">
+			<span>New Folder</span>
+		</div>
+	</div>
+
+
+	<!-- Ggl Context Menu -->
+	<!--
+	<cr-menu id="context-menu" class="decorated" role="menu" style="display: none; bottom: auto; right: auto;">
+		<button command="#open-in-new-tab-command" class="custom-appearance" role="menuitem" disabled="disabled">Open in new tab</button>
+		<button command="#open-in-new-window-command" class="custom-appearance" role="menuitem" disabled="disabled">Open in new window</button>
+		<hr class="custom-appearance" role="divider">
+		<button command="#rename-item-command" class="custom-appearance" role="menuitem">Rename…</button>
+		<button command="#edit-command" class="custom-appearance" role="menuitem">Edit…</button>
+		<hr class="custom-appearance" role="divider">
+		<button command="#cut-command" class="custom-appearance" role="menuitem" disabled="disabled">Cut</button>
+		<button command="#copy-command" class="custom-appearance" role="menuitem" disabled="disabled">Copy</button>
+		<button command="#paste-from-context-menu-command" class="custom-appearance" role="menuitem" disabled="disabled">Paste</button>
+		<hr class="custom-appearance" role="divider">
+		<button command="#add-new-note-command" class="custom-appearance" role="menuitem">Add note…</button>
+		<button command="#add-new-folder-command" class="custom-appearance" role="menuitem">Add folder…</button>
+		<hr class="custom-appearance" role="divider">
+		<button command="#delete-command" class="custom-appearance" role="menuitem" disabled="disabled">Delete</button>
+		<button command="#undo-delete-command" class="custom-appearance" role="menuitem" disabled="disabled">Undo Delete</button>
+	</cr-menu>
+	-->
+
+
+	<script type="text/javascript" src="js/init.js"></script>
+	<script type="text/javascript" src="js/utils/debug.js"></script>
+	<script type="text/javascript" src="js/utils/persist.js"></script>
+	<script type="text/javascript" src="js/utils/caret_pos.js"></script>
+	<script type="text/javascript" src="js/utils/utils.js"></script>
+	<script type="text/javascript" src="js/utils/phone_formatter.js"></script>
+	<script type="text/javascript" src="js/utils/date_picker.js"></script>
+	<script type="text/javascript" src="js/utils/tooltip.js"></script>
+	<!--<script type="text/javascript" src="js/utils/format.js"></script>-->
+	<script type="text/javascript" src="js/templates.js"></script>
+	<script type="text/javascript" src="js/contacts.js"></script>
+	<script type="text/javascript" src="js/utils/modal.js"></script>
+	<script type="text/javascript" src="js/utils/contextmenu.js"></script>
+	<script type="text/javascript" src="js/utils/notification.js"></script>
+	<script type="text/javascript" src="js/utils/tools.js"></script>
+	<!--<script type="text/javascript" src="js/tree_data.js"></script>-->
+	<script type="text/javascript" src="js/TreeData.js"></script>
+	<!--<script type="text/javascript" src="js/tree.js"></script>-->
+	<script type="text/javascript" src="js/tree_structure.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<!--<script type="text/javascript" src="js/.js"></script>-->
+
+</body>
+
+</html>
