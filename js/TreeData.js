@@ -319,32 +319,32 @@ Tree.buildTree = function(dest, data) {
             var result = data[index];
             log("result: ", result);
     
-            const root = document.querySelector(dest);
+            var root = document.querySelector(dest);
 
-            const fragment = document.createDocumentFragment();
+            var fragment = document.createDocumentFragment();
         
-            const tree_item = document.createElement('div'); // <div class="tree-item" item-type="folder" expanded="false" select="false"></div>
+            var tree_item = document.createElement('div'); // <div class="tree-item" item-type="folder" expanded="false" select="false"></div>
                 tree_item.classList.add('tree-item');
                 tree_item.setAttribute('item-type', result.type);
                 tree_item.setAttribute('id', result.type + "-" + result.id);
                 tree_item.setAttribute('expanded', result.expanded);
                 tree_item.setAttribute('select', result.selected);
         
-            const tree_row = document.createElement('div'); // <div class="tree-row" has-children="true" may-have-children="" select="false"></div>
+            var tree_row = document.createElement('div'); // <div class="tree-row" has-children="true" may-have-children="" select="false"></div>
                 tree_row.classList.add('tree-row');
                 tree_row.setAttribute('may-have-children', '');
                 tree_row.setAttribute('select', result.selected);
         
-            const exp_icon = document.createElement('span'); // <span class="expand-icon"></span>
+            var exp_icon = document.createElement('span'); // <span class="expand-icon"></span>
                 exp_icon.classList.add('expand-icon');
         
-            const tree_label = document.createElement('span'); // <span class="tree-label"></span>
+            var tree_label = document.createElement('span'); // <span class="tree-label"></span>
                 tree_label.classList.add('tree-label');
                 //let label_text = document.createTextNode(result.label);
                 //tree_label.appendChild(label_text);
                 tree_label.textContent = result.label;
         
-            const tree_children = document.createElement('div'); // <div class="tree-children" expanded="false" select="false"></div>
+            var tree_children = document.createElement('div'); // <div class="tree-children" expanded="false" select="false"></div>
                 tree_children.classList.add('tree-children');
                 tree_children.setAttribute('expanded', result.expanded);
 
