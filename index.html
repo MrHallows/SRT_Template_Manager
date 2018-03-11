@@ -46,23 +46,19 @@
 <body>
 
 	<!-- Navbar -->
+	
 	<nav class="menubar panel-top unselectable" role="navigation">
 
 		<div class="menubar-left">
 			<span id="menu-title" class=""> SRT Template Manager </span>
 		</div>
+
 		<div class="menubar-middle">
 			<input type="search" id="menu-search" class="textbox" placeholder="Search..">
 			<span class="ui-icon ui-search" tip="Search here for file_tree items."></span>
 		</div>
+
 		<div class="menubar-right">
-			<!--
-			<a class="gb_b" href="#">
-				<svg class="gb_be" focusable="false" viewBox="0 0 24 24">
-					<path d="M4 8h4V4H4v4zm6 12h4v-4h-4v4zm-6 0h4v-4H4v4zm0-6h4v-4H4v4zm6 0h4v-4h-4v4zm6-10v4h4V4h-4zm-6 4h4V4h-4v4zm6 6h4v-4h-4v4zm0 6h4v-4h-4v4z"></path>
-				</svg>
-			</a>
-			-->
 			<span style="color: #4d90fe;">Press <kbd>Ctrl+S</kbd> to save!</span>
 			<button id="btnClearCookies" class="button btn-cancel">Clear Cookies</button>
 			<button id="btnSettings" class="button btn-std">Settings</button>
@@ -295,11 +291,8 @@
 
 		</section>
 
-		<!--<div class="result">Test</div>-->
-
 		<section class="panel-mid">
-			<!--<textarea id="format-js" class="modal-input" style="width: 600px; height: 400px;"></textarea>-->
-			<!--<div id="template-test" class="textbox"></div>-->
+
 			<div id="template-view" class="">
 
 				<div id="note-view" class="" style="display: none;">
@@ -456,91 +449,7 @@
 			</div>
 		</section>
 
-
-		<!-- VanillaTree.js Example 
-        <script>
-            const main = document.querySelector('main');
-            const info = document.querySelector('footer');
-            const tree = new VanillaTree(main,{
-                contextmenu: [{
-                    label: 'Hey',
-                    action: function(id) {
-                        alert('Hey ' + id);
-                    }
-                }, {
-                    label: 'Blah',
-                    action: function(id) {
-                        alert('Blah ' + id);
-                    }
-                }]
-            });
-
-            tree.add({
-                label: 'Label A',
-                id: 'a',
-                opened: true
-            });
-
-            tree.add({
-                label: 'Label B',
-                id: 'b'
-            });
-
-            tree.add({
-                label: 'Label A.A',
-                parent: 'a',
-                id: 'a.a',
-                opened: true,
-                selected: true
-            });
-
-            tree.add({
-                label: 'Label A.A.A',
-                parent: 'a.a'
-            });
-
-            tree.add({
-                label: 'Label A.A.B',
-                parent: 'a.a'
-            });
-
-            tree.add({
-                label: 'Label B.A',
-                parent: 'b'
-            });
-
-            main.addEventListener('vtree-open', function(evt) {
-                info.innerHTML = evt.detail.id + ' is opened';
-            });
-
-            main.addEventListener('vtree-close', function(evt) {
-                info.innerHTML = evt.detail.id + ' is closed';
-            });
-
-            main.addEventListener('vtree-select', function(evt) {
-                info.innerHTML = evt.detail.id + ' is selected';
-            });
-        </script>
-        <script src="http://static.jsbin.com/js/render/edit.js?4.1.2"></script>
-        -->
-
 	</main>
-
-
-	<!-- Custom Context Menu -->
-
-	<!--<div class="context-menu">
-		<span id="cm-rename" class="menu-item"><a href="#">Rename</a>
-		</span>
-		<span id="cm-edit" class="menu-item"><a href="#">Edit</a>
-		</span>
-		<span id="cm-delete" class="menu-item"><a href="#">Delete</a>
-		</span>
-		<span id="cm-new-item" class="menu-item"><a href="#">New Item</a>
-		</span>
-		<span id="cm-new-folder" class="menu-item"><a href="#">New Folder</a>
-		</span>
-	</div>-->
 
 
 	<!-- Custom Tree Context Menu -->
@@ -567,28 +476,6 @@
 			<span>New Folder</span>
 		</div>
 	</div>
-
-
-	<!-- Ggl Context Menu -->
-	<!--
-	<cr-menu id="context-menu" class="decorated" role="menu" style="display: none; bottom: auto; right: auto;">
-		<button command="#open-in-new-tab-command" class="custom-appearance" role="menuitem" disabled="disabled">Open in new tab</button>
-		<button command="#open-in-new-window-command" class="custom-appearance" role="menuitem" disabled="disabled">Open in new window</button>
-		<hr class="custom-appearance" role="divider">
-		<button command="#rename-item-command" class="custom-appearance" role="menuitem">Rename…</button>
-		<button command="#edit-command" class="custom-appearance" role="menuitem">Edit…</button>
-		<hr class="custom-appearance" role="divider">
-		<button command="#cut-command" class="custom-appearance" role="menuitem" disabled="disabled">Cut</button>
-		<button command="#copy-command" class="custom-appearance" role="menuitem" disabled="disabled">Copy</button>
-		<button command="#paste-from-context-menu-command" class="custom-appearance" role="menuitem" disabled="disabled">Paste</button>
-		<hr class="custom-appearance" role="divider">
-		<button command="#add-new-note-command" class="custom-appearance" role="menuitem">Add note…</button>
-		<button command="#add-new-folder-command" class="custom-appearance" role="menuitem">Add folder…</button>
-		<hr class="custom-appearance" role="divider">
-		<button command="#delete-command" class="custom-appearance" role="menuitem" disabled="disabled">Delete</button>
-		<button command="#undo-delete-command" class="custom-appearance" role="menuitem" disabled="disabled">Undo Delete</button>
-	</cr-menu>
-	-->
 
 
 	<script type="text/javascript" src="js/init.js"></script>
