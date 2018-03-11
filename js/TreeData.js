@@ -345,6 +345,11 @@ Tree.buildTree = function(dest, data) {
                     if (result.type == 'folder') {
                         tree_item.setAttribute('has-children', true);
                         tree_row.setAttribute('has-children', true);
+
+                        notification.open({
+                            severity: 'info',
+                            content: result.type + " " + result.label + " has " + children.length + " children."
+                        });
                     }
                 }
         
