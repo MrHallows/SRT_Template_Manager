@@ -307,6 +307,7 @@ Tree.getChildrenOfNode = function(data, node_id) {
 Tree.buildTree = function(dest, data) {
     //var result = null;
     var folders = [];
+    const children = data[index].children;
 
     //log("dest: ", dest);
 
@@ -367,7 +368,6 @@ Tree.buildTree = function(dest, data) {
             fragment.appendChild(tree_item);
 
 
-            const children = data[index].children;
             if (!children) {
                 if (children[index].type == 'folder') {
                     tree_item.setAttribute('has-children', false);
