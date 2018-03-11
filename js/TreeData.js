@@ -307,7 +307,6 @@ Tree.getChildrenOfNode = function(data, node_id) {
 Tree.buildTree = function(dest, data) {
     //var result = null;
     var folders = [];
-    const children = data[index].children;
 
     //log("dest: ", dest);
 
@@ -318,6 +317,7 @@ Tree.buildTree = function(dest, data) {
 
             //var result = null;
             var result = data[index];
+            const children = data[index].children;
             log("result: ", result);
     
             var root = document.querySelector(dest);
