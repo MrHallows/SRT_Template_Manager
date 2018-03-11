@@ -332,17 +332,17 @@ Tree.buildTree = function(dest, data) {
                 tree_item.setAttribute('select', result.selected);
 
                 if (!children) {
-                    if (children[index].type == 'folder') {
+                    if (result.type == 'folder') {
                         tree_item.setAttribute('has-children', false);
                         tree_row.setAttribute('has-children', false);
-                        
+
                         notification.open({
                             severity: 'info',
                             content: result.type + " " + result.label + " has no children."
                         });
                     }
                 } else {
-                    if (children[index].type == 'folder') {
+                    if (result.type == 'folder') {
                         tree_item.setAttribute('has-children', true);
                         tree_row.setAttribute('has-children', true);
                     }
