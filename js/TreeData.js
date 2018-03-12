@@ -328,10 +328,21 @@ Tree.buildTree = function(dest, data) {
                 tree_item.classList.add('tree-item');
                 tree_item.setAttribute('item-type', result.type);
                 tree_item.setAttribute('id', result.type + "-" + result.id);
+
+                if (!result.children) {
+                    if (result.type == 'folder') {
+                        tree_item.setAttribute('has-children', false);
+                    }
+                } else {
+                    if (result.type == 'folder') {
+                        tree_item.setAttribute('has-children', true);
+                    }
+                }
+
                 tree_item.setAttribute('expanded', result.expanded);
                 tree_item.setAttribute('select', result.selected);
 
-                if (!children) {
+                /*if (!children) {
                     if (children[index].type == 'folder') {
                         tree_item.setAttribute('has-children', false);
                         tree_row.setAttribute('has-children', false);
@@ -351,11 +362,22 @@ Tree.buildTree = function(dest, data) {
                             content: result.type + " " + result.label + " has " + children.length + " children."
                         });
                     }
-                }
+                }*/
         
             var tree_row = document.createElement('div'); // <div class="tree-row" has-children="true" may-have-children="" select="false"></div>
                 tree_row.classList.add('tree-row');
                 tree_row.setAttribute('may-have-children', '');
+
+                if (!result.children) {
+                    if (result.type == 'folder') {
+                        tree_row.setAttribute('has-children', false);
+                    }
+                } else {
+                    if (result.type == 'folder') {
+                        tree_row.setAttribute('has-children', true);
+                    }
+                }
+
                 tree_row.setAttribute('select', result.selected);
         
             var exp_icon = document.createElement('span'); // <span class="expand-icon"></span>

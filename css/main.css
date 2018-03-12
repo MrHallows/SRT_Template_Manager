@@ -414,6 +414,26 @@ input[type=radio] {
 	width: 0.8em;
 }
 
+input[type=checkbox] {
+	display: inline-block;
+	background: #fff;
+	border: 3px solid #fff;
+	border-radius: 0;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	width: 15px;
+	height: 15px !important;
+	padding: 0;
+	margin: 4px 8px 4px 4px !important;
+	outline: 1px solid #cacaca;
+	box-sizing: border-box;
+	vertical-align: bottom;
+}
+input[type=checkbox]:checked {
+	background: #0cf;
+}
+
 
 .textbox {
     /* background-color: #202020; */
