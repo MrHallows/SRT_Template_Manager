@@ -317,7 +317,7 @@ Tree.buildTree = function(dest, data) {
 
             //var result = null;
             var result = data[index];
-            const children = data[index].children;
+            var children = data[index].children;
             log("result: ", result);
 
             var root = document.querySelector(dest);
