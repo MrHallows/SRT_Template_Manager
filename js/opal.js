@@ -13,89 +13,89 @@ if (typeof opal === "undefined") {
 // Generate
 opal.gen = {
     // Element
-    element: (tag) => {
+    element: function(tag) {
 	return document.createElement(tag);
     },
     // Text Node
-    text: (text) => {
+    text: function(text) {
 	return document.createTextNode(text);
     },
     // Attribute
-    attr: (attribute) => {
+    attr: function(attribute) {
 	return document.createAttribute(attribute);
     },
     // Event
-    event: (event) => {
+    event: function(event) {
 	return document.createEvent(event);
     },
     // Comment
-    comment: (comment) => {
+    comment: function(comment) {
 	return document.createComment(comment);
     },
     // CDATA
-    cdata: (cdata) => {
+    cdata: function(cdata) {
 	return document.createCDATASection(cdata);
     },
     // Document Fragment
-    dfrag: (dfrag) => {
+    dfrag: function(dfrag) {
 	return document.createDocumentFragment(dfrag);
     },
     // Range
-    range: (range) => {
+    range: function(range) {
 	return document.createRange(range);
     },
     // Tree Walker
-    twalk: (twalk) => {
+    twalk: function(twalk) {
 	return document.createTreeWalker(twalk);
     },
     // Expression
-    expr: (expr) => {
+    expr: function(expr) {
 	return document.createExpression(expr);
     },
     // Node Iterator
-    niter: (niter) => {
+    niter: function(niter) {
 	return document.createNodeIterator(niter);
     }/*,
     // 
-    : () => {
+    : function() {
 	return document.create;
     }*/
 };
 // Grab
 opal.grab = {
     // ID
-    id: (id) => {
+    id: function(id) {
 	return document.getElementById(id);
     },
     // Class
-    class: (cls) => {
+    class: function(cls) {
 	return document.getElementsByClassName(cls);
     },
     // Name
-    name: (name) => {
+    name: function(name) {
 	return document.getElementsByName(name);
     },
     // Tag
-    tag: (tag) => {
+    tag: function(tag) {
 	return document.getElementsByTagName(tag);
     },
     // All
-    all: (all) => {
+    all: function(all) {
 	return document.querySelectorAll(all);
     },
     // Active Element
-    active: () => {
+    active: function() {
 	return document.activeElement;
     }/*,
     // 
-    : () => {
+    : function() {
 	return document.getElement;
     }*/
 };
 
 
 /*
-var opal = (() => {
+var opal = (function() {
     var s = {};
     var obj = Object.prototype,
 	arr = Array.prototype,
@@ -104,74 +104,74 @@ var opal = (() => {
 	// Generate
 	gen = {
 	    // Element
-	    element: (tag) => {
+	    element: function(tag) {
 		return document.createElement(tag);
 	    },
 	    // Text Node
-	    text: (text) => {
+	    text: function(text) {
 		return document.createTextNode(text);
 	    },
 	    // Attribute
-	    attr: (attribute) => {
+	    attr: function(attribute) {
 		return document.createAttribute(attribute);
 	    },
 	    // Event
-	    event: (event) => {
+	    event: function(event) {
 		return document.createEvent(event);
 	    },
 	    // Comment
-	    comment: (comment) => {
+	    comment: function(comment) {
 		return document.createComment(comment);
 	    },
 	    // CDATA
-	    cdata: (cdata) => {
+	    cdata: function(cdata) {
 		return document.createCDATASection(cdata);
 	    },
 	    // Document Fragment
-	    dfrag: (dfrag) => {
+	    dfrag: function(dfrag) {
 		return document.createDocumentFragment(dfrag);
 	    },
 	    // Range
-	    range: (range) => {
+	    range: function(range) {
 		return document.createRange(range);
 	    },
 	    // Tree Walker
-	    twalk: (twalk) => {
+	    twalk: function(twalk) {
 		return document.createTreeWalker(twalk);
 	    },
 	    // Expression
-	    expr: (expr) => {
+	    expr: function(expr) {
 		return document.createExpression(expr);
 	    },
 	    // Node Iterator
-	    niter: (niter) => {
+	    niter: function(niter) {
 		return document.createNodeIterator(niter);
 	    }*//*,
 	    // 
-	    : () => {
+	    : function() {
 		return document.create;
 	    }*//*
 	},
 	// Access
 	access = {
 	    // ID
-	    id: (id) => {
+	    id: function(id) {
 		return document.getElementById(id);
 	    },
 	    // Class
-	    class: (class) => {
+	    class: function(class) {
 		return document.getElementsByClassName(class);
 	    },
 	    // Name
-	    name: (name) => {
+	    name: function(name) {
 		return document.getElementsByName(name);
 	    },
 	    // Tag
-	    tag: (tag) => {
+	    tag: function(tag) {
 		return document.getElementsByTagName(tag);
 	    }*//*,
 	    // 
-	    : () => {
+	    : function() {
 		return document.getElement;
 	    }*//*
 	}

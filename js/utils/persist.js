@@ -20,14 +20,14 @@
 /*
 var originalSetItem = localStorage.setItem;
 
-localStorage.setItem = () => {
+localStorage.setItem = function() {
     var event = new Event('itemInserted');
     document.dispatchEvent(event);
 
     originalSetItem.apply(this, arguments);
 }
 
-var storageHandler = (e) => {
+var storageHandler = function(e) {
     alert('Item saved to localStorage');
 };
 
@@ -45,7 +45,7 @@ if (typeof(Storage) !== "undefined") {
     var ls = ls || {};
 
     ls = {
-        set: (key, data) => {
+        set: function(key, data) {
             if(typeof(data) == 'object') {
                 //log("data( " + JSON.stringify(data) + " ) is of type: object");
                 return window.localStorage.setItem(key, JSON.stringify(data));
@@ -63,10 +63,10 @@ if (typeof(Storage) !== "undefined") {
                 return window.localStorage.setItem(key, data);
             }
         },
-        get: (key) => {
+        get: function(key) {
             return window.localStorage.getItem(key);
         },
-        remove: (key) => {
+        remove: function(key) {
             return window.localStorage.removeItem(key);
         }
     };
@@ -85,6 +85,6 @@ if (typeof(Storage) !== "undefined") {
 /* *
  * Clear all cookies
  */
-var clearCookies = () => {
-    document.cookie.split(";").forEach((c) => { document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); });
+var clearCookies = function() {
+    document.cookie.split(";").forEach(function(c) { document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); });
 };

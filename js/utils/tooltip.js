@@ -5,13 +5,13 @@
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  * Tooltip
  */
-var tooltip = (() => {
+var tooltip = (function() {
     var method = {},
 	$tooltip,
 	$content;
 
     // Center the tooltip in the viewport
-    /*method.center = (e) => {
+    /*method.center = function(e) {
         var top, left;
         top = Math.max($(window).height() - $tooltip.outerHeight(), 0) / 2;
         left = Math.max($(window).width() - $tooltip.outerWidth(), 0) / 2;
@@ -23,7 +23,7 @@ var tooltip = (() => {
     };*/
 
     // Open the tooltip
-    method.open = (settings) => {
+    method.open = function(settings) {
         $content.empty().append(settings.content);
         $tooltip.css({
             width: settings.width || 'auto',
@@ -38,12 +38,12 @@ var tooltip = (() => {
     };
 
     // Close the tooltip
-    method.close = () => {
+    method.close = function() {
         $tooltip.hide();
         $content.empty();
     };
 
-    method.flip = (e) => {
+    method.flip = function(e) {
 
 		var tooltip_w = $('.tool-tip').width() + 10;
 		var tooltip_h = $('.tool-tip').height() + 2;
@@ -75,18 +75,18 @@ var tooltip = (() => {
     $tooltip.hide();
     $tooltip.append($content);
 
-    $(document).ready(() => {
+    $(document).ready(function() {
         $('body').append($tooltip);
     });
 
     return method;
-});
+}());
 
 
 // Wait until the DOM has loaded before querying the document
-$(document).ready(() => {
+$(document).ready(function() {
 
-    $('[tip]').on('mousemove', (e) => {
+    $('[tip]').on('mousemove', function(e) {
     	//var evtobj = window.event ? event : e;
 
     	tooltip.open({
@@ -99,7 +99,7 @@ $(document).ready(() => {
     	e.preventDefault();
     });
 
-    $(document).on('mouseout', (e) => {
+    $(document).on('mouseout', function(e) {
     	tooltip.close();
     	e.preventDefault();
     });

@@ -6,7 +6,7 @@
  * Tree Context Menu
  */
 var $context_menu = $('<div class="context-menu">');
-var $new_item = ((label) => {
+var $new_item = (function(label) {
 	$('<span class="menu-item"><a href="#">' + label + '</a></span>');
 });
 
@@ -14,17 +14,17 @@ var $new_item = ((label) => {
 /*$('.context-menu').attr('status', 'inactive');
 
 // On right mouse click, set attribute 'status' to 'active'
-$(document).on('contextmenu', () => {
+$(document).on('contextmenu', function() {
 	$('.context-menu').attr('status', 'active');
 });
 
 // On left mouse click, set attribute 'status' to 'inactive'
-$(document).on('click', () => {
+$(document).on('click', function() {
 	$('.context-menu').attr('status', 'inactive');
 });*/
 
 
-var $get_this = (() => {
+var $get_this = (function() {
 	return $(this);
 });
 
@@ -32,7 +32,7 @@ var $get_this = (() => {
 //var getPos
 
 
-/*$(document).on('contextmenu', (e) => {
+/*$(document).on('contextmenu', function(e) {
     if (!$(e.target).is("#special"))
 		return false;
 
@@ -45,7 +45,7 @@ var $get_this = (() => {
 /* *
  * Context Menu
  */
-$(document).on('contextmenu', '.tree-row', (e) => {
+$(document).on('contextmenu', '.tree-row', function(e) {
 	// Restrict the context menu to only open if .tree-row or .tree-label is right clicked.
 	if (!$(e.target).is('.tree-row') && !$(e.target).is('.tree-label'))
 		return false;
@@ -99,7 +99,7 @@ $(document).on('contextmenu', '.tree-row', (e) => {
 
 
 // Disable unrelated menu items
-$('.tree').on('contextmenu', '.tree-row', (e) => {
+$('.tree').on('contextmenu', '.tree-row', function(e) {
 
 	// If the right-clicked tree-row is not a folder, disable the "New Item" & "New Folder" menu items
 	if($(this).parent('.tree-item').attr('item-type') != "folder") {
@@ -128,7 +128,7 @@ $('.tree').on('contextmenu', '.tree-row', (e) => {
 /* *
  * Rename
  */
-$('.context-menu').on('click', '#cm-rename', (e) => {
+$('.context-menu').on('click', '#cm-rename', function(e) {
 	log("cm-rename clicked: (" + e.pageX + ", " + e.pageY + ")");
 	log("e.target: " + e.target);
 
@@ -152,19 +152,19 @@ $('.context-menu').on('click', '#cm-rename', (e) => {
 	$form.rename_new_name.focus();
 	$form.rename_new_name.select();
 
-	$('.modal-input[name=rename_new_name]').keydown((e) => {
+	$('.modal-input[name=rename_new_name]').keydown(function(e) {
 		if (e.keyCode === 13) {
 			$('.button.btn-submit.submit').click();
 		}
 	});
 
-	$('.button.btn-submit.submit').on('click', (e) => {
+	$('.button.btn-submit.submit').on('click', function(e) {
 		e.preventDefault();
 		$('.tree-row[select=true]').find('.tree-label').text($form.rename_new_name.value);
 		modal.close();
 	});
 
-	$('.button.btn-cancel.cancel').on('click', (e) => {
+	$('.button.btn-cancel.cancel').on('click', function(e) {
 		e.preventDefault();
 		modal.close();
 	});
@@ -174,7 +174,7 @@ $('.context-menu').on('click', '#cm-rename', (e) => {
 /* *
  * Edit
  */
-$('.context-menu').on('click', '#cm-edit', (e) => {
+$('.context-menu').on('click', '#cm-edit', function(e) {
 	log("cm-edit clicked: (" + e.pageX + ", " + e.pageY + ")");
 	log("e.target: " + e.target);
 
@@ -211,7 +211,7 @@ $('.context-menu').on('click', '#cm-edit', (e) => {
 			var Notes = {
 				index: ls.get("Notes:index"),
 
-				init: () => {
+				init: function() {
 					// Initialize the storage index
 					if (!Notes.index) {
 						ls.set("Notes:index", Notes.index = 1);
@@ -229,7 +229,7 @@ $('.context-menu').on('click', '#cm-edit', (e) => {
 					//note.key = $tree_item.attr('id');
 
 					// Check if the key already exists
-					var exists = (key) => {
+					var exists = function(key) {
 						if(!ls.get(note.key)) {
 							return false;
 						}
@@ -246,7 +246,7 @@ $('.context-menu').on('click', '#cm-edit', (e) => {
 					}
 
 					// On Save
-					$('.button.btn-submit.submit').on('click', (e) => {
+					$('.button.btn-submit.submit').on('click', function(e) {
 
 						// Save the note
 						Notes.save(note);
@@ -257,7 +257,7 @@ $('.context-menu').on('click', '#cm-edit', (e) => {
 				},
 
 				// Create
-				create: (note) => {
+				create: function(note) {
 					alert("Creating note: " + note.key);
 
 					ls.set(note.key, JSON.stringify(note));
@@ -267,7 +267,7 @@ $('.context-menu').on('click', '#cm-edit', (e) => {
 				},
 
 				// Edit
-				edit: (note) => {
+				edit: function(note) {
 					alert("Editing note: " + note.key);
 
 					var _this = JSON.parse(ls.get(note.key));
@@ -277,7 +277,7 @@ $('.context-menu').on('click', '#cm-edit', (e) => {
 				},
 
 				// Save
-				save: (note) => {
+				save: function(note) {
 					alert("Saving note: " + note.key);
 
 					note.name = $form.edit_note_name.value;
@@ -290,7 +290,7 @@ $('.context-menu').on('click', '#cm-edit', (e) => {
 				},
 
 				// Path
-				path: (note) => {
+				path: function(note) {
 					//var path = ;
 					//$tree_item = $selected.parent('.tree-item');
 				}
@@ -309,7 +309,7 @@ $('.context-menu').on('click', '#cm-edit', (e) => {
 			var Emails = {
 				index: ls.get("Emails:index"),
 
-				init: () => {
+				init: function() {
 					// Initialize the storage index
 					if (!Emails.index) {
 						ls.set("Emails:index", Emails.index = 1);
@@ -327,7 +327,7 @@ $('.context-menu').on('click', '#cm-edit', (e) => {
 					//email.key = $tree_item.attr('id');
 
 					// Check if the key already exists
-					var exists = (key) => {
+					var exists = function(key) {
 						if(!ls.get(email.key)) {
 							return false;
 						}
@@ -344,7 +344,7 @@ $('.context-menu').on('click', '#cm-edit', (e) => {
 					}
 
 					// On Save
-					$('.button.btn-submit.submit').on('click', (e) => {
+					$('.button.btn-submit.submit').on('click', function(e) {
 
 						// Save the email
 						Emails.save(email);
@@ -355,7 +355,7 @@ $('.context-menu').on('click', '#cm-edit', (e) => {
 				},
 
 				// Create
-				create: (email) => {
+				create: function(email) {
 					alert("Creating email: " + email.key);
 
 					ls.set(email.key, JSON.stringify(email));
@@ -365,7 +365,7 @@ $('.context-menu').on('click', '#cm-edit', (e) => {
 				},
 
 				// Edit
-				edit: (email) => {
+				edit: function(email) {
 					alert("Editing email: " + email.key);
 
 					var _this = JSON.parse(ls.get(email.key));
@@ -379,7 +379,7 @@ $('.context-menu').on('click', '#cm-edit', (e) => {
 				},
 
 				// Save
-				save: (email) => {
+				save: function(email) {
 					alert("Saving email: " + email.key);
 
 					email.name = $form.edit_email_name.value;
@@ -396,7 +396,7 @@ $('.context-menu').on('click', '#cm-edit', (e) => {
 				},
 
 				// Path
-				path: (email) => {
+				path: function(email) {
 					//var path = ;
 					//$tree_item = $selected.parent('.tree-item');
 				}
@@ -415,7 +415,7 @@ $('.context-menu').on('click', '#cm-edit', (e) => {
 			var Contacts = {
 				index: ls.get("Contacts:index"),
 
-				init: () => {
+				init: function() {
 					// Initialize the storage index
 					if (!Contacts.index) {
 						ls.set("Contacts:index", Contacts.index = 1);
@@ -433,7 +433,7 @@ $('.context-menu').on('click', '#cm-edit', (e) => {
 					//contact.key = $tree_item.attr('id');
 
 					// Check if the key already exists
-					var exists = (key) => {
+					var exists = function(key) {
 						if(!ls.get(contact.key)) {
 							return false;
 						}
@@ -450,7 +450,7 @@ $('.context-menu').on('click', '#cm-edit', (e) => {
 					}
 
 					// On Save
-					$('.button.btn-submit.submit').on('click', (e) => {
+					$('.button.btn-submit.submit').on('click', function(e) {
 
 						// Save the contact
 						Contacts.save(contact);
@@ -461,7 +461,7 @@ $('.context-menu').on('click', '#cm-edit', (e) => {
 				},
 
 				// Create
-				create: (contact) => {
+				create: function(contact) {
 					alert("Creating contact: " + contact.key);
 
 					ls.set(contact.key, JSON.stringify(contact));
@@ -471,7 +471,7 @@ $('.context-menu').on('click', '#cm-edit', (e) => {
 				},
 
 				// Edit
-				edit: (contact) => {
+				edit: function(contact) {
 					alert("Editing contact: " + contact.key);
 
 					var _this = JSON.parse(ls.get(contact.key));
@@ -487,7 +487,7 @@ $('.context-menu').on('click', '#cm-edit', (e) => {
 				},
 
 				// Save
-				save: (contact) => {
+				save: function(contact) {
 					alert("Saving contact: " + contact.key);
 
 					contact.first = $form.edit_contact_first_name.value;
@@ -506,7 +506,7 @@ $('.context-menu').on('click', '#cm-edit', (e) => {
 				},
 
 				// Path
-				path: (contact) => {
+				path: function(contact) {
 					//var path = ;
 					//$tree_item = $selected.parent('.tree-item');
 				}
@@ -515,7 +515,7 @@ $('.context-menu').on('click', '#cm-edit', (e) => {
 			break;
 	}
 
-	$('.button.btn-cancel.cancel').on('click', (e) => {
+	$('.button.btn-cancel.cancel').on('click', function(e) {
 		modal.close();
 		e.preventDefault();
 	});
@@ -525,7 +525,7 @@ $('.context-menu').on('click', '#cm-edit', (e) => {
 /* *
  * Delete
  */
-$('.context-menu').on('click', '#cm-delete', (e) => {
+$('.context-menu').on('click', '#cm-delete', function(e) {
 	log("cm-delete clicked: (" + e.pageX + ", " + e.pageY + ")");
 	log("e.target: " + e.target);
 
@@ -564,7 +564,7 @@ $('.context-menu').on('click', '#cm-delete', (e) => {
 /* *
  * New Item
  */
-$('.context-menu').on('click', '#cm-new-item', (e) => {
+$('.context-menu').on('click', '#cm-new-item', function(e) {
 	log("cm-new-item clicked: (" + e.pageX + ", " + e.pageY + ")");
 	log("e.target: " + e.target);
 
@@ -590,7 +590,7 @@ $('.context-menu').on('click', '#cm-new-item', (e) => {
 	var $tab = $('.tree-row[select=true]').parent('.tree-tab-content');
 	var parentFolder = $('.tree-row[select=true]').find('.tree-label').text();
 	var path = $('.tree-row[select=true]').parents('.tree-item[item-type=folder]')
-							.each(() => {
+							.each(function() {
 								return $(this).find('.tree-label:first').text();
 							}).get().join('/');
 
@@ -605,7 +605,7 @@ $('.context-menu').on('click', '#cm-new-item', (e) => {
 			});
 			$('.modal-input').focus();
 
-			$('.button.btn-submit.submit').on('click', (e) => {
+			$('.button.btn-submit.submit').on('click', function(e) {
 				e.preventDefault();
 
 				//ls.set("Notes:index", ++Notes.index);
@@ -616,7 +616,7 @@ $('.context-menu').on('click', '#cm-new-item', (e) => {
 				var $tree_label = $('<span class="tree-label"></span>'); /*' + $form.new_item_name.value + '*/
 				var $tree_children = $('<div class="tree-children" expanded="false"></div>');
 
-				var add_item = () => {
+				var add_item = function() {
 					if(!$this.find('.tree-children:first')) {
 						// Create .tree-children
 						$this.append($tree_children);
@@ -650,7 +650,7 @@ $('.context-menu').on('click', '#cm-new-item', (e) => {
 			break;
 	}
 
-	$('.button.btn-cancel.cancel').on('click', (e) => {
+	$('.button.btn-cancel.cancel').on('click', function(e) {
 		modal.close();
 		e.preventDefault();
 	});
@@ -662,7 +662,7 @@ $('.context-menu').on('click', '#cm-new-item', (e) => {
 /* *
  * New Folder
  */
-$('.context-menu').on('click', '#cm-new-folder', (e) => {
+$('.context-menu').on('click', '#cm-new-folder', function(e) {
 	log("cm-new-folder clicked: (" + e.pageX + ", " + e.pageY + ")");
 	log("e.target: " + e.target);
 	
@@ -684,7 +684,7 @@ $('.context-menu').on('click', '#cm-new-folder', (e) => {
 	});
 	$('.modal-input').focus();
 
-	$('.button.btn-submit.submit').on('click', (e) => {
+	$('.button.btn-submit.submit').on('click', function(e) {
 		e.preventDefault();
 
 		var $this = $('.tree-row[select=true]').parent('.tree-item');
@@ -694,7 +694,7 @@ $('.context-menu').on('click', '#cm-new-folder', (e) => {
 		var $tree_label = $('<span class="tree-label">' + $form.new_folder_name.value + '</span>');
 		var $tree_children = $('<div class="tree-children" expanded="false"></div>');
 
-		var add_folder = () => {
+		var add_folder = function() {
 			if(!$this.find('.tree-children:first')) {
 				// Create .tree-children
 				$this.append($tree_children);
@@ -714,7 +714,7 @@ $('.context-menu').on('click', '#cm-new-folder', (e) => {
 		modal.close();
 	});
 
-	$('.button.btn-cancel.cancel').on('click', (e) => {
+	$('.button.btn-cancel.cancel').on('click', function(e) {
 		modal.close();
 		e.preventDefault();
 	});
@@ -726,7 +726,7 @@ $('.context-menu').on('click', '#cm-new-folder', (e) => {
 /* *
  * Hide context menu
  */
-$(document).on('click', (e) => {
+$(document).on('click', function(e) {
 	$('.context-menu').css({
 		display: "none"
 	});

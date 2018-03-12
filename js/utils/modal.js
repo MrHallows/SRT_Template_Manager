@@ -6,7 +6,7 @@
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  * Modal
  */
-var modal = (() => {
+var modal = (function() {
     var method = {},
 	$overlay,
 	$modal,
@@ -16,7 +16,7 @@ var modal = (() => {
 	$content;
 
     // Center the modal in the viewport
-    method.center = () => {
+    method.center = function() {
         var top, left;
         top = Math.max($(window).height() - $modal.outerHeight(), 0) / 2;
         left = Math.max($(window).width() - $modal.outerWidth(), 0) / 2;
@@ -28,7 +28,7 @@ var modal = (() => {
     };
 
     // Open the modal
-    method.open = (settings) => {
+    method.open = function(settings) {
         $title.empty().append(settings.title);
         $content.empty().append(settings.content);
         $modal.css({
@@ -42,7 +42,7 @@ var modal = (() => {
     };
 
     // Close the modal
-    method.close = () => {
+    method.close = function() {
         $modal.hide();
         $overlay.hide();
         $title.empty();
@@ -64,22 +64,22 @@ var modal = (() => {
     $overlay.hide();
     $modal.append($titlebar.append($title, $close, $maximize, $minimize), $content);
 
-    $(document).ready(() => {
+    $(document).ready(function() {
         $('body').append($overlay, $modal);
     });
 
-    $close.on('click', (e) => {
+    $close.on('click', function(e) {
         method.close();
         e.preventDefault();
     });
 
-    $('.button.btn-cancel').on('click', (e) => {
+    $('.button.btn-cancel').on('click', function(e) {
 		method.close();
         e.preventDefault();
     });
 
     return method;
-});
+}());
 
 
 /*

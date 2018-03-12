@@ -15,7 +15,7 @@
 
 var debug = {
     // Logger
-    log: (severity, msg) => {
+    log: function(severity, msg) {
         // Severity types
         switch(severity) {
             case "info":

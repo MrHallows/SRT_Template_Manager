@@ -238,12 +238,12 @@ Tree.notes = [
 ];
 
 
-Tree.getFirstLevelData = (data) => {
+Tree.getFirstLevelData = function(data) {
     if(!data) data = Tree.notes;
 
     var datum = [];
 
-    $.each(data, () => {
+    $.each(data, function() {
         if(this.type == 'folder') {
             var node = {
                 type: this.type,
@@ -275,13 +275,13 @@ Tree.getFirstLevelData = (data) => {
 };
 
 
-Tree.getChildrenOfNode = (data, node_id) => {
+Tree.getChildrenOfNode = function(data, node_id) {
     var result = null;
 
     function iterate(nodes) {
         if(!nodes) nodes = data;
 
-        $.each(nodes, () => {
+        $.each(nodes, function() {
             if(result) {
                 return;
             } else {
@@ -304,7 +304,7 @@ Tree.getChildrenOfNode = (data, node_id) => {
 };
 
 
-Tree.buildTree = (dest, data) => {
+Tree.buildTree = function(dest, data) {
     //var result = null;
     var folders = [];
 
@@ -317,7 +317,7 @@ Tree.buildTree = (dest, data) => {
 
             //var result = null;
             var result = data[index];
-            var children = data[index].children;
+            const children = data[index].children;
             log("result: ", result);
 
             var root = document.querySelector(dest);
