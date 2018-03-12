@@ -317,9 +317,9 @@ Tree.buildTree = function(dest, data) {
 
             //var result = null;
             var result = data[index];
-            const children = data[index].children;
+            var children = data[index].children;
             log("result: ", result);
-    
+
             var root = document.querySelector(dest);
 
             var fragment = document.createDocumentFragment();
@@ -346,10 +346,12 @@ Tree.buildTree = function(dest, data) {
                         tree_item.setAttribute('has-children', true);
                         tree_row.setAttribute('has-children', true);
 
-                        notification.open({
-                            severity: 'info',
-                            content: result.type + " " + result.label + " has " + children.length + " children."
-                        });
+                        setTimeout(() => {
+                            notification.open({
+                                severity: 'info',
+                                content: result.type + " " + result.label + " has " + children.length + " children."
+                            });
+                        }, 5000);
                     }
                 }
         
