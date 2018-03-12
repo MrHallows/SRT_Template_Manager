@@ -45,14 +45,12 @@ var notification = (function() {
 				break;
 		}
 
-		setTimeout(function() {
-			$severity.empty().append(settings.severity);
-			$content.empty().append(settings.content);
-			
-			$notification.removeClass('hide');
-			$notification.addClass('show');
-			$notification.show();
-		}, 3000);
+		$severity.empty().append(settings.severity);
+		$content.empty().append(settings.content);
+		
+		$notification.removeClass('hide');
+		$notification.addClass('show');
+		$notification.show();
     };
 
     // Close the notification
