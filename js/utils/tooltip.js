@@ -80,7 +80,7 @@ var tooltip = (() => {
     });
 
     return method;
-}());
+});
 
 
 // Wait until the DOM has loaded before querying the document

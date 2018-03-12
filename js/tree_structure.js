@@ -345,7 +345,7 @@ $('.tree').on('contextmenu', '.tree-row', () => {
 });
 
 
-/* *
+/**
  * This is used as a blueprint for new tree item elements.
  * @type {!HTMLElement}
  */

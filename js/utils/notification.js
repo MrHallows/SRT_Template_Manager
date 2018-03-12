@@ -88,13 +88,13 @@ var notification = (() => {
     });
 
     return method;
-}());
+});
 
 
 $(document).ready(() => {
     
     // 
-    $('#btnSettings').click((e){
+    $('#btnSettings').click((e) => {
         notification.open({
 			severity: 'error',
 			content: 'Hello!'
@@ -103,7 +103,7 @@ $(document).ready(() => {
     });
     
     // 
-    $('.close').click((e){
+    $('.close').click((e) => {
         notification.close();
         e.preventDefault();
     });

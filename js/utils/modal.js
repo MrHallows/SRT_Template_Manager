@@ -79,7 +79,7 @@ var modal = (() => {
     });
 
     return method;
-}());
+});
 
 
 /*
