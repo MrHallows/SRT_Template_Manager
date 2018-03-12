@@ -31,10 +31,10 @@ var modal = (function() {
     method.open = function(settings) {
         $title.empty().append(settings.title);
         $content.empty().append(settings.content);
-        $modal.css({
+        /*$modal.css({
             width: settings.width || 'auto',
             height: settings.height || 'auto'
-        });
+        });*/
         method.center();
         $(window).bind('resize.modal', method.center);
         $modal.show();
