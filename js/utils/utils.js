@@ -36,7 +36,7 @@ function copy(id) {
     clipbd.removeRange();
 }
 
-(function() {
+(() => {
     'use strict';
 
     // click events
@@ -75,7 +75,7 @@ function copy(id) {
    * @return {?}
    */
 var self = {};
-String.prototype.truncate = function(str, length, truncateStr) {
+String.prototype.truncate = (str, length, truncateStr) => {
     return truncateStr = truncateStr || "…",
     str.length > length ? str.slice(0, length) + truncateStr : str;
 };
@@ -123,7 +123,7 @@ function versionCompare(v1, v2) {
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  * Allow TAB insertion within <textarea>
  */
-$('textarea').keydown(function(e) {
+$('textarea').keydown((e) => {
     //alert("Key was pressed!");
     if (e.keyCode === 9) {
         // Tab was pressed
@@ -228,7 +228,7 @@ document.onkeydown = quoteSelection;*/
 var Cookie = Cookie || {};
 
 Cookie = {
-	read: function(cookie_name) {
+	read: (cookie_name) => {
 		var numOfCookies = document.cookie.length;
 		var nameOfCookie = escapeEx(cookie_name) + "=";
 		var cookieLen = nameOfCookie.length;
@@ -243,35 +243,35 @@ Cookie = {
 		}
 		return null;
 	},
-	extract: function(val) {
+	extract: (val) => {
 		if((endOfCookie = document.cookie.indexOf(";",val)) == -1)
 			endOfCookie = document.cookie.length;
 		return unescapeEx(document.cookie.substring(val, endOfCookie));
 	},
-	create: function(name, value, expiredays, path) {
+	create: (name, value, expiredays, path) => {
 		var todayDate = new Date();
 		name = escapeEx(name);
 		value = escapeEx(value);
 		todayDate.setDate(todayDate.getDate() + expiredays);
 		document.cookie = name + "=" + value + "; expires=" + todayDate.toGMTString() + "; path=" + path + ";";
 	},
-	createTemp: function(name, value, path) {
+	createTemp: (name, value, path) => {
 		name = escapeEx(name);
 		value = escapeEx(value);
 		document.cookie=name + "=" + value + "; path=" + path + ";";
 	},
-	returnExp: function(days) {
+	returnExp: (days) => {
 		var todayDate = new Date();
 		todayDate.setDate(todayDate.getDate() + days);
 		return(todayDate.toGMTString());
 	},
-	delete: function(name, path) {
+	delete: (name, path) => {
 		var todayDate = new Date();
 		var value = escapeEx(readCookie(name));
 		todayDate.setDate(todayDate.getDate() - 1);
 		document.cookie = name + "=" + value + "; expires=" + todayDate.toGMTString() + "; path=" + path + ";";
 	},
-	escapeEx: function(tmpstr) {
+	escapeEx: (tmpstr) => {
 		tmpstr = escape(tmpstr);
 		var tmpstr2 = "";
 		while(true) {
@@ -283,7 +283,7 @@ Cookie = {
 		}
 		return tmpstr2;
 	},
-	unescapeEx: function(tmpstr) {
+	unescapeEx: (tmpstr) => {
 		tmpstr = unescape(tmpstr);
 		var tmpstr2 = "";
 		while(true) {

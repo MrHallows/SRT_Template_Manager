@@ -15,7 +15,7 @@ var ContactsList = localStorage[ContactsList] ? JSON.parse(localStorage[Contacts
 var state = state || {};
 
 // View State
-$(window).on('beforeunload', function() {
+$(window).on('beforeunload', () => {
 	var $selected = $('.tree-row[select=true]');
 	var $label = $selected.find('.tree-label');
 	var $label_text = $selected.find('.tree-label').text();
@@ -40,7 +40,7 @@ $(window).on('beforeunload', function() {
 	$('.active').click();*/
 });
 
-$(window).on('load', function() {
+$(window).on('load', () => {
 	var $selected = $('.tree-row[select=true]');
 	var $label = $selected.find('.tree-label');
 	var $label_text = $selected.find('.tree-label').text();
@@ -70,7 +70,7 @@ $(window).on('load', function() {
 	//$('.tree-children').addClass('hidden');
 });
 
-/*$(document).on('change', function() {
+/*$(document).on('change', () => {
 	var $selected = $('.tree-row[select=true]');
 	var $label = $selected.find('.tree-label');
 	var $label_text = $selected.find('.tree-label').text();
@@ -89,7 +89,7 @@ $(window).on('load', function() {
 });*/
 
 
-$(document).on('click', '.tree-row', function() {
+$(document).on('click', '.tree-row', () => {
 	var $selected = $('.tree-row[select=true]');
 	var $label = $selected.find('.tree-label');
 	var $label_text = $selected.find('.tree-label').text();
@@ -205,21 +205,21 @@ if (!ls.get("Contacts:index")) {
 }*/
 
 
-/*$('input').on('focus', function(e) {
+/*$('input').on('focus', (e) => {
     //$(this).after('<span class="input-clear"></span>');
-    $(this).wrap('<span class="deleteicon"/>').after($('<span/>').click(function() {
+    $(this).wrap('<span class="deleteicon"/>').after($('<span/>').click(() => {
         $(this).prev('input').val('').trigger('change').focus();
     }));
-    $('input').on('blur', function(e) {
+    $('input').on('blur', (e) => {
         $('input').parent('.deleteicon').find('span').remove();
     });
 });*/
-/*$('input').on('blur', function(e) {
+/*$('input').on('blur', (e) => {
     $(this).remove('.deleteicon span');
 });*/
 
-/*$(document).ready(function() {
-    $('input').wrap('<span class="deleteicon"/>').after($('<span/>').click(function() {
+/*$(document).ready(() => {
+    $('input').wrap('<span class="deleteicon"/>').after($('<span/>').click(() => {
         $(this).prev('input').val('').trigger('change').focus();
     }));
 });*/
@@ -232,7 +232,7 @@ var other;
 $('.cp-panel').resizable({
     handles: 's',
     // try using "n" to see what happens...
-    start: function(e, ui) {
+    start: (e, ui) => {
         if ($(this).next('.cp-panel').length > 0) {
             other = $(this).next('.cp-panel');
         } else {
@@ -240,7 +240,7 @@ $('.cp-panel').resizable({
         }
         startingHeight = other.height();
     },
-    resize: function(e, ui) {
+    resize: (e, ui) => {
         var dh = ui.size.height - ui.originalSize.height;
         if (dh > startingHeight) {
             // can't resize the box more then it's neighbour
@@ -260,8 +260,8 @@ $('.cp-panel').resizable({
  * <label>Start Date: </label><input name="StartDate">
  * <input id="date" type="button" value="select" onclick="displayDatePicker('StartDate');">
  */
-$('.date').on('click', function(e) {
-	$(this).each(function() {
+$('.date').on('click', (e) => {
+	$(this).each(() => {
 		displayDatePicker('StartDate');
 	});
 });
@@ -270,7 +270,7 @@ $('.date').on('click', function(e) {
 /* *
  * Clear Cookies
  */
-$('#btnClearCookies').on('click', function() {
+$('#btnClearCookies').on('click', () => {
 	clearCookies();
 	alert("Cookies have been cleared!");
 });
@@ -279,7 +279,7 @@ $('#btnClearCookies').on('click', function() {
 
 
 
-    $('.modal-input').on('keydown', function(e) {
+    $('.modal-input').on('keydown', (e) => {
         if($(this).val() != "") {
             $(this).siblings('label').css('visibility', 'hidden');
             var lbl_text = $(this).siblings('label').text();

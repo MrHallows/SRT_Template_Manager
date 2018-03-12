@@ -6,7 +6,7 @@
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  * Notification
  */
-var notification = (function() {
+var notification = (() => {
     var method = {},
 	$notification,
 	$severity,
@@ -14,7 +14,7 @@ var notification = (function() {
 	$close;
 
     // Open the notification
-    method.open = function(settings) {		
+    method.open = (settings) => {		
 		switch (settings.severity) {
 			case 'success':
 				$severity.addClass('success');
@@ -45,7 +45,7 @@ var notification = (function() {
 				break;
 		}
 
-		setTimeout(function() {
+		setTimeout(() => {
 			$severity.empty().append(settings.severity);
 			$content.empty().append(settings.content);
 			
@@ -56,7 +56,7 @@ var notification = (function() {
     };
 
     // Close the notification
-    method.close = function() {
+    method.close = () => {
 		$notification.removeClass('show');
 		$notification.addClass('hide');
         $notification.hide();
@@ -73,16 +73,16 @@ var notification = (function() {
     // $notification.hide();
     $notification.append($severity, $content, $close);
 
-    $(document).ready(function() {
+    $(document).ready(() => {
         $('main').append($notification);
     });
 
-    $close.on('click', function(e) {
+    $close.on('click', (e) => {
         method.close();
         e.preventDefault();
     });
 
-    $('.button.btn-cancel').on('click', function(e) {
+    $('.button.btn-cancel').on('click', (e) => {
 		method.close();
         e.preventDefault();
     });
@@ -91,10 +91,10 @@ var notification = (function() {
 }());
 
 
-$(document).ready(function() {
+$(document).ready(() => {
     
     // 
-    $('#btnSettings').click(function(e){
+    $('#btnSettings').click((e){
         notification.open({
 			severity: 'error',
 			content: 'Hello!'
@@ -103,7 +103,7 @@ $(document).ready(function() {
     });
     
     // 
-    $('.close').click(function(e){
+    $('.close').click((e){
         notification.close();
         e.preventDefault();
     });

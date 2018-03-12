@@ -21,10 +21,10 @@ https://www.fedex.com/en-us/search.html?q=
 
 
 Clear all cookies:
-document.cookie.split(";").forEach(function(c) { document.cookie = c.replace(/^ +/, "").replace(/=.*/ // <-- ERASE THIS! , "=;expires=" + new Date().toUTCString() + ";path=/"); });
+document.cookie.split(";").forEach((c) => { document.cookie = c.replace(/^ +/, "").replace(/=.*/ // <-- ERASE THIS! , "=;expires=" + new Date().toUTCString() + ";path=/"); });
 /*
 Code for a bookmarklet:
-javascript:(function(){document.cookie.split(";").forEach(function(c) { document.cookie = c.replace(/^ +/, "").replace(/=.*/ // <-- ERASE THIS! , "=;expires=" + new Date().toUTCString() + ";path=/"); }); })();
+javascript:(() =>{document.cookie.split(";").forEach((c) => { document.cookie = c.replace(/^ +/, "").replace(/=.*/ // <-- ERASE THIS! , "=;expires=" + new Date().toUTCString() + ";path=/"); }); })();
 
 
 /*
@@ -51,9 +51,9 @@ Follow these easy steps to calculate dim weight:
 
 */
  
-$(document).ready(function() {
+$(document).ready(() => {
 
-    $('#dimReset').click(function(e) {
+    $('#dimReset').click((e) => {
         e.preventDefault();
         //logLinkView('resetDimWeight', 'event6');
 
@@ -63,7 +63,7 @@ $(document).ready(function() {
         $('#dim_error').hide();
     });
 
-    $('#dimRedo').click(function(e) {
+    $('#dimRedo').click((e) => {
         e.preventDefault();
         //logLinkView('recalculateDimWeight', 'event6');
 
@@ -73,11 +73,11 @@ $(document).ready(function() {
         $('#dimForm_form').show();
         $('#dimResult').hide();
     });
-    $('#dimShipNow').click(function(e) {
+    $('#dimShipNow').click((e) => {
         //logLinkView('shipNowLink', 'event7');
     });
 
-    $('#dimCalc').click(function(e) {
+    $('#dimCalc').click((e) => {
         e.preventDefault();
 
         var _shipRatio = 0;
@@ -133,13 +133,13 @@ $(document).ready(function() {
         $('#dimForm_form').hide();
     }
 
-    $('#dimWeightFAQ_cta').click(function(e) {
+    $('#dimWeightFAQ_cta').click((e) => {
         //logLinkView('dimWeightFAQ_Link', 'event8');
     });
-    $('#quickGuide_cta').click(function(e) {
+    $('#quickGuide_cta').click((e) => {
         //logLinkView('quickGuide_Link', 'event9');
     });
-    $('#rightSizing_cta').click(function(e) {
+    $('#rightSizing_cta').click((e) => {
         //logLinkView('rightSizing_Link', 'event10');
     });
 });
@@ -204,7 +204,7 @@ $(document).ready(function() {
 
 
 
-$('#btnTools').on('click', function(e) {
+$('#btnTools').on('click', (e) => {
     e.preventDefault();
 
     var $form = document.getElementById('content');
@@ -214,7 +214,7 @@ $('#btnTools').on('click', function(e) {
         content: '<div id="tools-dim-calc" class="modal-input tools-tile" name="tools_dim_calc"><div>Dimensional Weight Calculator</div></div><div id="tools-1" class="modal-input tools-tile" name="tools_"><div>Another Tool</div></div><div id="tools-2" class="modal-input tools-tile" name="tools_"><div>Another Tool</div></div><div class="actionbar"><button class="button btn-cancel">Cancel</button><button class="button btn-submit">Save</button></div>'
     });
 
-    $('#tools-dim-calc').on('click', function(e) {
+    $('#tools-dim-calc').on('click', (e) => {
         modal.close();
         //
         modal.open({
@@ -222,7 +222,7 @@ $('#btnTools').on('click', function(e) {
             content: '<form id="dimForm" class=""><div class=""><div class=""><div class=""><h2>Calculate your dimensional weight</h2><div id="dimResult" style="display: none;"><div class="" style="background-color:#4d148c; color:#fff; margin-bottom:15px;"><h2 style="margin-top:0;color:#fff;">Dimensional weight: <b><span id="result_weight">2</span> lbs.</b></h2><div class="alert"><p><span>!</span>To ensure your invoice matches your quote, be sure to include all package dimensions (including length, width, and height) when creating your shipment.</p></div></div><div class="" style="margin-bottom:20px;margin-right: 0;"><a class="" id="dimShipNow" href="">Ship now</a><button class="button btn-std" id="dimRedo">Recalculate</button></div></div><fieldset id="dimForm_form" style="display:block;"><div class=""><label>Select one</label><div class="radio-container"><input type="radio"/><label class="unselectable"><span></span> U.S. Domestic</label></div><div class="radio-container"><input type="radio"/><label class="unselectable"><span></span> U.S. International (Import/Export)</label></div><div class=""><label>Enter dimensions to the nearest whole number (in.)</label><div class="dimensions"><label for="length_val">Length</label><input type="text" id="length-val" class="modal-input" name="length_val" placeholder="Length"></div><div class="dimensions"><label for="width_val">Width</label><input type="text" id="width-val" class="modal-input" name="width_val" placeholder="Width"></div><div class="dimensions"><label for="height_val">Height</label><input type="text" id="height-val" class="modal-input" name="height_val" placeholder="Height"></div><div id="dim_error" class="" style="display: none;">Enter dimensions to the nearest whole number (in.)</div></div><div class="" style="margin-bottom:20px;"><button class="button btn-submit" id="dimCalc">Calculate</button><button class="button btn-cancel" id="dimReset">Reset</button></div></fieldset></div></div></div></form>'
         });
 
-        $('#back').on('click', function(e) {
+        $('#back').on('click', (e) => {
             modal.close();
 
             modal.open({
@@ -233,12 +233,12 @@ $('#btnTools').on('click', function(e) {
         e.preventDefault();
     });
 
-    $('.button.btn-submit').on('click', function(e) {
+    $('.button.btn-submit').on('click', (e) => {
         modal.close();
         e.preventDefault();
     });
 
-    $('.button.btn-cancel').on('click', function(e) {
+    $('.button.btn-cancel').on('click', (e) => {
         modal.close();
         e.preventDefault();
     });

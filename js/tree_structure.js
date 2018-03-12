@@ -17,7 +17,7 @@ ls.set('SRTTM_State', JSON.stringify(state));*/
 
 
 // Set the Notes tab to 'active'
-/*$(document).ready(function() {
+/*$(document).ready(() => {
 	if($('.tree-tabs a').hasClass('active')) {
 		$(this).removeAttr('class', 'active');
 		$('a[href="#tab-notes"]').attr('class', 'active');
@@ -28,7 +28,7 @@ ls.set('SRTTM_State', JSON.stringify(state));*/
 
 
 // Save the tree to localStorage
-/*$(window).on('load', function() {
+/*$(window).on('load', () => {
 	alert("window loading..");
 	if(!ls.get('Notes_Tree')) {
 		alert("Notes Tree not saved/loaded properly!\nSaving current state..");
@@ -53,7 +53,7 @@ ls.set('SRTTM_State', JSON.stringify(state));*/
 });*/
 
 // Save the tree to localStorage
-/*$(document).on('change', function() {
+/*$(document).on('change', () => {
 	alert("document changed!");
 	ls.set('Notes_Tree', $('#tab-notes').html());
 	ls.set('Email_Tree', $('#tab-email').html());
@@ -64,7 +64,7 @@ ls.set('SRTTM_State', JSON.stringify(state));*/
 var state = state || {};
 
 // Tabs
-$('.tree-tabs').each(function() {
+$('.tree-tabs').each(() => {
 	// For each set of tabs, we want to keep track of
 	// which tab is active and its associated content
 	var $active, $content, $links = $(this).find('a');
@@ -78,12 +78,12 @@ $('.tree-tabs').each(function() {
 	$content = $($active[0].hash);
 
 	// Hide the remaining content
-	$links.not($active).each(function() {
+	$links.not($active).each(() => {
 		$(this.hash).hide();
 	});
 
 	// Bind the click event handler
-	$(this).on('click', 'a', function(e) {
+	$(this).on('click', 'a', (e) => {
 
 		// Make the old tab inactive
 		$active.removeClass('active');
@@ -106,31 +106,31 @@ $('.tree-tabs').each(function() {
 	});
 });
 
-/*$('.tree-tab').on('click', function() {
+/*$('.tree-tab').on('click', () => {
     $(this).find('a').click();
 });*/
 
 
 // Dynamically set tree-item id's
 /*var noteId = 0;//ls.get("Notes:index");
-$('.tree-item[item-type=note]').each(function() {
+$('.tree-item[item-type=note]').each(() => {
 	this.id = 'note-' + ++noteId;
 });*/
 
 var emailId = 0;//ls.get("Email:index");
-$('.tree-item[item-type=email]').each(function() {
+$('.tree-item[item-type=email]').each(() => {
 	this.id = 'email-' + ++emailId;
 });
 
 var contactId = 0;//ls.get("Contacts:index");
-$('.tree-item[item-type=contact]').each(function() {
+$('.tree-item[item-type=contact]').each(() => {
 	this.id = 'contact-' + ++contactId;
 });
 
 
 // Tree Components
 /*var $tree = $('<div class="tree"></div>');
-var $tree_item = function(item_type) {
+var $tree_item = (item_type) => {
 	switch(item_type) {
 		case "folder":
 			return $('<div class="tree-item" item-type="folder" expanded="false" has-children="true"></div>');
@@ -149,7 +149,7 @@ var $tree_item = function(item_type) {
 			break;
 	}
 };
-var $tree_row = function(has_children) {
+var $tree_row = (has_children) => {
 	switch(has_children) {
 		case true:
 			return $('<div class="tree-row" has-children="true" may-have-children="" select="false"></div>');
@@ -163,19 +163,19 @@ var $tree_row = function(has_children) {
 	}
 };
 var $expand_icon = $('<span class="expand-icon"></span>');
-var $tree_label = function(label) {
+var $tree_label = (label) => {
 	return $('<span class="tree-label">' + label + '</span>');
 };*/
-/*var $rename = function() {
+/*var $rename = () => {
 	return $('<input type="text" class="tree-rename" style="display: none;">');
 };
 $('.tree-label').after($rename());*/
 
 
 // Edit tree-label text
-/*$('.tree-row').on('dblclick', function() {
+/*$('.tree-row').on('dblclick', () => {
 	var $tree_rename = $('<input type="text" class="tree-rename"/>');
-	$tree_rename.init = (function() {
+	$tree_rename.init = (() => {
 		return new $tree_rename;
 	});//
 	$('.tree-rename').remove();
@@ -194,7 +194,7 @@ $('.tree-label').after($rename());*/
 	//$lbl.attr('contenteditable', 'true').focus().select();
 	//log($lbl.text());
 	// When ENTER is pressed, set value
-	$tree_rename.on('keyup', function(e) {
+	$tree_rename.on('keyup', (e) => {
 		var keycode = e.charCode || e.keyCode;
 		if(keycode === 13 || keycode === 9) {
 			e.preventDefault();
@@ -217,14 +217,14 @@ $('.tree-label').after($rename());*/
 });*/
 
 
-/*$('.tree-row').on('click', function() {
+/*$('.tree-row').on('click', () => {
 	var $lbl = $(this).find('.tree-label[contenteditable=true]');
 	var $notthis = $('.tree-label').parent().not(this).find('.tree-label');
 	//log("Label: " + $lbl.text());
 });*/
 
 
-$(document).ready(function() {
+$(document).ready(() => {
 	// Set all tree-item and tree-children elements' 'expanded' attribute to 'false'
 	$('.tree-item').attr('expanded', 'false');
 	$('.tree-children').attr('expanded', 'false');
@@ -239,7 +239,7 @@ $(document).ready(function() {
 
 
 // Toggle the 'expanded' attribute: true/false
-$('.tree').on('click', '.tree-row[has-children=true] .expand-icon', function() {
+$('.tree').on('click', '.tree-row[has-children=true] .expand-icon', () => {
 	//log("this: " + $(this).text());
 	var $par = $(this).parent().parent('.tree-item');
 	var $sib = $(this).parent().next('.tree-children'); //.tree-children[expanded]
@@ -249,7 +249,7 @@ $('.tree').on('click', '.tree-row[has-children=true] .expand-icon', function() {
 	var padl = $par.css('-webkit-padding-start');
 	//log("padl: " + padl);
 
-	/*$sib.css('-webkit-padding-start', function() {
+	/*$sib.css('-webkit-padding-start', () => {
 		var digits = padl.match(/\d+/);
 		//log("digits: " + digits);
 		var newPad = (digits + 17) + 'px';
@@ -290,13 +290,13 @@ $('.tree').on('click', '.tree-row[has-children=true] .expand-icon', function() {
 	/*if($par.attr('expanded') == 'true') {
 		$sib.attr('expanded', 'true');
 
-		setTimeout(function() {
+		setTimeout(() => {
 			$sib.css('display', 'block');
 		}, 20);
 	} else {
 		$sib.attr('expanded', 'false');
 
-		$sib.one('transitionend', function(e) {
+		$sib.one('transitionend', (e) => {
 			$sib.css({'display':'none','-webkit-padding-start':''});
 		});
 	}*/
@@ -305,13 +305,13 @@ $('.tree').on('click', '.tree-row[has-children=true] .expand-icon', function() {
 
 
 // Set all tree-item and tree-children elements' 'select' attribute to 'false'
-$(document).ready(function() {
+$(document).ready(() => {
 	$('.tree-item').attr('select', 'false');
 	$('.tree-children').attr('select', 'false');
 });
 
 // Toggle the 'select' attribute: true/false
-$('.tree').on('click', '.tree-row', function() {
+$('.tree').on('click', '.tree-row', () => {
 	var $par = $(this).parent('.tree-item');
 	var $lbl = $(this).find('.tree-label');
 	$('.tree-row').not(this).attr('select', 'false'); // false
@@ -328,7 +328,7 @@ $('.tree').on('click', '.tree-row', function() {
 });
 
 // Toggle the 'select' attribute: true/false
-$('.tree').on('contextmenu', '.tree-row', function() {
+$('.tree').on('contextmenu', '.tree-row', () => {
 	var $par = $(this).parent('.tree-item');
 	var $lbl = $(this).find('.tree-label');
 	$('.tree-row').not(this).attr('select', 'false'); // false
@@ -350,7 +350,7 @@ $('.tree').on('contextmenu', '.tree-row', function() {
  * @type {!HTMLElement}
  */
 /*
-var treeItemProto = (function() {
+var treeItemProto = (() => {
 	var treeItem = document.createElement('div');
 	treeItem.className = 'tree-item';
 	treeItem.innerHTML = '<div class="tree-row">' + '<span class="expand-icon"></span>' + '<span class="tree-label"></span>' + '</div>' + '<div class="tree-children" role="group"></div>';
@@ -376,8 +376,8 @@ var title_ext = " - " + $label_text;
 
 var $form = document.getElementById('content');
 
-var getLabelFull = (function() {
-	$('.tree-label').each(function() {
+var getLabelFull = (() => {
+	$('.tree-label').each(() => {
 		var full = $(this).text();
 		log("getLabelFull: " + full);
 
@@ -385,8 +385,8 @@ var getLabelFull = (function() {
 	});
 })();
 
-var getLabelShort = (function() {
-	$('.tree-label').each(function() {
+var getLabelShort = (() => {
+	$('.tree-label').each(() => {
 		var length = $(this).text().length;
 		var cap = 19;
 		var id = $(this).parent('.tree-item').attr('id');
@@ -401,8 +401,8 @@ var getLabelShort = (function() {
 })();*/
 
 /*
-var label = (function() {
-	$('.tree-label').each(function() {
+var label = (() => {
+	$('.tree-label').each(() => {
 
 		//var $lbl_full = $(this).text();
 		//$lbl_full.truncate($(this).text(), 19, "…");
@@ -438,7 +438,7 @@ var label = (function() {
 
 
 /* Context Menu for NoteTemplates */
-$(document).on('contextmenu', ':not(.tree)', function(e) {
+$(document).on('contextmenu', ':not(.tree)', (e) => {
 	e.preventDefault();
 	var contextmenu_w = $('cr-menu').width();
 	var contextmenu_h = $('cr-menu').height();
@@ -465,7 +465,7 @@ $(document).on('contextmenu', ':not(.tree)', function(e) {
 	//log("contextmenu width: " + contextmenu_w + "px\n" + "contextmenu height: " + contextmenu_h + "px");
 	//log("viewport width: " + viewport_w + "px\n" + "viewport height: " + viewport_h + "px");
 });
-$(document).on('click', function(e) {
+$(document).on('click', (e) => {
 	$('cr-menu').css({
 		display: "none"
 	});

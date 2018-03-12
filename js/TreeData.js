@@ -238,12 +238,12 @@ Tree.notes = [
 ];
 
 
-Tree.getFirstLevelData = function(data) {
+Tree.getFirstLevelData = (data) => {
     if(!data) data = Tree.notes;
 
     var datum = [];
 
-    $.each(data, function() {
+    $.each(data, () => {
         if(this.type == 'folder') {
             var node = {
                 type: this.type,
@@ -275,13 +275,13 @@ Tree.getFirstLevelData = function(data) {
 };
 
 
-Tree.getChildrenOfNode = function(data, node_id) {
+Tree.getChildrenOfNode = (data, node_id) => {
     var result = null;
 
     function iterate(nodes) {
         if(!nodes) nodes = data;
 
-        $.each(nodes, function() {
+        $.each(nodes, () => {
             if(result) {
                 return;
             } else {
@@ -304,7 +304,7 @@ Tree.getChildrenOfNode = function(data, node_id) {
 };
 
 
-Tree.buildTree = function(dest, data) {
+Tree.buildTree = (dest, data) => {
     //var result = null;
     var folders = [];
 
@@ -346,12 +346,10 @@ Tree.buildTree = function(dest, data) {
                         tree_item.setAttribute('has-children', true);
                         tree_row.setAttribute('has-children', true);
 
-                        setTimeout(() => {
-                            notification.open({
-                                severity: 'info',
-                                content: result.type + " " + result.label + " has " + children.length + " children."
-                            });
-                        }, 5000);
+                        notification.open({
+                            severity: 'info',
+                            content: result.type + " " + result.label + " has " + children.length + " children."
+                        });
                     }
                 }
         
