@@ -180,7 +180,7 @@ Tree.notes = [
             {
                 type: 'note',
                 label: 'Busy Signal',
-                id: 17,
+                id: 18,
                 selected: false,
                 content: {
                     name: 'Busy Signal',
@@ -190,13 +190,13 @@ Tree.notes = [
             {
                 type: 'folder',
                 label: 'Sauropods',
-                id: 18,
+                id: 19,
                 expanded: false,
                 selected: false,
                 children: [{
                         type: 'note',
                         label: 'Diplodocoids',
-                        id: 19,
+                        id: 20,
                         selected: false,
                         content: {
                             name: '',
@@ -206,13 +206,13 @@ Tree.notes = [
                     {
                         type: 'folder',
                         label: 'Macronarians',
-                        id: 20,
+                        id: 21,
                         expanded: false,
                         selected: false,
                         children: [{
                                 type: 'note',
                                 label: 'Brachiosaurids',
-                                id: 21,
+                                id: 22,
                                 selected: false,
                                 content: {
                                     name: '',
@@ -222,7 +222,7 @@ Tree.notes = [
                             {
                                 type: 'note',
                                 label: 'Titanosaurians',
-                                id: 22,
+                                id: 23,
                                 selected: false,
                                 content: {
                                     name: '',
@@ -328,10 +328,17 @@ Tree.buildTree = function(dest, data) {
                 tree_item.classList.add('tree-item');
                 tree_item.setAttribute('item-type', result.type);
                 tree_item.setAttribute('id', result.type + "-" + result.id);
+                log("tree_item.id: " + tree_item.id);
+                log("result.id: " + result.id);
 
                 if (!result.children) {
                     if (result.type == 'folder') {
                         tree_item.setAttribute('has-children', false);
+                        log("Set attribute 'has-children' to " + tree_item.getAttribute('has-children'));
+                        notification.open({
+                            severity: 'info',
+                            content: "Set attribute 'has-children' to " + tree_item.getAttribute('has-children')
+                        });
                     }
                 } else {
                     if (result.type == 'folder') {
@@ -403,13 +410,13 @@ Tree.buildTree = function(dest, data) {
                     //var children = data.getChildrenOfNode(index);
                 }*/
 
-            tree_row.appendChild(exp_icon);
+            /*tree_row.appendChild(exp_icon);
             tree_row.appendChild(tree_label);
 
             tree_item.appendChild(tree_row);
             tree_item.appendChild(tree_children);
 
-            fragment.appendChild(tree_item);
+            fragment.appendChild(tree_item);*/
 
 
             if (!children) {
@@ -430,39 +437,50 @@ Tree.buildTree = function(dest, data) {
 
                         let result = children[index];
 
-                        let tree_item = document.createElement('div'); // <div class="tree-item" item-type="folder" expanded="false" select="false"></div>
-                            tree_item.classList.add('tree-item');
-                            tree_item.setAttribute('item-type', result.type);
-                            tree_item.setAttribute('id', result.type + "-" + result.id);
-                            tree_item.setAttribute('expanded', result.expanded);
-                            tree_item.setAttribute('select', result.selected);
+                        let tree_item_ = document.createElement('div'); // <div class="tree-item" item-type="folder" expanded="false" select="false"></div>
+                            tree_item_.classList.add('tree-item');
+                            tree_item_.setAttribute('item-type', result.type);
+                            tree_item_.setAttribute('id', result.type + "-" + result.id);
+                            tree_item_.setAttribute('expanded', result.expanded);
+                            tree_item_.setAttribute('select', result.selected);
                     
-                        let tree_row = document.createElement('div'); // <div class="tree-row" has-children="true" may-have-children="" select="false"></div>
-                            tree_row.classList.add('tree-row');
-                            tree_row.setAttribute('select', result.selected);
+                        let tree_row_ = document.createElement('div'); // <div class="tree-row" has-children="true" may-have-children="" select="false"></div>
+                            tree_row_.classList.add('tree-row');
+                            tree_row_.setAttribute('select', result.selected);
                             
-                        let exp_icon = document.createElement('span'); // <span class="expand-icon"></span>
-                            exp_icon.classList.add('expand-icon');
+                        let exp_icon_ = document.createElement('span'); // <span class="expand-icon"></span>
+                            exp_icon_.classList.add('expand-icon');
 
                             if (children[index].type != 'folder') {
-                                exp_icon.style.visibility = 'hidden';
+                                exp_icon_.style.visibility = 'hidden';
                             }
+                    
+                        let tree_label_ = document.createElement('span'); // <span class="tree-label"></span>
+                            tree_label_.classList.add('tree-label');
+                            //let label_text = document.createTextNode(result.label);
+                            //tree_label_.appendChild(label_text);
+                            tree_label_.textContent = result.label;
+                    
+                        let tree_children_ = document.createElement('div'); // <div class="tree-children" expanded="false" select="false"></div>
+                            tree_children_.classList.add('tree-children');
+                            tree_children_.setAttribute('expanded', result.expanded);
+
+                        log("(Children) result.id: " + result.id);
+
+
+                        tree_row_.appendChild(exp_icon_);
+                        tree_row_.appendChild(tree_label_);
+                        
+                        tree_item_.appendChild(tree_row_);
+                        tree_item_.appendChild(tree_children_);
+
+                        fragment.appendChild(tree_item_);
+
 
                         tree_row.appendChild(exp_icon);
-                    
-                        let tree_label = document.createElement('span'); // <span class="tree-label"></span>
-                            tree_label.classList.add('tree-label');
-                            //let label_text = document.createTextNode(result.label);
-                            //tree_label.appendChild(label_text);
-                            tree_label.textContent = result.label;
-                            
                         tree_row.appendChild(tree_label);
-                    
-                        let tree_children = document.createElement('div'); // <div class="tree-children" expanded="false" select="false"></div>
-                            tree_children.classList.add('tree-children');
-                            tree_children.setAttribute('expanded', result.expanded);
 
-
+                        tree_children.appendChild(tree_item_);
 
                         tree_item.appendChild(tree_row);
                         tree_item.appendChild(tree_children);

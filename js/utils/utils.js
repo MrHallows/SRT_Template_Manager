@@ -15,6 +15,28 @@ parser.search;   // => "?search=test"
 parser.hash;     // => "#hash"
 parser.host;     // => "example.com:3000"
 
+var parts = [];
+
+parts.push(parser.protocol); // => "http:"
+parts.push("\/\/"); // => "//"
+parts.push(parser.host);     // => "example.com:3000"
+parts.push(parser.pathname); // => "/pathname/"
+parts.push(parser.search);   // => "?search=test"
+parts.push(parser.hash);     // => "#hash"
+
+var partsParser = (data) => {
+	// 
+	var result = '';
+	log("parts.length: " + parts.length);
+
+	for(var i = 0; i < parts.length; i++) {
+		log(parts[i]);
+		result += parts[i];
+	}
+	return document.getElementById('menu-search').value = result;
+};
+partsParser(parts);
+
 
 function encode(e) {
 	return encodeURIComponent(e);
