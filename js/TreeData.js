@@ -418,12 +418,13 @@ Tree.buildTree = function(dest, data) {
 
             fragment.appendChild(tree_item);*/
 
+            var result_ = null;
 
             if (!children) {
-                if (children[index].type == 'folder') {
+                //if (children[index].type == 'folder') {
                     tree_item.setAttribute('has-children', false);
                     tree_row.setAttribute('has-children', false);
-                }
+                //}
             } else {
                 if (children[index].type == 'folder') {
                     tree_item.setAttribute('has-children', true);
@@ -431,22 +432,51 @@ Tree.buildTree = function(dest, data) {
                 }
                 //log("Tree:Children ", children[index].label);
 
+
                 for(let index in children) {
                     if (children.hasOwnProperty(index)) {
-                        log("Tree:Children ", children[index]);
 
-                        let result = children[index];
+                        result_ = children[index];
+                        log("Tree:Children ", result_);
 
                         let tree_item_ = document.createElement('div'); // <div class="tree-item" item-type="folder" expanded="false" select="false"></div>
                             tree_item_.classList.add('tree-item');
-                            tree_item_.setAttribute('item-type', result.type);
-                            tree_item_.setAttribute('id', result.type + "-" + result.id);
-                            tree_item_.setAttribute('expanded', result.expanded);
-                            tree_item_.setAttribute('select', result.selected);
+                            tree_item_.setAttribute('item-type', result_.type);
+                            tree_item_.setAttribute('id', result_.type + "-" + result_.id);
+
+                            if (!result_.children) {
+                                if (result_.type == 'folder') {
+                                    tree_item_.setAttribute('has-children', false);
+                                    log("Set attribute 'has-children' to " + tree_item_.getAttribute('has-children'));
+                                    notification.open({
+                                        severity: 'info',
+                                        content: "Set attribute 'has-children' to " + tree_item_.getAttribute('has-children')
+                                    });
+                                }
+                            } else {
+                                if (result_.type == 'folder') {
+                                    tree_item_.setAttribute('has-children', true);
+                                }
+                            }
+
+                            tree_item_.setAttribute('expanded', result_.expanded);
+                            tree_item_.setAttribute('select', result_.selected);
                     
                         let tree_row_ = document.createElement('div'); // <div class="tree-row" has-children="true" may-have-children="" select="false"></div>
                             tree_row_.classList.add('tree-row');
-                            tree_row_.setAttribute('select', result.selected);
+                            tree_row_.setAttribute('may-have-children', '');
+                            
+                            if (!result_.children) {
+                                if (result_.type == 'folder') {
+                                    tree_row_.setAttribute('has-children', false);
+                                }
+                            } else {
+                                if (result_.type == 'folder') {
+                                    tree_row_.setAttribute('has-children', true);
+                                }
+                            }
+
+                            tree_row_.setAttribute('select', result_.selected);
                             
                         let exp_icon_ = document.createElement('span'); // <span class="expand-icon"></span>
                             exp_icon_.classList.add('expand-icon');
@@ -457,31 +487,37 @@ Tree.buildTree = function(dest, data) {
                     
                         let tree_label_ = document.createElement('span'); // <span class="tree-label"></span>
                             tree_label_.classList.add('tree-label');
-                            //let label_text = document.createTextNode(result.label);
+                            //let label_text = document.createTextNode(result_.label);
                             //tree_label_.appendChild(label_text);
-                            tree_label_.textContent = result.label;
+                            tree_label_.textContent = result_.label;
                     
                         let tree_children_ = document.createElement('div'); // <div class="tree-children" expanded="false" select="false"></div>
                             tree_children_.classList.add('tree-children');
-                            tree_children_.setAttribute('expanded', result.expanded);
+                            tree_children_.setAttribute('expanded', result_.expanded);
 
-                        log("(Children) result.id: " + result.id);
+                        log("(Children) result_.id: " + result_.id);
+                        
+                        if (!children) {
+                            if (children[index].type == 'folder') {
+                                tree_item_.setAttribute('has-children', false);
+                                tree_row_.setAttribute('has-children', false);
+                            }
+                        } else {
+                            if (children[index].type == 'folder') {
+                                tree_item_.setAttribute('has-children', true);
+                                tree_row_.setAttribute('has-children', true);
+                            }
+                        }
 
 
                         tree_row_.appendChild(exp_icon_);
                         tree_row_.appendChild(tree_label_);
-                        
                         tree_item_.appendChild(tree_row_);
                         tree_item_.appendChild(tree_children_);
 
-                        fragment.appendChild(tree_item_);
-
-
                         tree_row.appendChild(exp_icon);
                         tree_row.appendChild(tree_label);
-
                         tree_children.appendChild(tree_item_);
-
                         tree_item.appendChild(tree_row);
                         tree_item.appendChild(tree_children);
 
@@ -490,14 +526,15 @@ Tree.buildTree = function(dest, data) {
                 }
             }
 
-            //log("Tree:Data (result): ", result);
+            //log("Tree:Data (result_): ", result_);
             //log("Tree:Data (folders): ", folders);
             /*if(!ls.get("Tree:Folders")) {
                 ls.set("Tree:Folders", JSON.stringify(folders));
             }*/
-            folders.push(result);
+            folders.push(result_);
             root.appendChild(fragment);
         }
+        Tree.buildTree('#tree-body-notes', result_);
     }
 
     //log("Tree:Folders: ", folders);
