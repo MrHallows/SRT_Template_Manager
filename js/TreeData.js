@@ -2,39 +2,13 @@
 /* js/TreeData.js */
 
 
-var Tree = {};
-var EmailTree = {};
-var ContactsTree = {};
+var Tree = Tree || {};
 
+
+/* *
+ * Tree: Notes
+ */
 Tree.notes = [
-    {
-        type: 'folder',
-        label: 'SmartPost',
-        id: 1,
-        expanded: false,
-        selected: false,
-        children: [{
-                type: 'note',
-                label: 'SmartPost Implemented',
-                id: 2,
-                selected: false,
-                content: {
-                    name: 'SmartPost Implemented',
-                    body: 'Implemented%20SmartPost%20(SmartPost%20ID%3A%20%2C%20Mailer%20ID%3A%20)%20and%20sent%20welcome%20%26%20activation%20emails.'
-                }
-            },
-            {
-                type: 'note',
-                label: 'Applied Pricing',
-                id: 32,
-                selected: false,
-                content: {
-                    name: 'Applied Pricing',
-                    body: 'Applied%20%5BPricing%20Structure%5D%20(Request%20ID%3A%20%5BRequest%20ID%5D).%20I%20will%20implement%20SmartPost%20once%20pricing%20has%20loaded.'
-                }
-            }
-        ]
-    },
     {
         type: 'folder',
         label: 'Alcohol Enrollment',
@@ -48,7 +22,7 @@ Tree.notes = [
                 selected: false,
                 content: {
                     name: 'Sent Initial Email',
-                    body: ''
+                    body: 'Sent%20initial%20email.%20Awaiting%20response%20with%20documentation.'
                 }
             },
             {
@@ -163,6 +137,34 @@ Tree.notes = [
     },
     {
         type: 'folder',
+        label: 'SmartPost',
+        id: 1,
+        expanded: false,
+        selected: false,
+        children: [{
+                type: 'note',
+                label: 'SmartPost Implemented',
+                id: 2,
+                selected: false,
+                content: {
+                    name: 'SmartPost Implemented',
+                    body: 'Implemented%20SmartPost%20(SmartPost%20ID%3A%20%2C%20Mailer%20ID%3A%20)%20and%20sent%20welcome%20%26%20activation%20emails.'
+                }
+            },
+            {
+                type: 'note',
+                label: 'Applied Pricing',
+                id: 32,
+                selected: false,
+                content: {
+                    name: 'Applied Pricing',
+                    body: 'Applied%20%5BPricing%20Structure%5D%20(Request%20ID%3A%20%5BRequest%20ID%5D).%20I%20will%20implement%20SmartPost%20once%20pricing%20has%20loaded.'
+                }
+            }
+        ]
+    },
+    {
+        type: 'folder',
         label: 'Unable to Reach',
         id: 16,
         expanded: false,
@@ -230,6 +232,402 @@ Tree.notes = [
                                 }
                             }
                         ]
+                    }
+                ]
+            }
+        ]
+    }
+];
+
+
+/* *
+ * Tree: Email
+ */
+Tree.email = [
+    {
+        type: 'folder',
+        label: 'SmartPost',
+        id: 1,
+        expanded: false,
+        selected: false,
+        children: [{
+                type: 'email',
+                label: 'SmartPost Implemented',
+                id: 2,
+                selected: false,
+                content: {
+                    name: 'SmartPost Implemented',
+                    body: 'Implemented%20SmartPost%20(SmartPost%20ID%3A%20%2C%20Mailer%20ID%3A%20)%20and%20sent%20welcome%20%26%20activation%20emails.'
+                }
+            },
+            {
+                type: 'email',
+                label: 'Applied Pricing',
+                id: 32,
+                selected: false,
+                content: {
+                    name: 'Applied Pricing',
+                    body: 'Applied%20%5BPricing%20Structure%5D%20(Request%20ID%3A%20%5BRequest%20ID%5D).%20I%20will%20implement%20SmartPost%20once%20pricing%20has%20loaded.'
+                }
+            }
+        ]
+    },
+    {
+        type: 'folder',
+        label: 'Alcohol Enrollment',
+        id: 3,
+        expanded: false,
+        selected: false,
+        children: [{
+                type: 'email',
+                label: 'Sent Initial Email',
+                id: 4,
+                selected: false,
+                content: {
+                    name: 'Sent Initial Email',
+                    body: 'Sent%20initial%20email.%20Awaiting%20response%20with%20documentation.'
+                }
+            },
+            {
+                type: 'email',
+                label: 'Ceratosaurians',
+                id: 5,
+                selected: false,
+                content: {
+                    name: 'Ceratosaurians',
+                    body: ''
+                }
+            },
+            {
+                type: 'email',
+                label: 'Spinosauroids',
+                id: 6,
+                selected: false,
+                content: {
+                    name: 'Spinosauroids',
+                    body: ''
+                }
+            },
+            {
+                type: 'email',
+                label: 'Carnosaurians',
+                id: 7,
+                selected: false,
+                content: {
+                    name: 'Carnosaurians',
+                    body: ''
+                }
+            },
+            {
+                type: 'folder',
+                label: 'Coelurosaurians',
+                id: 8,
+                expanded: false,
+                selected: false,
+                children: [{
+                        type: 'email',
+                        label: 'Tyrannosauroids',
+                        id: 9,
+                        selected: false,
+                        content: {
+                            name: 'Tyrannosauroids',
+                            body: ''
+                        }
+                    },
+                    {
+                        type: 'email',
+                        label: 'Ornithomimosaurians',
+                        id: 10,
+                        selected: false,
+                        content: {
+                            name: 'Ornithomimosaurians',
+                            body: ''
+                        }
+                    },
+                    {
+                        type: 'email',
+                        label: 'Therizinosauroids',
+                        id: 11,
+                        selected: false,
+                        content: {
+                            name: 'Therizinosauroids',
+                            body: ''
+                        }
+                    },
+                    {
+                        type: 'email',
+                        label: 'Oviraptorosaurians',
+                        id: 12,
+                        selected: false,
+                        content: {
+                            name: 'Oviraptorosaurians',
+                            body: ''
+                        }
+                    },
+                    {
+                        type: 'email',
+                        label: 'Dromaeosaurids',
+                        id: 13,
+                        selected: false,
+                        content: {
+                            name: 'Dromaeosaurids',
+                            body: ''
+                        }
+                    },
+                    {
+                        type: 'email',
+                        label: 'Troodontids',
+                        id: 14,
+                        selected: false,
+                        content: {
+                            name: 'Troodontids',
+                            body: ''
+                        }
+                    },
+                    {
+                        type: 'email',
+                        label: 'Avialans',
+                        id: 15,
+                        selected: false,
+                        content: {
+                            name: 'Avialans',
+                            body: ''
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        type: 'folder',
+        label: 'Unable to Reach',
+        id: 16,
+        expanded: false,
+        selected: false,
+        children: [{
+                type: 'email',
+                label: 'Left Voice Message',
+                id: 17,
+                selected: false,
+                content: {
+                    name: 'Left Voice Message',
+                    body: 'I called [Customer] in regard to [his/her] [Subject] request. No answer; left a voice message.'
+                }
+            },
+            {
+                type: 'email',
+                label: 'Busy Signal',
+                id: 18,
+                selected: false,
+                content: {
+                    name: 'Busy Signal',
+                    body: 'I called [Customer] in regard to [his/her] [Subject] request. Received a busy signal; unable to leave a voice message.'
+                }
+            },
+            {
+                type: 'folder',
+                label: 'Sauropods',
+                id: 19,
+                expanded: false,
+                selected: false,
+                children: [{
+                        type: 'email',
+                        label: 'Diplodocoids',
+                        id: 20,
+                        selected: false,
+                        content: {
+                            name: '',
+                            body: ''
+                        }
+                    },
+                    {
+                        type: 'folder',
+                        label: 'Macronarians',
+                        id: 21,
+                        expanded: false,
+                        selected: false,
+                        children: [{
+                                type: 'email',
+                                label: 'Brachiosaurids',
+                                id: 22,
+                                selected: false,
+                                content: {
+                                    name: '',
+                                    body: ''
+                                }
+                            },
+                            {
+                                type: 'email',
+                                label: 'Titanosaurians',
+                                id: 23,
+                                selected: false,
+                                content: {
+                                    name: '',
+                                    body: ''
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+];
+
+
+/* *
+ * Tree: Contacts
+ */
+Tree.contacts = [
+    {
+        type: 'folder',
+        label: 'Customers',
+        id: 1,
+        expanded: false,
+        selected: false,
+        children: [{
+                type: 'contact',
+                label: 'SmartPost Implemented',
+                id: 2,
+                selected: false,
+                content: {
+                    name: 'SmartPost Implemented',
+                    body: 'Implemented%20SmartPost%20(SmartPost%20ID%3A%20%2C%20Mailer%20ID%3A%20)%20and%20sent%20welcome%20%26%20activation%20emails.'
+                }
+            },
+            {
+                type: 'contact',
+                label: 'Applied Pricing',
+                id: 32,
+                selected: false,
+                content: {
+                    name: 'Applied Pricing',
+                    body: 'Applied%20%5BPricing%20Structure%5D%20(Request%20ID%3A%20%5BRequest%20ID%5D).%20I%20will%20implement%20SmartPost%20once%20pricing%20has%20loaded.'
+                }
+            }
+        ]
+    },
+    {
+        type: 'folder',
+        label: 'Colleagues',
+        id: 3,
+        expanded: false,
+        selected: false,
+        children: [{
+                type: 'contact',
+                label: 'Sent Initial Email',
+                id: 4,
+                selected: false,
+                content: {
+                    name: 'Sent Initial Email',
+                    body: 'Sent%20initial%20email.%20Awaiting%20response%20with%20documentation.'
+                }
+            },
+            {
+                type: 'contact',
+                label: 'Ceratosaurians',
+                id: 5,
+                selected: false,
+                content: {
+                    name: 'Ceratosaurians',
+                    body: ''
+                }
+            },
+            {
+                type: 'contact',
+                label: 'Spinosauroids',
+                id: 6,
+                selected: false,
+                content: {
+                    name: 'Spinosauroids',
+                    body: ''
+                }
+            },
+            {
+                type: 'contact',
+                label: 'Carnosaurians',
+                id: 7,
+                selected: false,
+                content: {
+                    name: 'Carnosaurians',
+                    body: ''
+                }
+            },
+            {
+                type: 'folder',
+                label: 'Coelurosaurians',
+                id: 8,
+                expanded: false,
+                selected: false,
+                children: [{
+                        type: 'contact',
+                        label: 'Tyrannosauroids',
+                        id: 9,
+                        selected: false,
+                        content: {
+                            name: 'Tyrannosauroids',
+                            body: ''
+                        }
+                    },
+                    {
+                        type: 'contact',
+                        label: 'Ornithomimosaurians',
+                        id: 10,
+                        selected: false,
+                        content: {
+                            name: 'Ornithomimosaurians',
+                            body: ''
+                        }
+                    },
+                    {
+                        type: 'contact',
+                        label: 'Therizinosauroids',
+                        id: 11,
+                        selected: false,
+                        content: {
+                            name: 'Therizinosauroids',
+                            body: ''
+                        }
+                    },
+                    {
+                        type: 'contact',
+                        label: 'Oviraptorosaurians',
+                        id: 12,
+                        selected: false,
+                        content: {
+                            name: 'Oviraptorosaurians',
+                            body: ''
+                        }
+                    },
+                    {
+                        type: 'contact',
+                        label: 'Dromaeosaurids',
+                        id: 13,
+                        selected: false,
+                        content: {
+                            name: 'Dromaeosaurids',
+                            body: ''
+                        }
+                    },
+                    {
+                        type: 'contact',
+                        label: 'Troodontids',
+                        id: 14,
+                        selected: false,
+                        content: {
+                            name: 'Troodontids',
+                            body: ''
+                        }
+                    },
+                    {
+                        type: 'contact',
+                        label: 'Avialans',
+                        id: 15,
+                        selected: false,
+                        content: {
+                            name: 'Avialans',
+                            body: ''
+                        }
                     }
                 ]
             }
@@ -310,8 +708,8 @@ Tree.buildTree = function(dest, data) {
 
     //log("dest: ", dest);
 
-    // Parse through data (i.e., Tree.notes)
-    for(var index in data) {
+    // Parse through the data (i.e., Tree.notes)
+    for(let index in data) {
         if(data.hasOwnProperty(index)) {
             log("index: ", index);
 
@@ -534,7 +932,7 @@ Tree.buildTree = function(dest, data) {
             folders.push(result_);
             root.appendChild(fragment);
         }
-        Tree.buildTree('#tree-body-notes', result_);
+        Tree.buildTree(dest, result_);
     }
 
     //log("Tree:Folders: ", folders);
@@ -543,11 +941,32 @@ Tree.buildTree = function(dest, data) {
     //return folders;
     //return Tree.buildTree(dest, folders);
 };
+
+
+// Array of Notes
+var TreeNotes = localStorage[Tree.notes] ? JSON.parse(localStorage[Tree.notes]) : [];
+
+
+// Array of Email
+var TreeEmail = localStorage[Tree.email] ? JSON.parse(localStorage[Tree.email]) : [];
+
+// Array of Contacts
+var TreeContacts = localStorage[Tree.contacts] ? JSON.parse(localStorage[Tree.contacts]) : [];
+
+
 Tree.buildTree('#tree-body-notes', Tree.notes);
+Tree.buildTree('#tree-body-email', Tree.email);
+Tree.buildTree('#tree-body-contacts', Tree.contacts);
 
 
 if(!ls.get("Tree:Notes")) {
     ls.set("Tree:Notes", JSON.stringify(Tree.notes));
+}
+if(!ls.get("Tree:Email")) {
+    ls.set("Tree:Email", JSON.stringify(Tree.email));
+}
+if(!ls.get("Tree:Contacts")) {
+    ls.set("Tree:Contacts", JSON.stringify(Tree.contacts));
 }
 
 //log("Tree.getFirstLevelData(): ", Tree.getFirstLevelData(Tree.notes));

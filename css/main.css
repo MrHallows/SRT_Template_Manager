@@ -556,36 +556,30 @@ input[type=checkbox]:checked {
     font-size: 12px;/
 }*/
 
-/*#note-view {
-    /*display: block;/
-}*/
 #note-view .body pre {
     display: inline-flex; /* inline-table; /* default: inline-flex */
+    max-width: 500px;
     padding: 0; /* 4px 10px 10px 89px; /* 0px 10px; /* 10px 40px; */
     white-space: pre-wrap;
     word-wrap: break-word;
     user-select: text;
 }
 
-/*#email-view {
-    /*display: block;/
-}*/
 #email-view .body pre {
     display: inline-flex; /* inline-table; /* default: inline-flex */
+    max-width: 500px;
     padding: 0; /* 4px 10px 10px 89px; /* 0px 10px; /* 10px 40px; */
     white-space: pre-wrap;
     word-wrap: break-word;
     user-select: text;
 }
 
-/*#contact-view {
-    /*display: block;/
-}*/
 #contact-view div span {
     display: inline-flex; /* inline-table; /* default: inline-flex */
 }
 #contact-view .comments pre {
     display: inline-flex; /* inline-table; /* default: inline-flex */
+    max-width: 500px;
     padding: 0; /* 4px 10px 10px 89px; /* 0px 10px; /* 10px 40px; */
     white-space: pre-wrap;
     word-wrap: break-word;
