@@ -52,7 +52,7 @@ var modal = (function() {
 
     // Generate the HTML and add it to the document
     $overlay = $('<div id="overlay"></div>');
-    $modal = $('<div id="modal"></div>');
+    $modal = $('<div id="modal" class="glow"></div>');
     $titlebar = $('<div class="titlebar unselectable"></div>');
     $title = $('<span class="modal-title"></span>');
     $minimize = $('<span class="minimize"></span>');

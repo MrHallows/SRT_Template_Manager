@@ -61,7 +61,7 @@ ls.set('SRTTM_State', JSON.stringify(state));*/
 });*/
 
 
-var state = state || {};
+var state = {};
 
 // Tabs
 $('.tree-tabs').each(function() {

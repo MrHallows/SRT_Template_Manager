@@ -153,7 +153,7 @@ $('.context-menu').on('click', '#cm-rename', function(e) {
 	$form.rename_new_name.select();
 
 	$('.modal-input[name=rename_new_name]').keydown(function(e) {
-		if (e.keyCode === 13) {
+		if (e.keyCode === 13 || e.which === 13) {
 			$('.button.btn-submit.submit').click();
 		}
 	});

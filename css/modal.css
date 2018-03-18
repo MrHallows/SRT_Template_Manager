@@ -4,7 +4,7 @@
 
 
 #overlay {
-    position: fixed; 
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -17,9 +17,9 @@
 
 #modal {
     position: absolute;
-    /*background: url(tint20.png) 0 0 repeat;*/
+    /* background: url(tint20.png) 0 0 repeat; */
     background: rgba(0,0,0,0.2);
-    background: #282828;
+    background: #202123;
     border: 2px solid #555;
     border-radius: 0;
     font-family: 'Ubuntu', sans-serif !important;
@@ -220,6 +220,13 @@ select.modal-input {
     /* background: #333333; */
     border: 1px solid #e93060; /* default: #ed174b */
     color: #e93060; /* default: #ed174b */
+}
+
+.glow {
+	/*border: 1px solid #20968b;
+	border-radius: .5rem;*/
+	-webkit-box-shadow: 0 0 0 #fff, 0 0 1px #fff, 0 0 2px #15dac6, 0 0 3px #15dac6, 0 0 8px #15dac6, 0 0 8px #15dac6, 0 0 8px #15dac6, 0 0 406px 5px #15dac6;
+	box-shadow: 0 0 0 #fff, 0 0 1px #fff, 0 0 2px #2b867d, 0 0 3px #2b867d, 0 0 8px #2b867d, 0 0 8px #2b867d, 0 0 8px #2b867d, 0 0 406px 5px #2b867d; /* default: 0 0 85px 5px #15dac6; */
 }
 
 

@@ -2,7 +2,7 @@
 /* js/main.js */
 
 
-var state = state || {};
+var state = {};
 
 // View State
 $(window).on('beforeunload', function() {

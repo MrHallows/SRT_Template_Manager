@@ -280,22 +280,30 @@ Tree.email = [
         selected: false,
         children: [{
                 type: 'email',
-                label: 'Sent Initial Email',
+                label: 'Initial Information',
                 id: 4,
                 selected: false,
                 content: {
-                    name: 'Sent Initial Email',
-                    body: 'Sent%20initial%20email.%20Awaiting%20response%20with%20documentation.'
+                    name: 'Initial Information',
+                    to: '[Customer]',
+                    cc: '',
+                    subject: 'FedEx Alcohol Shipping Enrollment Information',
+                    attachments: '',
+                    body: '%5BCustomer%5D%2C%0A%0AThank%20you%20for%20your%20interest%20in%20becoming%20an%20authorized%20shipper%20with%20FedEx.%20To%20begin%20the%20process%2C%20there%20are%20few%20things%20we%20need%20to%20cover%3A%0A%0A1)%09Please%20confirm%20the%20company%20name%20and%20shipping%20address%20are%3A%0A%0ABusiness%0AAddress%0ACity%2C%20State%2C%20ZIP%0A%0A2)%09Is%20the%20above%20shipping%20address%20also%20the%20same%20on%20your%20State%20Liquor%20License%20to%20sell%20and%20your%20TTB%20Permit%3F%0A%0A3)%09Is%20your%20business%20a%20Retailer%3F%20If%20so%2C%20only%20a%20State%20Liquor%20License%20is%20required.%20Otherwise%2C%20both%20a%20State%20Liquor%20License%20and%20TTB%20Permit%20are%20required.%0A%0A4)%09With%20FedEx%20the%20only%20thing%20you%20are%20able%20to%20ship%20to%20consumers%20is%20wine.%20Beer%20and%20spirits%20can%20only%20be%20sent%20to%20other%20licensed%20distributors.%20What%20will%20you%20be%20shipping%3B%20wine%2C%20beer%20or%20spirits%3F%0A%0A5)%09Will%20you%20be%20shipping%20domestically%2C%20internationally%20or%20both%3F%0A%0A6)%09Does%20the%20company%20have%20a%20fax%20number%3F%20If%20so%2C%20please%20provide%20it.%0A%0A7)%09What%20type%20of%20packaging%20will%20you%20be%20using%20to%20ship%3F%20Polystyrene%2C%20Molded%20Pulp%2C%20or%20Die-Cut%20Corrugated.%20If%20you%20are%20not%20sure%2C%20please%20review%20this%20page%3A%20https%3A%2F%2Fsmallbusiness.fedex.com%2Finternational%2Fshipping-wine%2Fresources%0A%0A8)%09Part%20of%20the%20shipping%20agreement%20is%20that%20labels%20must%20be%20completed%20through%20an%20automation%20method%2C%20such%20as%20FedEx%20Ship%20Manager%C2%AE%20at%20www.fedex.com%20or%20FedEx%20Ship%20Manager%C2%AE%20Software.%20https%3A%2F%2Fsmallbusiness.fedex.com%2Finternational%2Fshipping-wine%2F%0A%0AAlong%20with%20your%20responses%20to%20the%20above%20questions%2C%20if%20you%20would%20please%20forward%20me%20copies%20of%20your%20State%20Liquor%20License%20and%20your%20TTB%20permit%20(depending%20on%20your%20answer%20to%20question%203)%2C%20I%20will%20forward%20everything%20to%20our%20legal%20department.%20The%20process%20generally%20takes%20approximately%202%20-%2010%20business%20days%2C%20upon%20receipt%20of%20your%20licenses%2C%20providing%20there%20are%20no%20issues%20with%20the%20enrollment.%0A'
                 }
             },
             {
                 type: 'email',
-                label: 'Ceratosaurians',
+                label: 'Submitted Documents',
                 id: 5,
                 selected: false,
                 content: {
-                    name: 'Ceratosaurians',
-                    body: ''
+                    name: 'Submitted Documents',
+                    to: 'alcoholenroll@fedex.com',
+                    cc: 'laura.sanderson.osv@fedex.com',
+                    subject: 'Alcohol Enrollment - [BUSINESS] - [XXXXXXXXX-EAN]',
+                    attachments: '[Customer\'s Documents (License & TTB)]',
+                    body: 'Team%2C%0A%0AAttached%20is%20the%20Alcohol%20Enrollment%20Check%20Sheet%2C%20State%20Liquor%20License%20and%20TTB%20for%20%5BBUSINESS%5D.%0A%0A***When%20sending%20the%20signed%20agreement%2C%20replace%20with%3A%0AAttached%20is%20the%20signed%20alcohol%20agreement%20for%20%5BBUSINESS%5D.%0A'
                 }
             },
             {
@@ -305,6 +313,10 @@ Tree.email = [
                 selected: false,
                 content: {
                     name: 'Spinosauroids',
+                    to: '',
+                    cc: '',
+                    subject: '',
+                    attachments: '',
                     body: ''
                 }
             },
@@ -315,6 +327,10 @@ Tree.email = [
                 selected: false,
                 content: {
                     name: 'Carnosaurians',
+                    to: '',
+                    cc: '',
+                    subject: '',
+                    attachments: '',
                     body: ''
                 }
             },
@@ -331,6 +347,10 @@ Tree.email = [
                         selected: false,
                         content: {
                             name: 'Tyrannosauroids',
+                            to: '',
+                            cc: '',
+                            subject: '',
+                            attachments: '',
                             body: ''
                         }
                     },
@@ -341,6 +361,10 @@ Tree.email = [
                         selected: false,
                         content: {
                             name: 'Ornithomimosaurians',
+                            to: '',
+                            cc: '',
+                            subject: '',
+                            attachments: '',
                             body: ''
                         }
                     },
@@ -351,6 +375,10 @@ Tree.email = [
                         selected: false,
                         content: {
                             name: 'Therizinosauroids',
+                            to: '',
+                            cc: '',
+                            subject: '',
+                            attachments: '',
                             body: ''
                         }
                     },
@@ -361,6 +389,10 @@ Tree.email = [
                         selected: false,
                         content: {
                             name: 'Oviraptorosaurians',
+                            to: '',
+                            cc: '',
+                            subject: '',
+                            attachments: '',
                             body: ''
                         }
                     },
@@ -371,6 +403,10 @@ Tree.email = [
                         selected: false,
                         content: {
                             name: 'Dromaeosaurids',
+                            to: '',
+                            cc: '',
+                            subject: '',
+                            attachments: '',
                             body: ''
                         }
                     },
@@ -381,6 +417,10 @@ Tree.email = [
                         selected: false,
                         content: {
                             name: 'Troodontids',
+                            to: '',
+                            cc: '',
+                            subject: '',
+                            attachments: '',
                             body: ''
                         }
                     },
@@ -391,10 +431,50 @@ Tree.email = [
                         selected: false,
                         content: {
                             name: 'Avialans',
+                            to: '',
+                            cc: '',
+                            subject: '',
+                            attachments: '',
                             body: ''
                         }
                     }
                 ]
+            }
+        ]
+    },
+    {
+        type: 'folder',
+        label: 'SmartPost',
+        id: 1,
+        expanded: false,
+        selected: false,
+        children: [{
+                type: 'email',
+                label: 'SmartPost Implemented',
+                id: 2,
+                selected: false,
+                content: {
+                    name: 'SmartPost Implemented',
+                    to: '',
+                    cc: '',
+                    subject: '',
+                    attachments: '',
+                    body: 'Implemented%20SmartPost%20(SmartPost%20ID%3A%20%2C%20Mailer%20ID%3A%20)%20and%20sent%20welcome%20%26%20activation%20emails.'
+                }
+            },
+            {
+                type: 'email',
+                label: 'Applied Pricing',
+                id: 32,
+                selected: false,
+                content: {
+                    name: 'Applied Pricing',
+                    to: '',
+                    cc: '',
+                    subject: '',
+                    attachments: '',
+                    body: 'Applied%20%5BPricing%20Structure%5D%20(Request%20ID%3A%20%5BRequest%20ID%5D).%20I%20will%20implement%20SmartPost%20once%20pricing%20has%20loaded.'
+                }
             }
         ]
     },
@@ -411,6 +491,10 @@ Tree.email = [
                 selected: false,
                 content: {
                     name: 'Left Voice Message',
+                    to: '',
+                    cc: '',
+                    subject: '',
+                    attachments: '',
                     body: 'I called [Customer] in regard to [his/her] [Subject] request. No answer; left a voice message.'
                 }
             },
@@ -421,6 +505,10 @@ Tree.email = [
                 selected: false,
                 content: {
                     name: 'Busy Signal',
+                    to: '',
+                    cc: '',
+                    subject: '',
+                    attachments: '',
                     body: 'I called [Customer] in regard to [his/her] [Subject] request. Received a busy signal; unable to leave a voice message.'
                 }
             },
@@ -437,6 +525,10 @@ Tree.email = [
                         selected: false,
                         content: {
                             name: '',
+                            to: '',
+                            cc: '',
+                            subject: '',
+                            attachments: '',
                             body: ''
                         }
                     },
@@ -453,6 +545,10 @@ Tree.email = [
                                 selected: false,
                                 content: {
                                     name: '',
+                                    to: '',
+                                    cc: '',
+                                    subject: '',
+                                    attachments: '',
                                     body: ''
                                 }
                             },
@@ -463,6 +559,10 @@ Tree.email = [
                                 selected: false,
                                 content: {
                                     name: '',
+                                    to: '',
+                                    cc: '',
+                                    subject: '',
+                                    attachments: '',
                                     body: ''
                                 }
                             }
@@ -487,12 +587,18 @@ Tree.contacts = [
         selected: false,
         children: [{
                 type: 'contact',
-                label: 'SmartPost Implemented',
+                label: 'Tom Jones',
                 id: 2,
                 selected: false,
                 content: {
-                    name: 'SmartPost Implemented',
-                    body: 'Implemented%20SmartPost%20(SmartPost%20ID%3A%20%2C%20Mailer%20ID%3A%20)%20and%20sent%20welcome%20%26%20activation%20emails.'
+                    firstName: 'Tom',
+                    lastName: 'Jones',
+                    fullName: 'Tom Jones',
+                    phone: '(555)555-5555',
+                    email: 'tjones@test.com',
+                    business: 'Jones\' Auto Parts',
+                    ean: '',
+                    comments: ''
                 }
             },
             {
@@ -501,8 +607,14 @@ Tree.contacts = [
                 id: 32,
                 selected: false,
                 content: {
-                    name: 'Applied Pricing',
-                    body: 'Applied%20%5BPricing%20Structure%5D%20(Request%20ID%3A%20%5BRequest%20ID%5D).%20I%20will%20implement%20SmartPost%20once%20pricing%20has%20loaded.'
+                    firstName: '',
+                    lastName: '',
+                    fullName: '',
+                    phone: '',
+                    email: '',
+                    business: '',
+                    ean: '',
+                    comments: ''
                 }
             }
         ]
@@ -519,8 +631,14 @@ Tree.contacts = [
                 id: 4,
                 selected: false,
                 content: {
-                    name: 'Sent Initial Email',
-                    body: 'Sent%20initial%20email.%20Awaiting%20response%20with%20documentation.'
+                    firstName: '',
+                    lastName: '',
+                    fullName: '',
+                    phone: '',
+                    email: '',
+                    business: '',
+                    ean: '',
+                    comments: ''
                 }
             },
             {
@@ -529,8 +647,14 @@ Tree.contacts = [
                 id: 5,
                 selected: false,
                 content: {
-                    name: 'Ceratosaurians',
-                    body: ''
+                    firstName: '',
+                    lastName: '',
+                    fullName: '',
+                    phone: '',
+                    email: '',
+                    business: '',
+                    ean: '',
+                    comments: ''
                 }
             },
             {
@@ -539,8 +663,14 @@ Tree.contacts = [
                 id: 6,
                 selected: false,
                 content: {
-                    name: 'Spinosauroids',
-                    body: ''
+                    firstName: '',
+                    lastName: '',
+                    fullName: '',
+                    phone: '',
+                    email: '',
+                    business: '',
+                    ean: '',
+                    comments: ''
                 }
             },
             {
@@ -549,8 +679,14 @@ Tree.contacts = [
                 id: 7,
                 selected: false,
                 content: {
-                    name: 'Carnosaurians',
-                    body: ''
+                    firstName: '',
+                    lastName: '',
+                    fullName: '',
+                    phone: '',
+                    email: '',
+                    business: '',
+                    ean: '',
+                    comments: ''
                 }
             },
             {
@@ -565,8 +701,14 @@ Tree.contacts = [
                         id: 9,
                         selected: false,
                         content: {
-                            name: 'Tyrannosauroids',
-                            body: ''
+                            firstName: '',
+                            lastName: '',
+                            fullName: '',
+                            phone: '',
+                            email: '',
+                            business: '',
+                            ean: '',
+                            comments: ''
                         }
                     },
                     {
@@ -575,8 +717,14 @@ Tree.contacts = [
                         id: 10,
                         selected: false,
                         content: {
-                            name: 'Ornithomimosaurians',
-                            body: ''
+                            firstName: '',
+                            lastName: '',
+                            fullName: '',
+                            phone: '',
+                            email: '',
+                            business: '',
+                            ean: '',
+                            comments: ''
                         }
                     },
                     {
@@ -585,8 +733,14 @@ Tree.contacts = [
                         id: 11,
                         selected: false,
                         content: {
-                            name: 'Therizinosauroids',
-                            body: ''
+                            firstName: '',
+                            lastName: '',
+                            fullName: '',
+                            phone: '',
+                            email: '',
+                            business: '',
+                            ean: '',
+                            comments: ''
                         }
                     },
                     {
@@ -595,8 +749,14 @@ Tree.contacts = [
                         id: 12,
                         selected: false,
                         content: {
-                            name: 'Oviraptorosaurians',
-                            body: ''
+                            firstName: '',
+                            lastName: '',
+                            fullName: '',
+                            phone: '',
+                            email: '',
+                            business: '',
+                            ean: '',
+                            comments: ''
                         }
                     },
                     {
@@ -605,8 +765,14 @@ Tree.contacts = [
                         id: 13,
                         selected: false,
                         content: {
-                            name: 'Dromaeosaurids',
-                            body: ''
+                            firstName: '',
+                            lastName: '',
+                            fullName: '',
+                            phone: '',
+                            email: '',
+                            business: '',
+                            ean: '',
+                            comments: ''
                         }
                     },
                     {
@@ -615,8 +781,14 @@ Tree.contacts = [
                         id: 14,
                         selected: false,
                         content: {
-                            name: 'Troodontids',
-                            body: ''
+                            firstName: '',
+                            lastName: '',
+                            fullName: '',
+                            phone: '',
+                            email: '',
+                            business: '',
+                            ean: '',
+                            comments: ''
                         }
                     },
                     {
@@ -625,8 +797,14 @@ Tree.contacts = [
                         id: 15,
                         selected: false,
                         content: {
-                            name: 'Avialans',
-                            body: ''
+                            firstName: '',
+                            lastName: '',
+                            fullName: '',
+                            phone: '',
+                            email: '',
+                            business: '',
+                            ean: '',
+                            comments: ''
                         }
                     }
                 ]
@@ -637,7 +815,7 @@ Tree.contacts = [
 
 
 Tree.getFirstLevelData = function(data) {
-    if(!data) data = Tree.notes;
+    if(!data) data = null;
 
     var datum = [];
 
@@ -650,15 +828,47 @@ Tree.getFirstLevelData = function(data) {
                 expanded: this.expanded,
                 selected: this.selected
             };
-        } else if(this.type == 'note') { // this.type == 'note'
+        } else if(this.type == 'note') {
             var node = {
                 type: this.type,
                 label: this.label,
                 id: this.id,
                 selected: this.selected,
-                content: { // Not sure yet if these are necessary here..
+                content: {
                     name: this.content.name,
                     body: this.content.body
+                }
+            };
+        } else if(this.type == 'email') {
+            var node = {
+                type: this.type,
+                label: this.label,
+                id: this.id,
+                selected: this.selected,
+                content: {
+                    name: this.content.name,
+                    to: this.content.to,
+                    cc: this.content.cc,
+                    subject: this.content.subject,
+                    attachments: this.content.attachments,
+                    body: this.content.body
+                }
+            };
+        } else if(this.type == 'contact') {
+            var node = {
+                type: this.type,
+                label: this.label,
+                id: this.id,
+                selected: this.selected,
+                content: {
+                    firstName: this.content.firstName,
+                    lastName: this.content.lastName,
+                    fullName: this.content.fullName,
+                    phone: this.content.phone,
+                    email: this.content.email,
+                    business: this.content.business,
+                    ean: this.content.ean,
+                    comments: this.content.comments
                 }
             };
         }
@@ -702,6 +912,140 @@ Tree.getChildrenOfNode = function(data, node_id) {
 };
 
 
+/* *
+ * Store tree data to localStorage
+ */
+Tree.persist = function(data) {
+    if(!data) data = null;
+
+    var datum = [];
+
+    var TreeNotes = [];
+    var TreeEmail = [];
+    var TreeContacts = [];
+
+    //ls.set("Tree:Notes", JSON.stringify(TreeNotes));
+    //ls.set("Tree:Email", JSON.stringify(TreeEmail));
+    //ls.set("Tree:Contacts", JSON.stringify(TreeContacts));
+
+    data.forEach(function() {
+        if(this.type == 'folder') {
+            var node = {
+                type: this.type,
+                label: this.label,
+                id: this.id,
+                expanded: this.expanded,
+                selected: this.selected
+            };
+
+        } else if(this.type == 'note') {
+            var node = {
+                type: this.type,
+                label: this.label,
+                id: this.id,
+                selected: this.selected,
+                content: {
+                    name: this.content.name,
+                    body: this.content.body
+                }
+            };
+            TreeNotes.push(node);
+
+        } else if(this.type == 'email') {
+            var node = {
+                type: this.type,
+                label: this.label,
+                id: this.id,
+                selected: this.selected,
+                content: {
+                    name: this.content.name,
+                    to: this.content.to,
+                    cc: this.content.cc,
+                    subject: this.content.subject,
+                    attachments: this.content.attachments,
+                    body: this.content.body
+                }
+            };
+
+        } else if(this.type == 'contact') {
+            var node = {
+                type: this.type,
+                label: this.label,
+                id: this.id,
+                selected: this.selected,
+                content: {
+                    firstName: this.content.firstName,
+                    lastName: this.content.lastName,
+                    fullName: this.content.fullName,
+                    phone: this.content.phone,
+                    email: this.content.email,
+                    business: this.content.business,
+                    ean: this.content.ean,
+                    comments: this.content.comments
+                }
+            };
+        }
+
+        if(this.children) {
+            //node.load_on_demand = true;
+        }
+
+        datum.push(node);
+
+        TreeNotes.push(node);
+        TreeEmail.push(node);
+        TreeContacts.push(node);
+
+        //datum.push({TreeNotes, TreeEmail, TreeContacts});
+    });
+    ls.set("datum", JSON.stringify(datum));
+    return datum;
+};
+
+ls.set("Tree:Notes", JSON.stringify(Tree.notes));
+ls.set("Tree:Email", JSON.stringify(Tree.email));
+ls.set("Tree:Contacts", JSON.stringify(Tree.contacts));
+
+Tree.persist(Tree.notes);
+Tree.persist(Tree.email);
+Tree.persist(Tree.contacts);
+
+
+function traverse(x) {
+  if(isArray(x)) {
+    traverseArray(x);
+  } else if((typeof x === 'object') && (x !== null)) {
+    traverseObject(x);
+  } else {
+
+  }
+}
+
+function traverseArray(arr) {
+  arr.forEach(function(x) {
+    traverse(x);
+  })
+}
+
+function traverseObject(obj) {
+  for(var key in obj) {
+    if (obj.hasOwnProperty(key)) {
+      traverse(obj[key]);
+    }
+  }
+}
+
+function isArray(o) {
+  return Object.prototype.toString.call(o) === '[object Array]';
+}
+
+// usage:
+log("---- Traverse Tree.notes: ", traverse(Tree.notes));
+
+
+/* *
+ * Build the HTML tree
+ */
 Tree.buildTree = function(dest, data) {
     //var result = null;
     var folders = [];
@@ -798,7 +1142,7 @@ Tree.buildTree = function(dest, data) {
                 tree_children.classList.add('tree-children');
                 tree_children.setAttribute('expanded', result.expanded);
 
-                /*if(!result.children) {
+                if(!result.children) {
                     tree_row.setAttribute('has-children', false);
                     log("result.children: ", result.children);
                 } else {
@@ -806,7 +1150,7 @@ Tree.buildTree = function(dest, data) {
                     alert("index " + index + " has children:\n" + result.children[index].label);
                     //tree_children.appendChild(result.children); //Tree.buildTree('.tree-children', data[index].children));
                     //var children = data.getChildrenOfNode(index);
-                }*/
+                }
 
             /*tree_row.appendChild(exp_icon);
             tree_row.appendChild(tree_label);
