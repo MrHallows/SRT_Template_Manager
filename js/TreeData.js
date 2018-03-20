@@ -12,13 +12,13 @@ Tree.notes = [
     {
         type: 'folder',
         label: 'Alcohol Enrollment',
-        id: 3,
+        id: 1,
         expanded: false,
         selected: false,
         children: [{
                 type: 'note',
                 label: 'Sent Initial Email',
-                id: 4,
+                id: 2,
                 selected: false,
                 content: {
                     name: 'Sent Initial Email',
@@ -28,7 +28,7 @@ Tree.notes = [
             {
                 type: 'note',
                 label: 'Ceratosaurians',
-                id: 5,
+                id: 3,
                 selected: false,
                 content: {
                     name: 'Ceratosaurians',
@@ -38,7 +38,7 @@ Tree.notes = [
             {
                 type: 'note',
                 label: 'Spinosauroids',
-                id: 6,
+                id: 4,
                 selected: false,
                 content: {
                     name: 'Spinosauroids',
@@ -48,7 +48,7 @@ Tree.notes = [
             {
                 type: 'note',
                 label: 'Carnosaurians',
-                id: 7,
+                id: 5,
                 selected: false,
                 content: {
                     name: 'Carnosaurians',
@@ -58,13 +58,13 @@ Tree.notes = [
             {
                 type: 'folder',
                 label: 'Coelurosaurians',
-                id: 8,
+                id: 6,
                 expanded: false,
                 selected: false,
                 children: [{
                         type: 'note',
                         label: 'Tyrannosauroids',
-                        id: 9,
+                        id: 7,
                         selected: false,
                         content: {
                             name: 'Tyrannosauroids',
@@ -74,7 +74,7 @@ Tree.notes = [
                     {
                         type: 'note',
                         label: 'Ornithomimosaurians',
-                        id: 10,
+                        id: 8,
                         selected: false,
                         content: {
                             name: 'Ornithomimosaurians',
@@ -84,7 +84,7 @@ Tree.notes = [
                     {
                         type: 'note',
                         label: 'Therizinosauroids',
-                        id: 11,
+                        id: 9,
                         selected: false,
                         content: {
                             name: 'Therizinosauroids',
@@ -94,7 +94,7 @@ Tree.notes = [
                     {
                         type: 'note',
                         label: 'Oviraptorosaurians',
-                        id: 12,
+                        id: 10,
                         selected: false,
                         content: {
                             name: 'Oviraptorosaurians',
@@ -104,7 +104,7 @@ Tree.notes = [
                     {
                         type: 'note',
                         label: 'Dromaeosaurids',
-                        id: 13,
+                        id: 11,
                         selected: false,
                         content: {
                             name: 'Dromaeosaurids',
@@ -114,7 +114,7 @@ Tree.notes = [
                     {
                         type: 'note',
                         label: 'Troodontids',
-                        id: 14,
+                        id: 12,
                         selected: false,
                         content: {
                             name: 'Troodontids',
@@ -124,7 +124,7 @@ Tree.notes = [
                     {
                         type: 'note',
                         label: 'Avialans',
-                        id: 15,
+                        id: 13,
                         selected: false,
                         content: {
                             name: 'Avialans',
@@ -137,14 +137,42 @@ Tree.notes = [
     },
     {
         type: 'folder',
+        label: 'Outdated',
+        id: 14,
+        expanded: false,
+        selected: false,
+        children: [{
+                type: 'note',
+                label: 'No Response After 10 Days',
+                id: 15,
+                selected: false,
+                content: {
+                    name: 'No Response After 10 Days',
+                    body: 'Customer has not provided the necessary documentation to move this request forward. Closing CR.'
+                }
+            },
+            {
+                type: 'note',
+                label: 'Over 60 Days Old',
+                id: 16,
+                selected: false,
+                content: {
+                    name: 'Over 60 Days Old',
+                    body: 'Closing outdated L/CR; will continue to monitor for future developments.'
+                }
+            }
+        ]
+    },
+    {
+        type: 'folder',
         label: 'SmartPost',
-        id: 1,
+        id: 17,
         expanded: false,
         selected: false,
         children: [{
                 type: 'note',
                 label: 'SmartPost Implemented',
-                id: 2,
+                id: 18,
                 selected: false,
                 content: {
                     name: 'SmartPost Implemented',
@@ -154,7 +182,7 @@ Tree.notes = [
             {
                 type: 'note',
                 label: 'Applied Pricing',
-                id: 32,
+                id: 19,
                 selected: false,
                 content: {
                     name: 'Applied Pricing',
@@ -166,13 +194,13 @@ Tree.notes = [
     {
         type: 'folder',
         label: 'Unable to Reach',
-        id: 16,
+        id: 20,
         expanded: false,
         selected: false,
         children: [{
                 type: 'note',
                 label: 'Left Voice Message',
-                id: 17,
+                id: 21,
                 selected: false,
                 content: {
                     name: 'Left Voice Message',
@@ -182,7 +210,7 @@ Tree.notes = [
             {
                 type: 'note',
                 label: 'Busy Signal',
-                id: 18,
+                id: 22,
                 selected: false,
                 content: {
                     name: 'Busy Signal',
@@ -192,13 +220,13 @@ Tree.notes = [
             {
                 type: 'folder',
                 label: 'Sauropods',
-                id: 19,
+                id: 23,
                 expanded: false,
                 selected: false,
                 children: [{
                         type: 'note',
                         label: 'Diplodocoids',
-                        id: 20,
+                        id: 24,
                         selected: false,
                         content: {
                             name: '',
@@ -208,13 +236,13 @@ Tree.notes = [
                     {
                         type: 'folder',
                         label: 'Macronarians',
-                        id: 21,
+                        id: 25,
                         expanded: false,
                         selected: false,
                         children: [{
                                 type: 'note',
                                 label: 'Brachiosaurids',
-                                id: 22,
+                                id: 26,
                                 selected: false,
                                 content: {
                                     name: '',
@@ -224,7 +252,7 @@ Tree.notes = [
                             {
                                 type: 'note',
                                 label: 'Titanosaurians',
-                                id: 23,
+                                id: 27,
                                 selected: false,
                                 content: {
                                     name: '',
@@ -244,34 +272,6 @@ Tree.notes = [
  * Tree: Email
  */
 Tree.email = [
-    {
-        type: 'folder',
-        label: 'SmartPost',
-        id: 1,
-        expanded: false,
-        selected: false,
-        children: [{
-                type: 'email',
-                label: 'SmartPost Implemented',
-                id: 2,
-                selected: false,
-                content: {
-                    name: 'SmartPost Implemented',
-                    body: 'Implemented%20SmartPost%20(SmartPost%20ID%3A%20%2C%20Mailer%20ID%3A%20)%20and%20sent%20welcome%20%26%20activation%20emails.'
-                }
-            },
-            {
-                type: 'email',
-                label: 'Applied Pricing',
-                id: 32,
-                selected: false,
-                content: {
-                    name: 'Applied Pricing',
-                    body: 'Applied%20%5BPricing%20Structure%5D%20(Request%20ID%3A%20%5BRequest%20ID%5D).%20I%20will%20implement%20SmartPost%20once%20pricing%20has%20loaded.'
-                }
-            }
-        ]
-    },
     {
         type: 'folder',
         label: 'Alcohol Enrollment',
@@ -916,7 +916,7 @@ Tree.getChildrenOfNode = function(data, node_id) {
  * Store tree data to localStorage
  */
 Tree.persist = function(data) {
-    if(!data) data = null;
+    if(!data) return;
 
     var datum = [];
 
@@ -995,16 +995,14 @@ Tree.persist = function(data) {
         TreeNotes.push(node);
         TreeEmail.push(node);
         TreeContacts.push(node);
-
-        //datum.push({TreeNotes, TreeEmail, TreeContacts});
     });
-    ls.set("datum", JSON.stringify(datum));
+    //ls.set("datum", JSON.stringify(datum));
     return datum;
 };
 
-ls.set("Tree:Notes", JSON.stringify(Tree.notes));
-ls.set("Tree:Email", JSON.stringify(Tree.email));
-ls.set("Tree:Contacts", JSON.stringify(Tree.contacts));
+//ls.set("Tree:Notes", JSON.stringify(Tree.notes));
+//ls.set("Tree:Email", JSON.stringify(Tree.email));
+//ls.set("Tree:Contacts", JSON.stringify(Tree.contacts));
 
 Tree.persist(Tree.notes);
 Tree.persist(Tree.email);
@@ -1050,22 +1048,21 @@ Tree.buildTree = function(dest, data) {
     //var result = null;
     var folders = [];
 
+    var root = document.querySelector(dest);
+
+    var fragment = document.createDocumentFragment();
+
     //log("dest: ", dest);
 
-    // Parse through the data (i.e., Tree.notes)
-    for(let index in data) {
+    // Parse through data (i.e., Tree.notes)
+    for(var index in data) {
         if(data.hasOwnProperty(index)) {
-            log("index: ", index);
+            log("---- index: ", data[index]);
 
-            //var result = null;
             var result = data[index];
             var children = data[index].children;
             log("result: ", result);
 
-            var root = document.querySelector(dest);
-
-            var fragment = document.createDocumentFragment();
-        
             var tree_item = document.createElement('div'); // <div class="tree-item" item-type="folder" expanded="false" select="false"></div>
                 tree_item.classList.add('tree-item');
                 tree_item.setAttribute('item-type', result.type);
@@ -1112,7 +1109,7 @@ Tree.buildTree = function(dest, data) {
                         });
                     }
                 }*/
-        
+
             var tree_row = document.createElement('div'); // <div class="tree-row" has-children="true" may-have-children="" select="false"></div>
                 tree_row.classList.add('tree-row');
                 tree_row.setAttribute('may-have-children', '');
@@ -1128,21 +1125,21 @@ Tree.buildTree = function(dest, data) {
                 }
 
                 tree_row.setAttribute('select', result.selected);
-        
+
             var exp_icon = document.createElement('span'); // <span class="expand-icon"></span>
                 exp_icon.classList.add('expand-icon');
-        
+
             var tree_label = document.createElement('span'); // <span class="tree-label"></span>
                 tree_label.classList.add('tree-label');
                 //let label_text = document.createTextNode(result.label);
                 //tree_label.appendChild(label_text);
                 tree_label.textContent = result.label;
-        
+
             var tree_children = document.createElement('div'); // <div class="tree-children" expanded="false" select="false"></div>
                 tree_children.classList.add('tree-children');
                 tree_children.setAttribute('expanded', result.expanded);
 
-                if(!result.children) {
+                /*if(!result.children) {
                     tree_row.setAttribute('has-children', false);
                     log("result.children: ", result.children);
                 } else {
@@ -1150,7 +1147,7 @@ Tree.buildTree = function(dest, data) {
                     alert("index " + index + " has children:\n" + result.children[index].label);
                     //tree_children.appendChild(result.children); //Tree.buildTree('.tree-children', data[index].children));
                     //var children = data.getChildrenOfNode(index);
-                }
+                }*/
 
             /*tree_row.appendChild(exp_icon);
             tree_row.appendChild(tree_label);
@@ -1163,22 +1160,20 @@ Tree.buildTree = function(dest, data) {
             var result_ = null;
 
             if (!children) {
-                //if (children[index].type == 'folder') {
-                    tree_item.setAttribute('has-children', false);
-                    tree_row.setAttribute('has-children', false);
+                //if (children.type == 'folder') {
+                tree_item.setAttribute('has-children', false);
+                tree_row.setAttribute('has-children', false);
                 //}
             } else {
-                if (children[index].type == 'folder') {
-                    tree_item.setAttribute('has-children', true);
-                    tree_row.setAttribute('has-children', true);
-                }
+                tree_item.setAttribute('has-children', true);
+                tree_row.setAttribute('has-children', true);
                 //log("Tree:Children ", children[index].label);
 
 
-                for(let index in children) {
-                    if (children.hasOwnProperty(index)) {
+                for(var index_ in children) {
+                    if (children.hasOwnProperty(index_)) {
 
-                        result_ = children[index];
+                        result_ = children[index_];
                         log("Tree:Children ", result_);
 
                         let tree_item_ = document.createElement('div'); // <div class="tree-item" item-type="folder" expanded="false" select="false"></div>
@@ -1186,7 +1181,7 @@ Tree.buildTree = function(dest, data) {
                             tree_item_.setAttribute('item-type', result_.type);
                             tree_item_.setAttribute('id', result_.type + "-" + result_.id);
 
-                            if (!result_.children) {
+                            /*if (!result_.children) {
                                 if (result_.type == 'folder') {
                                     tree_item_.setAttribute('has-children', false);
                                     log("Set attribute 'has-children' to " + tree_item_.getAttribute('has-children'));
@@ -1199,56 +1194,58 @@ Tree.buildTree = function(dest, data) {
                                 if (result_.type == 'folder') {
                                     tree_item_.setAttribute('has-children', true);
                                 }
-                            }
+                            }*/
 
                             tree_item_.setAttribute('expanded', result_.expanded);
                             tree_item_.setAttribute('select', result_.selected);
-                    
+
                         let tree_row_ = document.createElement('div'); // <div class="tree-row" has-children="true" may-have-children="" select="false"></div>
                             tree_row_.classList.add('tree-row');
                             tree_row_.setAttribute('may-have-children', '');
-                            
-                            if (!result_.children) {
+
+                            /*if (!result_.children) {
                                 if (result_.type == 'folder') {
+                                    tree_item_.setAttribute('has-children', false);
                                     tree_row_.setAttribute('has-children', false);
                                 }
                             } else {
                                 if (result_.type == 'folder') {
-                                    tree_row_.setAttribute('has-children', true);
+                                    tree_item_.setAttribute('has-children', true);
+                                    tree_row_.setAttribute('has-children', false);
                                 }
-                            }
+                            }*/
 
                             tree_row_.setAttribute('select', result_.selected);
-                            
+
                         let exp_icon_ = document.createElement('span'); // <span class="expand-icon"></span>
                             exp_icon_.classList.add('expand-icon');
 
-                            if (children[index].type != 'folder') {
+                            if (result_.type != 'folder') {
                                 exp_icon_.style.visibility = 'hidden';
                             }
-                    
+
                         let tree_label_ = document.createElement('span'); // <span class="tree-label"></span>
                             tree_label_.classList.add('tree-label');
                             //let label_text = document.createTextNode(result_.label);
                             //tree_label_.appendChild(label_text);
                             tree_label_.textContent = result_.label;
-                    
+
                         let tree_children_ = document.createElement('div'); // <div class="tree-children" expanded="false" select="false"></div>
                             tree_children_.classList.add('tree-children');
                             tree_children_.setAttribute('expanded', result_.expanded);
 
                         log("(Children) result_.id: " + result_.id);
-                        
-                        if (!children) {
-                            if (children[index].type == 'folder') {
+
+                        if (!result_) {
+                            //if (result_.type == 'folder') {
                                 tree_item_.setAttribute('has-children', false);
                                 tree_row_.setAttribute('has-children', false);
-                            }
+                            //}
                         } else {
-                            if (children[index].type == 'folder') {
+                            //if (result_.type == 'folder') {
                                 tree_item_.setAttribute('has-children', true);
                                 tree_row_.setAttribute('has-children', true);
-                            }
+                            //}
                         }
 
 
@@ -1267,16 +1264,18 @@ Tree.buildTree = function(dest, data) {
                     }
                 }
             }
-
-            //log("Tree:Data (result_): ", result_);
-            //log("Tree:Data (folders): ", folders);
-            /*if(!ls.get("Tree:Folders")) {
-                ls.set("Tree:Folders", JSON.stringify(folders));
-            }*/
             folders.push(result_);
-            root.appendChild(fragment);
+
+            log("Tree:Data (result_): ", result_);
+            log("Tree:Data (folders): ", folders);
+            if(!ls.get("Tree:Folders")) {
+                ls.set("Tree:Folders", JSON.stringify(folders));
+            }
+            Tree.buildTree(dest, children);
+            //root.appendChild(fragment);
         }
-        Tree.buildTree(dest, result_);
+        //Tree.buildTree(dest, result_);
+        root.appendChild(fragment);
     }
 
     //log("Tree:Folders: ", folders);

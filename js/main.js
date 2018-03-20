@@ -113,24 +113,24 @@ $(document).on('click', '.tree-row', function() {
 					severity: 'success',
 					content: 'Note has been defined!'
 				});
-			}
 
-			if(_this.name == '' || null || undefined) {
-				notification.open({
-					severity: 'error',
-					content: 'No name defined for this note!'
-				});
-			} else {
-				$('#note-view .name > span').text(_this.name);
-			}
+				if(_this.name == '' || null || undefined) {
+					notification.open({
+						severity: 'error',
+						content: 'No name defined for this note!'
+					});
+				} else {
+					$('#note-view .name > span').text(_this.name);
+				}
 
-			if(_this.body == '' || null || undefined) {
-				notification.open({
-					severity: 'error',
-					content: 'No body defined for this note!'
-				});
-			} else {
-				$('#note-view .body > pre').text(decode(_this.body));
+				if(_this.body == '' || null || undefined) {
+					notification.open({
+						severity: 'error',
+						content: 'No body defined for this note!'
+					});
+				} else {
+					$('#note-view .body > pre').text(decode(_this.body));
+				}
 			}
 			break;
 

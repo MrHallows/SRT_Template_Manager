@@ -1,0 +1,86 @@
+/* options_menu.css */
+/* css/options_menu.css */
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/* Random idea: Write an "html/css-like" library in C++ with the versatility 		 */
+/*				 and simplicity to efficiently build GUIs for games, software, etc.  */
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+
+/* *
+ * HTML Elements (Tags)
+ */
+div {
+	display: block;
+}
+div, input, textarea, select, button {
+	outline-style: none !important;
+	box-shadow: none;
+}
+a {
+	text-decoration: none;
+}
+
+/* *
+ * Context Menu
+ */
+.options-menu {
+	display: none;
+	background-color: #252526;
+	border: 1px solid #aaa;
+	border-radius: 0;
+	top: 100%;
+	left: 0;
+	min-width: 100px;
+	max-height: 400px;
+	padding: 0;
+	margin-top: 2px;
+	position: absolute;
+	z-index: 1000;
+	float: left;
+	overflow-y: auto;
+	text-align: left;
+	list-style: none;
+}
+
+/* *
+ * Menu Items
+ */
+.options-menu>.menu-item {
+	display: block;
+    font-family: 'Ubuntu', 'Roboto', sans-serif;/**/
+	font-weight: 300;
+	font-size: 11px;
+	color: #51a8ff;
+	padding: 3px 16px;
+	margin: 3px;
+	clear: both;
+	line-height: 1.42857143;
+	white-space: nowrap;
+	text-decoration: none;
+	cursor: default;
+}
+.options-menu>.menu-item:hover {
+	background-color: #323232;
+}
+
+.options-menu>.menu-item>img {
+	display: inline-block;
+	position: relative;
+	left: -14px;
+}
+
+.options-menu>.menu-item>span {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+/* *
+ * Menu Items - Disabled
+ */
+.options-menu>.menu-item.disabled,
+.options-menu>.menu-item.disabled:hover {
+	background-color: transparent;
+	opacity: 0.2;
+}

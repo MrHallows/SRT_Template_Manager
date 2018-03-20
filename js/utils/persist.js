@@ -17,32 +17,14 @@
  */
 
 
-/*
-var originalSetItem = localStorage.setItem;
-
-localStorage.setItem = function() {
-    var event = new Event('itemInserted');
-    document.dispatchEvent(event);
-
-    originalSetItem.apply(this, arguments);
-}
-
-var storageHandler = function(e) {
-    alert('Item saved to localStorage');
-};
-
-document.addEventListener("itemInserted", storageHandler, false);
-
-localStorage.setItem('foo', 'bar'); // Pops an alert
-ls.set('bar', 'foo'); // Pops an alert
-*/
+//var ls = ls || {};
 
 
-if (typeof(Storage) !== "undefined") {
+if(typeof(Storage) !== "undefined") {
     // Code for localStorage/sessionStorage.
     log("Web Storage is supported!");
 
-    var ls = ls || {};
+    //var ls = ls || {};
 
     ls = {
         set: function(key, data) {
@@ -80,6 +62,27 @@ if (typeof(Storage) !== "undefined") {
 //ls.set("WebStorage", "is supported!");
 //ls.set("Undefined", undefined);
 //ls.set("Number", 2);
+
+
+/*
+var originalSetItem = localStorage.setItem;
+
+localStorage.setItem = function() {
+    var event = new Event('itemInserted');
+    document.dispatchEvent(event);
+
+    originalSetItem.apply(this, arguments);
+}
+
+var storageHandler = function(e) {
+    alert('Item saved to localStorage');
+};
+
+document.addEventListener("itemInserted", storageHandler, false);
+
+localStorage.setItem('foo', 'bar'); // Pops an alert
+ls.set('bar', 'foo'); // Pops an alert
+*/
 
 
 /* *
