@@ -3,14 +3,14 @@
 
 
 /* *
- * Tree Context Menu
+ * Tree Options Menu
  */
 var $options_menu = $('<div class="options-menu">');
 var $new_item = (function(label) {
 	$('<span class="menu-item"><a href="#">' + label + '</a></span>');
 });
 
-// Start the context menu with attribute 'status' set to 'inactive'
+// Start the options menu with attribute 'status' set to 'inactive'
 /*$('.options-menu').attr('status', 'inactive');
 
 // On right mouse click, set attribute 'status' to 'active'
@@ -31,6 +31,18 @@ var $get_this = (function() {
 /* getPos */
 //var getPos
 
+function getOffset(element) {
+    var _x = 0;
+    var _y = 0;
+    while( element && !isNaN( element.offsetLeft ) && !isNaN( element.offsetTop ) ) {
+        _x += element.offsetLeft - element.scrollLeft;
+        _y += element.offsetTop - element.scrollTop;
+        element = element.offsetParent;
+    }
+    return { top: _y, left: _x };
+}
+var x = getOffset( document.querySelectorAll('.tree-item-options') ).left;
+
 
 /*$(document).on('contextmenu', function(e) {
     if (!$(e.target).is("#special"))
@@ -43,13 +55,13 @@ var $get_this = (function() {
 
 
 /* *
- * Context Menu
+ * Options Menu
  */
-$(document).on('contextmenu', '.tree-row', function(e) {
+$(document).on('click', '.tree-row', function(e) {
 //$(document).on('click', '.tree-item-options', function(e) {
 
-	// Restrict the context menu to only open if .tree-row or .tree-label is right clicked.
-	if (!$(e.target).is('.tree-row') && !$(e.target).is('.tree-label') && !$(e.target).is('.tree-item-options'))
+	// Restrict the options menu to only open if .tree-row or .tree-label is right clicked.
+	if (!$(e.target).is('.tree-item-options'))
 		return false;
 
 	$this = $get_this().parent('.tree-item');
@@ -66,17 +78,25 @@ $(document).on('contextmenu', '.tree-row', function(e) {
 		log("Element tag: <" + e.target.tagName.toLowerCase() + ">\nError: No classes have been defined for this element.");
 	}
 
-	var contextmenu_w = $('.options-menu').width() + 2;
-	var contextmenu_h = $('.options-menu').height() + 2;
+	var options_menu_w = $('.options-menu').width() + 2;
+	var options_menu_h = $('.options-menu').height() + 2;
 
 	var viewport_w = $('body').width();
 	var viewport_h = $('body').height();
 
+	// var options_menu_x = getOffset( document.querySelectorAll('.tree-item-options') ).left;
+	// var options_menu_y = getOffset( document.querySelectorAll('.tree-item-options') ).top;
+
+	var options_menu_x = this.style.left + 20;
+	var options_menu_y = this.style.top;
+
 	// Display menu
 	$('.options-menu').css({
 		display: "block",
-		left: e.pageX,
-		top: e.pageY
+		// left: getOffset( document.querySelectorAll('.tree-item-options') ).left, //e.pageX,
+		left: options_menu_x + 'px', //e.pageX,
+		// top: getOffset( document.querySelectorAll('.tree-item-options') ).top //e.pageY
+		top: options_menu_y + 'px' //e.pageY
 	});
 	/*
 		left: 239px;
@@ -84,20 +104,20 @@ $(document).on('contextmenu', '.tree-row', function(e) {
 	*/
 
 	// Keep menu in viewport left
-	if(e.pageX + contextmenu_w > viewport_w) {
+	/*if(e.pageX + options_menu_w > viewport_w) {
 		$('.options-menu').css({
-			left: e.pageX - contextmenu_w
+			left: e.pageX - options_menu_w
 		});
-	}
+	}*/
 
 	// Keep menu in viewport top
-	if(e.pageY + contextmenu_h > viewport_h) {
+	/*if(e.pageY + options_menu_h > viewport_h) {
 		$('.options-menu').css({
-			top: e.pageY - contextmenu_h - 3
+			top: e.pageY - options_menu_h - 3
 		});
-	}
+	}*/
 
-	//log("contextmenu width: " + contextmenu_w + "px\n" + "contextmenu height: " + contextmenu_h + "px");
+	//log("options_menu width: " + options_menu_w + "px\n" + "options_menu height: " + options_menu_h + "px");
 	//log("viewport width: " + viewport_w + "px\n" + "viewport height: " + viewport_h + "px");
 
 	e.preventDefault();
@@ -109,18 +129,18 @@ $('.tree').on('contextmenu', '.tree-row', function(e) {
 
 	// If the right-clicked tree-row is not a folder, disable the "New Item" & "New Folder" menu items
 	if($(this).parent('.tree-item').attr('item-type') != "folder") {
-		$('#cm-new-folder').addClass('disabled');
-		$('#cm-new-item').addClass('disabled');
+		$('#om-new-folder').addClass('disabled');
+		$('#om-new-item').addClass('disabled');
 	} else { // Otherwise, "enable" all menu items
-		$('#cm-new-folder').removeClass('disabled');
-		$('#cm-new-item').removeClass('disabled');
+		$('#om-new-folder').removeClass('disabled');
+		$('#om-new-item').removeClass('disabled');
 	}
 
 	// If the right-clicked tree-row is a folder, disable the "Edit" menu item
 	if($(this).parent('.tree-item').attr('item-type') == "folder") {
-		$('#cm-edit').addClass('disabled');
+		$('#om-edit').addClass('disabled');
 	} else { // Otherwise, "enable" all menu items
-		$('#cm-edit').removeClass('disabled');
+		$('#om-edit').removeClass('disabled');
 	}
 
 	e.preventDefault();
@@ -134,8 +154,8 @@ $('.tree').on('contextmenu', '.tree-row', function(e) {
 /* *
  * Rename
  */
-$('.options-menu').on('click', '#cm-rename', function(e) {
-	log("cm-rename clicked: (" + e.pageX + ", " + e.pageY + ")");
+$('.options-menu').on('click', '#om-rename', function(e) {
+	log("om-rename clicked: (" + e.pageX + ", " + e.pageY + ")");
 	log("e.target: " + e.target);
 
 	e.preventDefault();
@@ -180,8 +200,8 @@ $('.options-menu').on('click', '#cm-rename', function(e) {
 /* *
  * Edit
  */
-$('.options-menu').on('click', '#cm-edit', function(e) {
-	log("cm-edit clicked: (" + e.pageX + ", " + e.pageY + ")");
+$('.options-menu').on('click', '#om-edit', function(e) {
+	log("om-edit clicked: (" + e.pageX + ", " + e.pageY + ")");
 	log("e.target: " + e.target);
 
 	e.preventDefault();
@@ -531,8 +551,8 @@ $('.options-menu').on('click', '#cm-edit', function(e) {
 /* *
  * Delete
  */
-$('.options-menu').on('click', '#cm-delete', function(e) {
-	log("cm-delete clicked: (" + e.pageX + ", " + e.pageY + ")");
+$('.options-menu').on('click', '#om-delete', function(e) {
+	log("om-delete clicked: (" + e.pageX + ", " + e.pageY + ")");
 	log("e.target: " + e.target);
 
 	// Give the user a second chance
@@ -570,12 +590,12 @@ $('.options-menu').on('click', '#cm-delete', function(e) {
 /* *
  * New Item
  */
-$('.options-menu').on('click', '#cm-new-item', function(e) {
-	log("cm-new-item clicked: (" + e.pageX + ", " + e.pageY + ")");
+$('.options-menu').on('click', '#om-new-item', function(e) {
+	log("om-new-item clicked: (" + e.pageX + ", " + e.pageY + ")");
 	log("e.target: " + e.target);
 
 	if($(e.target).is('.disabled')) {
-		alert("Disabled! To create a new Item, open the context menu (right click) on the folder you would like it to be created in.");
+		alert("Disabled! To create a new Item, open the options menu (right click) on the folder you would like it to be created in.");
 		return false;
 	} else {
 		// New Item Modal
@@ -668,12 +688,12 @@ $('.options-menu').on('click', '#cm-new-item', function(e) {
 /* *
  * New Folder
  */
-$('.options-menu').on('click', '#cm-new-folder', function(e) {
-	log("cm-new-folder clicked: (" + e.pageX + ", " + e.pageY + ")");
+$('.options-menu').on('click', '#om-new-folder', function(e) {
+	log("om-new-folder clicked: (" + e.pageX + ", " + e.pageY + ")");
 	log("e.target: " + e.target);
 	
 	if($(e.target).is('.disabled')) {
-		alert("Disabled! To create a new Folder, open the context menu (right click) on the folder you would like it to be created in.");
+		alert("Disabled! To create a new Folder, open the options menu (right click) on the folder you would like it to be created in.");
 		return false;
 	} else {
 		// New Folder Modal
@@ -730,7 +750,7 @@ $('.options-menu').on('click', '#cm-new-folder', function(e) {
 
 
 /* *
- * Hide context menu
+ * Hide options menu
  */
 $(document).on('click', function(e) {
 	$('.options-menu').css({

@@ -19,7 +19,7 @@
     position: absolute;
     /* background: url(tint20.png) 0 0 repeat; */
     background: rgba(0,0,0,0.2);
-    background: #202123;
+    background: #232323; /* #202123; default: #282828; */
     border: 2px solid #555;
     border-radius: 0;
     font-family: 'Ubuntu', sans-serif !important;
