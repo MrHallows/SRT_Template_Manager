@@ -1056,9 +1056,8 @@ Tree.buildTree = function(data) { //! Removed first parameter 'dest'. Append the
     // Parse through data (i.e., Tree.notes)
     for(var index in data) {
         if(data.hasOwnProperty(index)) {
+
             var node = data[index];
-            //var _children = data[index].children;
-            log("node: ", node);
 
             var tree_item = document.createElement('div'); // <div class="tree-item" item-type="folder" expanded="false" select="false"></div>
                 tree_item.classList.add('tree-item');
@@ -1068,7 +1067,7 @@ Tree.buildTree = function(data) { //! Removed first parameter 'dest'. Append the
                 if (!node.children) {
                     if (node.type == 'folder') {
                         tree_item.setAttribute('has-children', false);
-                        log("Set attribute 'has-children' Item ID: " + tree_item.id + " to " + tree_item.getAttribute('has-children'));
+                        //log("Set attribute 'has-children' Item ID: " + tree_item.id + " to " + tree_item.getAttribute('has-children'));
                         notification.open({
                             severity: 'info',
                             content: "Set attribute 'has-children' to " + tree_item.getAttribute('has-children')
@@ -1077,15 +1076,15 @@ Tree.buildTree = function(data) { //! Removed first parameter 'dest'. Append the
                 } else {
                     if (node.type == 'folder') {
                         tree_item.setAttribute('has-children', true);
-                        log("Set attribute 'has-children' Item ID: " + tree_item.id + " to " + tree_item.getAttribute('has-children'));
+                        //log("Set attribute 'has-children' Item ID: " + tree_item.id + " to " + tree_item.getAttribute('has-children'));
                     }
                 }
 
                 tree_item.setAttribute('expanded', node.expanded);
                 tree_item.setAttribute('select', node.selected);
 
-                log("node.id: " + node.id);
-                log("tree_item.id: " + tree_item.id);
+                //log("node.id: " + node.id);
+                //log("tree_item.id: " + tree_item.id);
 
             var tree_row = document.createElement('div'); // <div class="tree-row" has-children="true" may-have-children="" select="false"></div>
                 tree_row.classList.add('tree-row');
@@ -1094,12 +1093,12 @@ Tree.buildTree = function(data) { //! Removed first parameter 'dest'. Append the
                 if (!node.children) {
                     if (node.type == 'folder') {
                         tree_row.setAttribute('has-children', false);
-                        log("Set attribute 'has-children' to " + tree_item.getAttribute('has-children')) + " for " + tree_item.id + ".";
+                        //log("Set attribute 'has-children' to " + tree_item.getAttribute('has-children')) + " for " + tree_item.id + ".";
                     }
                 } else {
                     if (node.type == 'folder') {
                         tree_row.setAttribute('has-children', true);
-                        log("Set attribute 'has-children' to " + tree_item.getAttribute('has-children')) + " for " + tree_item.id + ".";
+                        //log("Set attribute 'has-children' to " + tree_item.getAttribute('has-children')) + " for " + tree_item.id + ".";
                     }
                 }
 
@@ -1107,6 +1106,10 @@ Tree.buildTree = function(data) { //! Removed first parameter 'dest'. Append the
 
             var exp_icon = document.createElement('span'); // <span class="expand-icon"></span>
                 exp_icon.classList.add('expand-icon');
+
+                if (node.type != 'folder') {
+                    exp_icon.style.visibility = 'hidden';
+                }
 
             var tree_label = document.createElement('span'); // <span class="tree-label"></span>
                 tree_label.classList.add('tree-label');
@@ -1120,27 +1123,14 @@ Tree.buildTree = function(data) { //! Removed first parameter 'dest'. Append the
             tree_row.appendChild(tree_label);
 
             tree_item.appendChild(tree_row);
-            log("Appended tree_row to tree_item " + tree_item.id + ".");
 
-            if (!node.children) {
+            if(node.hasOwnProperty('children')) {
                 if(node.type == 'folder') {
-                    log("Node ID: " + node.id + " has 0 children.");
+                    //log("Node children: " + node + " has " + node.children.length + " children.");
+                    tree_children.appendChild(Tree.buildTree(node.children));
                 }
-            } else {
-                if(node.type == 'folder') {
-                    for(var i = 0; i < node.children.length; i++) {
-                        //log("Node children: " + node.children + " has " + node.children.length + " children.");
-                        tree_children.appendChild(Tree.buildTree(node.children));
-                        alert("Appended children to " + node.type + " id: " + node.id + ".");
-                    }
-                } else {
-                    tree_children.appendChild(node);
-                    alert("Appended " + node.type + " id: " + node.id + " to parent.");
-                }
-                log("Node ID: " + node.id + " has " + node.children.length + " children.");
+                tree_item.appendChild(tree_children);
             }
-
-            tree_item.appendChild(tree_children);
 
             fragment.appendChild(tree_item);
         }

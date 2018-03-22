@@ -246,13 +246,12 @@ ol, ul {
 }
 
 .tree-item-options {
-    position: relative;
+    position: fixed;
     float: right;
     background-image: url(../images/snowman.png);
     background-position: -32px -16px;
     width: 16px;
     height: 16px;
-    left: 3px;
     margin: 1px;
     vertical-align: top;
     opacity: .4;
