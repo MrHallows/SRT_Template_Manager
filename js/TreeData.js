@@ -1044,11 +1044,10 @@ log("---- Traverse Tree.notes: ", traverse(Tree.notes));
 /* *
  * Build the HTML tree
  */
-Tree.buildTree = function(dest, data) {
-    //var result = null;
+Tree.buildTree = function(data) { //! Removed first parameter 'dest'. Append the output to each respective .tree-body
     var folders = [];
 
-    var root = document.querySelector(dest);
+    //var root = document.querySelector(dest);
 
     var fragment = document.createDocumentFragment();
 
@@ -1057,249 +1056,110 @@ Tree.buildTree = function(dest, data) {
     // Parse through data (i.e., Tree.notes)
     for(var index in data) {
         if(data.hasOwnProperty(index)) {
-            log("---- index: ", data[index]);
-
-            var result = data[index];
-            var children = data[index].children;
-            log("result: ", result);
+            var node = data[index];
+            //var _children = data[index].children;
+            log("node: ", node);
 
             var tree_item = document.createElement('div'); // <div class="tree-item" item-type="folder" expanded="false" select="false"></div>
                 tree_item.classList.add('tree-item');
-                tree_item.setAttribute('item-type', result.type);
-                tree_item.setAttribute('id', result.type + "-" + result.id);
-                log("tree_item.id: " + tree_item.id);
-                log("result.id: " + result.id);
+                tree_item.setAttribute('item-type', node.type);
+                tree_item.setAttribute('id', node.type + "-" + node.id);
 
-                if (!result.children) {
-                    if (result.type == 'folder') {
+                if (!node.children) {
+                    if (node.type == 'folder') {
                         tree_item.setAttribute('has-children', false);
-                        log("Set attribute 'has-children' to " + tree_item.getAttribute('has-children'));
+                        log("Set attribute 'has-children' Item ID: " + tree_item.id + " to " + tree_item.getAttribute('has-children'));
                         notification.open({
                             severity: 'info',
                             content: "Set attribute 'has-children' to " + tree_item.getAttribute('has-children')
                         });
                     }
                 } else {
-                    if (result.type == 'folder') {
+                    if (node.type == 'folder') {
                         tree_item.setAttribute('has-children', true);
+                        log("Set attribute 'has-children' Item ID: " + tree_item.id + " to " + tree_item.getAttribute('has-children'));
                     }
                 }
 
-                tree_item.setAttribute('expanded', result.expanded);
-                tree_item.setAttribute('select', result.selected);
+                tree_item.setAttribute('expanded', node.expanded);
+                tree_item.setAttribute('select', node.selected);
 
-                /*if (!children) {
-                    if (children[index].type == 'folder') {
-                        tree_item.setAttribute('has-children', false);
-                        tree_row.setAttribute('has-children', false);
-
-                        notification.open({
-                            severity: 'info',
-                            content: result.type + " " + result.label + " has no children."
-                        });
-                    }
-                } else {
-                    if (children[index].type == 'folder') {
-                        tree_item.setAttribute('has-children', true);
-                        tree_row.setAttribute('has-children', true);
-
-                        notification.open({
-                            severity: 'info',
-                            content: result.type + " " + result.label + " has " + children.length + " children."
-                        });
-                    }
-                }*/
+                log("node.id: " + node.id);
+                log("tree_item.id: " + tree_item.id);
 
             var tree_row = document.createElement('div'); // <div class="tree-row" has-children="true" may-have-children="" select="false"></div>
                 tree_row.classList.add('tree-row');
                 tree_row.setAttribute('may-have-children', '');
 
-                if (!result.children) {
-                    if (result.type == 'folder') {
+                if (!node.children) {
+                    if (node.type == 'folder') {
                         tree_row.setAttribute('has-children', false);
+                        log("Set attribute 'has-children' to " + tree_item.getAttribute('has-children')) + " for " + tree_item.id + ".";
                     }
                 } else {
-                    if (result.type == 'folder') {
+                    if (node.type == 'folder') {
                         tree_row.setAttribute('has-children', true);
+                        log("Set attribute 'has-children' to " + tree_item.getAttribute('has-children')) + " for " + tree_item.id + ".";
                     }
                 }
 
-                tree_row.setAttribute('select', result.selected);
+                tree_row.setAttribute('select', node.selected);
 
             var exp_icon = document.createElement('span'); // <span class="expand-icon"></span>
                 exp_icon.classList.add('expand-icon');
 
             var tree_label = document.createElement('span'); // <span class="tree-label"></span>
                 tree_label.classList.add('tree-label');
-                //let label_text = document.createTextNode(result.label);
-                //tree_label.appendChild(label_text);
-                tree_label.textContent = result.label;
+                tree_label.textContent = node.label;
 
             var tree_children = document.createElement('div'); // <div class="tree-children" expanded="false" select="false"></div>
                 tree_children.classList.add('tree-children');
-                tree_children.setAttribute('expanded', result.expanded);
+                tree_children.setAttribute('expanded', node.expanded);
 
-                /*if(!result.children) {
-                    tree_row.setAttribute('has-children', false);
-                    log("result.children: ", result.children);
-                } else {
-                    tree_row.setAttribute('has-children', true);
-                    alert("index " + index + " has children:\n" + result.children[index].label);
-                    //tree_children.appendChild(result.children); //Tree.buildTree('.tree-children', data[index].children));
-                    //var children = data.getChildrenOfNode(index);
-                }*/
-
-            /*tree_row.appendChild(exp_icon);
+            tree_row.appendChild(exp_icon);
             tree_row.appendChild(tree_label);
 
             tree_item.appendChild(tree_row);
+            log("Appended tree_row to tree_item " + tree_item.id + ".");
+
+            if (!node.children) {
+                if(node.type == 'folder') {
+                    log("Node ID: " + node.id + " has 0 children.");
+                }
+            } else {
+                if(node.type == 'folder') {
+                    for(var i = 0; i < node.children.length; i++) {
+                        //log("Node children: " + node.children + " has " + node.children.length + " children.");
+                        tree_children.appendChild(Tree.buildTree(node.children));
+                        alert("Appended children to " + node.type + " id: " + node.id + ".");
+                    }
+                } else {
+                    tree_children.appendChild(node);
+                    alert("Appended " + node.type + " id: " + node.id + " to parent.");
+                }
+                log("Node ID: " + node.id + " has " + node.children.length + " children.");
+            }
+
             tree_item.appendChild(tree_children);
 
-            fragment.appendChild(tree_item);*/
-
-            var result_ = null;
-
-            if (!children) {
-                //if (children.type == 'folder') {
-                tree_item.setAttribute('has-children', false);
-                tree_row.setAttribute('has-children', false);
-                //}
-            } else {
-                tree_item.setAttribute('has-children', true);
-                tree_row.setAttribute('has-children', true);
-                //log("Tree:Children ", children[index].label);
-
-
-                for(var index_ in children) {
-                    if (children.hasOwnProperty(index_)) {
-
-                        result_ = children[index_];
-                        log("Tree:Children ", result_);
-
-                        let tree_item_ = document.createElement('div'); // <div class="tree-item" item-type="folder" expanded="false" select="false"></div>
-                            tree_item_.classList.add('tree-item');
-                            tree_item_.setAttribute('item-type', result_.type);
-                            tree_item_.setAttribute('id', result_.type + "-" + result_.id);
-
-                            /*if (!result_.children) {
-                                if (result_.type == 'folder') {
-                                    tree_item_.setAttribute('has-children', false);
-                                    log("Set attribute 'has-children' to " + tree_item_.getAttribute('has-children'));
-                                    notification.open({
-                                        severity: 'info',
-                                        content: "Set attribute 'has-children' to " + tree_item_.getAttribute('has-children')
-                                    });
-                                }
-                            } else {
-                                if (result_.type == 'folder') {
-                                    tree_item_.setAttribute('has-children', true);
-                                }
-                            }*/
-
-                            tree_item_.setAttribute('expanded', result_.expanded);
-                            tree_item_.setAttribute('select', result_.selected);
-
-                        let tree_row_ = document.createElement('div'); // <div class="tree-row" has-children="true" may-have-children="" select="false"></div>
-                            tree_row_.classList.add('tree-row');
-                            tree_row_.setAttribute('may-have-children', '');
-
-                            /*if (!result_.children) {
-                                if (result_.type == 'folder') {
-                                    tree_item_.setAttribute('has-children', false);
-                                    tree_row_.setAttribute('has-children', false);
-                                }
-                            } else {
-                                if (result_.type == 'folder') {
-                                    tree_item_.setAttribute('has-children', true);
-                                    tree_row_.setAttribute('has-children', false);
-                                }
-                            }*/
-
-                            tree_row_.setAttribute('select', result_.selected);
-
-                        let exp_icon_ = document.createElement('span'); // <span class="expand-icon"></span>
-                            exp_icon_.classList.add('expand-icon');
-
-                            if (result_.type != 'folder') {
-                                exp_icon_.style.visibility = 'hidden';
-                            }
-
-                        let tree_label_ = document.createElement('span'); // <span class="tree-label"></span>
-                            tree_label_.classList.add('tree-label');
-                            //let label_text = document.createTextNode(result_.label);
-                            //tree_label_.appendChild(label_text);
-                            tree_label_.textContent = result_.label;
-
-                        let tree_children_ = document.createElement('div'); // <div class="tree-children" expanded="false" select="false"></div>
-                            tree_children_.classList.add('tree-children');
-                            tree_children_.setAttribute('expanded', result_.expanded);
-
-                        log("(Children) result_.id: " + result_.id);
-
-                        if (!result_) {
-                            //if (result_.type == 'folder') {
-                                tree_item_.setAttribute('has-children', false);
-                                tree_row_.setAttribute('has-children', false);
-                            //}
-                        } else {
-                            //if (result_.type == 'folder') {
-                                tree_item_.setAttribute('has-children', true);
-                                tree_row_.setAttribute('has-children', true);
-                            //}
-                        }
-
-
-                        tree_row_.appendChild(exp_icon_);
-                        tree_row_.appendChild(tree_label_);
-                        tree_item_.appendChild(tree_row_);
-                        tree_item_.appendChild(tree_children_);
-
-                        tree_row.appendChild(exp_icon);
-                        tree_row.appendChild(tree_label);
-                        tree_children.appendChild(tree_item_);
-                        tree_item.appendChild(tree_row);
-                        tree_item.appendChild(tree_children);
-
-                        fragment.appendChild(tree_item);
-                    }
-                }
-            }
-            folders.push(result_);
-
-            log("Tree:Data (result_): ", result_);
-            log("Tree:Data (folders): ", folders);
-            if(!ls.get("Tree:Folders")) {
-                ls.set("Tree:Folders", JSON.stringify(folders));
-            }
-            Tree.buildTree(dest, children);
-            //root.appendChild(fragment);
+            fragment.appendChild(tree_item);
         }
-        //Tree.buildTree(dest, result_);
-        root.appendChild(fragment);
     }
-
-    //log("Tree:Folders: ", folders);
-    //log("Tree.buildTree(): ", Tree.buildTree());
-
-    //return folders;
-    //return Tree.buildTree(dest, folders);
+    return fragment;
 };
+document.getElementById('tree-body-notes').appendChild(Tree.buildTree(Tree.notes));
+document.getElementById('tree-body-email').appendChild(Tree.buildTree(Tree.email));
+document.getElementById('tree-body-contacts').appendChild(Tree.buildTree(Tree.contacts));
 
 
 // Array of Notes
 var TreeNotes = localStorage[Tree.notes] ? JSON.parse(localStorage[Tree.notes]) : [];
-
 
 // Array of Email
 var TreeEmail = localStorage[Tree.email] ? JSON.parse(localStorage[Tree.email]) : [];
 
 // Array of Contacts
 var TreeContacts = localStorage[Tree.contacts] ? JSON.parse(localStorage[Tree.contacts]) : [];
-
-
-Tree.buildTree('#tree-body-notes', Tree.notes);
-Tree.buildTree('#tree-body-email', Tree.email);
-Tree.buildTree('#tree-body-contacts', Tree.contacts);
 
 
 if(!ls.get("Tree:Notes")) {

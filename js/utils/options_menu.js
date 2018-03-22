@@ -87,6 +87,7 @@ $(document).on('click', '.tree-row', function(e) {
 	// var options_menu_x = getOffset( document.querySelectorAll('.tree-item-options') ).left;
 	// var options_menu_y = getOffset( document.querySelectorAll('.tree-item-options') ).top;
 
+	log("[Options Menu] this: ", this);
 	var options_menu_x = this.style.left + 20;
 	var options_menu_y = this.style.top;
 
