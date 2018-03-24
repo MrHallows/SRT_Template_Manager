@@ -1009,51 +1009,13 @@ Tree.persist(Tree.email);
 Tree.persist(Tree.contacts);
 
 
-function traverse(x) {
-  if(isArray(x)) {
-    traverseArray(x);
-  } else if((typeof x === 'object') && (x !== null)) {
-    traverseObject(x);
-  } else {
-
-  }
-}
-
-function traverseArray(arr) {
-  arr.forEach(function(x) {
-    traverse(x);
-  })
-}
-
-function traverseObject(obj) {
-  for(var key in obj) {
-    if (obj.hasOwnProperty(key)) {
-      traverse(obj[key]);
-    }
-  }
-}
-
-function isArray(o) {
-  return Object.prototype.toString.call(o) === '[object Array]';
-}
-
-// usage:
-log("---- Traverse Tree.notes: ", traverse(Tree.notes));
-
-
 /* *
  * Build the HTML tree
  */
-Tree.buildTree = function(data) { //! Removed first parameter 'dest'. Append the output to each respective .tree-body
-    var folders = [];
-
-    //var root = document.querySelector(dest);
-
+Tree.buildTree = function(data) {
     var fragment = document.createDocumentFragment();
 
-    //log("dest: ", dest);
-
-    // Parse through data (i.e., Tree.notes)
+    // Iterate through data (i.e., Tree.notes)
     for(var index in data) {
         if(data.hasOwnProperty(index)) {
 
@@ -1068,10 +1030,6 @@ Tree.buildTree = function(data) { //! Removed first parameter 'dest'. Append the
                     if (node.type == 'folder') {
                         tree_item.setAttribute('has-children', false);
                         //log("Set attribute 'has-children' Item ID: " + tree_item.id + " to " + tree_item.getAttribute('has-children'));
-                        notification.open({
-                            severity: 'info',
-                            content: "Set attribute 'has-children' to " + tree_item.getAttribute('has-children')
-                        });
                     }
                 } else {
                     if (node.type == 'folder') {
@@ -1115,12 +1073,16 @@ Tree.buildTree = function(data) { //! Removed first parameter 'dest'. Append the
                 tree_label.classList.add('tree-label');
                 tree_label.textContent = node.label;
 
+            var options_button = document.createElement('span'); // <span class="tree-item-options"></span>
+                options_button.classList.add('tree-item-options');
+
             var tree_children = document.createElement('div'); // <div class="tree-children" expanded="false" select="false"></div>
                 tree_children.classList.add('tree-children');
                 tree_children.setAttribute('expanded', node.expanded);
 
             tree_row.appendChild(exp_icon);
             tree_row.appendChild(tree_label);
+            tree_row.appendChild(options_button);
 
             tree_item.appendChild(tree_row);
 
@@ -1131,7 +1093,6 @@ Tree.buildTree = function(data) { //! Removed first parameter 'dest'. Append the
                 }
                 tree_item.appendChild(tree_children);
             }
-
             fragment.appendChild(tree_item);
         }
     }
@@ -1152,7 +1113,8 @@ var TreeEmail = localStorage[Tree.email] ? JSON.parse(localStorage[Tree.email]) 
 var TreeContacts = localStorage[Tree.contacts] ? JSON.parse(localStorage[Tree.contacts]) : [];
 
 
-if(!ls.get("Tree:Notes")) {
+// Moved to js/init.js
+/*if(!ls.get("Tree:Notes")) {
     ls.set("Tree:Notes", JSON.stringify(Tree.notes));
 }
 if(!ls.get("Tree:Email")) {
@@ -1160,7 +1122,7 @@ if(!ls.get("Tree:Email")) {
 }
 if(!ls.get("Tree:Contacts")) {
     ls.set("Tree:Contacts", JSON.stringify(Tree.contacts));
-}
+}*/
 
 //log("Tree.getFirstLevelData(): ", Tree.getFirstLevelData(Tree.notes));
 

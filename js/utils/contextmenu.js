@@ -209,18 +209,18 @@ $('.context-menu').on('click', '#cm-edit', function(e) {
 
 			// Notes namespace
 			var Notes = {
-				index: ls.get("Notes:index"),
+				index: ls.get("Notes:Index"),
 
 				init: function() {
 					// Initialize the storage index
 					if (!Notes.index) {
-						ls.set("Notes:index", Notes.index = 1);
+						ls.set("Notes:Index", Notes.index = 1);
 					}
 
 					var note = note || {};
 
 					if($tree_item.attr('id') == "" || $tree_item.attr('id') == null || $tree_item.attr('id') == undefined) {
-						$tree_item.attr('id', 'note-' + ls.get("Notes:index"));
+						//$tree_item.attr('id', 'note-' + ls.get("Notes:Index"));
 						note.key = $tree_item.attr('id');
 					} else {
 						note.key = $tree_item.attr('id');
@@ -261,7 +261,7 @@ $('.context-menu').on('click', '#cm-edit', function(e) {
 					alert("Creating note: " + note.key);
 
 					ls.set(note.key, JSON.stringify(note));
-					ls.set("Notes:index", ++Notes.index);
+					ls.set("Notes:Index", ++Notes.index);
 
 					alert("Created key: " + ls.get(note.key));
 				},
@@ -307,18 +307,18 @@ $('.context-menu').on('click', '#cm-edit', function(e) {
 
 			// Emails namespace
 			var Emails = {
-				index: ls.get("Emails:index"),
+				index: ls.get("Email:Index"),
 
 				init: function() {
 					// Initialize the storage index
 					if (!Emails.index) {
-						ls.set("Emails:index", Emails.index = 1);
+						ls.set("Email:Index", Emails.index = 1);
 					}
 
 					var email = email || {};
 
 					if($tree_item.attr('id') == "" || $tree_item.attr('id') == null || $tree_item.attr('id') == undefined) {
-						$tree_item.attr('id', 'note-' + ls.get("Emails:index"));
+						//$tree_item.attr('id', 'email-' + ls.get("Email:Index"));
 						email.key = $tree_item.attr('id');
 					} else {
 						email.key = $tree_item.attr('id');
@@ -359,7 +359,7 @@ $('.context-menu').on('click', '#cm-edit', function(e) {
 					alert("Creating email: " + email.key);
 
 					ls.set(email.key, JSON.stringify(email));
-					ls.set("Emails:index", ++Emails.index);
+					ls.set("Email:Index", ++Emails.index);
 
 					alert("Created key: " + ls.get(email.key));
 				},
@@ -413,18 +413,18 @@ $('.context-menu').on('click', '#cm-edit', function(e) {
 
 			// Contacts namespace
 			var Contacts = {
-				index: ls.get("Contacts:index"),
+				index: ls.get("Contacts:Index"),
 
 				init: function() {
 					// Initialize the storage index
 					if (!Contacts.index) {
-						ls.set("Contacts:index", Contacts.index = 1);
+						ls.set("Contacts:Index", Contacts.index = 1);
 					}
 
 					var contact = contact || {};
 
 					if($tree_item.attr('id') == "" || $tree_item.attr('id') == null || $tree_item.attr('id') == undefined) {
-						$tree_item.attr('id', 'note-' + ls.get("Contacts:index"));
+						$tree_item.attr('id', 'note-' + ls.get("Contacts:Index"));
 						contact.key = $tree_item.attr('id');
 					} else {
 						contact.key = $tree_item.attr('id');
@@ -465,7 +465,7 @@ $('.context-menu').on('click', '#cm-edit', function(e) {
 					alert("Creating contact: " + contact.key);
 
 					ls.set(contact.key, JSON.stringify(contact));
-					ls.set("Contacts:index", ++Contacts.index);
+					ls.set("Contacts:Index", ++Contacts.index);
 
 					alert("Created key: " + ls.get(contact.key));
 				},
@@ -583,7 +583,7 @@ $('.context-menu').on('click', '#cm-new-item', function(e) {
 	var $tree_item_id = $tree_item.attr('id');
 	var $item_type = $selected.closest('.tree-tab-content').attr('item-type');
 	//alert("$item_type: " + $item_type);
-	var $item_id = $item_type + '-' + ls.get("Notes:index");
+	var $item_id = $item_type + '-' + ls.get("Notes:Index");
 	var title_ext = " - " + $label_text;
 
 	var $form = document.getElementById('content');
@@ -600,19 +600,20 @@ $('.context-menu').on('click', '#cm-new-item', function(e) {
 		case "note":
 			//Notes.init();
 			modal.open({
-				title: parentFolder + ' → New Item → ' + path,
-				content: '<input type="search" id="new-item-name" class="modal-input" name="new_item_name" placeholder="New Item Name"/><textarea id="new-item-body" class="modal-input" name="new_note_body"></textarea><div class="actionbar"><button class="button btn-cancel cancel">Cancel</button><button class="button btn-submit submit">Create</button></div>'
+				title: parentFolder + ' → New Note', // → ' + path,
+				content: '<input type="search" id="new-note-name" class="modal-input" name="new_note_name" placeholder="New Note Name"/><textarea id="new-note-body" class="modal-input" name="new_note_body"></textarea><div class="actionbar"><button class="button btn-cancel cancel">Cancel</button><button class="button btn-submit submit">Create</button></div>'
 			});
-			$('.modal-input').focus();
+			$('.modal-input:first').focus();
 
-			$('.button.btn-submit.submit').on('click', function(e) {
+			$('.button.btn-submit').on('click', function(e) {
 				e.preventDefault();
 
-				//ls.set("Notes:index", ++Notes.index);
+				//ls.set("Notes:Index", ++Notes.index);
 
 				var $this = $('.tree-row[select=true]').parent('.tree-item');
-				var $tree_item = $('<div id="' + $item_id + '" class="tree-item" item-type="' + $item_type + '" has-children="false"></div>');
+				var $tree_item = $('<div class="tree-item" item-type="' + $item_type + '" id="' + $item_id + '" has-children="false"></div>');
 				var $tree_row = $('<div class="tree-row" has-children="false"></div>');
+				var $exp_icon = $('<span class="expand-icon"></span>');
 				var $tree_label = $('<span class="tree-label"></span>'); /*' + $form.new_item_name.value + '*/
 				var $tree_children = $('<div class="tree-children" expanded="false"></div>');
 
@@ -622,11 +623,13 @@ $('.context-menu').on('click', '#cm-new-item', function(e) {
 						$this.append($tree_children);
 					}
 
-					// Add new folder to .tree-children
+					// Add new note to .tree-children
 					$this.find('.tree-children:first').append( //.prepend() to place at the top
 						$tree_item.append(
 							$tree_row.append(
-								$tree_label.text($form.new_item_name.value)
+								$exp_icon,
+								$tree_label.textContent($form.new_note_name.value),
+								$options_menu
 							)
 						)
 					);
@@ -639,14 +642,93 @@ $('.context-menu').on('click', '#cm-new-item', function(e) {
 
 
 		case "email":
-			//
-			alert("Disabled! Please select the 'Rename' option instead.");
+			modal.open({
+				title: parentFolder + ' → New Email', // → ' + path,
+				content: '<input type="search" id="new-email-name" class="modal-input" name="new_email_name" placeholder="Template Name"/><input type="search" id="new-email-to" class="modal-input" name="new_email_to" placeholder="To"/><input type="search" id="new-email-cc" class="modal-input" name="new_email_cc" placeholder="Cc"/><input type="search" id="new-email-subject" class="modal-input" name="new_email_subject" placeholder="Subject"/><input type="search" id="new-email-attachments" class="modal-input" name="new_email_attachments" placeholder="Attachments"/><textarea id="new-email-body" class="modal-input" name="new_email_body"></textarea><div class="actionbar"><button class="button btn-cancel cancel">Cancel</button><button class="button btn-submit submit">Create</button></div>'
+			});
+			$('.modal-input:first').focus();
+
+			$('.button.btn-submit').on('click', function(e) {
+				e.preventDefault();
+
+				//ls.set("Notes:Index", ++Notes.index);
+
+				var $this = $('.tree-row[select=true]').parent('.tree-item');
+				var $tree_item = $('<div class="tree-item" item-type="' + $item_type + '" id="' + $item_id + '" has-children="false"></div>');
+				var $tree_row = $('<div class="tree-row" has-children="false"></div>');
+				var $exp_icon = $('<span class="expand-icon"></span>');
+				var $tree_label = $('<span class="tree-label"></span>');
+				var $options_menu = $('<span class="tree-item-options"></span>');
+				var $tree_children = $('<div class="tree-children" expanded="false"></div>');
+
+				var add_item = function() {
+					if(!$this.find('.tree-children:first')) {
+						// Create .tree-children
+						$this.append($tree_children);
+					}
+
+					// Add new note to .tree-children
+					$this.find('.tree-children:first').append( //.prepend() to place at the top
+						$tree_item.append(
+							$tree_row.append(
+								$exp_icon,
+								$tree_label.textContent($form.new_email_name.value),
+								$options_menu
+							)
+						)
+					);
+				};
+				add_item();
+
+				modal.close();
+			});
 			break;
 
 
 		case "contact":
 			//
-			alert("Disabled! Please select the 'Rename' option instead.");
+			modal.open({
+				title: parentFolder + ' → New Contact', // → ' + path,
+				content: '<input type="search" id="new-contact-first-name" class="modal-input" name="new_contact_first_name" placeholder="First Name"/><input type="search" id="new-contact-last-name" class="modal-input" name="new_contact_last_name" placeholder="Last Name"/><input type="search" id="new-contact-full-name" class="modal-input" name="new_contact_full_name" placeholder="Full Name"/><input type="search" id="new-contact-phone" class="modal-input" name="new_contact_phone" placeholder="Phone" onkeydown="javascript:backspacerDOWN(this,event);" onkeyup="javascript:backspacerUP(this,event);"/><input type="search" id="new-contact-email" class="modal-input" name="new_contact_email" placeholder="Email"/><input type="search" id="new-contact-business" class="modal-input" name="new_contact_business" placeholder="Business"/><input type="search" id="new-contact-ean" class="modal-input" name="new_contact_ean" placeholder="EAN"/><textarea id="new-contact-comments" class="modal-input" name="new_contact_comments" placeholder="Comments"></textarea><div class="actionbar"><button class="button btn-cancel">Cancel</button><button class="button btn-submit">Save</button></div>'
+			});
+			$('.modal-input:first').focus();
+
+			$('.button.btn-submit').on('click', function(e) {
+				e.preventDefault();
+
+				//ls.set("Notes:Index", ++Notes.index);
+
+				var $this = $('.tree-row[select=true]').parent('.tree-item');
+				var $tree_item = $('<div class="tree-item" item-type="' + $item_type + '" id="' + $item_id + '" has-children="false"></div>');
+				var $tree_row = $('<div class="tree-row" has-children="false"></div>');
+				var $exp_icon = $('<span class="expand-icon"></span>');
+				var $tree_label = $('<span class="tree-label"></span>');
+				var $options_menu = $('<span class="tree-item-options"></span>');
+				var $tree_children = $('<div class="tree-children" expanded="false"></div>');
+
+				$form.new_contact_full_name.value = $form.new_contact_first_name.value + " " + $form.new_contact_last_name.value;
+
+				var add_item = function() {
+					if(!$this.find('.tree-children:first')) {
+						// Create .tree-children
+						$this.append($tree_children);
+					}
+
+					// Add new contact to .tree-children
+					$this.find('.tree-children:first').append( //.prepend() to place at the top
+						$tree_item.append(
+							$tree_row.append(
+								$exp_icon,
+								$tree_label.textContent($form.new_contact_fullname.value),
+								$options_menu
+							)
+						)
+					);
+				};
+				add_item();
+
+				modal.close();
+			});
 			break;
 	}
 
@@ -667,7 +749,7 @@ $('.context-menu').on('click', '#cm-new-folder', function(e) {
 	log("e.target: " + e.target);
 	
 	if($(e.target).is('.disabled')) {
-		alert("Disabled! To create a new Folder, open the context menu (right click) on the folder you would like it to be created in.");
+		alert("Information: To create a new Folder, open the context menu (right click) on the folder you would like it to be created in.");
 		return false;
 	} else {
 		// New Folder Modal
@@ -704,7 +786,9 @@ $('.context-menu').on('click', '#cm-new-folder', function(e) {
 			$this.find('.tree-children:first').append(
 				$tree_item.append(
 					$tree_row.append(
-						$expand_icon, $tree_label
+						$expand_icon,
+						$tree_label.textContent($form.new_folder_name.value),
+						$options_menu
 					)
 				).append($tree_children)
 			);

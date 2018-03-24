@@ -246,14 +246,15 @@ ol, ul {
 }
 
 .tree-item-options {
-    position: fixed;
+    position: inherit;
     float: right;
     background-image: url(../images/snowman.png);
-    background-position: -32px -16px;
+    /* background-position: -32px -16px; */
+    right: 3px;
     width: 16px;
     height: 16px;
     margin: 1px;
-    vertical-align: top;
+    /* vertical-align: top; */
     opacity: .4;
     z-index: 4;
 }
@@ -291,9 +292,9 @@ ol, ul {
     display: none;
 }*/
 
-.tree-row[has-children=false] {
+/*.tree-row[has-children=false] {
     -webkit-padding-start: 20px;
-}
+}*/
 
 .tree-row:hover {
     /*background-color: hsl(214, 91%, 97%);*/
@@ -334,7 +335,7 @@ ol, ul {
 }*/
 
 .tree-item > .tree-row > */*:not('.tree-item[is-editing] input')*/ {
-    display: inline-block;
+    display: contents;
     box-sizing: border-box;
 }
 .tree-label {
@@ -346,7 +347,7 @@ ol, ul {
     text-overflow: ellipsis;
     max-width: 186px;
     /* width: auto !important; */
-    width: 186px;
+    width: 173px;
     height: 16px !important;
     -webkit-padding-start: 20px;
     margin: 1px 0 !important;

@@ -2,7 +2,17 @@
 /* js/main.js */
 
 
-var state = {};
+// Array of Notes
+var NotesList = localStorage[NotesList] ? JSON.parse(localStorage[NotesList]) : [];
+
+// Array of Email
+var EmailList = localStorage[EmailList] ? JSON.parse(localStorage[EmailList]) : [];
+
+// Array of Contacts
+var ContactsList = localStorage[ContactsList] ? JSON.parse(localStorage[ContactsList]) : [];
+
+
+var state = state || {};
 
 // View State
 $(window).on('beforeunload', function() {
@@ -113,24 +123,24 @@ $(document).on('click', '.tree-row', function() {
 					severity: 'success',
 					content: 'Note has been defined!'
 				});
+			}
 
-				if(_this.name == '' || null || undefined) {
-					notification.open({
-						severity: 'error',
-						content: 'No name defined for this note!'
-					});
-				} else {
-					$('#note-view .name > span').text(_this.name);
-				}
+			if(_this.name == '' || null || undefined) {
+				notification.open({
+					severity: 'error',
+					content: 'No name defined for this note!'
+				});
+			} else {
+				$('#note-view .name > span').text(_this.name);
+			}
 
-				if(_this.body == '' || null || undefined) {
-					notification.open({
-						severity: 'error',
-						content: 'No body defined for this note!'
-					});
-				} else {
-					$('#note-view .body > pre').text(decode(_this.body));
-				}
+			if(_this.body == '' || null || undefined) {
+				notification.open({
+					severity: 'error',
+					content: 'No body defined for this note!'
+				});
+			} else {
+				$('#note-view .body > pre').text(decode(_this.body));
 			}
 			break;
 
@@ -176,23 +186,23 @@ $(document).on('click', '.tree-row', function() {
 
 
 /*
-if (!ls.get("Notes:index")) {
-	ls.set("Notes:index", 1);
+if (!ls.get("Notes:Index")) {
+	ls.set("Notes:Index", 1);
 } else {
-	ls.get("Notes:index");
-}
-
-if (!ls.get("Email:index")) {
-	ls.set("Email:index", 1);
-} else {
-	ls.get("Email:index");
-}
-
-if (!ls.get("Contacts:index")) {
-	ls.set("Contacts:index", 1);
-} else {
-	ls.get("Contacts:index");
+	ls.get("Notes:Index");
 }*/
+
+if (!ls.get("Email:Index")) {
+	ls.set("Email:Index", 1);
+} else {
+	ls.get("Email:Index");
+}
+
+if (!ls.get("Contacts:Index")) {
+	ls.set("Contacts:Index", 1);
+} else {
+	ls.get("Contacts:Index");
+}
 
 
 /*$('input').on('focus', function(e) {
@@ -267,18 +277,16 @@ $('#btnClearCookies').on('click', function() {
 
 
 
-
-
-    $('.modal-input').on('keydown', function(e) {
-        if($(this).val() != "") {
-            $(this).siblings('label').css('visibility', 'hidden');
-            var lbl_text = $(this).siblings('label').text();
-            log("Label " + lbl_text + " is hidden");
-            log("Textbox value: " + $(this).val());
-        } else {
-            $(this).siblings('label').css('visibility', 'visible');
-            var lbl_text = $(this).siblings('label').text();
-            log("Label " + lbl_text + " is visible");
-            log("Textbox value: " + $(this).val());
-        }
-    });
+$('.modal-input').on('keydown', function(e) {
+	if($(this).val() != "") {
+		$(this).siblings('label').css('visibility', 'hidden');
+		var lbl_text = $(this).siblings('label').text();
+		log("Label " + lbl_text + " is hidden");
+		log("Textbox value: " + $(this).val());
+	} else {
+		$(this).siblings('label').css('visibility', 'visible');
+		var lbl_text = $(this).siblings('label').text();
+		log("Label " + lbl_text + " is visible");
+		log("Textbox value: " + $(this).val());
+	}
+});

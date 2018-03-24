@@ -61,7 +61,7 @@ ls.set('SRTTM_State', JSON.stringify(state));*/
 });*/
 
 
-var state = {};
+var state = state || {};
 
 // Tabs
 $('.tree-tabs').each(function() {
@@ -112,20 +112,20 @@ $('.tree-tabs').each(function() {
 
 
 // Dynamically set tree-item id's
-/*var noteId = 0;//ls.get("Notes:index");
+/*var noteId = 0;//ls.get("Notes:Index");
 $('.tree-item[item-type=note]').each(function() {
 	this.id = 'note-' + ++noteId;
-});*/
+});
 
-var emailId = 0;//ls.get("Email:index");
+var emailId = 0;//ls.get("Email:Index");
 $('.tree-item[item-type=email]').each(function() {
 	this.id = 'email-' + ++emailId;
 });
 
-var contactId = 0;//ls.get("Contacts:index");
+var contactId = 0;//ls.get("Contacts:Index");
 $('.tree-item[item-type=contact]').each(function() {
 	this.id = 'contact-' + ++contactId;
-});
+});*/
 
 
 // Tree Components
