@@ -27,6 +27,7 @@ a {
  */
 .options-menu {
 	display: none;
+	position: absolute;
 	background-color: #252526;
 	border: 1px solid #aaa;
 	border-radius: 0;
@@ -36,12 +37,10 @@ a {
 	max-height: 400px;
 	padding: 0;
 	margin-top: 2px;
-	position: absolute;
 	z-index: 1000;
-	float: left;
+	/* float: left; */
 	overflow-y: auto;
 	text-align: left;
-	list-style: none;
 }
 
 /* *

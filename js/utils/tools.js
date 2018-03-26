@@ -84,7 +84,7 @@ $(document).ready(function() {
         var _error = 0;
         var _trackString = 'calculateDimWeight: ';
 
-        switch ($('#dimForm_form input[type="radio"]:checked').attr('class')) {
+        switch($('#dimForm_form input[type="radio"]:checked').attr('class')) {
             // Pulling class as a value since value attribute clears out when resetting form
             case 'domestic':
                 _shipRatio = 139;
@@ -98,14 +98,14 @@ $(document).ready(function() {
                 _shipRatio = 0;
         }
 
-        if ($('#length_val').val().match(/^\d+$/) && $('#width_val').val().match(/^\d+$/) && $('#height_val').val().match(/^\d+$/)) {
+        if($('#length_val').val().match(/^\d+$/) && $('#width_val').val().match(/^\d+$/) && $('#height_val').val().match(/^\d+$/)) {
             $('#dim_error').hide();
         } else {
             $('#dim_error').show();
             var _error = 1;
         }
 
-        if (_error == 0) {
+        if(_error == 0) {
             var _length = $('#length_val').val();
             var _height = $('#height_val').val();
             var _width = $('#width_val').val();
@@ -121,8 +121,9 @@ $(document).ready(function() {
 
             showResult(_dimWeight, _trackString);
         }
-
+        e.preventDefault();
     });
+    
     function showResult(_shippingWeight, _statement) {
         //logLinkView(_statement, 'event5');
 
@@ -204,7 +205,7 @@ $(document).ready(function() {
 
 
 
-$('#btnTools').on('click', function(e) {
+$('#rs-tools').on('click', function(e) {
     e.preventDefault();
 
     var $form = document.getElementById('content');

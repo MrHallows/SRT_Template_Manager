@@ -87,9 +87,9 @@ $(document).on('click', '.tree-row', function(e) {
 	// var options_menu_x = getOffset( document.querySelectorAll('.tree-item-options') ).left;
 	// var options_menu_y = getOffset( document.querySelectorAll('.tree-item-options') ).top;
 
-	log("[Options Menu] this: ", this);
-	var options_menu_x = this.style.left + 20;
-	var options_menu_y = this.style.top;
+	log("[Options Menu] this: ", e.target);
+	var options_menu_x = e.target.style.left + 20;
+	var options_menu_y = e.target.style.top;
 
 	// Display menu
 	$('.options-menu').css({
@@ -236,18 +236,18 @@ $('.options-menu').on('click', '#om-edit', function(e) {
 
 			// Notes namespace
 			var Notes = {
-				index: ls.get("Notes:index"),
+				index: ls.get("Notes:Index"),
 
 				init: function() {
 					// Initialize the storage index
 					if (!Notes.index) {
-						ls.set("Notes:index", Notes.index = 1);
+						ls.set("Notes:Index", Notes.index = 1);
 					}
 
 					var note = note || {};
 
 					if($tree_item.attr('id') == "" || $tree_item.attr('id') == null || $tree_item.attr('id') == undefined) {
-						$tree_item.attr('id', 'note-' + ls.get("Notes:index"));
+						$tree_item.attr('id', 'note-' + ls.get("Notes:Index"));
 						note.key = $tree_item.attr('id');
 					} else {
 						note.key = $tree_item.attr('id');
@@ -288,7 +288,7 @@ $('.options-menu').on('click', '#om-edit', function(e) {
 					alert("Creating note: " + note.key);
 
 					ls.set(note.key, JSON.stringify(note));
-					ls.set("Notes:index", ++Notes.index);
+					ls.set("Notes:Index", ++Notes.index);
 
 					alert("Created key: " + ls.get(note.key));
 				},
@@ -334,18 +334,18 @@ $('.options-menu').on('click', '#om-edit', function(e) {
 
 			// Emails namespace
 			var Emails = {
-				index: ls.get("Emails:index"),
+				index: ls.get("Emails:Index"),
 
 				init: function() {
 					// Initialize the storage index
 					if (!Emails.index) {
-						ls.set("Emails:index", Emails.index = 1);
+						ls.set("Emails:Index", Emails.index = 1);
 					}
 
 					var email = email || {};
 
 					if($tree_item.attr('id') == "" || $tree_item.attr('id') == null || $tree_item.attr('id') == undefined) {
-						$tree_item.attr('id', 'note-' + ls.get("Emails:index"));
+						$tree_item.attr('id', 'note-' + ls.get("Emails:Index"));
 						email.key = $tree_item.attr('id');
 					} else {
 						email.key = $tree_item.attr('id');
@@ -386,7 +386,7 @@ $('.options-menu').on('click', '#om-edit', function(e) {
 					alert("Creating email: " + email.key);
 
 					ls.set(email.key, JSON.stringify(email));
-					ls.set("Emails:index", ++Emails.index);
+					ls.set("Emails:Index", ++Emails.index);
 
 					alert("Created key: " + ls.get(email.key));
 				},
@@ -440,18 +440,18 @@ $('.options-menu').on('click', '#om-edit', function(e) {
 
 			// Contacts namespace
 			var Contacts = {
-				index: ls.get("Contacts:index"),
+				index: ls.get("Contacts:Index"),
 
 				init: function() {
 					// Initialize the storage index
 					if (!Contacts.index) {
-						ls.set("Contacts:index", Contacts.index = 1);
+						ls.set("Contacts:Index", Contacts.index = 1);
 					}
 
 					var contact = contact || {};
 
 					if($tree_item.attr('id') == "" || $tree_item.attr('id') == null || $tree_item.attr('id') == undefined) {
-						$tree_item.attr('id', 'note-' + ls.get("Contacts:index"));
+						$tree_item.attr('id', 'note-' + ls.get("Contacts:Index"));
 						contact.key = $tree_item.attr('id');
 					} else {
 						contact.key = $tree_item.attr('id');
@@ -492,7 +492,7 @@ $('.options-menu').on('click', '#om-edit', function(e) {
 					alert("Creating contact: " + contact.key);
 
 					ls.set(contact.key, JSON.stringify(contact));
-					ls.set("Contacts:index", ++Contacts.index);
+					ls.set("Contacts:Index", ++Contacts.index);
 
 					alert("Created key: " + ls.get(contact.key));
 				},
@@ -610,7 +610,7 @@ $('.options-menu').on('click', '#om-new-item', function(e) {
 	var $tree_item_id = $tree_item.attr('id');
 	var $item_type = $selected.closest('.tree-tab-content').attr('item-type');
 	//alert("$item_type: " + $item_type);
-	var $item_id = $item_type + '-' + ls.get("Notes:index");
+	var $item_id = $item_type + '-' + ls.get("Notes:Index");
 	var title_ext = " - " + $label_text;
 
 	var $form = document.getElementById('content');
@@ -635,7 +635,7 @@ $('.options-menu').on('click', '#om-new-item', function(e) {
 			$('.button.btn-submit.submit').on('click', function(e) {
 				e.preventDefault();
 
-				//ls.set("Notes:index", ++Notes.index);
+				//ls.set("Notes:Index", ++Notes.index);
 
 				var $this = $('.tree-row[select=true]').parent('.tree-item');
 				var $tree_item = $('<div id="' + $item_id + '" class="tree-item" item-type="' + $item_type + '" has-children="false"></div>');

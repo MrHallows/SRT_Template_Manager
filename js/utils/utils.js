@@ -38,11 +38,20 @@ var partsParser = (data) => {
 partsParser(parts);
 
 
-function encode(e) {
-	return encodeURIComponent(e);
+/**
+ * Encode URI
+ * @param {string} str 
+ */
+function encode(str) {
+	return encodeURIComponent(str);
 }
-function decode(e) {
-	return decodeURIComponent(e);
+
+/**
+ * Decode URI
+ * @param {string} str 
+ */
+function decode(str) {
+	return decodeURIComponent(str);
 }
 
 
@@ -96,14 +105,14 @@ function copy(id) {
    * @param {string} truncateStr
    * @return {?}
    */
-var self = {};
+/*var self = {};
 String.prototype.truncate = function(str, length, truncateStr) {
     return truncateStr = truncateStr || "…",
     str.length > length ? str.slice(0, length) + truncateStr : str;
-};
+};*/
 
 
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+/**
  * Compare two dotted version strings (like '10.2.3').
  * @returns {Integer} 0: v1 == v2, -1: v1 < v2, 1: v1 > v2
  */
@@ -394,3 +403,34 @@ function unescapeEx(tmpstr) {
 	}
 	return tmpstr2;
 }*/
+
+
+
+/**
+ * Helper function to get an element's exact position
+ */
+function getPos(element) {
+	var xPos = 0;
+	var yPos = 0;
+
+	while (element) {
+		if (element.tagName == "BODY") {
+			// deal with browser quirks with body/window/document and page scroll
+			var xScroll = element.scrollLeft || document.documentElement.scrollLeft;
+			var yScroll = element.scrollTop || document.documentElement.scrollTop;
+
+			xPos += (element.offsetLeft - xScroll + element.clientLeft);
+			yPos += (element.offsetTop - yScroll + element.clientTop);
+		} else {
+			// for all other non-BODY elements
+			xPos += (element.offsetLeft - element.scrollLeft + element.clientLeft);
+			yPos += (element.offsetTop - element.scrollTop + element.clientTop);
+		}
+
+		element = element.offsetParent;
+	}
+	return {
+		x: xPos,
+		y: yPos
+	};
+}

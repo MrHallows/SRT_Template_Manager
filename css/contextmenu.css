@@ -38,10 +38,9 @@ a {
 	margin-top: 2px;
 	position: absolute;
 	z-index: 1000;
-	float: left;
+	/* float: left; */
 	overflow-y: auto;
 	text-align: left;
-	list-style: none;
 }
 
 /* *

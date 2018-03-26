@@ -271,7 +271,7 @@ $('.tree').on('click', '.tree-row[has-children=true] .expand-icon', function() {
 	//log("this: " + $(this).text());
 
 	// Slide animation for .tree-children
-	if($sib.css('-webkit-padding-start') == '0px') {
+	/*if($sib.css('-webkit-padding-start') == '0px') {
 		var digits = padl.match(/\d+/);
 		//log("digits: " + digits);
 		newPad = (digits + 17) + 'px';
@@ -285,7 +285,7 @@ $('.tree').on('click', '.tree-row[has-children=true] .expand-icon', function() {
 		//log("newPad: " + newPad);
 		//$sib.css('display', 'none');
 		return newPad;
-	}
+	}*/
 
 	/*if($par.attr('expanded') == 'true') {
 		$sib.attr('expanded', 'true');

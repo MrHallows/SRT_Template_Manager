@@ -28,9 +28,6 @@ var $get_this = (function() {
 	return $(this);
 });
 
-/* getPos */
-//var getPos
-
 
 /*$(document).on('contextmenu', function(e) {
     if (!$(e.target).is("#special"))
@@ -614,7 +611,8 @@ $('.context-menu').on('click', '#cm-new-item', function(e) {
 				var $tree_item = $('<div class="tree-item" item-type="' + $item_type + '" id="' + $item_id + '" has-children="false"></div>');
 				var $tree_row = $('<div class="tree-row" has-children="false"></div>');
 				var $exp_icon = $('<span class="expand-icon"></span>');
-				var $tree_label = $('<span class="tree-label"></span>'); /*' + $form.new_item_name.value + '*/
+				var $tree_label = $('<span class="tree-label"></span>');
+				var $options_menu = $('<span class="tree-item-options"></span>');
 				var $tree_children = $('<div class="tree-children" expanded="false"></div>');
 
 				var add_item = function() {
@@ -628,7 +626,7 @@ $('.context-menu').on('click', '#cm-new-item', function(e) {
 						$tree_item.append(
 							$tree_row.append(
 								$exp_icon,
-								$tree_label.textContent($form.new_note_name.value),
+								$tree_label.text($form.new_note_name.value),
 								$options_menu
 							)
 						)
@@ -672,7 +670,7 @@ $('.context-menu').on('click', '#cm-new-item', function(e) {
 						$tree_item.append(
 							$tree_row.append(
 								$exp_icon,
-								$tree_label.textContent($form.new_email_name.value),
+								$tree_label.text($form.new_email_name.value),
 								$options_menu
 							)
 						)
@@ -719,7 +717,7 @@ $('.context-menu').on('click', '#cm-new-item', function(e) {
 						$tree_item.append(
 							$tree_row.append(
 								$exp_icon,
-								$tree_label.textContent($form.new_contact_fullname.value),
+								$tree_label.text($form.new_contact_fullname.value),
 								$options_menu
 							)
 						)
@@ -773,7 +771,8 @@ $('.context-menu').on('click', '#cm-new-folder', function(e) {
 		var $tree_item = $('<div class="tree-item" item-type="folder" has-children="true" expanded="false"></div>');
 		var $tree_row = $('<div class="tree-row" has-children="true" may-have-children=""></div>');
 		var $expand_icon = $('<span class="expand-icon"></span>');
-		var $tree_label = $('<span class="tree-label">' + $form.new_folder_name.value + '</span>');
+		var $tree_label = $('<span class="tree-label"></span>');
+		var $options_menu = $('<span class="tree-item-options"></span>');
 		var $tree_children = $('<div class="tree-children" expanded="false"></div>');
 
 		var add_folder = function() {
@@ -783,11 +782,11 @@ $('.context-menu').on('click', '#cm-new-folder', function(e) {
 			}
 
 			// Add new folder to .tree-children
-			$this.find('.tree-children:first').append(
+			$this.find('.tree-children:first').prepend(
 				$tree_item.append(
 					$tree_row.append(
 						$expand_icon,
-						$tree_label.textContent($form.new_folder_name.value),
+						$tree_label.text($form.new_folder_name.value),
 						$options_menu
 					)
 				).append($tree_children)

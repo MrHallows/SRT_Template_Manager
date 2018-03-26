@@ -1,0 +1,57 @@
+/* tools.css */
+/* css/tools.css */
+
+
+/**
+ * Dim Calc
+ */
+.dim-calc {
+	display: block; /* default: inline-block */
+	position: relative;
+	float: right;
+	border: 1px solid #555;
+	color: #fff;
+	width: 600px;
+	height: auto; /* default: 600px; */
+	padding: 10px;
+	/* margin: 10px; */
+}
+
+
+
+.fxg-field {
+	display: block; /* default: inline-block */
+	position: relative;
+	width: 415px;
+	float: left;
+	text-align: left;
+	/* vertical-align: bottom; */
+}
+.input-text {
+	background: #fafafa;
+	font-size: 20px;
+	font-weight: 300;
+	width: calc(100% - 3px);
+	padding: 27px 8px 10px 15px;
+	border: 0;
+	border-radius: 0;
+	box-shadow: none;
+}
+.input-text:focus {
+	border-left: 2px solid #4d148c;
+	opacity: 1 !important;
+}
+/*.placeholder {
+	position: absolute;
+	left: 15px;
+	top: 24px;
+}*/
+.floating-placeholder {
+	position: absolute;
+	font-size: 14px;
+	text-transform: uppercase;
+	left: 15px;
+	top: 24px;
+	pointer-events: none;
+	transition: all .2s ease;
+}
