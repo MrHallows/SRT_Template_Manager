@@ -246,7 +246,7 @@ ol, ul {
 }
 
 .tree-item-options {
-    position: inherit;
+    position: absolute;
     float: right;
     background-image: url(../images/snowman.png);
     /* background-position: -32px -16px; */
@@ -335,7 +335,7 @@ ol, ul {
 }*/
 
 .tree-item > .tree-row > */*:not('.tree-item[is-editing] input')*/ {
-    display: contents;
+    display: inline-block;
     box-sizing: border-box;
 }
 .tree-label {
