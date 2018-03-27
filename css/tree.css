@@ -250,7 +250,7 @@ ol, ul {
     float: right;
     background-image: url(../images/snowman.png);
     /* background-position: -32px -16px; */
-    right: 3px;
+    right: 0;
     width: 16px;
     height: 16px;
     margin: 1px;
