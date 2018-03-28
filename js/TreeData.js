@@ -1102,6 +1102,10 @@ document.getElementById('tree-body-notes').appendChild(Tree.buildTree(Tree.notes
 document.getElementById('tree-body-email').appendChild(Tree.buildTree(Tree.email));
 document.getElementById('tree-body-contacts').appendChild(Tree.buildTree(Tree.contacts));
 
+log(Tree.buildTree(Tree.notes));
+log(Tree.buildTree(Tree.email));
+log(Tree.buildTree(Tree.contacts));
+
 
 // Array of Notes
 var TreeNotes = localStorage[Tree.notes] ? JSON.parse(localStorage[Tree.notes]) : [];
