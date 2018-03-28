@@ -3,7 +3,7 @@
 
 
 /* *
- * FedEx Dimensional Weight Calculator
+ * Dimensional Weight Calculator
  *
  ~ Search Query URLs ~
 
@@ -62,7 +62,7 @@ $('#rs-tools').on('click', function(e) {
 
     modal.open({
         title: 'Tools',
-        content: '<div id="tools-dim-calc" class="modal-input tools-tile" name="tools_dim_calc"><div>Dimensional Weight Calculator</div></div><div id="tools-1" class="modal-input tools-tile" name="tools_"><div>Another Tool</div></div><div id="tools-2" class="modal-input tools-tile" name="tools_"><div>Another Tool</div></div><div class="actionbar"><button class="button btn-cancel">Cancel</button><button class="button btn-submit">Save</button></div>'
+        content: '<div class="row"><div id="tools-dim-calc" class="modal-input tools-tile" name="tools_dim_calc"><div>Dimensional Weight Calculator</div></div><div id="tools-1" class="modal-input tools-tile" name="tools_1"><div>Another Tool</div></div><div id="tools-2" class="modal-input tools-tile" name="tools_2"><div>Another Tool</div></div></div><div class="row"><div id="tools-3" class="modal-input tools-tile" name="tools_3"><div>Another Tool</div></div><div id="tools-4" class="modal-input tools-tile" name="tools_4"><div>Another Tool</div></div><div id="tools-5" class="modal-input tools-tile" name="tools_5"><div>Another Tool</div></div></div>'
     });
 
     $('#tools-dim-calc').on('click', function(e) {

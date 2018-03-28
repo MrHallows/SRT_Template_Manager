@@ -2,6 +2,45 @@
 /* css/tools.css */
 
 
+/* *
+ * Tools Modal
+ */
+.tools-tile {
+	display: inline-grid;
+	color: #51a8ff;
+	width: 100px;
+	height: 100px;
+	padding: 8px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+    cursor: pointer;
+    transform-origin: center;
+	transition: .3s cubic-bezier(0.18, 0.89, 0.5, 1.46);
+}
+.tools-tile:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 4px 0 #333;
+}
+
+.tools-tile:last-child {
+	margin-right: 0;
+}
+
+.row:last-child .tools-tile {
+	margin-bottom: 0;
+}
+
+.tools-tile div {
+	width: 82px;
+	height: 82px;
+	text-align: center;
+	-webkit-font-smoothing: subpixel-antialiased;
+	vertical-align: middle;
+	line-height: 1.65;
+	user-select: none;
+}
+
+
 /**
  * Dim Calc
  */

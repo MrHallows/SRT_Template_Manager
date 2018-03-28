@@ -26,8 +26,8 @@
     height: auto;
     padding: 25px 5px 5px 5px;
     /* margin-top: 62px; */
-    /* margin: auto; */
-    margin-bottom: 60px;
+    margin: auto;
+    /* margin-bottom: 60px; */
     z-index: 3;
 }
 
@@ -43,7 +43,7 @@
 	left: 0;
 	width: 100%;
 	height: auto;
-	margin-bottom: 20px;
+	/* margin-bottom: 20px; */
 	padding: 4px;
 }
 .modal-title {
@@ -224,34 +224,4 @@ select.modal-input {
     /* background: #333333; */
     border: 1px solid #e93060; /* default: #ed174b */
     color: #e93060; /* default: #ed174b */
-}
-
-
-/* *
- * Tools Modal
- */
-.tools-tile {
-	display: inline-flex;
-	color: #51a8ff;
-	width: 100px;
-	height: 100px;
-	padding: 8px;
-	margin-right: 10px;
-	margin-bottom: 10px;
-	cursor: pointer;
-	transition: .3s cubic-bezier(0.18, 0.89, 0.5, 1.46);
-}
-.tools-tile:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 4px 0 #333;
-}
-
-.tools-tile div {
-	width: 82px;
-	height: 82px;
-	text-align: center;
-	-webkit-font-smoothing: subpixel-antialiased;
-	vertical-align: middle;
-	line-height: 1.65;
-	user-select: none;
 }
