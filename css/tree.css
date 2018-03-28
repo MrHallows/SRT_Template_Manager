@@ -246,25 +246,23 @@ ol, ul {
 }
 
 .tree-item-options {
-    position: absolute;
-    float: right;
-    background-image: url(../images/snowman.png);
-    /* background-position: -32px -16px; */
-    right: 0;
-    width: 16px;
-    height: 16px;
-    margin: 1px;
-    /* vertical-align: top; */
-    opacity: .4;
-    z-index: 4;
+	position: absolute;
+	float: right;
+	background-image: url(../images/snowman.png);
+	right: 0;
+	width: 16px;
+	height: 16px;
+	margin: 1px;
+	vertical-align: top;
+	opacity: .4;
+	z-index: 4;
 }
 .tree-item-options:hover {
-    background-color: #333;
-    cursor: pointer;
-    opacity: 1;
-    z-index: 4;
+	background-color: #333;
+	cursor: pointer;
+	opacity: 1;
+	z-index: 4;
 }
-
 
 .tree-item[expanded=true] {
     height: auto;

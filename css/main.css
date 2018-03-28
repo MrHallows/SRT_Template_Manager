@@ -51,7 +51,7 @@ body {
 ::selection {
     background-color: #111;
     color: #7fffd4;
-    text-shadow: 1px 1px 2px #000;
+    /*text-shadow: 1px 1px 2px #000;*/
 }
 
 /* *
@@ -360,13 +360,10 @@ img {
 	opacity: 1;
 	filter: alpha(opacity=100);
 }
-.right-shelf ul li a {
+.right-shelf ul li div {
 	color: #fff;
 	font-weight: 400;
-}
-.right-shelf ul li a {
-	color: #fff;
-	font-weight: 400;
+	width: auto;
 }
 .right-shelf ul li img {
 	width: 16px;
@@ -595,13 +592,13 @@ input[type=checkbox]:checked {
 
 
 
-#template-test {
+/*#template-test {
     color: #51a8ff;
     width: 600px;
     height: 430px;
     margin: 10px;
     resize: none;
-}
+}*/
 
 
 /* *
@@ -680,3 +677,58 @@ input[type=checkbox]:checked {
     left: 0;
     margin-top: 6px;
 }*/
+
+
+/* *
+ * Dim Calc
+ */
+.dim-calc {
+	display: block; /* default: inline-block */
+	position: relative;
+	float: right;
+	border: 1px solid #555;
+	color: #fff;
+	width: 600px;
+	height: auto; /* default: 600px; */
+	padding: 10px;
+	/* margin: 10px; */
+}
+
+
+
+.fxg-field {
+	display: block; /* default: inline-block */
+	position: relative;
+	width: 415px;
+	float: left;
+	text-align: left;
+	/* vertical-align: bottom; */
+}
+.input-text {
+	background: #fafafa;
+	font-size: 20px;
+	font-weight: 300;
+	width: calc(100% - 3px);
+	padding: 27px 8px 10px 15px;
+	border: 0;
+	border-radius: 0;
+	box-shadow: none;
+}
+.input-text:focus {
+	border-left: 2px solid #4d148c;
+	opacity: 1 !important;
+}
+/*.placeholder {
+	position: absolute;
+	left: 15px;
+	top: 24px;
+}*/
+.floating-placeholder {
+	position: absolute;
+	font-size: 14px;
+	text-transform: uppercase;
+	left: 15px;
+	top: 24px;
+	pointer-events: none;
+	transition: all .2s ease;
+}

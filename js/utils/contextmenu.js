@@ -42,9 +42,9 @@ var $get_this = (function() {
 /* *
  * Context Menu
  */
-$(document).on('contextmenu', '.tree-row', function(e) {
+$(document).on('contextmenu', '.tree-body', function(e) {
 	// Restrict the context menu to only open if .tree-row or .tree-label is right clicked.
-	if (!$(e.target).is('.tree-row') && !$(e.target).is('.tree-label'))
+	if (!$(e.target).is('.tree-row') && !$(e.target).is('.tree-label') && !$(e.target).is('.tree-body'))
 		return false;
 
 	$this = $get_this().parent('.tree-item');
@@ -103,16 +103,37 @@ $('.tree').on('contextmenu', '.tree-row', function(e) {
 		$('#cm-new-folder').addClass('disabled');
 		$('#cm-new-item').addClass('disabled');
 	} else { // Otherwise, "enable" all menu items
-		$('#cm-new-folder').removeClass('disabled');
+		$('#cm-rename').removeClass('disabled');
+		$('#cm-edit').removeClass('disabled');
+		$('#cm-delete').removeClass('disabled');
 		$('#cm-new-item').removeClass('disabled');
+		$('#cm-new-folder').removeClass('disabled');
 	}
 
 	// If the right-clicked tree-row is a folder, disable the "Edit" menu item
 	if($(this).parent('.tree-item').attr('item-type') == "folder") {
 		$('#cm-edit').addClass('disabled');
 	} else { // Otherwise, "enable" all menu items
+		$('#cm-rename').removeClass('disabled');
 		$('#cm-edit').removeClass('disabled');
+		$('#cm-delete').removeClass('disabled');
+		$('#cm-new-item').removeClass('disabled');
+		$('#cm-new-folder').removeClass('disabled');
 	}
+
+	e.preventDefault();
+});
+
+
+// Disable unrelated menu items
+$('.tree-body').on('contextmenu', function(e) {
+
+	// If the right-clicked tree-body is not a folder, disable the "New Item" & "New Folder" menu items
+	$('#cm-rename').addClass('disabled');
+	$('#cm-edit').addClass('disabled');
+	$('#cm-delete').addClass('disabled');
+	$('#cm-new-item').addClass('disabled');
+	$('#cm-new-folder').removeClass('disabled');
 
 	e.preventDefault();
 });
@@ -756,6 +777,10 @@ $('.context-menu').on('click', '#cm-new-folder', function(e) {
 
 	var parentFolder = $('.tree-row[select=true]').find('.tree-label').text();
 
+	if(parentFolder == "") {
+		parentFolder = "Tree Body";
+	}
+
 	var $form = document.getElementById('content');
 
 	modal.open({
@@ -770,7 +795,7 @@ $('.context-menu').on('click', '#cm-new-folder', function(e) {
 		var $this = $('.tree-row[select=true]').parent('.tree-item');
 		var $tree_item = $('<div class="tree-item" item-type="folder" has-children="true" expanded="false"></div>');
 		var $tree_row = $('<div class="tree-row" has-children="true" may-have-children=""></div>');
-		var $expand_icon = $('<span class="expand-icon"></span>');
+		var $exp_icon = $('<span class="expand-icon"></span>');
 		var $tree_label = $('<span class="tree-label"></span>');
 		var $options_menu = $('<span class="tree-item-options"></span>');
 		var $tree_children = $('<div class="tree-children" expanded="false"></div>');
@@ -785,7 +810,7 @@ $('.context-menu').on('click', '#cm-new-folder', function(e) {
 			$this.find('.tree-children:first').prepend(
 				$tree_item.append(
 					$tree_row.append(
-						$expand_icon,
+						$exp_icon,
 						$tree_label.text($form.new_folder_name.value),
 						$options_menu
 					)
@@ -793,6 +818,8 @@ $('.context-menu').on('click', '#cm-new-folder', function(e) {
 			);
 		};
 		add_folder();
+
+		parentFolder = "";
 
 		modal.close();
 	});
