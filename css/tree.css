@@ -177,10 +177,10 @@ ol, ul {
     display: block;
     position: relative;
     background: transparent;
-    width: auto;
+    width: 100%;
     height: 100%; /* 308px */
     padding: 0;
-    overflow: auto;
+    overflow: overlay;
 }
 
 
@@ -235,13 +235,12 @@ ol, ul {
     background-position: -32px -16px;
     width: 16px;
     height: 16px;
-    /*opacity: .6;*/
-    /*top: 1px;*/
     margin: 1px;
     vertical-align: top;
 }
 .expand-icon:hover {
     background-image: url(../images/ui-icons_2e83ff_256x240.png);
+    cursor: pointer;
 }
 
 .tree-item-options {
@@ -297,17 +296,17 @@ ol, ul {
 .tree-children {
     display: none;
     -webkit-padding-start: 0px;
-    transition: all .2s cubic-bezier(0.18, 0.89, 0.5, 1.46);
+    /* transition: all .2s cubic-bezier(0.18, 0.89, 0.5, 1.46);
     transform: translate(-80px);
-    opacity: 0;
+    opacity: 0; */
     
 }
 .tree-children[expanded=true] {
     display: block;
     -webkit-padding-start: 17px;
-    transition: all .2s cubic-bezier(0.18, 0.89, 0.5, 1.46);
+    /* transition: all .2s cubic-bezier(0.18, 0.89, 0.5, 1.46);
     transform: translate(0);
-    opacity: 1;
+    opacity: 1; */
 }
 
 .tree-item > .tree-row > */*:not('.tree-item[is-editing] input')*/ {

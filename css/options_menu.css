@@ -39,7 +39,7 @@ a {
 	margin-top: 2px;
 	z-index: 1000;
 	/* float: left; */
-	overflow-y: auto;
+	overflow: overlay;
 	text-align: left;
 }
 
