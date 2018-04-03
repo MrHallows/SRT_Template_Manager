@@ -5,7 +5,7 @@
 /* *
  * Link Parser
  */
-var parser = document.createElement('a');
+/*var parser = document.createElement('a');
 parser.href = "http://example.com:3000/pathname/?search=test#hash";
 parser.protocol; // => "http:"
 parser.hostname; // => "example.com"
@@ -35,11 +35,12 @@ var partsParser = (data) => {
 	}
 	return document.getElementById('menu-search').value = result;
 };
-partsParser(parts);
+partsParser(parts);*/
 
 
 /**
  * Encode URI
+ * @function encode
  * @param {string} str 
  */
 function encode(str) {
@@ -48,10 +49,45 @@ function encode(str) {
 
 /**
  * Decode URI
+ * @function decode
  * @param {string} str 
  */
 function decode(str) {
 	return decodeURIComponent(str);
+}
+
+
+/**
+ * RegEx Helper Function
+ */
+function getMatches(string, regex, index) {
+	index || (index = 1); // default to the first capturing group
+	var matches = [];
+	var match;
+	while (match = regex.exec(string)) {
+		matches.push(match[index]);
+	}
+	return matches;
+}
+
+// Example :
+var myString = 'something format_abc something format_def something format_ghi';
+var myRegEx = /(?:^|\s)format_(.*?)(?:\s|$)/g;
+
+// Get an array containing the first capturing group for every match
+var matches = getMatches(myString, myRegEx, 1);
+
+// Log results
+document.getElementById('menu-search').value = (matches.length + ' matches found: ' + JSON.stringify(matches));
+log(matches);
+
+
+/**
+ * Validate Email Address
+ */
+function validateEmail(email) {
+	var pattern = /^[A-z0-9\._%+-]{1,256}@[A-z0-9.-]{1,256}\.[A-z]{2,4}$/;
+	return email.match(pattern);
 }
 
 

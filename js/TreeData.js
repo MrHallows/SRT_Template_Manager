@@ -148,7 +148,7 @@ Tree.notes = [
                 selected: false,
                 content: {
                     name: 'No Response After 10 Days',
-                    body: 'Customer has not provided the necessary documentation to move this request forward. Closing CR.'
+                    body: 'Customer%20has%20not%20provided%20the%20necessary%20documentation%20to%20move%20this%20request%20forward.%20Closing%20CR.'
                 }
             },
             {
@@ -158,7 +158,7 @@ Tree.notes = [
                 selected: false,
                 content: {
                     name: 'Over 60 Days Old',
-                    body: 'Closing outdated L/CR; will continue to monitor for future developments.'
+                    body: 'Closing%20outdated%20L%2FCR%3B%20will%20continue%20to%20monitor%20for%20future%20developments.'
                 }
             }
         ]
@@ -204,7 +204,7 @@ Tree.notes = [
                 selected: false,
                 content: {
                     name: 'Left Voice Message',
-                    body: 'I called [Customer] in regard to [his/her] [Subject] request. No answer; left a voice message.'
+                    body: 'I%20called%20%5BCustomer%5D%20in%20regard%20to%20%5Bhis%2Fher%5D%20%5BSubject%5D%20request.%20No%20answer%3B%20left%20a%20voice%20message.'
                 }
             },
             {
@@ -214,7 +214,7 @@ Tree.notes = [
                 selected: false,
                 content: {
                     name: 'Busy Signal',
-                    body: 'I called [Customer] in regard to [his/her] [Subject] request. Received a busy signal; unable to leave a voice message.'
+                    body: 'I%20called%20%5BCustomer%5D%20in%20regard%20to%20%5Bhis%2Fher%5D%20%5BSubject%5D%20request.%20Received%20a%20busy%20signal%3B%20unable%20to%20leave%20a%20voice%20message.'
                 }
             },
             {
@@ -450,16 +450,16 @@ Tree.email = [
         selected: false,
         children: [{
                 type: 'email',
-                label: 'SmartPost Implemented',
+                label: 'Online Activation',
                 id: 2,
                 selected: false,
                 content: {
-                    name: 'SmartPost Implemented',
-                    to: '',
+                    name: 'Online Activation',
+                    to: '[Customer]',
                     cc: '',
-                    subject: '',
+                    subject: 'FedEx SmartPost Online Activation',
                     attachments: '',
-                    body: 'Implemented%20SmartPost%20(SmartPost%20ID%3A%20%2C%20Mailer%20ID%3A%20)%20and%20sent%20welcome%20%26%20activation%20emails.'
+                    body: '%5BCustomer%5D%2C%0A%0AThank%20you%20for%20your%20interest%20in%20shipping%20SmartPost%20with%20FedEx.%20Your%20account%20has%20been%20enabled%20with%20the%20pricing%20and%20ability%20to%20utilize%20this%20service.%20To%20be%20able%20to%20fully%20access%20SmartPost%20shipping%20with%20your%20FedEx.com%20account%20and%20Ship%20Manager%2C%20you%20will%20need%20to%20complete%20the%20following%20steps%3A%0A%0A1)%09Login%20to%20your%20FedEx%20account%0A2)%09Go%20to%20Ship%20Manager%20as%20you%20would%20to%20create%20a%20shipment%0A3)%09Select%20the%20%E2%80%9CAdministration%E2%80%9D%20tab%0A4)%09Click%20%E2%80%9CCompany%20Settings%E2%80%9D%20on%20the%20left%0A5)%09Select%20the%20%E2%80%9CPermissions%E2%80%9D%20tab%0A6)%09Click%20%E2%80%9CFedEx%20Express%20and%20FedEx%20Ground%E2%80%9D%0A7)%09Under%20%E2%80%9CFedEx%20Domestic%20Shipping%20Services%2C%E2%80%9D%20tick%20the%20checkbox%20next%20to%20%E2%80%9CEnable%20for%20FedEx%20SmartPost%E2%80%9D%0A8)%09Click%20%5BSave%5D%0A%0AIf%20your%20account%20has%20multiple%20administrators%2C%20continue%3A%0A%0A9)%09Select%20the%20%E2%80%9CUsers%E2%80%9D%20tab%0A10)%09Under%20%E2%80%9CManage%20Users%E2%80%9D%2C%20check%20the%20%E2%80%9CUser%20Role%E2%80%9D%20column%20to%20determine%20if%20you%20are%20a%20Company%20Admin%20or%20Standard%20User%0A11)%09Check%20the%20customer%20permissions%20reference%20and%20defaults%20button.%0A12)%09Be%20sure%20that%20the%20button%20next%20to%20customize%20privileges%2C%20reference%2C%20and%20defaults%20is%20selected.%0A13)%09Click%20continue.%0A14)%09In%20the%20right%20hand%20column%2C%20under%20SmartPost%20Services%20Section%2C%20tick%20the%20checkbox%20next%20to%20FedEx%20SmartPost.%0A15)%09Scroll%20to%20the%20bottom%20and%20click%20Save.%0A%0ASmartPost%20will%20now%20be%20enabled%20onto%20your%20FedEx.com%20Ship%20Manager%20as%20an%20available%20option%20under%20Service%20Type.%20If%20you%20are%20having%20any%20additional%20issues%20with%20FedEx.com%2C%20please%20reach%20out%20to%20our%20Technical%20Support%20Team%20at%201(877)339-2774%2C%20Option%201.%0A'
                 }
             },
             {
@@ -495,7 +495,7 @@ Tree.email = [
                     cc: '',
                     subject: '',
                     attachments: '',
-                    body: 'I called [Customer] in regard to [his/her] [Subject] request. No answer; left a voice message.'
+                    body: 'I%20called%20%5BCustomer%5D%20in%20regard%20to%20%5Bhis%2Fher%5D%20%5BSubject%5D%20request.%20No%20answer%3B%20left%20a%20voice%20message.'
                 }
             },
             {
@@ -509,7 +509,7 @@ Tree.email = [
                     cc: '',
                     subject: '',
                     attachments: '',
-                    body: 'I called [Customer] in regard to [his/her] [Subject] request. Received a busy signal; unable to leave a voice message.'
+                    body: 'I%20called%20%5BCustomer%5D%20in%20regard%20to%20%5Bhis%2Fher%5D%20%5BSubject%5D%20request.%20Received%20a%20busy%20signal%3B%20unable%20to%20leave%20a%20voice%20message.'
                 }
             },
             {
@@ -597,13 +597,13 @@ Tree.contacts = [
                     phone: '(555)555-5555',
                     email: 'tjones@test.com',
                     business: 'Jones\' Auto Parts',
-                    ean: '',
+                    ean: '123456789',
                     comments: ''
                 }
             },
             {
                 type: 'contact',
-                label: 'Applied Pricing',
+                label: 'John Smith',
                 id: 32,
                 selected: false,
                 content: {
@@ -627,7 +627,7 @@ Tree.contacts = [
         selected: false,
         children: [{
                 type: 'contact',
-                label: 'Sent Initial Email',
+                label: 'Steven Miller',
                 id: 4,
                 selected: false,
                 content: {
@@ -643,7 +643,7 @@ Tree.contacts = [
             },
             {
                 type: 'contact',
-                label: 'Ceratosaurians',
+                label: 'Emily Warren',
                 id: 5,
                 selected: false,
                 content: {
@@ -659,7 +659,7 @@ Tree.contacts = [
             },
             {
                 type: 'contact',
-                label: 'Spinosauroids',
+                label: 'Chris Johnson',
                 id: 6,
                 selected: false,
                 content: {
@@ -675,7 +675,7 @@ Tree.contacts = [
             },
             {
                 type: 'contact',
-                label: 'Carnosaurians',
+                label: 'Ashley Mendez',
                 id: 7,
                 selected: false,
                 content: {
@@ -814,6 +814,34 @@ Tree.contacts = [
 ];
 
 
+// If this is the first time the application is opened (no localStorage data), set data
+var TreeNotes = [];
+var TreeEmail = [];
+var TreeContacts = [];
+
+if(!ls.get("Tree:Notes")) {
+    ls.set("Tree:Notes", JSON.stringify(Tree.notes));
+    TreeNotes = ls.get("Tree:Notes");
+} else {
+    TreeNotes = ls.get("Tree:Notes");
+}
+
+if(!ls.get("Tree:Email")) {
+    ls.set("Tree:Email", JSON.stringify(Tree.email));
+    TreeEmail = ls.get("Tree:Email");
+} else {
+    TreeEmail = ls.get("Tree:Email");
+}
+
+if(!ls.get("Tree:Contacts")) {
+    ls.set("Tree:Contacts", JSON.stringify(Tree.contacts));
+    TreeContacts = ls.get("Tree:Contacts");
+} else {
+    TreeContacts = ls.get("Tree:Contacts");
+}
+
+
+
 Tree.getFirstLevelData = function(data) {
     if(!data) data = null;
 
@@ -912,6 +940,108 @@ Tree.getChildrenOfNode = function(data, node_id) {
 };
 
 
+Tree.getNodeData = function(tree_item_id) {
+    //if(!data) data = null;
+
+    //var datum = [];
+
+    var data = null;
+    var type = null;
+    var id = null;
+
+    String.prototype.getId = function() {
+        var separator = /(note|email|contact)-(\d+)/;
+
+        var i = this.replace(separator, function() {
+            id = $2;
+            return id;
+        });
+
+        return i;
+    };
+
+    $.each(data, function() {
+        if(this.type == 'folder') {
+            var node = {
+                type: this.type,
+                label: this.label,
+                id: this.id,
+                expanded: this.expanded,
+                selected: this.selected
+            };
+        } else if(this.type == 'note') {
+            var node = {
+                type: this.type,
+                label: this.label,
+                id: this.id,
+                selected: this.selected,
+                content: {
+                    name: this.content.name,
+                    body: this.content.body
+                }
+            };
+        } else if(this.type == 'email') {
+            var node = {
+                type: this.type,
+                label: this.label,
+                id: this.id,
+                selected: this.selected,
+                content: {
+                    name: this.content.name,
+                    to: this.content.to,
+                    cc: this.content.cc,
+                    subject: this.content.subject,
+                    attachments: this.content.attachments,
+                    body: this.content.body
+                }
+            };
+        } else if(this.type == 'contact') {
+            var node = {
+                type: this.type,
+                label: this.label,
+                id: this.id,
+                selected: this.selected,
+                content: {
+                    firstName: this.content.firstName,
+                    lastName: this.content.lastName,
+                    fullName: this.content.fullName,
+                    phone: this.content.phone,
+                    email: this.content.email,
+                    business: this.content.business,
+                    ean: this.content.ean,
+                    comments: this.content.comments
+                }
+            };
+        }
+
+        if(this.children) {
+            node.load_on_demand = true;
+        }
+
+        datum.push(node);
+    });
+    return datum;
+};
+
+
+Tree.getNodeData = function(tree_item_id) {
+    var result = null;
+    var type = null;
+    var id = null;
+
+    String.prototype.getId = function() {
+        var separator = /(note|email|contact)-(\d+)/;
+
+        var i = this.replace(separator, function() {
+            id = $2;
+            return id;
+        });
+
+        return i;
+    };
+};
+
+
 /* *
  * Store tree data to localStorage
  */
@@ -919,10 +1049,6 @@ Tree.persist = function(data) {
     if(!data) return;
 
     var datum = [];
-
-    var TreeNotes = [];
-    var TreeEmail = [];
-    var TreeContacts = [];
 
     //ls.set("Tree:Notes", JSON.stringify(TreeNotes));
     //ls.set("Tree:Email", JSON.stringify(TreeEmail));
@@ -987,14 +1113,14 @@ Tree.persist = function(data) {
         }
 
         if(this.children) {
-            //node.load_on_demand = true;
+            Tree.persist(this.children);
         }
 
         datum.push(node);
 
-        TreeNotes.push(node);
-        TreeEmail.push(node);
-        TreeContacts.push(node);
+        //TreeNotes.push(node);
+        //TreeEmail.push(node);
+        //TreeContacts.push(node);
     });
     //ls.set("datum", JSON.stringify(datum));
     return datum;
@@ -1098,26 +1224,171 @@ Tree.buildTree = function(data) {
     }
     return fragment;
 };
-document.getElementById('tree-body-notes').appendChild(Tree.buildTree(Tree.notes));
-document.getElementById('tree-body-email').appendChild(Tree.buildTree(Tree.email));
-document.getElementById('tree-body-contacts').appendChild(Tree.buildTree(Tree.contacts));
+document.getElementById('tree-body-notes').appendChild(Tree.buildTree(JSON.parse(TreeNotes)));
+document.getElementById('tree-body-email').appendChild(Tree.buildTree(JSON.parse(TreeEmail)));
+document.getElementById('tree-body-contacts').appendChild(Tree.buildTree(JSON.parse(TreeContacts)));
 
-log(Tree.buildTree(Tree.notes));
-log(Tree.buildTree(Tree.email));
-log(Tree.buildTree(Tree.contacts));
-
-
-// Array of Notes
-var TreeNotes = localStorage[Tree.notes] ? JSON.parse(localStorage[Tree.notes]) : [];
-
-// Array of Email
-var TreeEmail = localStorage[Tree.email] ? JSON.parse(localStorage[Tree.email]) : [];
-
-// Array of Contacts
-var TreeContacts = localStorage[Tree.contacts] ? JSON.parse(localStorage[Tree.contacts]) : [];
+log(Tree.buildTree(JSON.parse(TreeNotes)));
+log(Tree.buildTree(JSON.parse(TreeEmail)));
+log(Tree.buildTree(JSON.parse(TreeContacts)));
 
 
-// Moved to js/init.js
+/* *
+ * Sync the HTML tree
+ */
+Tree.sync = function(data) {
+    //var fragment = document.createDocumentFragment();
+
+    // Iterate through data (i.e., Tree.notes)
+    for(var index in data) {
+        if(data.hasOwnProperty(index)) {
+
+            var _this = data[index];
+
+            if(this.type == 'folder') {
+                var node = {
+                    type: this.type,
+                    label: this.label,
+                    id: this.id,
+                    expanded: this.expanded,
+                    selected: this.selected
+                };
+
+            } else if(this.type == 'note') {
+                var node = {
+                    type: this.type,
+                    label: this.label,
+                    id: this.id,
+                    selected: this.selected,
+                    content: {
+                        name: this.content.name,
+                        body: this.content.body
+                    }
+                };
+                //TreeNotes.push(node);
+
+            } else if(this.type == 'email') {
+                var node = {
+                    type: this.type,
+                    label: this.label,
+                    id: this.id,
+                    selected: this.selected,
+                    content: {
+                        name: this.content.name,
+                        to: this.content.to,
+                        cc: this.content.cc,
+                        subject: this.content.subject,
+                        attachments: this.content.attachments,
+                        body: this.content.body
+                    }
+                };
+
+            } else if(this.type == 'contact') {
+                var node = {
+                    type: this.type,
+                    label: this.label,
+                    id: this.id,
+                    selected: this.selected,
+                    content: {
+                        firstName: this.content.firstName,
+                        lastName: this.content.lastName,
+                        fullName: this.content.fullName,
+                        phone: this.content.phone,
+                        email: this.content.email,
+                        business: this.content.business,
+                        ean: this.content.ean,
+                        comments: this.content.comments
+                    }
+                };
+            }
+
+            if(this.children) {
+                Tree.sync(this.children);
+            }
+
+            var tree_item = document.createElement('div'); // <div class="tree-item" item-type="folder" expanded="false" select="false"></div>
+                tree_item.classList.add('tree-item');
+                tree_item.setAttribute('item-type', node.type);
+                tree_item.setAttribute('id', node.type + "-" + node.id);
+
+                if (!node.children) {
+                    if (node.type == 'folder') {
+                        tree_item.setAttribute('has-children', false);
+                        //log("Set attribute 'has-children' Item ID: " + tree_item.id + " to " + tree_item.getAttribute('has-children'));
+                    }
+                } else {
+                    if (node.type == 'folder') {
+                        tree_item.setAttribute('has-children', true);
+                        //log("Set attribute 'has-children' Item ID: " + tree_item.id + " to " + tree_item.getAttribute('has-children'));
+                    }
+                }
+
+                tree_item.setAttribute('expanded', node.expanded);
+                tree_item.setAttribute('select', node.selected);
+
+                //log("node.id: " + node.id);
+                //log("tree_item.id: " + tree_item.id);
+
+            var tree_row = document.createElement('div'); // <div class="tree-row" has-children="true" may-have-children="" select="false"></div>
+                tree_row.classList.add('tree-row');
+                tree_row.setAttribute('may-have-children', '');
+
+                if (!node.children) {
+                    if (node.type == 'folder') {
+                        tree_row.setAttribute('has-children', false);
+                        //log("Set attribute 'has-children' to " + tree_item.getAttribute('has-children')) + " for " + tree_item.id + ".";
+                    }
+                } else {
+                    if (node.type == 'folder') {
+                        tree_row.setAttribute('has-children', true);
+                        //log("Set attribute 'has-children' to " + tree_item.getAttribute('has-children')) + " for " + tree_item.id + ".";
+                    }
+                }
+
+                tree_row.setAttribute('select', node.selected);
+
+            var exp_icon = document.createElement('span'); // <span class="expand-icon"></span>
+                exp_icon.classList.add('expand-icon');
+
+                if (node.type != 'folder') {
+                    exp_icon.style.visibility = 'hidden';
+                }
+
+            var tree_label = document.createElement('span'); // <span class="tree-label"></span>
+                tree_label.classList.add('tree-label');
+                tree_label.textContent = node.label;
+
+            var options_button = document.createElement('span'); // <span class="tree-item-options"></span>
+                options_button.classList.add('tree-item-options');
+
+            var tree_children = document.createElement('div'); // <div class="tree-children" expanded="false" select="false"></div>
+                tree_children.classList.add('tree-children');
+                tree_children.setAttribute('expanded', node.expanded);
+
+            tree_row.appendChild(exp_icon);
+            tree_row.appendChild(tree_label);
+            tree_row.appendChild(options_button);
+
+            tree_item.appendChild(tree_row);
+
+            if(node.hasOwnProperty('children')) {
+                if(node.type == 'folder') {
+                    //log("Node children: " + node + " has " + node.children.length + " children.");
+                    tree_children.appendChild(Tree.buildTree(node.children));
+                }
+                tree_item.appendChild(tree_children);
+            }
+            fragment.appendChild(tree_item);
+        }
+    }
+    return fragment;
+};
+
+
+
+/* *
+ * Remove from js/init.js
+ */
 /*if(!ls.get("Tree:Notes")) {
     ls.set("Tree:Notes", JSON.stringify(Tree.notes));
 }

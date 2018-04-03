@@ -320,6 +320,9 @@ $('.tree').on('click', '.tree-row', function() {
 	$par.attr('select', 'true'); // true
 	log("Selected: " + $lbl.text());
 
+	log("Expanded: " + $par.attr("expanded"));
+	log("ID: " + $par.attr("id").match(/\d+/));
+
 	// Save active item state
 	state.item = $par.id;
 	ls.set("SRTTM_State", JSON.stringify(state));

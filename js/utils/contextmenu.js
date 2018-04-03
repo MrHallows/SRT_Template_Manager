@@ -157,7 +157,7 @@ $('.context-menu').on('click', '#cm-rename', function(e) {
 	var $label_text = $selected.find('.tree-label').text();
 	var $tree_item = $selected.parent('.tree-item');
 	var $item_type = $selected.parent('.tree-item').attr('item-type');
-	var title_ext = " - " + $label_text;
+	var title_ext = " → " + $label_text;
 
 	var $form = document.getElementById('content');
 
@@ -204,7 +204,7 @@ $('.context-menu').on('click', '#cm-edit', function(e) {
 	var $tree_item = $selected.parent('.tree-item');
 	var $tree_item_id = $tree_item.attr('id')
 	var $item_type = $selected.parent('.tree-item').attr('item-type');
-	var title_ext = " - " + $label_text;
+	var title_ext = " → " + $label_text;
 
 	var $form = document.getElementById('content');
 
@@ -602,7 +602,7 @@ $('.context-menu').on('click', '#cm-new-item', function(e) {
 	var $item_type = $selected.closest('.tree-tab-content').attr('item-type');
 	//alert("$item_type: " + $item_type);
 	var $item_id = $item_type + '-' + ls.get("Notes:Index");
-	var title_ext = " - " + $label_text;
+	var title_ext = " → " + $label_text;
 
 	var $form = document.getElementById('content');
 	var $tab = $('.tree-row[select=true]').parent('.tree-tab-content');

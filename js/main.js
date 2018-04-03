@@ -3,13 +3,13 @@
 
 
 // Array of Notes
-var NotesList = localStorage[NotesList] ? JSON.parse(localStorage[NotesList]) : [];
+//var NotesList = localStorage[NotesList] ? JSON.parse(localStorage[NotesList]) : [];
 
 // Array of Email
-var EmailList = localStorage[EmailList] ? JSON.parse(localStorage[EmailList]) : [];
+//var EmailList = localStorage[EmailList] ? JSON.parse(localStorage[EmailList]) : [];
 
 // Array of Contacts
-var ContactsList = localStorage[ContactsList] ? JSON.parse(localStorage[ContactsList]) : [];
+//var ContactsList = localStorage[ContactsList] ? JSON.parse(localStorage[ContactsList]) : [];
 
 
 var state = state || {};
