@@ -722,8 +722,7 @@ input[type=checkbox]:checked {
  * Hint
  *
  * HTML Example:
- *   <span class="hint--bottom" data-hint="Consecutive number of active days. Consecutive days are calculated using UTC.
- *       Your personal best is highlighted.">
+ *   <span class="hint--bottom" data-hint="This is a hint!">
  *       <i class="icon-info"></i>
  *   </span>
  */
@@ -758,12 +757,13 @@ input[type=checkbox]:checked {
 
 .hint:after, [data-hint]:after {
 	content: attr(data-hint);
-	background: #383838;
+	background: #333;
 	color: white;
 	padding: 6px 8px;
 	font-size: 12px;
 	line-height: 16px;
 	white-space: pre;
+	word-wrap: break-word;
 }
 
 .hint--top:before {
@@ -782,6 +782,7 @@ input[type=checkbox]:checked {
 	border-right-color: #383838;
 }
 
+/* hint-- */
 .hint--top:before {
 	margin-bottom: -12px;
 }
@@ -801,6 +802,7 @@ input[type=checkbox]:checked {
 	transform: translateY(-8px);
 }
 
+/* hint-- */
 .hint--bottom:before {
 	margin-top: -12px;
 }
@@ -820,6 +822,7 @@ input[type=checkbox]:checked {
 	transform: translateY(8px);
 }
 
+/* hint-- */
 .hint--right:before {
 	margin-left: -12px;
 	margin-bottom: -6px;
@@ -840,6 +843,7 @@ input[type=checkbox]:checked {
 	transform: translateX(8px);
 }
 
+/* hint-- */
 .hint--left:before {
 	margin-right: -12px;
 	margin-bottom: -6px;
@@ -858,4 +862,25 @@ input[type=checkbox]:checked {
 	-webkit-transform: translateX(-8px);
 	-moz-transform: translateX(-8px);
 	transform: translateX(-8px);
+}
+
+
+/* Multidirectional */
+.hint--bottom-left:before {
+	margin-top: -12px;
+}
+
+.hint--bottom-left:after {
+	margin-right: -18px;
+}
+
+.hint--bottom-left:before, .hint--bottom-left:after {
+	top: 100%;
+	right: 0;
+}
+
+.hint--bottom-left:hover:before, .hint--bottom-left:hover:after {
+	-webkit-transform: translateY(8px);
+	-moz-transform: translateY(8px);
+	transform: translateY(8px);
 }

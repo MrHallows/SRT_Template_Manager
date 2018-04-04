@@ -318,14 +318,19 @@ $('.tree').on('click', '.tree-row', function() {
 	$('.tree-row').not(this).parent().attr('select', 'false'); // false
 	$(this).attr('select', 'true'); // true
 	$par.attr('select', 'true'); // true
-	log("Selected: " + $lbl.text());
 
-	log("Expanded: " + $par.attr("expanded"));
-	log("ID: " + $par.attr("id").match(/\d+/));
+	log("_____________________________________________");
+	log("this.type: " + $par.attr('item-type'));
+	log("this.label: " + $lbl.text());
+	log("this.id: " + $par.attr('id').match(/\d+/));
+	log("this.selected: " + $par.attr('select'));
+	log("this.expanded: " + $par.attr('expanded'));
 
 	// Save active item state
-	state.item = $par.id;
+	state.item = $par.attr('id');
 	ls.set("SRTTM_State", JSON.stringify(state));
+
+	Tree.getNodeData();
 
 	//log($('.tree-row').not(this).parent('.tree-item'));
 });
@@ -341,7 +346,7 @@ $('.tree').on('contextmenu', '.tree-row', function() {
 	log("Selected: " + $lbl.text());
 
 	// Save active item state
-	state.item = $par.id;
+	state.item = $par.attr('id');
 	ls.set("SRTTM_State", JSON.stringify(state));
 
 	//log($('.tree-row').not(this).parent('.tree-item'));

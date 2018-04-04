@@ -210,6 +210,16 @@ select.modal-input {
 .button:active {
     top: 1px;
 }
+.btn-x {
+    width: 22px;
+}
+.btn-x::before {
+    content: '✖'; /* × */
+}
+.btn-x:hover {
+    border: 1px solid #e93060; /* default: #ed174b */
+    color: #e93060; /* default: #ed174b */
+}
 .btn-std:hover {
     /* background: #333333; */
     border: 1px solid #65b9ff; /* default: #44aff6; */

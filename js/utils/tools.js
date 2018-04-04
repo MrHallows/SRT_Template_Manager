@@ -70,7 +70,7 @@ $('#rs-tools').on('click', function(e) {
         //
         modal.open({
             title: 'Dimensional Weight Calculator',
-            content: '<div id="calcBox"><p>L: <input type="text" id="length" class="calc-input" size="2"/> W: <input type="text" id="width" class="calc-input" size="2"/> H: <input type="text" id="height" class="calc-input" size="2"/> <button id="btnCalculate" class="button btn-submit">Calculate</button><button type="reset" id="btnClear" class="button btn-x"> &times; </button></p><p><div class="data">Girth &#8674; <span id="girth" class="result"></span></div><div class="data">Length + Girth &#8674; <span id="lGirth" class="result"></span></div><div class="data">Dim Weight &#8674; <span id="dimWeight" class="result"></span></div><div class="data">Intl Dim Weight &#8674; <span id="intlDimWeight" class="result"></span></div><div class="data"><span id="error"></span></div></p></div>'
+            content: '<div id="calcBox"><p>L: <input type="text" id="length" class="calc-input" size="2"/> W: <input type="text" id="width" class="calc-input" size="2"/> H: <input type="text" id="height" class="calc-input" size="2"/> <button id="btnCalculate" class="button btn-submit">Calculate</button><button type="reset" id="btnClear" class="button btn-x"></button></p><p><div class="data">Girth &#8674; <span id="girth" class="result"></span></div><div class="data">Length + Girth &#8674; <span id="lGirth" class="result"></span></div><div class="data">Dim Weight &#8674; <span id="dimWeight" class="result"></span></div><div class="data">Intl Dim Weight &#8674; <span id="intlDimWeight" class="result"></span></div><div class="data"><span id="error"></span></div></p></div>'
         });
 
         document.getElementById('length').focus();
