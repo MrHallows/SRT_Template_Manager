@@ -57,9 +57,12 @@ $(window).on('load', function() {
 	} else {
 		state = JSON.parse(ls.get("SRTTM_State"));
 	}
-	
-	state.item = $tree_item_id;
+
+	//state.item = $tree_item_id;
 	//alert("state.item: " + state.item);
+
+	$('#' + state.item).find('.tree-row').attr('select', 'true');
+	$('#' + state.item).find('.tree-children').attr('select', 'true');
 
 	$('.active').removeClass('active')
 	$('a[href="' + state.tab + '"]').attr('class', 'active');
