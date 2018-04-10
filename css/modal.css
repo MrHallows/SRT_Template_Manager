@@ -21,8 +21,9 @@
     border: 2px solid #555;
     border-radius: 0;
     font-family: 'Ubuntu', sans-serif !important;
-    min-width: 240px;
-    width: auto;
+    min-width: 300px;
+	width: auto;
+	min-height: 130px;
     height: auto;
     padding: 25px 5px 5px 5px;
     /* margin-top: 62px; */

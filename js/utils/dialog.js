@@ -42,7 +42,7 @@ function createCustomAlert(msg) {
 	mObj.style.height = d.documentElement.scrollHeight + "px";
 
 	alertObj = mObj.appendChild(d.createElement("div"));
-	alertObj.id = "modal";
+	alertObj.id = "alertBox";
 	if(d.all && !window.opera) alertObj.style.top = document.documentElement.scrollTop + "px";
 	alertObj.style.left = (d.documentElement.scrollWidth - alertObj.offsetWidth) / 2 + "px";
 	alertObj.style.visiblity = "visible";
@@ -50,14 +50,15 @@ function createCustomAlert(msg) {
 	h1 = alertObj.appendChild(d.createElement("h1"));
 	h1.appendChild(d.createTextNode(ALERT_TITLE));
 
-	msg = alertObj.appendChild(d.createElement("p"));
+	msg = alertObj.appendChild(d.createElement("div"));
 	//msg.appendChild(d.createTextNode(msg));
 	msg.innerHTML = msg;
 
-	btn = alertObj.appendChild(d.createElement("a"));
+	btn = alertObj.appendChild(d.createElement("button"));
 	btn.id = "btnClose";
+	btn.classList = "button btn-close";
 	btn.appendChild(d.createTextNode(ALERT_BUTTON_TEXT));
-	btn.href = "#";
+	//btn.href = "#";
 	btn.focus();
 	btn.onclick = function() {
 		removeCustomAlert();
@@ -73,5 +74,5 @@ function removeCustomAlert() {
 }
 
 function ful() {
-	alert('Alert this pages');
+	alert('Alert this page');
 }

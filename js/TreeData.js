@@ -1337,75 +1337,10 @@ Tree.sync = function(data) {
                 Tree.sync(this.children);
             }
 
-            var tree_item = document.createElement('div'); // <div class="tree-item" item-type="folder" expanded="false" select="false"></div>
-                tree_item.classList.add('tree-item');
-                tree_item.setAttribute('item-type', node.type);
-                tree_item.setAttribute('id', node.type + "-" + node.id);
-
-                if (!node.children) {
-                    if (node.type == 'folder') {
-                        tree_item.setAttribute('has-children', false);
-                        //log("Set attribute 'has-children' Item ID: " + tree_item.id + " to " + tree_item.getAttribute('has-children'));
-                    }
-                } else {
-                    if (node.type == 'folder') {
-                        tree_item.setAttribute('has-children', true);
-                        //log("Set attribute 'has-children' Item ID: " + tree_item.id + " to " + tree_item.getAttribute('has-children'));
-                    }
-                }
-
-                tree_item.setAttribute('expanded', node.expanded);
-                tree_item.setAttribute('select', node.selected);
-
-                //log("node.id: " + node.id);
-                //log("tree_item.id: " + tree_item.id);
-
-            var tree_row = document.createElement('div'); // <div class="tree-row" has-children="true" may-have-children="" select="false"></div>
-                tree_row.classList.add('tree-row');
-                tree_row.setAttribute('may-have-children', '');
-
-                if (!node.children) {
-                    if (node.type == 'folder') {
-                        tree_row.setAttribute('has-children', false);
-                        //log("Set attribute 'has-children' to " + tree_item.getAttribute('has-children')) + " for " + tree_item.id + ".";
-                    }
-                } else {
-                    if (node.type == 'folder') {
-                        tree_row.setAttribute('has-children', true);
-                        //log("Set attribute 'has-children' to " + tree_item.getAttribute('has-children')) + " for " + tree_item.id + ".";
-                    }
-                }
-
-                tree_row.setAttribute('select', node.selected);
-
-            var exp_icon = document.createElement('span'); // <span class="expand-icon"></span>
-                exp_icon.classList.add('expand-icon');
-
-                if (node.type != 'folder') {
-                    exp_icon.style.visibility = 'hidden';
-                }
-
-            var tree_label = document.createElement('span'); // <span class="tree-label"></span>
-                tree_label.classList.add('tree-label');
-                tree_label.textContent = node.label;
-
-            var options_button = document.createElement('span'); // <span class="tree-item-options"></span>
-                options_button.classList.add('tree-item-options');
-
-            var tree_children = document.createElement('div'); // <div class="tree-children" expanded="false" select="false"></div>
-                tree_children.classList.add('tree-children');
-                tree_children.setAttribute('expanded', node.expanded);
-
-            tree_row.appendChild(exp_icon);
-            tree_row.appendChild(tree_label);
-            tree_row.appendChild(options_button);
-
-            tree_item.appendChild(tree_row);
-
             if(node.hasOwnProperty('children')) {
-                if(node.type == 'folder') {
+                if(this.type == 'folder') {
                     //log("Node children: " + node + " has " + node.children.length + " children.");
-                    tree_children.appendChild(Tree.buildTree(node.children));
+                    Tree.buildTree(node.children);
                 }
                 tree_item.appendChild(tree_children);
             }
@@ -1414,6 +1349,55 @@ Tree.sync = function(data) {
     }
     return fragment;
 };
+
+
+/**
+ * A function to take a string written in dot notation style, and use it to
+ * find a nested object property inside of an object.
+ *
+ * Useful in a plugin or module that accepts a JSON array of objects, but
+ * you want to let the user specify where to find various bits of data
+ * inside of each custom object instead of forcing a standardized
+ * property list.
+ *
+ * @param String nested A dot notation style parameter reference (ie "urls.small")
+ * @param Object object (optional) The object to search
+ *
+ * @return the value of the property in question
+ */
+
+function getProperty(object, propertyName) {
+    var parts = propertyName.split( "." ),
+        i,
+        property = object || this;
+
+    for(i = 0; i < parts.length; i++) {
+        property = property[parts[i]];
+    }
+    return property;
+}
+log("getProperty(object, propertyName): ", getProperty(JSON.parse(ls.get("Tree:Notes")), 'id'));
+
+log("Object.getOwnPropertyNames(Number.prototype): ", Object.getOwnPropertyNames(JSON.parse(ls.get("Tree:Notes"))));
+//log("Object.keys(Number.prototype): ", Object.keys(JSON.parse(ls.get("Tree:Notes"))).forEach());
+
+/*$.each(JSON.parse(ls.get("Tree:Notes")), function() {
+    //var id = null;
+    var $selected = $('.tree-row[select=true]');
+	var $label = $selected.find('.tree-label');
+	var $label_text = $selected.find('.tree-label').text();
+	var $tree_item = $selected.parent('.tree-item');
+	var $tree_item_id = $tree_item.attr('id');
+	var $item_type = $tree_item.attr('item-type');
+
+    if($tree_item_id == this.type + "-" + this.id) {
+        log("Matched: ", this.type + "-" + this.id);
+    } else {
+        log("No matches found.");
+    }
+
+    //log("this.id: ", this.type + "-" + this.id);
+});*/
 
 
 

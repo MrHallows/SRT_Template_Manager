@@ -330,7 +330,70 @@ $('.tree').on('click', '.tree-row', function() {
 	state.item = $par.attr('id');
 	ls.set("SRTTM_State", JSON.stringify(state));
 
-	Tree.getNodeData();
+	//Tree.getNodeData();
+
+	//state = JSON.parse(ls.get("SRTTM_State"));
+	//log(ls.get("SRTTM_State"));
+
+	if(state.tab == "#tab-notes") {
+		// 
+		Object.keys(JSON.parse(ls.get("Tree:Notes"))).forEach(function() {
+			//var id = null;
+			var $selected = $('.tree-row[select=true]');
+			var $label = $selected.find('.tree-label');
+			var $label_text = $selected.find('.tree-label').text();
+			var $tree_item = $selected.parent('.tree-item');
+			var $tree_item_id = $tree_item.attr('id');
+			var $item_type = $tree_item.attr('item-type');
+
+			if($tree_item_id == this.type + "-" + this.id) {
+				log("Matched: ", this.type + "-" + this.id);
+			} else {
+				log("No match found.");
+			}
+
+			//log("this.id: ", this.type + "-" + this.id);
+		});
+	} else if(state.tab == "#tab-email") {
+		// 
+		$.each(JSON.parse(ls.get("Tree:Email")), function() {
+			//var id = null;
+			var $selected = $('.tree-row[select=true]');
+			var $label = $selected.find('.tree-label');
+			var $label_text = $selected.find('.tree-label').text();
+			var $tree_item = $selected.parent('.tree-item');
+			var $tree_item_id = $tree_item.attr('id');
+			var $item_type = $tree_item.attr('item-type');
+
+			if($tree_item_id == this.type + "-" + this.id) {
+				log("Matched: ", this.type + "-" + this.id);
+			} else {
+				log("No match found.");
+			}
+
+			//log("this.id: ", this.type + "-" + this.id);
+		});
+	} else if(state.tab == "#tab-contacts") {
+		// 
+		$.each(JSON.parse(ls.get("Tree:Contacts")), function() {
+			//var id = null;
+			var $selected = $('.tree-row[select=true]');
+			var $label = $selected.find('.tree-label');
+			var $label_text = $selected.find('.tree-label').text();
+			var $tree_item = $selected.parent('.tree-item');
+			var $tree_item_id = $tree_item.attr('id');
+			var $item_type = $tree_item.attr('item-type');
+
+			if($tree_item_id == this.type + "-" + this.id) {
+				log("Matched: ", this.type + "-" + this.id);
+			} else {
+				log("No match found.");
+			}
+
+			//log("this.id: ", this.type + "-" + this.id);
+		});
+	}
+
 
 	//log($('.tree-row').not(this).parent('.tree-item'));
 });
