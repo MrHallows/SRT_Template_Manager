@@ -122,3 +122,27 @@
 	80% { -webkit-transform: skewX(-5deg); transform: skewX(-5deg); opacity: 1; }
 	100% { -webkit-transform: none; transform: none; opacity: 1; }
 }
+
+.starburst {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-image: url(/66f9/img/starburst.png);
+	width: 44px;
+	height: 44px;
+	border-radius: 28px;
+	display: block;
+	position: absolute;
+	z-index: 1;
+	top: -4px;
+	left: -2px;
+	opacity: 0;
+	background-size: 50%;
+	-webkit-transition: opacity .3s,background-size .3s;
+	-moz-transition: opacity .3s,background-size .3s;
+	transition: opacity .3s,background-size .3s;
+	-webkit-animation: 15s linear 0s infinite normal none spin;
+	-moz-animation: 15s linear 0s infinite normal none spin;
+	-o-animation: 15s linear 0s infinite normal none spin;
+	animation: 15s linear 0s infinite normal none spin
+}
+

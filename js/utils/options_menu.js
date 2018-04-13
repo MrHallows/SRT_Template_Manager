@@ -172,7 +172,7 @@ $('.options-menu').on('click', '#om-rename', function(e) {
 
 	modal.open({
 		title: 'Rename' + title_ext,
-		content: '<input type="search" class="modal-input" name="rename_new_name" placeholder="New Name"/><div class="actionbar"><button class="button btn-cancel cancel">Cancel</button><button class="button btn-submit submit">Save</button></div>'
+		content: '<input type="search" class="modal-input" name="rename_new_name" placeholder="New Name"/><div class="actionbar"><button class="button btn-cancel cancel">Cancel</button><button class="button btn-submit">Save</button></div>'
 	});
 
 	$form.rename_new_name.value = $label_text;
@@ -181,11 +181,11 @@ $('.options-menu').on('click', '#om-rename', function(e) {
 
 	$('.modal-input[name=rename_new_name]').keydown(function(e) {
 		if (e.keyCode === 13 || e.which === 13) {
-			$('.button.btn-submit.submit').click();
+			$('.button.btn-submit').click();
 		}
 	});
 
-	$('.button.btn-submit.submit').on('click', function(e) {
+	$('.button.btn-submit').on('click', function(e) {
 		e.preventDefault();
 		$('.tree-row[select=true]').find('.tree-label').text($form.rename_new_name.value);
 		modal.close();
@@ -222,7 +222,7 @@ $('.options-menu').on('click', '#om-edit', function(e) {
 		case "folder":
 			/*modal.open({
 				title: 'Edit Folder' + title_ext,
-				content: '<input type="search" id="edit-template-name" class="modal-input" name="edit_folder_name" placeholder="Template Name"/><textarea id="edit-template-body" class="modal-input" name="edit_template_body"></textarea><div class="actionbar"><button class="button btn-cancel cancel">Cancel</button><button class="button btn-submit submit">Save</button></div>'
+				content: '<input type="search" id="edit-template-name" class="modal-input" name="edit_folder_name" placeholder="Template Name"/><textarea id="edit-template-body" class="modal-input" name="edit_template_body"></textarea><div class="actionbar"><button class="button btn-cancel cancel">Cancel</button><button class="button btn-submit">Save</button></div>'
 			});*/
 			alert("Disabled! Please select the 'Rename' option instead.");
 			break;
@@ -231,7 +231,7 @@ $('.options-menu').on('click', '#om-edit', function(e) {
 		case "note":
 			modal.open({
 				title: 'Edit Note Template' + title_ext,
-				content: '<input type="search" id="edit-template-name" class="modal-input" name="edit_note_name" placeholder="Template Name"/><textarea id="edit-template-body" class="modal-input" name="edit_note_body"></textarea><div class="actionbar"><button class="button btn-cancel cancel">Cancel</button><button class="button btn-submit submit">Save</button></div>'
+				content: '<input type="search" id="edit-template-name" class="modal-input" name="edit_note_name" placeholder="Template Name"/><textarea id="edit-template-body" class="modal-input" name="edit_note_body"></textarea><div class="actionbar"><button class="button btn-cancel cancel">Cancel</button><button class="button btn-submit">Save</button></div>'
 			});
 
 			// Notes namespace
@@ -273,7 +273,7 @@ $('.options-menu').on('click', '#om-edit', function(e) {
 					}
 
 					// On Save
-					$('.button.btn-submit.submit').on('click', function(e) {
+					$('.button.btn-submit').on('click', function(e) {
 
 						// Save the note
 						Notes.save(note);
@@ -329,7 +329,7 @@ $('.options-menu').on('click', '#om-edit', function(e) {
 		case "email":
 			modal.open({
 				title: 'Edit Email Template' + title_ext,
-				content: '<input type="search" id="edit-template-email-name" class="modal-input" name="edit_email_name" placeholder="Template Name"/><input type="search" id="edit-template-email-to" class="modal-input" name="edit_email_to" placeholder="To"/><input type="search" id="edit-template-email-cc" class="modal-input" name="edit_email_cc" placeholder="Cc"/><input type="search" id="edit-template-email-subject" class="modal-input" name="edit_email_subject" placeholder="Subject"/><input type="search" id="edit-template-email-attachments" class="modal-input" name="edit_email_attachments" placeholder="Attachments"/><textarea id="edit-template-email-body" class="modal-input" name="edit_email_body"></textarea><div class="actionbar"><button class="button btn-cancel cancel">Cancel</button><button class="button btn-submit submit">Save</button></div>'
+				content: '<input type="search" id="edit-template-email-name" class="modal-input" name="edit_email_name" placeholder="Template Name"/><input type="search" id="edit-template-email-to" class="modal-input" name="edit_email_to" placeholder="To"/><input type="search" id="edit-template-email-cc" class="modal-input" name="edit_email_cc" placeholder="Cc"/><input type="search" id="edit-template-email-subject" class="modal-input" name="edit_email_subject" placeholder="Subject"/><input type="search" id="edit-template-email-attachments" class="modal-input" name="edit_email_attachments" placeholder="Attachments"/><textarea id="edit-template-email-body" class="modal-input" name="edit_email_body"></textarea><div class="actionbar"><button class="button btn-cancel cancel">Cancel</button><button class="button btn-submit">Save</button></div>'
 			});
 
 			// Emails namespace
@@ -371,7 +371,7 @@ $('.options-menu').on('click', '#om-edit', function(e) {
 					}
 
 					// On Save
-					$('.button.btn-submit.submit').on('click', function(e) {
+					$('.button.btn-submit').on('click', function(e) {
 
 						// Save the email
 						Emails.save(email);
@@ -435,7 +435,7 @@ $('.options-menu').on('click', '#om-edit', function(e) {
 		case "contact":
 			modal.open({
 				title: 'Edit Contact' + title_ext,
-				content: '<input type="hidden" class="modal-input" name="_id" value="0"/><input type="search" id="edit-contact-first-name" class="modal-input" name="edit_contact_first_name" placeholder="First Name"/><input type="search" id="edit-contact-last-name" class="modal-input" name="edit_contact_last_name" placeholder="Last Name"/><input type="search" id="edit-contact-full-name" class="modal-input" name="edit_contact_full_name" placeholder="Full Name"/><input type="search" id="edit-contact-phone" class="modal-input" name="edit_contact_phone" placeholder="Phone" onkeydown="javascript:backspacerDOWN(this,event);" onkeyup="javascript:backspacerUP(this,event);"/><input type="search" id="edit-contact-email" class="modal-input" name="edit_contact_email" placeholder="Email"/><input type="search" id="edit-contact-business" class="modal-input" name="edit_contact_business" placeholder="Business"/><input type="search" id="edit-contact-ean" class="modal-input" name="edit_contact_ean" placeholder="EAN"/><textarea id="edit-contact-comments" class="modal-input" name="edit_contact_comments" placeholder="Comments"></textarea><div class="actionbar"><button class="button btn-cancel cancel">Cancel</button><button class="button btn-submit submit">Save</button></div>'
+				content: '<input type="hidden" class="modal-input" name="_id" value="0"/><input type="search" id="edit-contact-first-name" class="modal-input" name="edit_contact_first_name" placeholder="First Name"/><input type="search" id="edit-contact-last-name" class="modal-input" name="edit_contact_last_name" placeholder="Last Name"/><input type="search" id="edit-contact-full-name" class="modal-input" name="edit_contact_full_name" placeholder="Full Name"/><input type="search" id="edit-contact-phone" class="modal-input" name="edit_contact_phone" placeholder="Phone" onkeydown="javascript:backspacerDOWN(this,event);" onkeyup="javascript:backspacerUP(this,event);"/><input type="search" id="edit-contact-email" class="modal-input" name="edit_contact_email" placeholder="Email"/><input type="search" id="edit-contact-business" class="modal-input" name="edit_contact_business" placeholder="Business"/><input type="search" id="edit-contact-ean" class="modal-input" name="edit_contact_ean" placeholder="EAN"/><textarea id="edit-contact-comments" class="modal-input" name="edit_contact_comments" placeholder="Comments"></textarea><div class="actionbar"><button class="button btn-cancel cancel">Cancel</button><button class="button btn-submit">Save</button></div>'
 			});
 
 			// Contacts namespace
@@ -477,7 +477,7 @@ $('.options-menu').on('click', '#om-edit', function(e) {
 					}
 
 					// On Save
-					$('.button.btn-submit.submit').on('click', function(e) {
+					$('.button.btn-submit').on('click', function(e) {
 
 						// Save the contact
 						Contacts.save(contact);
@@ -628,11 +628,11 @@ $('.options-menu').on('click', '#om-new-item', function(e) {
 			//Notes.init();
 			modal.open({
 				title: parentFolder + ' → New Item → ' + path,
-				content: '<input type="search" id="new-item-name" class="modal-input" name="new_item_name" placeholder="New Item Name"/><textarea id="new-item-body" class="modal-input" name="new_note_body"></textarea><div class="actionbar"><button class="button btn-cancel cancel">Cancel</button><button class="button btn-submit submit">Create</button></div>'
+				content: '<input type="search" id="new-item-name" class="modal-input" name="new_item_name" placeholder="New Item Name"/><textarea id="new-item-body" class="modal-input" name="new_note_body"></textarea><div class="actionbar"><button class="button btn-cancel cancel">Cancel</button><button class="button btn-submit">Create</button></div>'
 			});
 			$('.modal-input').focus();
 
-			$('.button.btn-submit.submit').on('click', function(e) {
+			$('.button.btn-submit').on('click', function(e) {
 				e.preventDefault();
 
 				//ls.set("Notes:Index", ++Notes.index);
@@ -707,11 +707,11 @@ $('.options-menu').on('click', '#om-new-folder', function(e) {
 
 	modal.open({
 		title: parentFolder + ' → New Folder',
-		content: '<input type="search" class="modal-input" name="new_folder_name" placeholder="New Folder Name"/><div class="actionbar"><button class="button btn-cancel cancel">Cancel</button><button class="button btn-submit submit">Create</button></div>'
+		content: '<input type="search" class="modal-input" name="new_folder_name" placeholder="New Folder Name"/><div class="actionbar"><button class="button btn-cancel cancel">Cancel</button><button class="button btn-submit">Create</button></div>'
 	});
 	$('.modal-input').focus();
 
-	$('.button.btn-submit.submit').on('click', function(e) {
+	$('.button.btn-submit').on('click', function(e) {
 		e.preventDefault();
 
 		var $this = $('.tree-row[select=true]').parent('.tree-item');
