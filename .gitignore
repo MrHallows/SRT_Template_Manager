@@ -2,3 +2,12 @@
 *.zip
 fonts/Freight Sans Book/readme.html
 css/retina_icons.css
+css/colorpicker.css
+js/utils/colorpicker.js
+js/utils/smoothscroll.js
+fonts/Gibson/Gibson-Bold.ttf
+fonts/Gibson/Gibson-Bold_Italic.ttf
+fonts/Gibson/Gibson-Regular.ttf
+fonts/Gibson/Gibson-Regular_Italic.ttf
+fonts/Gibson/sharefonts.net.txt
+images/colorpicker_background.png
