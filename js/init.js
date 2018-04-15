@@ -10,14 +10,3 @@ $('#template-view span, #template-view pre').css({
 	"-webkit-user-select": "text",
 	"user-select": "text"
 });
-
-
-if(!ls.get("Tree:Notes")) {
-    ls.set("Tree:Notes", JSON.stringify(Tree.notes));
-}
-if(!ls.get("Tree:Email")) {
-    ls.set("Tree:Email", JSON.stringify(Tree.email));
-}
-if(!ls.get("Tree:Contacts")) {
-    ls.set("Tree:Contacts", JSON.stringify(Tree.contacts));
-}

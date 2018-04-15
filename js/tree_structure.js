@@ -337,11 +337,11 @@ $('.tree').on('click', '.tree-row', function() {
 
 	if(state.tab == "#tab-notes") {
 		// 
-		Object.keys(JSON.parse(ls.get("Tree:Notes"))).forEach(function() {
+		var currentItem = Object.keys(JSON.parse(ls.get("Tree:Notes"))).forEach(function() {
 			//var id = null;
-			var $selected = $('.tree-row[select=true]');
+			var $selected = $('.tree-item[select=true]');
 			var $label = $selected.find('.tree-label');
-			var $label_text = $selected.find('.tree-label').text();
+			var $label_text = $label.text();
 			var $tree_item = $selected.parent('.tree-item');
 			var $tree_item_id = $tree_item.attr('id');
 			var $item_type = $tree_item.attr('item-type');
@@ -351,6 +351,7 @@ $('.tree').on('click', '.tree-row', function() {
 			} else {
 				log("No match found.");
 			}
+			return 
 
 			//log("this.id: ", this.type + "-" + this.id);
 		});

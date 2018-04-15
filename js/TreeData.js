@@ -842,33 +842,6 @@ Tree.contacts = [
 ];
 
 
-// If this is the first time the application is opened (no localStorage data), set data
-var TreeNotes = [];
-var TreeEmail = [];
-var TreeContacts = [];
-
-if(!ls.get("Tree:Notes")) {
-    ls.set("Tree:Notes", JSON.stringify(Tree.notes));
-    TreeNotes = ls.get("Tree:Notes");
-} else {
-    TreeNotes = ls.get("Tree:Notes");
-}
-
-if(!ls.get("Tree:Email")) {
-    ls.set("Tree:Email", JSON.stringify(Tree.email));
-    TreeEmail = ls.get("Tree:Email");
-} else {
-    TreeEmail = ls.get("Tree:Email");
-}
-
-if(!ls.get("Tree:Contacts")) {
-    ls.set("Tree:Contacts", JSON.stringify(Tree.contacts));
-    TreeContacts = ls.get("Tree:Contacts");
-} else {
-    TreeContacts = ls.get("Tree:Contacts");
-}
-
-
 
 Tree.getFirstLevelData = function(data) {
     if(!data) data = null;
@@ -968,115 +941,55 @@ Tree.getChildrenOfNode = function(data, node_id) {
 };
 
 
-Tree.getNodeData = function(tree_item_id) {
-    //if(!data) data = null;
+// If this is the first time the application is opened (no localStorage item), set data.
+var TreeNotes = new Array();
+var TreeEmail = new Array();
+var TreeContacts = new Array();
 
-    //var datum = [];
+// 
+if(!ls.get("Tree:Notes")) {
+    ls.set("Tree:Notes", JSON.stringify(Tree.notes));
+    TreeNotes = ls.get("Tree:Notes");
+} else {
+    TreeNotes = ls.get("Tree:Notes");
+}
 
-    var data = null;
-    var type = null;
-    var id = null;
-    var selected = document.querySelector('.tree-row').parentElement.getAttribute('select') == 'true';
-    log("Tree.getNodeData: ", selected);
+if(!ls.get("Tree:Email")) {
+    ls.set("Tree:Email", JSON.stringify(Tree.email));
+    TreeEmail = ls.get("Tree:Email");
+} else {
+    TreeEmail = ls.get("Tree:Email");
+}
 
-    Tree.getNodeId = function() {
-        var separator = /(note|email|contact)-(\d+)/;
+if(!ls.get("Tree:Contacts")) {
+    ls.set("Tree:Contacts", JSON.stringify(Tree.contacts));
+    TreeContacts = ls.get("Tree:Contacts");
+} else {
+    TreeContacts = ls.get("Tree:Contacts");
+}
 
-        var i = this.replace(separator, function() {
-            id = $2;
-            return id;
-        });
+Tree.getTree = function() {
+    var tree = null;
 
-        return i;
-    };
+    // 
+    state = JSON.parse(ls.get("SRTTM_State"));
 
-    $.each(data, function() {
-        if(this.type == 'folder') {
-            var node = {
-                type: this.type,
-                label: this.label,
-                id: this.id,
-                expanded: this.expanded,
-                selected: this.selected
-            };
-        } else if(this.type == 'note') {
-            var node = {
-                type: this.type,
-                label: this.label,
-                id: this.id,
-                selected: this.selected,
-                content: {
-                    name: this.content.name,
-                    body: this.content.body
-                }
-            };
-        } else if(this.type == 'email') {
-            var node = {
-                type: this.type,
-                label: this.label,
-                id: this.id,
-                selected: this.selected,
-                content: {
-                    name: this.content.name,
-                    to: this.content.to,
-                    cc: this.content.cc,
-                    subject: this.content.subject,
-                    attachments: this.content.attachments,
-                    body: this.content.body
-                }
-            };
-        } else if(this.type == 'contact') {
-            var node = {
-                type: this.type,
-                label: this.label,
-                id: this.id,
-                selected: this.selected,
-                content: {
-                    firstName: this.content.firstName,
-                    lastName: this.content.lastName,
-                    fullName: this.content.fullName,
-                    phone: this.content.phone,
-                    email: this.content.email,
-                    business: this.content.business,
-                    ean: this.content.ean,
-                    comments: this.content.comments
-                }
-            };
-        }
+    if(state.tab == "#tab-notes") {
+        tree = TreeNotes;
+    } else if(state.tab == "#tab-email") {
+        tree = TreeEmail;
+    } else if(state.tab == "#tab-contacts") {
+        tree = TreeContacts;
+    }
 
-        if(this.children) {
-            node.load_on_demand = true;
-        }
-
-        datum.push(node);
-    });
-    return datum;
+    return tree;
 };
-
-
-Tree.getNodeData = function(tree_item_id) {
-    var result = null;
-    var type = null;
-    var id = null;
-
-    String.prototype.getId = function() {
-        var separator = /(note|email|contact)-(\d+)/;
-
-        var i = this.replace(separator, function() {
-            id = $2;
-            return id;
-        });
-
-        return i;
-    };
-};
-Tree.getNodeData();
 
 
 /* *
  * Store tree data to localStorage
  */
-Tree.persist = function(data) {
+/*Tree.persist = function(data) {
     if(!data) return;
 
     var datum = [];
@@ -1161,9 +1074,9 @@ Tree.persist = function(data) {
 //ls.set("Tree:Email", JSON.stringify(Tree.email));
 //ls.set("Tree:Contacts", JSON.stringify(Tree.contacts));
 
-Tree.persist(Tree.notes);
-Tree.persist(Tree.email);
-Tree.persist(Tree.contacts);
+Tree.persist(TreeNotes);
+Tree.persist(TreeEmail);
+Tree.persist(TreeContacts);*/
 
 
 /* *
@@ -1259,19 +1172,38 @@ document.getElementById('tree-body-notes').appendChild(Tree.buildTree(JSON.parse
 document.getElementById('tree-body-email').appendChild(Tree.buildTree(JSON.parse(TreeEmail)));
 document.getElementById('tree-body-contacts').appendChild(Tree.buildTree(JSON.parse(TreeContacts)));
 
-log(Tree.buildTree(JSON.parse(TreeNotes)));
+/*log(Tree.buildTree(JSON.parse(TreeNotes)));
 log(Tree.buildTree(JSON.parse(TreeEmail)));
-log(Tree.buildTree(JSON.parse(TreeContacts)));
+log(Tree.buildTree(JSON.parse(TreeContacts)));*/
+
+
+/**
+ * Tree.getIndex()
+ * @function Tree.getIndex
+ * @param id of selected tree item
+ * @returns Number
+ */
+var $selected = $('.tree-item[select=true]');
+Tree.getIndex = function(id) {
+    var index = Tree.getTree().findIndex(x => x.id == id);
+    log("Tree.getIndex('" + id + "'): ", index);
+    
+    return index;
+};
+Tree.getIndex($selected.id);
 
 
 /* *
- * Sync the HTML tree
+ * Access the data for the selected tree item
+ * When a tree item is selected and modified, update the respective object in the localStorage data.
  */
-Tree.sync = function(data) {
-    //var fragment = document.createDocumentFragment();
+Tree.update = function() {
+    var currentItem = document.querySelector('[select=true]');
+    //var currentItem = $('.tree-item[select=true]');
+    log("Tree.update(): ", currentItem);
 
     // Iterate through data (i.e., Tree.notes)
-    for(var index in data) {
+    /*for(var index in data) {
         if(data.hasOwnProperty(index)) {
 
             var _this = data[index];
@@ -1334,7 +1266,7 @@ Tree.sync = function(data) {
             }
 
             if(this.children) {
-                Tree.sync(this.children);
+                Tree.update(this.children);
             }
 
             if(node.hasOwnProperty('children')) {
@@ -1346,9 +1278,10 @@ Tree.sync = function(data) {
             }
             fragment.appendChild(tree_item);
         }
-    }
-    return fragment;
+    }*/
+    return currentItem;
 };
+Tree.update();
 
 
 /**
@@ -1363,7 +1296,7 @@ Tree.sync = function(data) {
  * @param String nested A dot notation style parameter reference (ie "urls.small")
  * @param Object object (optional) The object to search
  *
- * @return the value of the property in question
+ * @returns the value of the property in question
  */
 
 function getProperty(object, propertyName) {

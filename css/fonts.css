@@ -1445,3 +1445,34 @@
 	font-weight: 500;
 	font-style: normal;
 }
+
+
+/* * * * * * * * * * * * * * * * * * * END Novecento Sans Wide * * * * * * * * * * * * * * * * * * */
+
+
+/* *
+ * Gibson
+ */
+@font-face {
+	font-family: Gibson;
+	font-style: normal;
+	font-weight: 400;
+	src: url(/fonts/gibson/35DB9A_0_unhinted_0.eot);
+	src: url(/fonts/gibson/35DB9A_0_unhinted_0.eot?#iefix) format('embedded-opentype'),url(/fonts/gibson/35DB9A_0_unhinted_0.woff2) format('woff2'),url(/fonts/gibson/35DB9A_0_unhinted_0.woff) format('woff'),url(/fonts/gibson/35DB9A_0_unhinted_0.ttf) format('truetype'),url(/fonts/gibson/35DB9A_0_unhinted_0.svg#wf) format('svg')
+}
+
+@font-face {
+	font-family: Gibson;
+	font-style: normal;
+	font-weight: 700;
+	src: url(/fonts/gibson/35DB9A_1_unhinted_0.eot);
+	src: url(/fonts/gibson/35DB9A_1_unhinted_0.eot?#iefix) format('embedded-opentype'),url(/fonts/gibson/35DB9A_1_unhinted_0.woff2) format('woff2'),url(/fonts/gibson/35DB9A_1_unhinted_0.woff) format('woff'),url(/fonts/gibson/35DB9A_1_unhinted_0.ttf) format('truetype'),url(/fonts/gibson/35DB9A_1_unhinted_0.svg#wf) format('svg')
+}
+
+@font-face {
+	font-family: Gibson;
+	font-style: italic;
+	font-weight: 400;
+	src: url(/fonts/gibson/35DB9A_2_unhinted_0.eot);
+	src: url(/fonts/gibson/35DB9A_2_unhinted_0.eot?#iefix) format('embedded-opentype'),url(/fonts/gibson/35DB9A_2_unhinted_0.woff2) format('woff2'),url(/fonts/gibson/35DB9A_2_unhinted_0.woff) format('woff'),url(/fonts/gibson/35DB9A_2_unhinted_0.ttf) format('truetype'),url(/fonts/gibson/35DB9A_2_unhinted_0.svg#wf) format('svg')
+}

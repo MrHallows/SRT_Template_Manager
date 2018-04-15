@@ -357,8 +357,8 @@ svg.check-circle {
 	margin-bottom: 3px;
 	right: -62px;
 	white-space: nowrap;
-    width: 70px;
-    z-index: 1;
+	width: 70px;
+	/* z-index: 1; */
 	-webkit-transform: translate(0, -50%);
 	-moz-transform: translate(0, -50%);
 	-ms-transform: translate(0, -50%);
@@ -735,7 +735,6 @@ input[type=checkbox]:checked {
 	position: absolute;
 	visibility: hidden;
 	opacity: 0;
-	z-index: 1000000;
 	pointer-events: none;
 	-webkit-transition: 0.3s ease;
 	-moz-transition: 0.3s ease;
@@ -745,6 +744,7 @@ input[type=checkbox]:checked {
 .hint:hover:before, .hint:hover:after, [data-hint]:hover:before, [data-hint]:hover:after {
 	visibility: visible;
 	opacity: 1;
+	z-index: 9999;
 }
 
 .hint:before, [data-hint]:before {
