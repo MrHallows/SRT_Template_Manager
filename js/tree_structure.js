@@ -319,23 +319,29 @@ $('.tree').on('click', '.tree-row', function() {
 	$(this).attr('select', 'true'); // true
 	$par.attr('select', 'true'); // true
 
-	log("_____________________________________________");
+	/*log("_____________________________________________");
 	log("this.type: " + $par.attr('item-type'));
 	log("this.label: " + $lbl.text());
 	log("this.id: " + $par.attr('id').match(/\d+/));
 	log("this.selected: " + $par.attr('select'));
-	log("this.expanded: " + $par.attr('expanded'));
+	log("this.expanded: " + $par.attr('expanded'));*/
 
 	// Save active item state
 	state.item = $par.attr('id');
+	state.itemId = $par.attr('id').match(/\d+/);
 	ls.set("SRTTM_State", JSON.stringify(state));
+
+	//log("Tree.getActiveItem(): ", Tree.getActiveItem());
+	//log("Tree.update(): ", Tree.update());
+	Tree.update();
+	Tree.getActiveItem();
 
 	//Tree.getNodeData();
 
 	//state = JSON.parse(ls.get("SRTTM_State"));
 	//log(ls.get("SRTTM_State"));
 
-	if(state.tab == "#tab-notes") {
+	/*if(state.tab == "#tab-notes") {
 		// 
 		var currentItem = Object.keys(JSON.parse(ls.get("Tree:Notes"))).forEach(function() {
 			//var id = null;
@@ -393,7 +399,7 @@ $('.tree').on('click', '.tree-row', function() {
 
 			//log("this.id: ", this.type + "-" + this.id);
 		});
-	}
+	}*/
 
 
 	//log($('.tree-row').not(this).parent('.tree-item'));
@@ -411,6 +417,7 @@ $('.tree').on('contextmenu', '.tree-row', function() {
 
 	// Save active item state
 	state.item = $par.attr('id');
+	state.itemId = $par.attr('id').match(/\d+/);
 	ls.set("SRTTM_State", JSON.stringify(state));
 
 	//log($('.tree-row').not(this).parent('.tree-item'));

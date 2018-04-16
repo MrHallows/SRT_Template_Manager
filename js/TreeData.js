@@ -941,37 +941,55 @@ Tree.getChildrenOfNode = function(data, node_id) {
 };
 
 
-// If this is the first time the application is opened (no localStorage item), set data.
-var TreeNotes = new Array();
-var TreeEmail = new Array();
-var TreeContacts = new Array();
+/**
+ * Tree.getTreeData()
+ * If it is the first time the application is opened (Tree data is not in localStorage), set data.
+ */
+// Global arrays for the current Tree data
+var TreeNotes = TreeNotes || [];
+var TreeEmail = TreeEmail || [];
+var TreeContacts = TreeContacts || [];
 
-// 
-if(!ls.get("Tree:Notes")) {
-    ls.set("Tree:Notes", JSON.stringify(Tree.notes));
-    TreeNotes = ls.get("Tree:Notes");
-} else {
-    TreeNotes = ls.get("Tree:Notes");
-}
+Tree.getTreeData = function() {
+    // If "Tree:Notes" item does not exist in localStorage, create it using the original Tree.notes object data
+    //  and assign it to TreeNotes.
+    // Otherwise, pull the tree's data and assign it to TreeNotes.
+    if(!ls.get("Tree:Notes")) {
+        ls.set("Tree:Notes", JSON.stringify(Tree.notes));
+        TreeNotes = JSON.parse(ls.get("Tree:Notes"));
+    } else {
+        TreeNotes = JSON.parse(ls.get("Tree:Notes"));
+    }
 
-if(!ls.get("Tree:Email")) {
-    ls.set("Tree:Email", JSON.stringify(Tree.email));
-    TreeEmail = ls.get("Tree:Email");
-} else {
-    TreeEmail = ls.get("Tree:Email");
-}
+    // If "Tree:Email" item does not exist in localStorage, create it using the original Tree.email object data
+    //  and assign it to TreeEmail.
+    // Otherwise, pull the tree's data and assign it to TreeEmail.
+    if(!ls.get("Tree:Email")) {
+        ls.set("Tree:Email", JSON.stringify(Tree.email));
+        TreeEmail = JSON.parse(ls.get("Tree:Email"));
+    } else {
+        TreeEmail = JSON.parse(ls.get("Tree:Email"));
+    }
 
-if(!ls.get("Tree:Contacts")) {
-    ls.set("Tree:Contacts", JSON.stringify(Tree.contacts));
-    TreeContacts = ls.get("Tree:Contacts");
-} else {
-    TreeContacts = ls.get("Tree:Contacts");
-}
+    // If "Tree:Contacts" item does not exist in localStorage, create it using the original Tree.contacts object data
+    //  and assign it to TreeContacts.
+    // Otherwise, pull the tree's data and assign it to TreeContacts.
+    if(!ls.get("Tree:Contacts")) {
+        ls.set("Tree:Contacts", JSON.stringify(Tree.contacts));
+        TreeContacts = JSON.parse(ls.get("Tree:Contacts"));
+    } else {
+        TreeContacts = JSON.parse(ls.get("Tree:Contacts"));
+    }
+};
+Tree.getTreeData();
 
-Tree.getTree = function() {
+log("TreeNotes: ", TreeNotes);
+
+
+Tree.getActiveTree = function() {
     var tree = null;
 
-    // 
+    // Get state data from localStorage
     state = JSON.parse(ls.get("SRTTM_State"));
 
     if(state.tab == "#tab-notes") {
@@ -1168,120 +1186,146 @@ Tree.buildTree = function(data) {
     }
     return fragment;
 };
-document.getElementById('tree-body-notes').appendChild(Tree.buildTree(JSON.parse(TreeNotes)));
-document.getElementById('tree-body-email').appendChild(Tree.buildTree(JSON.parse(TreeEmail)));
-document.getElementById('tree-body-contacts').appendChild(Tree.buildTree(JSON.parse(TreeContacts)));
+document.getElementById('tree-body-notes').appendChild(Tree.buildTree(TreeNotes));
+document.getElementById('tree-body-email').appendChild(Tree.buildTree(TreeEmail));
+document.getElementById('tree-body-contacts').appendChild(Tree.buildTree(TreeContacts));
 
-/*log(Tree.buildTree(JSON.parse(TreeNotes)));
-log(Tree.buildTree(JSON.parse(TreeEmail)));
-log(Tree.buildTree(JSON.parse(TreeContacts)));*/
+/*log(Tree.buildTree(TreeNotes));
+log(Tree.buildTree(TreeEmail));
+log(Tree.buildTree(TreeContacts));*/
+
+
+/**
+ * Tree.getActiveId()
+ * @function Tree.getActiveId
+ * @param {id} of selected tree item
+ * @returns {Number}
+ */
+Tree.getActiveId = function() {
+    var activeTree = Tree.getActiveTree();
+    var activeItem = document.querySelector('#' + state.item);
+    var digits = /[^\d]+/;
+    var activeItemId = activeItem.id.toString().replace(digits, "");
+    //log("Tree.getActiveId(): ", activeItemId);
+    
+    return activeItemId;
+};
 
 
 /**
  * Tree.getIndex()
  * @function Tree.getIndex
- * @param id of selected tree item
- * @returns Number
+ * @param {id} of selected tree item
+ * @returns {Number}
  */
-var $selected = $('.tree-item[select=true]');
-Tree.getIndex = function(id) {
-    var index = Tree.getTree().findIndex(x => x.id == id);
-    log("Tree.getIndex('" + id + "'): ", index);
+Tree.getIndex = function() {
+    var activeTree = Tree.getActiveTree();
+    var activeItemId = Tree.getActiveId();
+    var index = activeTree.find(item => item.id == activeItemId);
+    //log("Tree.getIndex(): ", index);
     
     return index;
 };
-Tree.getIndex($selected.id);
+
+
+/**
+ * Tree.getActiveItem()
+ * @function Tree.getActiveItem
+ * @param {id} of selected tree item
+ * @returns {Number}
+ */
+Tree.getActiveItem = function() {
+    var activeTree = Tree.getActiveTree();
+    var activeItemId = Tree.getActiveId();
+    var activeItem = activeTree.find(item => item.id == activeItemId);
+    //log("Tree.getActiveItem(): ", activeItem);
+    
+    return activeItem;
+};
 
 
 /* *
- * Access the data for the selected tree item
- * When a tree item is selected and modified, update the respective object in the localStorage data.
+ * Update the data for the selected tree item
+ * When the selected tree item is modified, update the respective object in the localStorage data.
  */
 Tree.update = function() {
-    var currentItem = document.querySelector('[select=true]');
-    //var currentItem = $('.tree-item[select=true]');
-    log("Tree.update(): ", currentItem);
+    var tree = Tree.getActiveTree();
+    var item = Tree.getActiveItem();
 
-    // Iterate through data (i.e., Tree.notes)
-    /*for(var index in data) {
-        if(data.hasOwnProperty(index)) {
+    // _itemElement is the selected tree-item element
+    var _itemElement = document.getElementById(item.type + '-' + item.id);
+    log("_itemElement: ", _itemElement);
 
-            var _this = data[index];
+    //log("this.type: " + $par.attr('item-type'));
+	//log("this.label: " + $lbl.text());
+	//log("this.id: " + $par.attr('id').match(/\d+/));
+	//log("this.selected: " + $par.attr('select'));
+    //log("this.expanded: " + $par.attr('expanded'));
 
-            if(this.type == 'folder') {
-                var node = {
-                    type: this.type,
-                    label: this.label,
-                    id: this.id,
-                    expanded: this.expanded,
-                    selected: this.selected
-                };
+    if(item.type == 'folder') {
+        var node = {
+            type: item.type,
+            label: item.label,
+            id: item.id,
+            expanded: item.expanded,
+            selected: item.selected
+        };
 
-            } else if(this.type == 'note') {
-                var node = {
-                    type: this.type,
-                    label: this.label,
-                    id: this.id,
-                    selected: this.selected,
-                    content: {
-                        name: this.content.name,
-                        body: this.content.body
-                    }
-                };
-                //TreeNotes.push(node);
+        item.label = _itemElement.querySelector('.tree-label').innerHTML;
+        item.expanded = _itemElement.getAttribute('expanded');
+        item.selected = _itemElement.getAttribute('selected');
 
-            } else if(this.type == 'email') {
-                var node = {
-                    type: this.type,
-                    label: this.label,
-                    id: this.id,
-                    selected: this.selected,
-                    content: {
-                        name: this.content.name,
-                        to: this.content.to,
-                        cc: this.content.cc,
-                        subject: this.content.subject,
-                        attachments: this.content.attachments,
-                        body: this.content.body
-                    }
-                };
-
-            } else if(this.type == 'contact') {
-                var node = {
-                    type: this.type,
-                    label: this.label,
-                    id: this.id,
-                    selected: this.selected,
-                    content: {
-                        firstName: this.content.firstName,
-                        lastName: this.content.lastName,
-                        fullName: this.content.fullName,
-                        phone: this.content.phone,
-                        email: this.content.email,
-                        business: this.content.business,
-                        ean: this.content.ean,
-                        comments: this.content.comments
-                    }
-                };
+    } else if(item.type == 'note') {
+        var node = {
+            type: item.type,
+            label: item.label,
+            id: item.id,
+            selected: item.selected,
+            content: {
+                name: item.content.name,
+                body: item.content.body
             }
+        };
+        //TreeNotes.push(node);
 
-            if(this.children) {
-                Tree.update(this.children);
+    } else if(item.type == 'email') {
+        var node = {
+            type: item.type,
+            label: item.label,
+            id: item.id,
+            selected: item.selected,
+            content: {
+                name: item.content.name,
+                to: item.content.to,
+                cc: item.content.cc,
+                subject: item.content.subject,
+                attachments: item.content.attachments,
+                body: item.content.body
             }
+        };
 
-            if(node.hasOwnProperty('children')) {
-                if(this.type == 'folder') {
-                    //log("Node children: " + node + " has " + node.children.length + " children.");
-                    Tree.buildTree(node.children);
-                }
-                tree_item.appendChild(tree_children);
+    } else if(item.type == 'contact') {
+        var node = {
+            type: item.type,
+            label: item.label,
+            id: item.id,
+            selected: item.selected,
+            content: {
+                firstName: item.content.firstName,
+                lastName: item.content.lastName,
+                fullName: item.content.fullName,
+                phone: item.content.phone,
+                email: item.content.email,
+                business: item.content.business,
+                ean: item.content.ean,
+                comments: item.content.comments
             }
-            fragment.appendChild(tree_item);
-        }
-    }*/
-    return currentItem;
+        };
+    }
+    return item;
 };
 Tree.update();
+Tree.getActiveItem();
 
 
 /**
@@ -1299,8 +1343,8 @@ Tree.update();
  * @returns the value of the property in question
  */
 
-function getProperty(object, propertyName) {
-    var parts = propertyName.split( "." ),
+Tree.getProperty = function(object, propertyName) {
+    var parts = propertyName.split("."),
         i,
         property = object || this;
 
@@ -1308,10 +1352,10 @@ function getProperty(object, propertyName) {
         property = property[parts[i]];
     }
     return property;
-}
-log("getProperty(object, propertyName): ", getProperty(JSON.parse(ls.get("Tree:Notes")), 'id'));
+};
+log("Tree.getProperty(object, propertyName): ", Tree.getProperty(TreeNotes, 'id'));
 
-log("Object.getOwnPropertyNames(Number.prototype): ", Object.getOwnPropertyNames(JSON.parse(ls.get("Tree:Notes"))));
+log("Object.getOwnPropertyNames(): ", Object.getOwnPropertyNames(TreeNotes));
 //log("Object.keys(Number.prototype): ", Object.keys(JSON.parse(ls.get("Tree:Notes"))).forEach());
 
 /*$.each(JSON.parse(ls.get("Tree:Notes")), function() {

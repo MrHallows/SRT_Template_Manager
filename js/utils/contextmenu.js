@@ -179,6 +179,8 @@ $('.context-menu').on('click', '#cm-rename', function(e) {
 	$('.button.btn-submit').on('click', function(e) {
 		e.preventDefault();
 		$('.tree-row[select=true]').find('.tree-label').text($form.rename_new_name.value);
+
+		Tree.update();
 		modal.close();
 	});
 

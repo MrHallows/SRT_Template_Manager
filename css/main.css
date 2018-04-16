@@ -18,6 +18,7 @@ body {
     font-family: 'Open Sans', sans-serif !important;
     /* font-family: 'Ubuntu', sans-serif !important; /**/
     /* font-family: 'Ebrima', sans-serif; /**/
+    font-family: 'Varela Round', sans-serif !important;
     font-weight: 200;
     font-size: 12px;
     height: 100%;
@@ -727,7 +728,8 @@ input[type=checkbox]:checked {
  *   </span>
  */
 .hint, [data-hint] {
-	position: relative;
+    position: relative;
+    font-family: 'Varela Round', sans-serif;
 	cursor: pointer;
 }
 

@@ -5,13 +5,14 @@
 @charset "UTF-8";
 
 
-@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,400italic,500,500italic,700,700italic|Roboto+Mono:400,500,700|Material+Icons);
-@import url(https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700);
-@import url(https://fonts.googleapis.com/css?family=Raleway:100,400,700);
-@import url(https://fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic|Open+Sans:700,400);
-@import url(https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,100italic,400italic,500italic,700italic|Roboto+Condensed|Montserrat:100,200,300,400,500,600,700);
-@import url(https://fonts.googleapis.com/css?family=Cabin:400,500,600,700);
-@import url(https://fonts.googleapis.com/css?family=Fjalla+One:400|Cantarell:400);
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400italic,500,500italic,700,700italic|Roboto+Mono:400,500,700|Material+Icons');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700');
+@import url('https://fonts.googleapis.com/css?family=Raleway:100,400,700');
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic|Open+Sans:700,400');
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,100italic,400italic,500italic,700italic|Roboto+Condensed|Montserrat:100,200,300,400,500,600,700');
+@import url('https://fonts.googleapis.com/css?family=Cabin:400,500,600,700');
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One:400|Cantarell:400');
+@import url('https://fonts.googleapis.com/css?family=Varela+Round');
 
 
 /* *
@@ -19,56 +20,56 @@
  */
 @font-face {
     font-family: Gordita;
-    src: url("https://cdn1.massdrop.com/fonts/gordita/gorditablack-webfont.eot");
-    src: url("https://cdn1.massdrop.com/fonts/gordita/gorditablack-webfont.eot?#iefix") format("embedded-opentype"),url("https://cdn1.massdrop.com/fonts/gordita/gorditablack-webfont.woff2") format("woff2"),url("https://cdn1.massdrop.com/fonts/gordita/gorditablack-webfont.woff") format("woff"),url("https://cdn1.massdrop.com/fonts/gordita/gorditablack-webfont.ttf") format("truetype");
+    src: url('https://cdn1.massdrop.com/fonts/gordita/gorditablack-webfont.eot');
+    src: url('https://cdn1.massdrop.com/fonts/gordita/gorditablack-webfont.eot?#iefix') format("embedded-opentype"),url('https://cdn1.massdrop.com/fonts/gordita/gorditablack-webfont.woff2') format("woff2"),url('https://cdn1.massdrop.com/fonts/gordita/gorditablack-webfont.woff') format("woff"),url('https://cdn1.massdrop.com/fonts/gordita/gorditablack-webfont.ttf') format("truetype");
     font-weight: 900;
     font-style: normal
 }
 
 @font-face {
     font-family: Gordita;
-    src: url("https://cdn1.massdrop.com/fonts/gordita/gorditabold-webfont.eot");
-    src: url("https://cdn1.massdrop.com/fonts/gordita/gorditabold-webfont.eot?#iefix") format("embedded-opentype"),url("https://cdn1.massdrop.com/fonts/gordita/gorditabold-webfont.woff2") format("woff2"),url("https://cdn1.massdrop.com/fonts/gordita/gorditabold-webfont.woff") format("woff"),url("https://cdn1.massdrop.com/fonts/gordita/gorditabold-webfont.ttf") format("truetype");
+    src: url('https://cdn1.massdrop.com/fonts/gordita/gorditabold-webfont.eot');
+    src: url('https://cdn1.massdrop.com/fonts/gordita/gorditabold-webfont.eot?#iefix') format("embedded-opentype"),url('https://cdn1.massdrop.com/fonts/gordita/gorditabold-webfont.woff2') format("woff2"),url('https://cdn1.massdrop.com/fonts/gordita/gorditabold-webfont.woff') format("woff"),url('https://cdn1.massdrop.com/fonts/gordita/gorditabold-webfont.ttf') format("truetype");
     font-weight: 700;
     font-style: normal
 }
 
 @font-face {
     font-family: Gordita;
-    src: url("https://cdn1.massdrop.com/fonts/gordita/gorditamediumitalic-webfont.eot");
-    src: url("https://cdn1.massdrop.com/fonts/gordita/gorditamediumitalic-webfont.eot?#iefix") format("embedded-opentype"),url("https://cdn1.massdrop.com/fonts/gordita/gorditamediumitalic-webfont.woff2") format("woff2"),url("https://cdn1.massdrop.com/fonts/gordita/gorditamediumitalic-webfont.woff") format("woff"),url("https://cdn1.massdrop.com/fonts/gordita/gorditamediumitalic-webfont.ttf") format("truetype");
+    src: url('https://cdn1.massdrop.com/fonts/gordita/gorditamediumitalic-webfont.eot');
+    src: url('https://cdn1.massdrop.com/fonts/gordita/gorditamediumitalic-webfont.eot?#iefix') format("embedded-opentype"),url('https://cdn1.massdrop.com/fonts/gordita/gorditamediumitalic-webfont.woff2') format("woff2"),url('https://cdn1.massdrop.com/fonts/gordita/gorditamediumitalic-webfont.woff') format("woff"),url('https://cdn1.massdrop.com/fonts/gordita/gorditamediumitalic-webfont.ttf') format("truetype");
     font-weight: 500;
     font-style: italic
 }
 
 @font-face {
     font-family: Gordita;
-    src: url("https://cdn1.massdrop.com/fonts/gordita/gorditamedium-webfont.eot");
-    src: url("https://cdn1.massdrop.com/fonts/gordita/gorditamedium-webfont.eot?#iefix") format("embedded-opentype"),url("https://cdn1.massdrop.com/fonts/gordita/gorditamedium-webfont.woff2") format("woff2"),url("https://cdn1.massdrop.com/fonts/gordita/gorditamedium-webfont.woff") format("woff"),url("https://cdn1.massdrop.com/fonts/gordita/gorditamedium-webfont.ttf") format("truetype");
+    src: url('https://cdn1.massdrop.com/fonts/gordita/gorditamedium-webfont.eot');
+    src: url('https://cdn1.massdrop.com/fonts/gordita/gorditamedium-webfont.eot?#iefix') format("embedded-opentype"),url('https://cdn1.massdrop.com/fonts/gordita/gorditamedium-webfont.woff2') format("woff2"),url('https://cdn1.massdrop.com/fonts/gordita/gorditamedium-webfont.woff') format("woff"),url('https://cdn1.massdrop.com/fonts/gordita/gorditamedium-webfont.ttf') format("truetype");
     font-weight: 500;
     font-style: normal
 }
 
 @font-face {
     font-family: Gordita;
-    src: url("https://cdn1.massdrop.com/fonts/gordita/gorditaregular-webfont.eot");
-    src: url("https://cdn1.massdrop.com/fonts/gordita/gorditaregular-webfont.eot?#iefix") format("embedded-opentype"),url("https://cdn1.massdrop.com/fonts/gordita/gorditaregular-webfont.woff2") format("woff2"),url("https://cdn1.massdrop.com/fonts/gordita/gorditaregular-webfont.woff") format("woff"),url("https://cdn1.massdrop.com/fonts/gordita/gorditaregular-webfont.ttf") format("truetype");
+    src: url('https://cdn1.massdrop.com/fonts/gordita/gorditaregular-webfont.eot');
+    src: url('https://cdn1.massdrop.com/fonts/gordita/gorditaregular-webfont.eot?#iefix') format("embedded-opentype"),url('https://cdn1.massdrop.com/fonts/gordita/gorditaregular-webfont.woff2') format("woff2"),url('https://cdn1.massdrop.com/fonts/gordita/gorditaregular-webfont.woff') format("woff"),url('https://cdn1.massdrop.com/fonts/gordita/gorditaregular-webfont.ttf') format("truetype");
     font-weight: 400;
     font-style: normal
 }
 
 @font-face {
     font-family: Gordita;
-    src: url("https://cdn1.massdrop.com/fonts/gordita/gorditaregularitalic-webfont.eot");
-    src: url("https://cdn1.massdrop.com/fonts/gordita/gorditaregularitalic-webfont.eot?#iefix") format("embedded-opentype"),url("https://cdn1.massdrop.com/fonts/gordita/gorditaregularitalic-webfont.woff2") format("woff2"),url("https://cdn1.massdrop.com/fonts/gordita/gorditaregularitalic-webfont.woff") format("woff"),url("https://cdn1.massdrop.com/fonts/gordita/gorditaregularitalic-webfont.ttf") format("truetype");
+    src: url('https://cdn1.massdrop.com/fonts/gordita/gorditaregularitalic-webfont.eot');
+    src: url('https://cdn1.massdrop.com/fonts/gordita/gorditaregularitalic-webfont.eot?#iefix') format("embedded-opentype"),url('https://cdn1.massdrop.com/fonts/gordita/gorditaregularitalic-webfont.woff2') format("woff2"),url('https://cdn1.massdrop.com/fonts/gordita/gorditaregularitalic-webfont.woff') format("woff"),url('https://cdn1.massdrop.com/fonts/gordita/gorditaregularitalic-webfont.ttf') format("truetype");
     font-weight: 400;
     font-style: italic
 }
 
 @font-face {
     font-family: Gordita;
-    src: url("https://cdn1.massdrop.com/fonts/gordita/gorditalight-webfont.eot");
-    src: url("https://cdn1.massdrop.com/fonts/gordita/gorditalight-webfont.eot?#iefix") format("embedded-opentype"),url("https://cdn1.massdrop.com/fonts/gordita/gorditalight-webfont.woff2") format("woff2"),url("https://cdn1.massdrop.com/fonts/gordita/gorditalight-webfont.woff") format("woff"),url("https://cdn1.massdrop.com/fonts/gordita/gorditalight-webfont.ttf") format("truetype");
+    src: url('https://cdn1.massdrop.com/fonts/gordita/gorditalight-webfont.eot');
+    src: url('https://cdn1.massdrop.com/fonts/gordita/gorditalight-webfont.eot?#iefix') format("embedded-opentype"),url('https://cdn1.massdrop.com/fonts/gordita/gorditalight-webfont.woff2') format("woff2"),url('https://cdn1.massdrop.com/fonts/gordita/gorditalight-webfont.woff') format("woff"),url('https://cdn1.massdrop.com/fonts/gordita/gorditalight-webfont.ttf') format("truetype");
     font-weight: 200;
     font-style: normal
 }
@@ -81,32 +82,32 @@
  */
 @font-face {
     font-family: 'Salesforce Sans';
-    src: url(https://isell.my.salesforce.com/_slds/fonts/v2.3.0/SalesforceSans-Light.woff2) format('woff2'),url(https://isell.my.salesforce.com/_slds/fonts/v2.3.0/SalesforceSans-Light.woff) format('woff');
+    src: url('ttps://isell.my.salesforce.com/_slds/fonts/v2.3.0/SalesforceSans-Light.woff') format('woff2'),url('ttps://isell.my.salesforce.com/_slds/fonts/v2.3.0/SalesforceSans-Light.wof') format('woff');
     font-weight: 300
 }
 
 @font-face {
     font-family: 'Salesforce Sans';
-    src: url(https://isell.my.salesforce.com/_slds/fonts/v2.3.0/SalesforceSans-Regular.woff2) format('woff2'),url(https://isell.my.salesforce.com/_slds/fonts/v2.3.0/SalesforceSans-Regular.woff) format('woff');
+    src: url('ttps://isell.my.salesforce.com/_slds/fonts/v2.3.0/SalesforceSans-Regular.woff') format('woff2'),url('ttps://isell.my.salesforce.com/_slds/fonts/v2.3.0/SalesforceSans-Regular.wof') format('woff');
     font-weight: 400
 }
 
 @font-face {
     font-family: 'Salesforce Sans';
-    src: url(https://isell.my.salesforce.com/_slds/fonts/v2.3.0/SalesforceSans-Italic.woff2) format('woff2'),url(https://isell.my.salesforce.com/_slds/fonts/v2.3.0/SalesforceSans-Italic.woff) format('woff');
+    src: url('ttps://isell.my.salesforce.com/_slds/fonts/v2.3.0/SalesforceSans-Italic.woff') format('woff2'),url('ttps://isell.my.salesforce.com/_slds/fonts/v2.3.0/SalesforceSans-Italic.wof') format('woff');
     font-style: italic;
     font-weight: 400
 }
 
 @font-face {
     font-family: 'Salesforce Sans';
-    src: url(https://isell.my.salesforce.com/_slds/fonts/v2.3.0/SalesforceSans-Bold.woff2) format('woff2'),url(https://isell.my.salesforce.com/_slds/fonts/v2.3.0/SalesforceSans-Bold.woff) format('woff');
+    src: url('ttps://isell.my.salesforce.com/_slds/fonts/v2.3.0/SalesforceSans-Bold.woff') format('woff2'),url('ttps://isell.my.salesforce.com/_slds/fonts/v2.3.0/SalesforceSans-Bold.wof') format('woff');
     font-weight: 700
 }
 
 @font-face {
     font-family: 'Salesforce Sans';
-    src: url(https://isell.my.salesforce.com/_slds/fonts/v2.3.0/SalesforceSans-BoldItalic.woff2) format('woff2'),url(https://isell.my.salesforce.com/_slds/fonts/v2.3.0/SalesforceSans-BoldItalic.woff) format('woff');
+    src: url('ttps://isell.my.salesforce.com/_slds/fonts/v2.3.0/SalesforceSans-BoldItalic.woff') format('woff2'),url('ttps://isell.my.salesforce.com/_slds/fonts/v2.3.0/SalesforceSans-BoldItalic.wof') format('woff');
     font-style: italic;
     font-weight: 700
 }
@@ -856,47 +857,47 @@
 /*@font-face {
     font-weight: 500;
     font-family: 'ProximaNova';
-    src: url(https://dkru86weszx9t.cloudfront.net/assets/files/150f5167aebdc9281d7e5ae2b40fe72c/2BE995_0_0.eot);
-    src: url(https://dkru86weszx9t.cloudfront.net/assets/files/150f5167aebdc9281d7e5ae2b40fe72c/2BE995_0_0.eot?#iefix) format('embedded-opentype'), url(https://dkru86weszx9t.cloudfront.net/assets/files/ed7d4e8c1f43a4913f6b18cb93475322/2BE995_0_0.woff) format('woff'), url(https://dkru86weszx9t.cloudfront.net/assets/files/7fe6f640ada28d2938f9cbb4595c4f3f/2BE995_0_0.ttf) format('truetype');
+    src: url('ttps://dkru86weszx9t.cloudfront.net/assets/files/150f5167aebdc9281d7e5ae2b40fe72c/2BE995_0_0.eo');
+    src: url('ttps://dkru86weszx9t.cloudfront.net/assets/files/150f5167aebdc9281d7e5ae2b40fe72c/2BE995_0_0.eot?#iefi') format('embedded-opentype'), url('ttps://dkru86weszx9t.cloudfront.net/assets/files/ed7d4e8c1f43a4913f6b18cb93475322/2BE995_0_0.wof') format('woff'), url('ttps://dkru86weszx9t.cloudfront.net/assets/files/7fe6f640ada28d2938f9cbb4595c4f3f/2BE995_0_0.tt') format('truetype');
 }
 
 @font-face {
     font-weight: 400;
     font-family: 'ProximaNova';
-    src: url(https://dkru86weszx9t.cloudfront.net/assets/files/abe0b7a18bf7044d0bf0b74ab548673f/2BE995_1_0.eot);
-    src: url(https://dkru86weszx9t.cloudfront.net/assets/files/abe0b7a18bf7044d0bf0b74ab548673f/2BE995_1_0.eot?#iefix) format('embedded-opentype'), url(https://dkru86weszx9t.cloudfront.net/assets/files/99480c3e8c6f3c031d9a98cb8734d12c/2BE995_1_0.woff) format('woff'), url(https://dkru86weszx9t.cloudfront.net/assets/files/21256b3bed040e84d5b74b3c74ca36c5/2BE995_1_0.ttf) format('truetype');
+    src: url('ttps://dkru86weszx9t.cloudfront.net/assets/files/abe0b7a18bf7044d0bf0b74ab548673f/2BE995_1_0.eo');
+    src: url('ttps://dkru86weszx9t.cloudfront.net/assets/files/abe0b7a18bf7044d0bf0b74ab548673f/2BE995_1_0.eot?#iefi') format('embedded-opentype'), url('ttps://dkru86weszx9t.cloudfront.net/assets/files/99480c3e8c6f3c031d9a98cb8734d12c/2BE995_1_0.wof') format('woff'), url('ttps://dkru86weszx9t.cloudfront.net/assets/files/21256b3bed040e84d5b74b3c74ca36c5/2BE995_1_0.tt') format('truetype');
 }*/
 
 @font-face {
     font-style: normal;
     font-weight: 300;
     font-family: 'Lato';
-    src: url(https://dkru86weszx9t.cloudfront.net/assets/files/a88eee11dc8bc2e41b3bcce9df3168cf/Lato-Light-webfont.eot);
-    src: url(https://dkru86weszx9t.cloudfront.net/assets/files/a88eee11dc8bc2e41b3bcce9df3168cf/Lato-Light-webfont.eot?#iefix) format('embedded-opentype'), url(https://dkru86weszx9t.cloudfront.net/assets/files/db6e0b3a48d17557f600a3270b63d771/Lato-Light-webfont.woff) format('woff'), url(https://dkru86weszx9t.cloudfront.net/assets/files/cdaca2705a67ab2ec1f6ee5dffea4458/Lato-Light-webfont.ttf) format('truetype');
+    src: url('ttps://dkru86weszx9t.cloudfront.net/assets/files/a88eee11dc8bc2e41b3bcce9df3168cf/Lato-Light-webfont.eo');
+    src: url('ttps://dkru86weszx9t.cloudfront.net/assets/files/a88eee11dc8bc2e41b3bcce9df3168cf/Lato-Light-webfont.eot?#iefi') format('embedded-opentype'), url('ttps://dkru86weszx9t.cloudfront.net/assets/files/db6e0b3a48d17557f600a3270b63d771/Lato-Light-webfont.wof') format('woff'), url('ttps://dkru86weszx9t.cloudfront.net/assets/files/cdaca2705a67ab2ec1f6ee5dffea4458/Lato-Light-webfont.tt') format('truetype');
 }
 
 @font-face {
     font-style: normal;
     font-weight: 400;
     font-family: 'Lato';
-    src: url(https://dkru86weszx9t.cloudfront.net/assets/files/c6db6ae243e33fd39cda52b924fba9d4/Lato-Regular-webfont.eot);
-    src: url(https://dkru86weszx9t.cloudfront.net/assets/files/c6db6ae243e33fd39cda52b924fba9d4/Lato-Regular-webfont.eot?#iefix) format('embedded-opentype'), url(https://dkru86weszx9t.cloudfront.net/assets/files/bffdbf7260efa512ed7fcd13e6e52d36/Lato-Regular-webfont.woff) format('woff'), url(https://dkru86weszx9t.cloudfront.net/assets/files/63783a5517e25ac0440c02f71c659926/Lato-Regular-webfont.ttf) format('truetype');
+    src: url('ttps://dkru86weszx9t.cloudfront.net/assets/files/c6db6ae243e33fd39cda52b924fba9d4/Lato-Regular-webfont.eo');
+    src: url('ttps://dkru86weszx9t.cloudfront.net/assets/files/c6db6ae243e33fd39cda52b924fba9d4/Lato-Regular-webfont.eot?#iefi') format('embedded-opentype'), url('ttps://dkru86weszx9t.cloudfront.net/assets/files/bffdbf7260efa512ed7fcd13e6e52d36/Lato-Regular-webfont.wof') format('woff'), url('ttps://dkru86weszx9t.cloudfront.net/assets/files/63783a5517e25ac0440c02f71c659926/Lato-Regular-webfont.tt') format('truetype');
 }
 
 @font-face {
     font-style: italic;
     font-weight: 300;
     font-family: 'Lato';
-    src: url(https://dkru86weszx9t.cloudfront.net/assets/files/842bcd6c0b03a410903643515b3194f9/Lato-Light-Italic-webfont.eot);
-    src: url(https://dkru86weszx9t.cloudfront.net/assets/files/842bcd6c0b03a410903643515b3194f9/Lato-Light-Italic-webfont.eot?#iefix) format('embedded-opentype'), url(https://dkru86weszx9t.cloudfront.net/assets/files/49e4e807512a51486857443a182dee6f/Lato-Light-Italic-webfont.woff) format('woff'), url(https://dkru86weszx9t.cloudfront.net/assets/files/7629347ce947b974f17ce1bb7c37136e/Lato-Light-Italic-webfont.ttf) format('truetype');
+    src: url('ttps://dkru86weszx9t.cloudfront.net/assets/files/842bcd6c0b03a410903643515b3194f9/Lato-Light-Italic-webfont.eo');
+    src: url('ttps://dkru86weszx9t.cloudfront.net/assets/files/842bcd6c0b03a410903643515b3194f9/Lato-Light-Italic-webfont.eot?#iefi') format('embedded-opentype'), url('ttps://dkru86weszx9t.cloudfront.net/assets/files/49e4e807512a51486857443a182dee6f/Lato-Light-Italic-webfont.wof') format('woff'), url('ttps://dkru86weszx9t.cloudfront.net/assets/files/7629347ce947b974f17ce1bb7c37136e/Lato-Light-Italic-webfont.tt') format('truetype');
 }
 
 @font-face {
     font-style: italic;
     font-weight: 400;
     font-family: 'Lato';
-    src: url(https://dkru86weszx9t.cloudfront.net/assets/files/5adedf4446f44f70dc786acafd330b69/Lato-Italic-webfont.eot);
-    src: url(https://dkru86weszx9t.cloudfront.net/assets/files/5adedf4446f44f70dc786acafd330b69/Lato-Italic-webfont.eot?#iefix) format('embedded-opentype'), url(https://dkru86weszx9t.cloudfront.net/assets/files/10bca3e8e19b2e49a1e47c6f858d1193/Lato-Italic-webfont.woff) format('woff'), url(https://dkru86weszx9t.cloudfront.net/assets/files/cbef3462ed0cb925a1508b22c372030d/Lato-Italic-webfont.ttf) format('truetype');
+    src: url('ttps://dkru86weszx9t.cloudfront.net/assets/files/5adedf4446f44f70dc786acafd330b69/Lato-Italic-webfont.eo');
+    src: url('ttps://dkru86weszx9t.cloudfront.net/assets/files/5adedf4446f44f70dc786acafd330b69/Lato-Italic-webfont.eot?#iefi') format('embedded-opentype'), url('ttps://dkru86weszx9t.cloudfront.net/assets/files/10bca3e8e19b2e49a1e47c6f858d1193/Lato-Italic-webfont.wof') format('woff'), url('ttps://dkru86weszx9t.cloudfront.net/assets/files/cbef3462ed0cb925a1508b22c372030d/Lato-Italic-webfont.tt') format('truetype');
 }
 
 /* * * * * * * * * * * * * * * * * * * END LATO * * * * * * * * * * * * * * * * * * */
@@ -925,10 +926,10 @@
  */
 @font-face {
 	font-family: UITKIcons;
-  src: url(https://a.travel-assets.com/uitoolkit/2-171/de6c3c9d0d06807be21b9521dabea280092d567d/core/fonts/UITKIcons.eot?#iefix) format('No-IE-404'),
-       url(https://a.travel-assets.com/uitoolkit/2-171/de6c3c9d0d06807be21b9521dabea280092d567d/core/fonts/UITKIcons.svg#UITKIcons) format('svg'),
-       url(https://a.travel-assets.com/uitoolkit/2-171/de6c3c9d0d06807be21b9521dabea280092d567d/core/fonts/UITKIcons.woff) format('woff'),
-       url(https://a.travel-assets.com/uitoolkit/2-171/de6c3c9d0d06807be21b9521dabea280092d567d/core/fonts/UITKIcons.ttf) format('truetype');
+  src: url('ttps://a.travel-assets.com/uitoolkit/2-171/de6c3c9d0d06807be21b9521dabea280092d567d/core/fonts/UITKIcons.eot?#iefi') format('No-IE-404'),
+       url('ttps://a.travel-assets.com/uitoolkit/2-171/de6c3c9d0d06807be21b9521dabea280092d567d/core/fonts/UITKIcons.svg#UITKIcon') format('svg'),
+       url('ttps://a.travel-assets.com/uitoolkit/2-171/de6c3c9d0d06807be21b9521dabea280092d567d/core/fonts/UITKIcons.wof') format('woff'),
+       url('ttps://a.travel-assets.com/uitoolkit/2-171/de6c3c9d0d06807be21b9521dabea280092d567d/core/fonts/UITKIcons.tt') format('truetype');
 	font-weight: 400;
 	font-style: normal
 }
@@ -1408,40 +1409,40 @@
 
 @font-face {
 	font-family: "Novecento Sans Wide";
-	src: url(/profiles/cheppers/themes/custom/chet/fonts/Novecentosanswide/Novecentosanswide-Bold-webfont.eot?eb5e3f4=);
-	src: url(/profiles/cheppers/themes/custom/chet/fonts/Novecentosanswide/Novecentosanswide-Bold-webfont.eot?eb5e3f4=#iefix) format('embedded-opentype'),url(/profiles/cheppers/themes/custom/chet/fonts/Novecentosanswide/Novecentosanswide-Bold-webfont.woff2?eb5e3f4=) format('woff2'),url(/profiles/cheppers/themes/custom/chet/fonts/Novecentosanswide/Novecentosanswide-Bold-webfont.woff?eb5e3f4=) format('woff'),url(/profiles/cheppers/themes/custom/chet/fonts/Novecentosanswide/Novecentosanswide-Bold-webfont.ttf?eb5e3f4=) format('truetype'),url(/profiles/cheppers/themes/custom/chet/fonts/Novecentosanswide/Novecentosanswide-Bold-webfont.svg?eb5e3f4=) format('svg');
+	src: url('profiles/cheppers/themes/custom/chet/fonts/Novecentosanswide/Novecentosanswide-Bold-webfont.eot?eb5e3f4');
+	src: url('profiles/cheppers/themes/custom/chet/fonts/Novecentosanswide/Novecentosanswide-Bold-webfont.eot?eb5e3f4=#iefi') format('embedded-opentype'),url('profiles/cheppers/themes/custom/chet/fonts/Novecentosanswide/Novecentosanswide-Bold-webfont.woff2?eb5e3f4') format('woff2'),url('profiles/cheppers/themes/custom/chet/fonts/Novecentosanswide/Novecentosanswide-Bold-webfont.woff?eb5e3f4') format('woff'),url('profiles/cheppers/themes/custom/chet/fonts/Novecentosanswide/Novecentosanswide-Bold-webfont.ttf?eb5e3f4') format('truetype'),url('profiles/cheppers/themes/custom/chet/fonts/Novecentosanswide/Novecentosanswide-Bold-webfont.svg?eb5e3f4') format('svg');
 	font-weight: 900;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: "Novecento Sans Wide";
-	src: url(/profiles/cheppers/themes/custom/chet/fonts/Novecentosanswide/Novecentosanswide-Book-webfont.eot?eb5e3f4=);
-	src: url(/profiles/cheppers/themes/custom/chet/fonts/Novecentosanswide/Novecentosanswide-Book-webfont.eot?eb5e3f4=#iefix) format('embedded-opentype'),url(/profiles/cheppers/themes/custom/chet/fonts/Novecentosanswide/Novecentosanswide-Book-webfont.woff2?eb5e3f4=) format('woff2'),url(/profiles/cheppers/themes/custom/chet/fonts/Novecentosanswide/Novecentosanswide-Book-webfont.woff?eb5e3f4=) format('woff'),url(/profiles/cheppers/themes/custom/chet/fonts/Novecentosanswide/Novecentosanswide-Book-webfont.ttf?eb5e3f4=) format('truetype'),url(/profiles/cheppers/themes/custom/chet/fonts/Novecentosanswide/Novecentosanswide-Book-webfont.svg?eb5e3f4=) format('svg');
+	src: url('profiles/cheppers/themes/custom/chet/fonts/Novecentosanswide/Novecentosanswide-Book-webfont.eot?eb5e3f4');
+	src: url('profiles/cheppers/themes/custom/chet/fonts/Novecentosanswide/Novecentosanswide-Book-webfont.eot?eb5e3f4=#iefi') format('embedded-opentype'),url('profiles/cheppers/themes/custom/chet/fonts/Novecentosanswide/Novecentosanswide-Book-webfont.woff2?eb5e3f4') format('woff2'),url('profiles/cheppers/themes/custom/chet/fonts/Novecentosanswide/Novecentosanswide-Book-webfont.woff?eb5e3f4') format('woff'),url('profiles/cheppers/themes/custom/chet/fonts/Novecentosanswide/Novecentosanswide-Book-webfont.ttf?eb5e3f4') format('truetype'),url('profiles/cheppers/themes/custom/chet/fonts/Novecentosanswide/Novecentosanswide-Book-webfont.svg?eb5e3f4') format('svg');
 	font-weight: 400;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: "Novecento Sans Wide";
-	src: url(/profiles/cheppers/themes/custom/chet/fonts/Novecentosanswide/Novecentosanswide-DemiBold-webfont.eot?eb5e3f4=);
-	src: url(/profiles/cheppers/themes/custom/chet/fonts/Novecentosanswide/Novecentosanswide-DemiBold-webfont.eot?eb5e3f4=#iefix) format('embedded-opentype'),url(/profiles/cheppers/themes/custom/chet/fonts/Novecentosanswide/Novecentosanswide-DemiBold-webfont.woff2?eb5e3f4=) format('woff2'),url(/profiles/cheppers/themes/custom/chet/fonts/Novecentosanswide/Novecentosanswide-DemiBold-webfont.woff?eb5e3f4=) format('woff'),url(/profiles/cheppers/themes/custom/chet/fonts/Novecentosanswide/Novecentosanswide-DemiBold-webfont.ttf?eb5e3f4=) format('truetype'),url(/profiles/cheppers/themes/custom/chet/fonts/Novecentosanswide/Novecentosanswide-DemiBold-webfont.svg?eb5e3f4=) format('svg');
+	src: url('profiles/cheppers/themes/custom/chet/fonts/Novecentosanswide/Novecentosanswide-DemiBold-webfont.eot?eb5e3f4');
+	src: url('profiles/cheppers/themes/custom/chet/fonts/Novecentosanswide/Novecentosanswide-DemiBold-webfont.eot?eb5e3f4=#iefi') format('embedded-opentype'),url('profiles/cheppers/themes/custom/chet/fonts/Novecentosanswide/Novecentosanswide-DemiBold-webfont.woff2?eb5e3f4') format('woff2'),url('profiles/cheppers/themes/custom/chet/fonts/Novecentosanswide/Novecentosanswide-DemiBold-webfont.woff?eb5e3f4') format('woff'),url('profiles/cheppers/themes/custom/chet/fonts/Novecentosanswide/Novecentosanswide-DemiBold-webfont.ttf?eb5e3f4') format('truetype'),url('profiles/cheppers/themes/custom/chet/fonts/Novecentosanswide/Novecentosanswide-DemiBold-webfont.svg?eb5e3f4') format('svg');
 	font-weight: 700;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: "Novecento Sans Wide";
-	src: url(/profiles/cheppers/themes/custom/chet/fonts/Novecentosanswide/Novecentosanswide-Light-webfont.eot?eb5e3f4=);
-	src: url(/profiles/cheppers/themes/custom/chet/fonts/Novecentosanswide/Novecentosanswide-Light-webfont.eot?eb5e3f4=#iefix) format('embedded-opentype'),url(/profiles/cheppers/themes/custom/chet/fonts/Novecentosanswide/Novecentosanswide-Light-webfont.woff2?eb5e3f4=) format('woff2'),url(/profiles/cheppers/themes/custom/chet/fonts/Novecentosanswide/Novecentosanswide-Light-webfont.woff?eb5e3f4=) format('woff'),url(/profiles/cheppers/themes/custom/chet/fonts/Novecentosanswide/Novecentosanswide-Light-webfont.ttf?eb5e3f4=) format('truetype'),url(/profiles/cheppers/themes/custom/chet/fonts/Novecentosanswide/Novecentosanswide-Light-webfont.svg?eb5e3f4=) format('svg');
+	src: url('profiles/cheppers/themes/custom/chet/fonts/Novecentosanswide/Novecentosanswide-Light-webfont.eot?eb5e3f4');
+	src: url('profiles/cheppers/themes/custom/chet/fonts/Novecentosanswide/Novecentosanswide-Light-webfont.eot?eb5e3f4=#iefi') format('embedded-opentype'),url('profiles/cheppers/themes/custom/chet/fonts/Novecentosanswide/Novecentosanswide-Light-webfont.woff2?eb5e3f4') format('woff2'),url('profiles/cheppers/themes/custom/chet/fonts/Novecentosanswide/Novecentosanswide-Light-webfont.woff?eb5e3f4') format('woff'),url('profiles/cheppers/themes/custom/chet/fonts/Novecentosanswide/Novecentosanswide-Light-webfont.ttf?eb5e3f4') format('truetype'),url('profiles/cheppers/themes/custom/chet/fonts/Novecentosanswide/Novecentosanswide-Light-webfont.svg?eb5e3f4') format('svg');
 	font-weight: 300;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: "Novecento Sans Wide";
-	src: url(/profiles/cheppers/themes/custom/chet/fonts/Novecentosanswide/Novecentosanswide-Normal-webfont.eot?eb5e3f4=);
-	src: url(/profiles/cheppers/themes/custom/chet/fonts/Novecentosanswide/Novecentosanswide-Normal-webfont.eot?eb5e3f4=#iefix) format('embedded-opentype'),url(/profiles/cheppers/themes/custom/chet/fonts/Novecentosanswide/Novecentosanswide-Normal-webfont.woff2?eb5e3f4=) format('woff2'),url(/profiles/cheppers/themes/custom/chet/fonts/Novecentosanswide/Novecentosanswide-Normal-webfont.woff?eb5e3f4=) format('woff'),url(/profiles/cheppers/themes/custom/chet/fonts/Novecentosanswide/Novecentosanswide-Normal-webfont.ttf?eb5e3f4=) format('truetype'),url(/profiles/cheppers/themes/custom/chet/fonts/Novecentosanswide/Novecentosanswide-Normal-webfont.svg?eb5e3f4=) format('svg');
+	src: url('profiles/cheppers/themes/custom/chet/fonts/Novecentosanswide/Novecentosanswide-Normal-webfont.eot?eb5e3f4');
+	src: url('profiles/cheppers/themes/custom/chet/fonts/Novecentosanswide/Novecentosanswide-Normal-webfont.eot?eb5e3f4=#iefi') format('embedded-opentype'),url('profiles/cheppers/themes/custom/chet/fonts/Novecentosanswide/Novecentosanswide-Normal-webfont.woff2?eb5e3f4') format('woff2'),url('profiles/cheppers/themes/custom/chet/fonts/Novecentosanswide/Novecentosanswide-Normal-webfont.woff?eb5e3f4') format('woff'),url('profiles/cheppers/themes/custom/chet/fonts/Novecentosanswide/Novecentosanswide-Normal-webfont.ttf?eb5e3f4') format('truetype'),url('profiles/cheppers/themes/custom/chet/fonts/Novecentosanswide/Novecentosanswide-Normal-webfont.svg?eb5e3f4') format('svg');
 	font-weight: 500;
 	font-style: normal;
 }
@@ -1457,22 +1458,22 @@
 	font-family: Gibson;
 	font-style: normal;
 	font-weight: 400;
-	src: url(/fonts/gibson/35DB9A_0_unhinted_0.eot);
-	src: url(/fonts/gibson/35DB9A_0_unhinted_0.eot?#iefix) format('embedded-opentype'),url(/fonts/gibson/35DB9A_0_unhinted_0.woff2) format('woff2'),url(/fonts/gibson/35DB9A_0_unhinted_0.woff) format('woff'),url(/fonts/gibson/35DB9A_0_unhinted_0.ttf) format('truetype'),url(/fonts/gibson/35DB9A_0_unhinted_0.svg#wf) format('svg')
+	src: url('fonts/gibson/35DB9A_0_unhinted_0.eo');
+	src: url('fonts/gibson/35DB9A_0_unhinted_0.eot?#iefi') format('embedded-opentype'),url('fonts/gibson/35DB9A_0_unhinted_0.woff') format('woff2'),url('fonts/gibson/35DB9A_0_unhinted_0.wof') format('woff'),url('fonts/gibson/35DB9A_0_unhinted_0.tt') format('truetype'),url('fonts/gibson/35DB9A_0_unhinted_0.svg#w') format('svg')
 }
 
 @font-face {
 	font-family: Gibson;
 	font-style: normal;
 	font-weight: 700;
-	src: url(/fonts/gibson/35DB9A_1_unhinted_0.eot);
-	src: url(/fonts/gibson/35DB9A_1_unhinted_0.eot?#iefix) format('embedded-opentype'),url(/fonts/gibson/35DB9A_1_unhinted_0.woff2) format('woff2'),url(/fonts/gibson/35DB9A_1_unhinted_0.woff) format('woff'),url(/fonts/gibson/35DB9A_1_unhinted_0.ttf) format('truetype'),url(/fonts/gibson/35DB9A_1_unhinted_0.svg#wf) format('svg')
+	src: url('fonts/gibson/35DB9A_1_unhinted_0.eo');
+	src: url('fonts/gibson/35DB9A_1_unhinted_0.eot?#iefi') format('embedded-opentype'),url('fonts/gibson/35DB9A_1_unhinted_0.woff') format('woff2'),url('fonts/gibson/35DB9A_1_unhinted_0.wof') format('woff'),url('fonts/gibson/35DB9A_1_unhinted_0.tt') format('truetype'),url('fonts/gibson/35DB9A_1_unhinted_0.svg#w') format('svg')
 }
 
 @font-face {
 	font-family: Gibson;
 	font-style: italic;
 	font-weight: 400;
-	src: url(/fonts/gibson/35DB9A_2_unhinted_0.eot);
-	src: url(/fonts/gibson/35DB9A_2_unhinted_0.eot?#iefix) format('embedded-opentype'),url(/fonts/gibson/35DB9A_2_unhinted_0.woff2) format('woff2'),url(/fonts/gibson/35DB9A_2_unhinted_0.woff) format('woff'),url(/fonts/gibson/35DB9A_2_unhinted_0.ttf) format('truetype'),url(/fonts/gibson/35DB9A_2_unhinted_0.svg#wf) format('svg')
+	src: url('fonts/gibson/35DB9A_2_unhinted_0.eo');
+	src: url('fonts/gibson/35DB9A_2_unhinted_0.eot?#iefi') format('embedded-opentype'),url('fonts/gibson/35DB9A_2_unhinted_0.woff') format('woff2'),url('fonts/gibson/35DB9A_2_unhinted_0.wof') format('woff'),url('fonts/gibson/35DB9A_2_unhinted_0.tt') format('truetype'),url('fonts/gibson/35DB9A_2_unhinted_0.svg#w') format('svg')
 }
