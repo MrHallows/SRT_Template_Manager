@@ -886,3 +886,84 @@ input[type=checkbox]:checked {
 	-moz-transform: translateY(8px);
 	transform: translateY(8px);
 }
+
+
+/* *
+ * SVG
+ */
+#settings-icon {
+    position: relative;
+    margin: 10px;
+	vertical-align: middle;
+}
+#settings-icon svg {
+    width: 16px;
+	height: 16px;
+    fill: #00c09a;
+	stroke: currentcolor;
+	stroke-width: 1.4;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+}
+
+
+/* *
+ * Slide-Toggle style checkboxes
+ */
+*, body, button, html, input, select, textarea {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+p {
+	padding: 0;
+	margin: 0;
+	margin-bottom: 10px;
+}
+
+label.checkboxCont {
+    color: #ddd;
+	cursor: pointer;
+}
+
+label.checkboxCont input[type=checkbox] {
+	display: none;
+}
+
+label.checkboxCont span.checkbox {
+	display: inline-block;
+	position: relative;
+	background: #0000001a;
+	vertical-align: middle;
+	border-radius: 14px;
+	width: 24px;
+	height: 14px;
+	margin-right: 5px;
+	top: -2px;
+	transition: all .15s;
+}
+label.checkboxCont input[type=checkbox]:checked + span.checkbox {
+	background: #0084ff;
+}
+
+label.checkboxCont span.checkbox:after {
+	content: "";
+	display: block;
+	position: absolute;
+	background: #eee;
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,.2), 0 0 1px 0 rgba(0,0,0,.21);
+	border-radius: 12px;
+	top: 1px;
+	left: 1px;
+	width: 12px;
+	height: 12px;
+	transition: left .15s;
+}
+label.checkboxCont input[type=checkbox]:checked + span.checkbox:after {
+	left: 11px;
+}
+
+label.checkboxCont small {
+	font-size: inherit;
+	color: #ffffff4d;
+}

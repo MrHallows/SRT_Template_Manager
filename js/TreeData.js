@@ -1238,7 +1238,7 @@ Tree.getActiveItem = function() {
     var activeTree = Tree.getActiveTree();
     var activeItemId = Tree.getActiveId();
     var activeItem = activeTree.find(item => item.id == activeItemId);
-    log("Tree.getActiveItem(): ", activeItem);
+    //log("Tree.getActiveItem(): ", activeItem);
     
     return activeItem;
 };
@@ -1326,6 +1326,7 @@ Tree.update = function() {
 };
 Tree.update();
 Tree.getActiveItem();
+log("Tree.getActiveItem(): ", Tree.getActiveItem());
 
 
 /**

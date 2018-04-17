@@ -335,6 +335,7 @@ $('.tree').on('click', '.tree-row', function() {
 	//log("Tree.update(): ", Tree.update());
 	Tree.update();
 	Tree.getActiveItem();
+	log("Tree.getActiveItem(): ", Tree.getActiveItem());
 
 	//Tree.getNodeData();
 
