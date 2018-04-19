@@ -2,6 +2,50 @@
 /* utils/settings.js */
 
 
+/* HTML content
+
+<div id="app-settings">
+	<h3>General</h3>
+	<div class="controls">
+		<p>
+			<label class="checkboxCont">
+				<input type="checkbox" name="autoRun">
+				<span class="checkbox"></span>Auto-run code
+				<small>(beta)</small>
+			</label>
+		</p>
+		<p>
+			<label class="checkboxCont">
+				<input type="checkbox" name="tabIcons">
+				<span class="checkbox"></span>File Tree Tabs: Show icons instead of text
+				<small></small>
+			</label>
+		</p>
+	</div>
+	<h3>File Tree</h3>
+	<div class="controls">
+		<p>
+			<label class="checkboxCont">
+				<input type="checkbox" name="autoRun">
+				<span class="checkbox"></span>Auto-run code
+				<small>(beta)</small>
+			</label>
+		</p>
+		<p>
+			<label class="checkboxCont">
+				<input type="checkbox" name="tabIcons">
+				<span class="checkbox"></span>File Tree Tabs: Show icons instead of text
+				<small></small>
+			</label>
+		</p>
+	</div>
+</div>
+<div class="actionbar">
+	<button class="button btn-cancel cancel">Cancel</button>
+	<button class="button btn-submit">Save</button>
+</div>
+*/
+
 /**
  * Settings
  */
