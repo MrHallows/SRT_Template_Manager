@@ -78,8 +78,8 @@ var myRegEx = /(?:^|\s)format_(.*?)(?:\s|$)/g;
 var matches = getMatches(myString, myRegEx, 1);
 
 // Log results
-document.getElementById('menu-search').value = (matches.length + ' matches found: ' + JSON.stringify(matches));
-log(matches);
+//document.getElementById('menu-search').value = (matches.length + ' matches found: ' + JSON.stringify(matches));
+//log(matches);
 
 
 /**
