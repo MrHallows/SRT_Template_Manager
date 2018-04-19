@@ -354,7 +354,7 @@ svg.check-circle {
 	-moz-border-radius: 3px 0 0 3px;
 	-ms-border-radius: 3px 0 0 3px;
 	border-radius: 3px 0 0 3px;
-	height: auto;
+	font-family: 'Varela Round', sans-serif;
 	margin-bottom: 3px;
 	right: -62px;
 	white-space: nowrap;
@@ -395,6 +395,7 @@ svg.check-circle {
 .right-shelf span {
 	color: #fff;
 	margin-left: 20px;
+	vertical-align: middle;
 }
 
 
@@ -922,21 +923,22 @@ input[type=checkbox]:checked {
 	margin-bottom: 10px;
 }
 
-label.checkboxCont {
+label.checkbox-container {
     color: #ddd;
     height: 14px;
     cursor: pointer;
 }
 
-label.checkboxCont input[type=checkbox] {
+label.checkbox-container input[type=checkbox] {
 	display: none;
 }
 
-label.checkboxCont span.checkbox {
+label.checkbox-container span.checkbox {
 	display: inline-block;
 	position: relative;
 	background: #0000001a;
 	vertical-align: middle;
+	border: 1px solid #444;
 	border-radius: 14px;
 	width: 24px;
 	height: 14px;
@@ -944,28 +946,28 @@ label.checkboxCont span.checkbox {
 	top: 0px;
 	transition: all .15s;
 }
-label.checkboxCont input[type=checkbox]:checked + span.checkbox {
-	background: #0084ff;
+label.checkbox-container input[type=checkbox]:checked + span.checkbox {
+	background: #4d80c3; /* default: #0084ff; */
 }
 
-label.checkboxCont span.checkbox:after {
+label.checkbox-container span.checkbox:after {
 	content: "";
 	display: block;
 	position: absolute;
 	background: #eee;
 	box-shadow: 0 2px 4px 0 rgba(0,0,0,.2), 0 0 1px 0 rgba(0,0,0,.21);
 	border-radius: 12px;
-	top: 1px;
+	top: 0;
 	left: 1px;
 	width: 12px;
 	height: 12px;
 	transition: left .15s;
 }
-label.checkboxCont input[type=checkbox]:checked + span.checkbox:after {
+label.checkbox-container input[type=checkbox]:checked + span.checkbox:after {
 	left: 11px;
 }
 
-label.checkboxCont small {
+label.checkbox-container small {
 	font-size: inherit;
 	color: #ffffff4d;
 }
