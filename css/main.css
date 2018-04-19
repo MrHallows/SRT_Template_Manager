@@ -710,10 +710,11 @@ input[type=checkbox]:checked {
     display: block;
     background: #242424;
     border: 1px solid #555;
+    color: #999;
     width: 232px;
     min-height: 151px;
     height: 50%;
-    padding: 0;
+    padding: 6px;
     margin: 4px auto;
 }
 
@@ -886,25 +887,6 @@ input[type=checkbox]:checked {
 	-webkit-transform: translateY(8px);
 	-moz-transform: translateY(8px);
 	transform: translateY(8px);
-}
-
-
-/* *
- * SVG
- */
-#settings-icon {
-    position: relative;
-    margin: 10px;
-	vertical-align: middle;
-}
-#settings-icon svg {
-    width: 16px;
-	height: 16px;
-    fill: #00c09a;
-	stroke: currentcolor;
-	stroke-width: 1.4;
-	stroke-linecap: round;
-	stroke-linejoin: round;
 }
 
 
