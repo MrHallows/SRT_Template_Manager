@@ -163,7 +163,7 @@ $('.context-menu').on('click', '#cm-rename', function(e) {
 
 	modal.open({
 		title: 'Rename' + title_ext,
-		content: '<input type="search" class="modal-input" name="rename_new_name" placeholder="New Name"/><div class="actionbar"><button class="button btn-cancel cancel">Cancel</button><button class="button btn-submit">Save</button></div>'
+		content: '<input type="search" class="modal-input" name="rename_new_name" placeholder="New Name"/><div class="actionbar"><button class="button btn-cancel">Cancel</button><button class="button btn-submit">Save</button></div>'
 	});
 
 	$form.rename_new_name.value = $label_text;
@@ -215,7 +215,7 @@ $('.context-menu').on('click', '#cm-edit', function(e) {
 		case "folder":
 			/*modal.open({
 				title: 'Edit Folder' + title_ext,
-				content: '<input type="search" id="edit-template-name" class="modal-input" name="edit_folder_name" placeholder="Template Name"/><textarea id="edit-template-body" class="modal-input" name="edit_template_body"></textarea><div class="actionbar"><button class="button btn-cancel cancel">Cancel</button><button class="button btn-submit">Save</button></div>'
+				content: '<input type="search" id="edit-template-name" class="modal-input" name="edit_folder_name" placeholder="Template Name"/><textarea id="edit-template-body" class="modal-input" name="edit_template_body"></textarea><div class="actionbar"><button class="button btn-cancel">Cancel</button><button class="button btn-submit">Save</button></div>'
 			});*/
 			alert("Disabled! Please select the 'Rename' option instead.");
 			break;
@@ -224,7 +224,7 @@ $('.context-menu').on('click', '#cm-edit', function(e) {
 		case "note":
 			modal.open({
 				title: 'Edit Note Template' + title_ext,
-				content: '<input type="search" id="edit-template-name" class="modal-input" name="edit_note_name" placeholder="Template Name"/><textarea id="edit-template-body" class="modal-input" name="edit_note_body"></textarea><div class="actionbar"><button class="button btn-cancel cancel">Cancel</button><button class="button btn-submit">Save</button></div>'
+				content: '<input type="search" id="edit-template-name" class="modal-input" name="edit_note_name" placeholder="Template Name"/><textarea id="edit-template-body" class="modal-input" name="edit_note_body"></textarea><div class="actionbar"><button class="button btn-cancel">Cancel</button><button class="button btn-submit">Save</button></div>'
 			});
 
 			// Notes namespace
@@ -322,7 +322,7 @@ $('.context-menu').on('click', '#cm-edit', function(e) {
 		case "email":
 			modal.open({
 				title: 'Edit Email Template' + title_ext,
-				content: '<input type="search" id="edit-template-email-name" class="modal-input" name="edit_email_name" placeholder="Template Name"/><input type="search" id="edit-template-email-to" class="modal-input" name="edit_email_to" placeholder="To"/><input type="search" id="edit-template-email-cc" class="modal-input" name="edit_email_cc" placeholder="Cc"/><input type="search" id="edit-template-email-subject" class="modal-input" name="edit_email_subject" placeholder="Subject"/><input type="search" id="edit-template-email-attachments" class="modal-input" name="edit_email_attachments" placeholder="Attachments"/><textarea id="edit-template-email-body" class="modal-input" name="edit_email_body"></textarea><div class="actionbar"><button class="button btn-cancel cancel">Cancel</button><button class="button btn-submit">Save</button></div>'
+				content: '<input type="search" id="edit-template-email-name" class="modal-input" name="edit_email_name" placeholder="Template Name"/><input type="search" id="edit-template-email-to" class="modal-input" name="edit_email_to" placeholder="To"/><input type="search" id="edit-template-email-cc" class="modal-input" name="edit_email_cc" placeholder="Cc"/><input type="search" id="edit-template-email-subject" class="modal-input" name="edit_email_subject" placeholder="Subject"/><input type="search" id="edit-template-email-attachments" class="modal-input" name="edit_email_attachments" placeholder="Attachments"/><textarea id="edit-template-email-body" class="modal-input" name="edit_email_body"></textarea><div class="actionbar"><button class="button btn-cancel">Cancel</button><button class="button btn-submit">Save</button></div>'
 			});
 
 			// Emails namespace
@@ -428,7 +428,7 @@ $('.context-menu').on('click', '#cm-edit', function(e) {
 		case "contact":
 			modal.open({
 				title: 'Edit Contact' + title_ext,
-				content: '<input type="hidden" class="modal-input" name="_id" value="0"/><input type="search" id="edit-contact-first-name" class="modal-input" name="edit_contact_first_name" placeholder="First Name"/><input type="search" id="edit-contact-last-name" class="modal-input" name="edit_contact_last_name" placeholder="Last Name"/><input type="search" id="edit-contact-full-name" class="modal-input" name="edit_contact_full_name" placeholder="Full Name"/><input type="search" id="edit-contact-phone" class="modal-input" name="edit_contact_phone" placeholder="Phone" onkeydown="javascript:backspacerDOWN(this,event);" onkeyup="javascript:backspacerUP(this,event);"/><input type="search" id="edit-contact-email" class="modal-input" name="edit_contact_email" placeholder="Email"/><input type="search" id="edit-contact-business" class="modal-input" name="edit_contact_business" placeholder="Business"/><input type="search" id="edit-contact-ean" class="modal-input" name="edit_contact_ean" placeholder="EAN"/><textarea id="edit-contact-comments" class="modal-input" name="edit_contact_comments" placeholder="Comments"></textarea><div class="actionbar"><button class="button btn-cancel cancel">Cancel</button><button class="button btn-submit">Save</button></div>'
+				content: '<input type="hidden" class="modal-input" name="_id" value="0"/><input type="search" id="edit-contact-first-name" class="modal-input" name="edit_contact_first_name" placeholder="First Name"/><input type="search" id="edit-contact-last-name" class="modal-input" name="edit_contact_last_name" placeholder="Last Name"/><input type="search" id="edit-contact-full-name" class="modal-input" name="edit_contact_full_name" placeholder="Full Name"/><input type="search" id="edit-contact-phone" class="modal-input" name="edit_contact_phone" placeholder="Phone" onkeydown="javascript:backspacerDOWN(this,event);" onkeyup="javascript:backspacerUP(this,event);"/><input type="search" id="edit-contact-email" class="modal-input" name="edit_contact_email" placeholder="Email"/><input type="search" id="edit-contact-business" class="modal-input" name="edit_contact_business" placeholder="Business"/><input type="search" id="edit-contact-ean" class="modal-input" name="edit_contact_ean" placeholder="EAN"/><textarea id="edit-contact-comments" class="modal-input" name="edit_contact_comments" placeholder="Comments"></textarea><div class="actionbar"><button class="button btn-cancel">Cancel</button><button class="button btn-submit">Save</button></div>'
 			});
 
 			// Contacts namespace
@@ -621,7 +621,7 @@ $('.context-menu').on('click', '#cm-new-item', function(e) {
 			//Notes.init();
 			modal.open({
 				title: parentFolder + ' → New Note', // → ' + path,
-				content: '<input type="search" id="new-note-name" class="modal-input" name="new_note_name" placeholder="New Note Name"/><textarea id="new-note-body" class="modal-input" name="new_note_body"></textarea><div class="actionbar"><button class="button btn-cancel cancel">Cancel</button><button class="button btn-submit">Create</button></div>'
+				content: '<input type="search" id="new-note-name" class="modal-input" name="new_note_name" placeholder="New Note Name"/><textarea id="new-note-body" class="modal-input" name="new_note_body"></textarea><div class="actionbar"><button class="button btn-cancel">Cancel</button><button class="button btn-submit">Create</button></div>'
 			});
 			$('.modal-input:first').focus();
 
@@ -665,7 +665,7 @@ $('.context-menu').on('click', '#cm-new-item', function(e) {
 		case "email":
 			modal.open({
 				title: parentFolder + ' → New Email', // → ' + path,
-				content: '<input type="search" id="new-email-name" class="modal-input" name="new_email_name" placeholder="Template Name"/><input type="search" id="new-email-to" class="modal-input" name="new_email_to" placeholder="To"/><input type="search" id="new-email-cc" class="modal-input" name="new_email_cc" placeholder="Cc"/><input type="search" id="new-email-subject" class="modal-input" name="new_email_subject" placeholder="Subject"/><input type="search" id="new-email-attachments" class="modal-input" name="new_email_attachments" placeholder="Attachments"/><textarea id="new-email-body" class="modal-input" name="new_email_body"></textarea><div class="actionbar"><button class="button btn-cancel cancel">Cancel</button><button class="button btn-submit">Create</button></div>'
+				content: '<input type="search" id="new-email-name" class="modal-input" name="new_email_name" placeholder="Template Name"/><input type="search" id="new-email-to" class="modal-input" name="new_email_to" placeholder="To"/><input type="search" id="new-email-cc" class="modal-input" name="new_email_cc" placeholder="Cc"/><input type="search" id="new-email-subject" class="modal-input" name="new_email_subject" placeholder="Subject"/><input type="search" id="new-email-attachments" class="modal-input" name="new_email_attachments" placeholder="Attachments"/><textarea id="new-email-body" class="modal-input" name="new_email_body"></textarea><div class="actionbar"><button class="button btn-cancel">Cancel</button><button class="button btn-submit">Create</button></div>'
 			});
 			$('.modal-input:first').focus();
 
@@ -787,7 +787,7 @@ $('.context-menu').on('click', '#cm-new-folder', function(e) {
 
 	modal.open({
 		title: parentFolder + ' → New Folder',
-		content: '<input type="search" class="modal-input" name="new_folder_name" placeholder="New Folder Name"/><div class="actionbar"><button class="button btn-cancel cancel">Cancel</button><button class="button btn-submit">Create</button></div>'
+		content: '<input type="search" class="modal-input" name="new_folder_name" placeholder="New Folder Name"/><div class="actionbar"><button class="button btn-cancel">Cancel</button><button class="button btn-submit">Create</button></div>'
 	});
 	$('.modal-input').focus();
 
