@@ -65,6 +65,9 @@ $('#rs-tools').on('click', function(e) {
         content: '<div class="row"><div id="tools-dim-calc" class="modal-input tools-tile" name="tools_dim_calc"><div>Dimensional Weight Calculator</div></div><div id="tools-1" class="modal-input tools-tile" name="tools_1"><div>Another Tool</div></div><div id="tools-2" class="modal-input tools-tile" name="tools_2"><div>Another Tool</div></div></div><div class="row"><div id="tools-3" class="modal-input tools-tile" name="tools_3"><div>Another Tool</div></div><div id="tools-4" class="modal-input tools-tile" name="tools_4"><div>Another Tool</div></div><div id="tools-5" class="modal-input tools-tile" name="tools_5"><div>Another Tool</div></div></div>'
     });
 
+    /**
+     * Dimensional Weight Calculator
+     */
     $('#tools-dim-calc').on('click', function(e) {
         modal.close();
         //
@@ -76,7 +79,7 @@ $('#rs-tools').on('click', function(e) {
         document.getElementById('length').focus();
 
         /**
-         * Dimensional Weight Calculator
+         * @function Calculate
          */
         $('#btnCalculate').on('click', function(e) {
             var l = document.getElementById('length').value;

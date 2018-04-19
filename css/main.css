@@ -915,7 +915,8 @@ input[type=checkbox]:checked {
 	-moz-osx-font-smoothing: grayscale;
 }
 
-p {
+.controls p {
+	height: 14px;
 	padding: 0;
 	margin: 0;
 	margin-bottom: 10px;
@@ -923,7 +924,8 @@ p {
 
 label.checkboxCont {
     color: #ddd;
-	cursor: pointer;
+    height: 14px;
+    cursor: pointer;
 }
 
 label.checkboxCont input[type=checkbox] {
@@ -938,8 +940,8 @@ label.checkboxCont span.checkbox {
 	border-radius: 14px;
 	width: 24px;
 	height: 14px;
-	margin-right: 5px;
-	top: -2px;
+	margin-right: 10px;
+	top: 0px;
 	transition: all .15s;
 }
 label.checkboxCont input[type=checkbox]:checked + span.checkbox {

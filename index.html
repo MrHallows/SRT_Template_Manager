@@ -26,6 +26,7 @@
 	<link type="text/css" rel="stylesheet" href="css/tooltip.css">
 	<link type="text/css" rel="stylesheet" href="css/contextmenu.css">
 	<link type="text/css" rel="stylesheet" href="css/options_menu.css">
+	<link type="text/css" rel="stylesheet" href="css/settings.css">
 	<link type="text/css" rel="stylesheet" href="css/tools.css">
 	<link type="text/css" rel="stylesheet" href="css/main.css">
 	<!--<link type="text/css" rel="stylesheet" href="css/.css">-->
@@ -389,6 +390,49 @@
 
 			</div>
 
+			<!-- Settings -->
+			<div id="app-settings">
+				<h3>General</h3>
+				<div class="controls">
+					<p>
+						<label class="checkboxCont">
+							<input type="checkbox" name="autoRun">
+							<span class="checkbox"></span>Auto-run code
+							<small>(beta)</small>
+						</label>
+					</p>
+					<p>
+						<label class="checkboxCont">
+							<input type="checkbox" name="tabIcons">
+							<span class="checkbox"></span>File Tree Tabs: Show icons instead of text
+							<small></small>
+						</label>
+					</p>
+				</div>
+				<h3>File Tree</h3>
+				<div class="controls">
+					<p>
+						<label class="checkboxCont">
+							<input type="checkbox" name="autoRun">
+							<span class="checkbox"></span>Auto-run code
+							<small>(beta)</small>
+						</label>
+					</p>
+					<p>
+						<label class="checkboxCont">
+							<input type="checkbox" name="tabIcons">
+							<span class="checkbox"></span>File Tree Tabs: Show icons instead of text
+							<small></small>
+						</label>
+					</p>
+				</div>
+			</div>
+			<div class="actionbar">
+				<button class="button btn-cancel cancel">Cancel</button>
+				<button class="button btn-submit">Save</button>
+			</div>
+
+			<!-- Right Shelf Menu -->
 			<div class="right-shelf-cage unselectable">
 				<div id="rs-tools" class="right-shelf">
 					<ul>
@@ -564,6 +608,7 @@
 	<script type="text/javascript" src="js/utils/contextmenu.js"></script>
 	<script type="text/javascript" src="js/utils/options_menu.js"></script>
 	<script type="text/javascript" src="js/utils/notification.js"></script>
+	<script type="text/javascript" src="js/utils/settings.js"></script>
 	<script type="text/javascript" src="js/utils/tools.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 	<script type="text/javascript" src="js/init.js"></script>
