@@ -986,24 +986,6 @@ Tree.getTreeData();
 log("TreeNotes: ", TreeNotes);
 
 
-Tree.getActiveTree = function() {
-    var tree = null;
-
-    // Get state data from localStorage
-    state = JSON.parse(ls.get("SRTTM_State"));
-
-    if(state.tab == "#tab-notes") {
-        tree = TreeNotes;
-    } else if(state.tab == "#tab-email") {
-        tree = TreeEmail;
-    } else if(state.tab == "#tab-contacts") {
-        tree = TreeContacts;
-    }
-
-    return tree;
-};
-
-
 /* *
  * Store tree data to localStorage
  */
@@ -1196,10 +1178,40 @@ log(Tree.buildTree(TreeContacts));*/
 
 
 /**
+ * Tree.getState()
+ */
+Tree.getState = function() {
+
+};
+
+
+/**
+ * Tree.getActiveTree()
+ * @function Tree.getActiveTree
+ * @returns {object} - Tree of selected tree item (i.e., TreeNotes, TreeEmail, or TreeContacts)
+ */
+Tree.getActiveTree = function() {
+    var tree = null;
+
+    // Get state data from localStorage
+    state = JSON.parse(ls.get("SRTTM_State"));
+
+    if(state.tab == "#tab-notes") {
+        tree = TreeNotes;
+    } else if(state.tab == "#tab-email") {
+        tree = TreeEmail;
+    } else if(state.tab == "#tab-contacts") {
+        tree = TreeContacts;
+    }
+
+    return tree;
+};
+
+
+/**
  * Tree.getActiveId()
  * @function Tree.getActiveId
- * @param {id} of selected tree item
- * @returns {Number}
+ * @returns {number} - id of selected tree item
  */
 Tree.getActiveId = function() {
     var activeTree = Tree.getActiveTree();
@@ -1208,21 +1220,20 @@ Tree.getActiveId = function() {
     var activeItemId = activeItem.id.toString().replace(digits, "");
     //log("Tree.getActiveId(): ", activeItemId);
     
-    return activeItemId;
+    return parseInt(activeItemId);
 };
 
 
 /**
  * Tree.getIndex()
  * @function Tree.getIndex
- * @param {id} of selected tree item
- * @returns {Number}
+ * @returns {number} - id of selected tree item
  */
 Tree.getIndex = function() {
     var activeTree = Tree.getActiveTree();
     var activeItemId = Tree.getActiveId();
     var index = activeTree.find(item => item.id == activeItemId);
-    //log("Tree.getIndex(): ", index);
+    log("Tree.getIndex(): ", index);
     
     return index;
 };
@@ -1231,8 +1242,7 @@ Tree.getIndex = function() {
 /**
  * Tree.getActiveItem()
  * @function Tree.getActiveItem
- * @param {id} of selected tree item
- * @returns {Number}
+ * @returns {number} - id of selected tree item
  */
 Tree.getActiveItem = function() {
     var activeTree = Tree.getActiveTree();
@@ -1242,6 +1252,26 @@ Tree.getActiveItem = function() {
     
     return activeItem;
 };
+
+
+/**
+ * Tree.findById()
+ */
+Tree.findById = function (data, id) {
+    var result = -1
+    for(var i = 0; i < data.length; i++) {
+        if(data[i].id === id) {
+            return data[i];
+        } else if(data[i].children && data[i].children.length && typeof data[i].children === "object") {
+            result = Tree.findById(data[i].children, id);
+            if (result.id === id) {
+                return result;
+            }
+        }
+    }
+    return result;
+};
+log("Tree.findById()1: ", Tree.findById(TreeNotes, ));
 
 
 /* *

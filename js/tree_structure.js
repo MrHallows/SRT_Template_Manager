@@ -328,14 +328,13 @@ $('.tree').on('click', '.tree-row', function() {
 
 	// Save active item state
 	state.item = $par.attr('id');
-	state.itemId = $par.attr('id').match(/\d+/);
+	state.itemId = parseInt($par.attr('id').replace(/[^0-9]+/, ''));
 	ls.set("SRTTM_State", JSON.stringify(state));
 
-	//log("Tree.getActiveItem(): ", Tree.getActiveItem());
-	//log("Tree.update(): ", Tree.update());
 	Tree.update();
 	Tree.getActiveItem();
 	log("Tree.getActiveItem(): ", Tree.getActiveItem());
+	log("Tree.findById()2: ", Tree.findById(TreeNotes, state.itemId));
 
 	//Tree.getNodeData();
 
