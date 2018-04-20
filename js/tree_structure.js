@@ -334,7 +334,8 @@ $('.tree').on('click', '.tree-row', function() {
 	Tree.update();
 	Tree.getActiveItem();
 	log("Tree.getActiveItem(): ", Tree.getActiveItem());
-	log("Tree.findById()2: ", Tree.findById(TreeNotes, state.itemId));
+	log("Tree.getActiveId(): ", Tree.getActiveId());
+	//log("Tree.findById()2: ", Tree.findById(TreeNotes, state.itemId));
 
 	//Tree.getNodeData();
 

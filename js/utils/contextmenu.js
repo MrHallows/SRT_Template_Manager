@@ -180,6 +180,7 @@ $('.context-menu').on('click', '#cm-rename', function(e) {
 		e.preventDefault();
 		$('.tree-row[select=true]').find('.tree-label').text($form.rename_new_name.value);
 
+		log("Running Tree.update()..")
 		Tree.update();
 		modal.close();
 	});

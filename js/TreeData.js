@@ -1181,7 +1181,43 @@ log(Tree.buildTree(TreeContacts));*/
  * Tree.getState()
  */
 Tree.getState = function() {
+    var state = JSON.parse(ls.get("SRTTM_State"));
+    return state;
+};
 
+Tree.setState = function() {
+    var state = state || {};
+
+	var $selected = document.querySelector('.tree-row[select=true]');
+	var $label = $selected.querySelector('.tree-label');
+	var $label_text = $selected.querySelector('.tree-label').textContent;
+	var $tree_item = $selected.parentElement('.tree-item');
+	var $tree_item_id = $tree_item.getAttribute('id');
+	var $item_type = $tree_item.getAttribute('item-type');
+
+	if(!ls.get("SRTTM_State")) {
+		state = {
+			tab: $('.active').attr('href'),
+			item: $tree_item_id
+		};
+		ls.set("SRTTM_State", JSON.stringify(state));
+	} else {
+		state = JSON.parse(ls.get("SRTTM_State"));
+	}
+
+	//state.item = $tree_item_id;
+	//alert("state.item: " + state.item);
+
+	$('#' + state.item).find('.tree-row').attr('select', 'true');
+	$('#' + state.item).find('.tree-children').attr('select', 'true');
+
+	$('.active').removeClass('active')
+	$('a[href="' + state.tab + '"]').attr('class', 'active');
+    $('.active').click();
+    
+    state.item = $par.attr('id');
+	state.itemId = parseInt($par.attr('id').replace(/[^0-9]+/, ''));
+	ls.set("SRTTM_State", JSON.stringify(state));
 };
 
 
@@ -1271,7 +1307,7 @@ Tree.findById = function (data, id) {
     }
     return result;
 };
-log("Tree.findById()1: ", Tree.findById(TreeNotes, ));
+//log("Tree.findById()1: ", Tree.findById(TreeNotes, Tree.));
 
 
 /* *
@@ -1281,9 +1317,10 @@ log("Tree.findById()1: ", Tree.findById(TreeNotes, ));
 Tree.update = function() {
     var tree = Tree.getActiveTree();
     var item = Tree.getActiveItem();
+    var state = JSON.parse(ls.get("SRTTM_State"));
 
     // _itemElement is the selected tree-item element
-    var _itemElement = document.getElementById(item.type + '-' + item.id);
+    var _itemElement = document.getElementById(state.item);
     log("_itemElement: ", _itemElement);
 
     //log("this.type: " + $par.attr('item-type'));
@@ -1303,7 +1340,7 @@ Tree.update = function() {
 
         item.label = _itemElement.querySelector('.tree-label').innerHTML;
         item.expanded = _itemElement.getAttribute('expanded');
-        item.selected = _itemElement.getAttribute('selected');
+        item.selected = _itemElement.getAttribute('select');
 
     } else if(item.type == 'note') {
         var node = {
