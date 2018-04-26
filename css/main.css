@@ -761,8 +761,8 @@ input[type=checkbox]:checked {
 
 .hint:after, [data-hint]:after {
 	content: attr(data-hint);
-	background: #333;
-	color: white;
+	background: #111;
+	color: #ccc;
 	padding: 6px 8px;
 	font-size: 12px;
 	line-height: 16px;
@@ -871,7 +871,7 @@ input[type=checkbox]:checked {
 
 /* Multidirectional */
 .hint--bottom-left:before {
-	margin-top: -12px;
+	/* margin-top: -12px; */
 }
 
 .hint--bottom-left:after {

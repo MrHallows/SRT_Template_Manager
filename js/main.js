@@ -93,15 +93,20 @@ $(window).on('load', function() {
 
 
 $(document).on('click', '.tree-row', function() {
-	var $selected = $('.tree-row[select=true]');
-	var $label = $selected.find('.tree-label');
-	var $label_text = $selected.find('.tree-label').text();
-	var $tree_item = $selected.parent('.tree-item');
-	var $tree_item_id = $tree_item.attr('id');
-	var $item_type = $tree_item.attr('item-type');
+	// var $selected = $('.tree-row[select=true]');
+	// var $label = $selected.find('.tree-label');
+	// var $label_text = $selected.find('.tree-label').text();
+	// var $tree_item = $selected.parent('.tree-item');
+	// var $tree_item_id = $tree_item.attr('id');
+	// var $item_type = $tree_item.attr('item-type');
 
-	log($item_type);
-	switch($item_type) {
+	var item = Tree.getActiveItem();
+	var element = Tree.getActiveElement();
+	//element.type = element.attributes['item-type'].nodeValue;
+
+	log("item.type: ", item.type);
+	log("element.type: ", element.type);
+	switch(element.type) {
 		case undefined:
 			log("You have selected undefined!");
 			break;
@@ -114,9 +119,9 @@ $(document).on('click', '.tree-row', function() {
 
 			var note = note || {};
 			note.key = $tree_item_id;
-			var _this = JSON.parse(ls.get(note.key));
+			//var _this = JSON.parse(ls.get(note.key));
 
-			if(_this == null || undefined) {
+			if(item == null || undefined) {
 				notification.open({
 					severity: 'error',
 					content: 'Note has not been defined!'
@@ -128,22 +133,22 @@ $(document).on('click', '.tree-row', function() {
 				});
 			}
 
-			if(_this.name == '' || null || undefined) {
+			if(item.name == '' || null || undefined) {
 				notification.open({
 					severity: 'error',
 					content: 'No name defined for this note!'
 				});
 			} else {
-				$('#note-view .name > span').text(_this.name);
+				$('#note-view .name > span').text(item.name);
 			}
 
-			if(_this.body == '' || null || undefined) {
+			if(item.body == '' || null || undefined) {
 				notification.open({
 					severity: 'error',
 					content: 'No body defined for this note!'
 				});
 			} else {
-				$('#note-view .body > pre').text(decode(_this.body));
+				$('#note-view .body > pre').text(decode(item.body));
 			}
 			break;
 
@@ -155,14 +160,14 @@ $(document).on('click', '.tree-row', function() {
 
 			var email = email || {};
 			email.key = $tree_item_id;
-			var _this = JSON.parse(ls.get(email.key));
+			//var item = JSON.parse(ls.get(email.key));
 
-			$('#email-view .name > span').text(_this.name);
-			$('#email-view .to > span').text(_this.to);
-			$('#email-view .cc > span').text(_this.cc);
-			$('#email-view .subject > span').text(_this.subject);
-			$('#email-view .attachments > span').text(_this.attachments);
-			$('#email-view .body > pre').text(decode(_this.body));
+			$('#email-view .name > span').text(item.name);
+			$('#email-view .to > span').text(item.to);
+			$('#email-view .cc > span').text(item.cc);
+			$('#email-view .subject > span').text(item.subject);
+			$('#email-view .attachments > span').text(item.attachments);
+			$('#email-view .body > pre').text(decode(item.body));
 			break;
 
 		case "contact":
@@ -173,16 +178,16 @@ $(document).on('click', '.tree-row', function() {
 
 			var contact = contact || {};
 			contact.key = $tree_item_id;
-			var _this = JSON.parse(ls.get(contact.key));
+			//var _this = JSON.parse(ls.get(contact.key));
 
-			$('#contact-view .firstname > span').text(_this.first);
-			$('#contact-view .lastname > span').text(_this.last);
-			$('#contact-view .fullname > span').text(_this.full);
-			$('#contact-view .phone > span').text(_this.phone);
-			$('#contact-view .email > span').text(_this.email);
-			$('#contact-view .business > span').text(_this.business);
-			$('#contact-view .ean > span').text(_this.ean);
-			$('#contact-view .comments > pre').text(decode(_this.comments));
+			$('#contact-view .firstname > span').text(item.first);
+			$('#contact-view .lastname > span').text(item.last);
+			$('#contact-view .fullname > span').text(item.full);
+			$('#contact-view .phone > span').text(item.phone);
+			$('#contact-view .email > span').text(item.email);
+			$('#contact-view .business > span').text(item.business);
+			$('#contact-view .ean > span').text(item.ean);
+			$('#contact-view .comments > pre').text(decode(item.comments));
 			break;
 	}
 });

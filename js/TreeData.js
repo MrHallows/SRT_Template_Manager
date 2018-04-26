@@ -1253,7 +1253,7 @@ Tree.getActiveId = function() {
     var activeTree = Tree.getActiveTree();
     var activeItem = document.querySelector('#' + state.item);
     var digits = /[^\d]+/;
-    var activeItemId = activeItem.id.toString().replace(digits, "");
+    var activeItemId = activeItem.id.toString().replace(digits, '');
     //log("Tree.getActiveId(): ", activeItemId);
     
     return parseInt(activeItemId);
@@ -1291,6 +1291,83 @@ Tree.getActiveItem = function() {
 
 
 /**
+ * Tree.getActiveElement()
+ */
+/*Tree.getActiveElement = function() {
+    state = JSON.parse(ls.get("SRTTM_State"));
+    var activeTab = state.tab;
+    var activeElement = document.getElementById(state.item);
+    activeElement.type = activeElement.attributes['item-type'].nodeValue;
+
+    switch(activeElement.type) {
+        case 'folder':
+            var element = {
+                type: item.type, // YOU WERE HERE!!! Assign attributes as you did with activeElement.type
+                label: item.label,
+                id: item.id,
+                expanded: item.expanded,
+                selected: item.selected
+            };
+            break;
+            
+        case 'note':
+            var element = {
+                type: item.type,
+                label: item.label,
+                id: item.id,
+                selected: item.selected,
+                content: {
+                    name: item.content.name,
+                    body: item.content.body
+                }
+            };
+            break;
+
+        case 'email':
+            var element = {
+                type: item.type,
+                label: item.label,
+                id: item.id,
+                selected: item.selected,
+                content: {
+                    name: item.content.name,
+                    to: item.content.to,
+                    cc: item.content.cc,
+                    subject: item.content.subject,
+                    attachments: item.content.attachments,
+                    body: item.content.body
+                }
+            };
+            break;
+
+        case 'contact':
+            var element = {
+                type: item.type,
+                label: item.label,
+                id: item.id,
+                selected: item.selected,
+                content: {
+                    firstName: item.content.firstName,
+                    lastName: item.content.lastName,
+                    fullName: item.content.fullName,
+                    phone: item.content.phone,
+                    email: item.content.email,
+                    business: item.content.business,
+                    ean: item.content.ean,
+                    comments: item.content.comments
+                }
+            };
+            break;
+
+        default:
+            break;
+    }
+
+    return element;
+};*/
+
+
+/**
  * Tree.findById()
  */
 Tree.findById = function (data, id) {
@@ -1317,6 +1394,8 @@ Tree.findById = function (data, id) {
 Tree.update = function() {
     var tree = Tree.getActiveTree();
     var item = Tree.getActiveItem();
+    //var element = Tree.getActiveElement();
+	//element.type = element.attributes['item-type'].nodeValue;
     var state = JSON.parse(ls.get("SRTTM_State"));
 
     // _itemElement is the selected tree-item element
