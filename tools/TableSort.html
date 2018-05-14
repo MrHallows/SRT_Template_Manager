@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<title>Sort a HTML Table Alphabetically</title>
+
+	<style>
+
+		@font-face {
+			font-family: 'Nintendo Switch UI';
+			src: url('../UIPrototype/fonts/Nintendo_Switch_UI.ttf') format("truetype");
+			font-weight: 400;
+			font-style: normal;
+		}
+
+		* {
+			outline: none;
+			box-shadow: none;
+		}
+
+		html, body {
+			background: #000;
+			font-family: 'Nintendo Switch UI', sans-serif;
+			font-size: 12px;
+			color: #eee;
+			user-select: none;
+		}
+
+		table {
+			color: #ddd;
+			border-spacing: 0;
+			width: 100%;
+			border: 0;
+		}
+		table * {
+			border: 1px solid #444;
+		}
+
+		th {
+			background-color: #251e3f;
+			line-height: 16px;
+		}
+
+		th,
+		td {
+			text-align: left;
+			padding: 10px;
+		}
+
+		tr {
+			background-color: #111;
+			padding: 0;
+			line-height: 0;
+		}
+		tr:nth-child(even) {
+			background-color: #333;
+		}
+
+		.btnSort {
+			float: right;
+			background: dodgerblue;
+			border: none;
+			width: 15px;
+			height: 15px;
+			padding: 0;
+			margin: 1px;
+		}
+		.btnSort:hover {
+			background: rgb(18, 91, 165);
+		}
+
+		.descending::before {
+			/* content: "▾"; */
+			/* content: "↓"; */
+			content: "ꜜ";
+			vertical-align: -webkit-baseline-middle;
+		}
+
+		.ascending::before {
+			/* content: "▴"; */
+			/* content: "↑"; */
+			content: "ꜛ";
+			vertical-align: -webkit-baseline-middle;
+		}
+	</style>
+</head>
+
+<body>
+
+	<p></p>
+	<p></p>
+
+	<div>
+		<input type="search" id="txtSearch" onkeyup="search()"/>
+	</div>
+
+	<table id="myTable">
+		<tr>
+			<th>Name
+				<button class="btnSort ascending" title="Sort Ascending" onclick="sortAscending('name')"></button>
+				<button class="btnSort descending" title="Sort Descending" onclick="sortDescending('name')"></button>
+			</th>
+			<th>Country
+				<button class="btnSort ascending" title="Sort Ascending" onclick="sortAscending('country')"></button>
+				<button class="btnSort descending" title="Sort Descending" onclick="sortDescending('country')"></button>
+			</th>
+		</tr>
+		<tr>
+			<td>Berglunds snabbkop</td>
+			<td>Sweden</td>
+		</tr>
+		<tr>
+			<td>North/South</td>
+			<td>UK</td>
+		</tr>
+		<tr>
+			<td>Alfreds Futterkiste</td>
+			<td>Germany</td>
+		</tr>
+		<tr>
+			<td>Koniglich Essen</td>
+			<td>Germany</td>
+		</tr>
+		<tr>
+			<td>Magazzini Alimentari Riuniti</td>
+			<td>Italy</td>
+		</tr>
+		<tr>
+			<td>Paris specialites</td>
+			<td>France</td>
+		</tr>
+		<tr>
+			<td>Island Trading</td>
+			<td>UK</td>
+		</tr>
+		<tr>
+			<td>Laughing Bacchus Winecellars</td>
+			<td>Canada</td>
+		</tr>
+	</table>
+
+	<script>
+		
+		/* Descending */
+		function sortDescending(column) {
+			if(column == "name" || column == 0) {
+				column = 0;
+			} else if(column == "country" || column == 1) {
+				column = 1;
+			}
+			
+			var table, rows, switching, i, x, y, shouldSwitch;
+			table = document.getElementById("myTable");
+			switching = true;
+			/*Make a loop that will continue until
+			no switching has been done:*/
+			while (switching) {
+				//start by saying: no switching is done:
+				switching = false;
+				rows = table.getElementsByTagName("TR");
+				/*Loop through all table rows (except the
+				first, which contains table headers):*/
+				for (i = 1; i < (rows.length - 1); i++) {
+					//start by saying there should be no switching:
+					shouldSwitch = false;
+					/*Get the two elements you want to compare,
+					one from current row and one from the next:*/
+					x = rows[i].getElementsByTagName("TD")[column];
+					y = rows[i + 1].getElementsByTagName("TD")[column];
+					//check if the two rows should switch place:
+					if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+						//if so, mark as a switch and break the loop:
+						shouldSwitch = true;
+						break;
+					}
+				}
+				if (shouldSwitch) {
+					/*If a switch has been marked, make the switch
+					and mark that a switch has been done:*/
+					rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+					switching = true;
+				}
+			}
+		}
+
+		/* Ascending */
+		function sortAscending(column) {
+			if(column == "name" || column == 0) {
+				column = 0;
+			} else if(column == "country" || column == 1) {
+				column = 1;
+			}
+			
+			var table, rows, switching, i, x, y, shouldSwitch;
+			table = document.getElementById("myTable");
+			switching = true;
+			/*Make a loop that will continue until
+			no switching has been done:*/
+			while (switching) {
+				//start by saying: no switching is done:
+				switching = false;
+				rows = table.getElementsByTagName("TR");
+				/*Loop through all table rows (except the
+				first, which contains table headers):*/
+				for (i = 1; i < (rows.length - 1); i++) {
+					//start by saying there should be no switching:
+					shouldSwitch = false;
+					/*Get the two elements you want to compare,
+					one from current row and one from the next:*/
+					x = rows[i].getElementsByTagName("TD")[column];
+					y = rows[i + 1].getElementsByTagName("TD")[column];
+					//check if the two rows should switch place:
+					if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+						//if so, mark as a switch and break the loop:
+						shouldSwitch = true;
+						break;
+					}
+				}
+				if (shouldSwitch) {
+					/*If a switch has been marked, make the switch
+					and mark that a switch has been done:*/
+					rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+					switching = true;
+				}
+			}
+		}
+
+
+		/**
+		 * Search filter
+		 */
+		function search() {
+			// Declare variables 
+			var input, filter, table, tr, td, i;
+			input = document.getElementById("txtSearch");
+			filter = input.value.toLowerCase();
+			table = document.getElementById("myTable");
+			tr = table.getElementsByTagName("tr");
+
+			// Loop through all table rows, and hide those who don't match the search query
+			for (i = 0; i < tr.length; i++) {
+				td = tr[i].getElementsByTagName("td")[0];
+				if (td) {
+					if (td.innerHTML.toLowerCase().indexOf(filter) > -1) {
+						tr[i].style.display = "";
+					} else {
+						tr[i].style.display = "none";
+						tr.css({
+							tr : find(':nth-child(' + i + ')').style.backgroundColor = "#333"
+						})
+					}
+				}
+			}
+		}
+
+	</script>
+
+</body>
+
+</html>

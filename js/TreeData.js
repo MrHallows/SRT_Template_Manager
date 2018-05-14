@@ -1293,10 +1293,11 @@ Tree.getActiveItem = function() {
 /**
  * Tree.getActiveElement()
  */
-/*Tree.getActiveElement = function() {
+Tree.getActiveElement = function() {
     state = JSON.parse(ls.get("SRTTM_State"));
     var activeTab = state.tab;
     var activeElement = document.getElementById(state.item);
+    var item = Tree.getActiveItem();
     activeElement.type = activeElement.attributes['item-type'].nodeValue;
 
     switch(activeElement.type) {
@@ -1364,7 +1365,7 @@ Tree.getActiveItem = function() {
     }
 
     return element;
-};*/
+};
 
 
 /**

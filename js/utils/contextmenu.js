@@ -58,7 +58,7 @@ $(document).on('contextmenu', '.tree-body', function(e) {
 	if(e.target.classList != "") {
 		log(".context-menu opened on: " + e.target.classList);
 	} else {
-		log("Element tag: <" + e.target.tagName.toLowerCase() + ">\nError: No classes have been defined for this element.");
+		log("contentmenu.js:61; Element tag: <" + e.target.tagName.toLowerCase() + ">\nError: No classes have been defined for this element.");
 	}
 
 	var contextmenu_w = $('.context-menu').width() + 2;
@@ -844,5 +844,5 @@ $(document).on('click', function(e) {
 		display: "none"
 	});
 
-	log('Element tag: <' + e.target.tagName.toLowerCase() + ' class="' + e.target.classList + '">');
+	log('contentmenu.js:847; Element tag: <' + e.target.tagName.toLowerCase() + ' class="' + e.target.classList + '">');
 });
