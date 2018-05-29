@@ -154,3 +154,34 @@ open.onsuccess = function() {
         db.close();
     };
 };
+
+
+
+/**
+ * IndexedDB
+ * Tutorial: Getting Started with indexedDB
+ * Author: All Things JavaScript, LLC
+ * URL: https://www.youtube.com/watch?v=g4U5WRzHitM
+ */
+// Ensure that 'window.indexedDB' refers to all browsers
+window.indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
+
+// Ensure that indexedDB is supported
+if(!window.indexedDB) {
+	alert("Your brower does not support IndexedDB!");
+}
+
+// Declare variables
+let request = window.indexedDB.open("SRTTM_DB", 1),
+	db,
+	tx,
+	store,
+	index;
+
+request.onerror = function(e) {
+	log("There was an error: " + e.target.errorCode);
+};
+
+request.onsuccess = function(e) {
+	//
+};
