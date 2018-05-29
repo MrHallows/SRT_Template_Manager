@@ -2,6 +2,11 @@
 /* js/TreeData.js */
 
 
+/**
+ * @name Tree
+ * @type {object}
+ * @description Base global Tree object
+ */
 var Tree = Tree || {};
 
 
@@ -1224,7 +1229,7 @@ Tree.setState = function() {
 /**
  * Tree.getActiveTree()
  * @function Tree.getActiveTree
- * @returns {object} - Tree of selected tree item (i.e., TreeNotes, TreeEmail, or TreeContacts)
+ * @returns {object} - Tree of selected tree item (i.e., TreeNotes, TreeEmail or TreeContacts)
  */
 Tree.getActiveTree = function() {
     var tree = null;
@@ -1265,26 +1270,26 @@ Tree.getActiveId = function() {
  * @function Tree.getIndex
  * @returns {number} - id of selected tree item
  */
-Tree.getIndex = function() {
+/*Tree.getIndex = function() {
     var activeTree = Tree.getActiveTree();
     var activeItemId = Tree.getActiveId();
     var index = activeTree.find(item => item.id == activeItemId);
     log("Tree.getIndex(): ", index);
     
     return index;
-};
+};*/
 
 
 /**
  * Tree.getActiveItem()
  * @function Tree.getActiveItem
- * @returns {number} - id of selected tree item
+ * @returns {object} - Object of selected tree item
  */
 Tree.getActiveItem = function() {
     var activeTree = Tree.getActiveTree();
     var activeItemId = Tree.getActiveId();
     var activeItem = activeTree.find(item => item.id == activeItemId);
-    //log("Tree.getActiveItem(): ", activeItem);
+    log("TreeData.js:1287 - Tree.getActiveItem(): ", activeItem);
     
     return activeItem;
 };
@@ -1292,6 +1297,8 @@ Tree.getActiveItem = function() {
 
 /**
  * Tree.getActiveElement()
+ * @function Tree.getActiveElement
+ * @returns {element} - Element of selected tree item
  */
 Tree.getActiveElement = function() {
     state = JSON.parse(ls.get("SRTTM_State"));
@@ -1303,11 +1310,11 @@ Tree.getActiveElement = function() {
     switch(activeElement.type) {
         case 'folder':
             var element = {
-                type: item.type, // YOU WERE HERE!!! Assign attributes as you did with activeElement.type
-                label: item.label,
-                id: item.id,
-                expanded: item.expanded,
-                selected: item.selected
+                type: activeElement.attributes['item-type'].nodeValue, //item.type, // YOU WERE HERE!!! Assign attributes as you did with activeElement.type on line 1301
+                label: activeElement.attributes['tree-label'].nodeValue, //item.label,
+                id: activeElement.attributes['tree-label'].nodeValue, //item.id,
+                expanded: activeElement.attributes['tree-label'].nodeValue, //item.expanded,
+                selected: activeElement.attributes['tree-label'].nodeValue, //item.selected
             };
             break;
             
@@ -1395,8 +1402,8 @@ Tree.findById = function (data, id) {
 Tree.update = function() {
     var tree = Tree.getActiveTree();
     var item = Tree.getActiveItem();
-    //var element = Tree.getActiveElement();
-	//element.type = element.attributes['item-type'].nodeValue;
+    var element = Tree.getActiveElement();
+	element.type = element.attributes['item-type'].nodeValue;
     var state = JSON.parse(ls.get("SRTTM_State"));
 
     // _itemElement is the selected tree-item element
