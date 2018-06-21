@@ -79,8 +79,7 @@ ol, ul {
 }
 
 .tree * {
-    font-family: Montserrat, sans-serif !important;
-    /* font-family: 'Varela Round', sans-serif !important; */
+    font-family: 'Salesforce Sans', sans-serif;
 }
 
 .tree-header {

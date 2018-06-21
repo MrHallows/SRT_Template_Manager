@@ -1,0 +1,17 @@
+/* draw.css */
+
+
+#canvas {
+	width: 2000px;
+	height: 2000px;
+	border: 10px solid transparent;
+}
+
+.rectangle {
+	background: #fff;
+	border: 1px solid #FF0000;
+	position: absolute;
+}
+.rectangle:hover {
+	border: 2px solid rgb(0, 162, 255);
+}

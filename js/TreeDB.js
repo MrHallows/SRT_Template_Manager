@@ -111,7 +111,7 @@ customerData.forEach(function (customer) {
 
 
 /**************************************************************************************************************************************/
-
+/*
 // This works on all devices/browsers, and uses IndexedDBShim as a final fallback 
 var indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB || window.shimIndexedDB;
 
@@ -153,7 +153,7 @@ open.onsuccess = function() {
     tx.oncomplete = function() {
         db.close();
     };
-};
+};*/
 
 
 
@@ -164,7 +164,7 @@ open.onsuccess = function() {
  * URL: https://www.youtube.com/watch?v=g4U5WRzHitM
  */
 // Ensure that 'window.indexedDB' refers to all browsers
-window.indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
+/*window.indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
 
 // Ensure that indexedDB is supported
 if(!window.indexedDB) {
@@ -184,4 +184,119 @@ request.onerror = function(e) {
 
 request.onsuccess = function(e) {
 	//
+};*/
+
+
+
+/**
+ * IndexedDB
+ * Tutorial: Adding IndexedDB Functionality to an Application
+ * Author: John Esposito
+ * URL: https://dzone.com/articles/adding-indexeddb-functionality
+ */
+// Ensure that 'window.indexedDB' refers to all browsers
+window.indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
+
+// Ensure that indexedDB is supported
+if(!window.indexedDB) {
+	alert("Your brower does not support IndexedDB!");
+}
+
+// 
+if('indexedDB' in window || 'mozIndexedDB' in window || 'webkitIndexedDB' in window || 'msIndexedDB' in window) {
+	window.indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
+	window.IDBTransaction = window.IDBTransaction || window.webkitIDBTransaction;
+	window.IDBKeyRange = window.IDBKeyRange || window.webkitIDBKeyRange;
+}
+
+// Create object shell(s)
+/*var TreeDB = {
+ 	db: null
+};*/
+
+var TasksDB = {
+	db: null,
+
+	open: function() {
+		if('indexedDB' in window) {
+			//alert("'indexedDB' in window");
+			var request = window.indexedDB.open("Tasks", 1); // Open database
+
+			request.onsuccess = function(e) {
+				TasksDB.db = e.target.result; // Connect to database
+
+				if(TasksDB.db.version != '1') {
+					request = TasksDB.db.setVersion('1');
+
+					request.onsuccess = function(e) {
+						var objStore = TasksDB.db.createObjectStore("Tasks", { keypath: "id" }); // Create object store
+						TasksDB.load();
+					};
+				} else {
+					request.onsuccess = function(e) {
+						var objStore = TasksDB.db.createObjectStore("Tasks", { keypath: "id" }); // Create object store
+						TasksDB.load();
+					};
+					//TasksDB.load();
+				}
+			};
+		} else if('openDatabase' in window) {
+			TasksDB.db = openDatabase("Tasks", 1, "Tasks Database", (5*1024*1024));
+
+			TasksDB.db.transaction(function(tx) { // Start SQL transaction
+				tx.executeSql('CREATE TABLE IF NOT EXISTS TasksSQL (' 
+					+ 'id INTEGER PRIMARY KEY ASC, title TEXT, status TEXT, progress TEXT,' 
+					+ 'priority TEXT, start_date DATETIME, due_date DATETIME, completed_date DATETIME' 
+					+ 'description TEXT, attachments TEXT)', [],
+					TasksDB.onsuccess, TasksDB.onerror);
+			});
+			TasksDB.load();
+		}
+	},
+
+	newTask: function() {
+		var Task = {
+			id: new Date().getTime(),
+			title: document.getElementById('task-title').value,
+			status: document.getElementById('task-status').value,
+			progress: document.getElementById('task-progress').value,
+			priority: document.getElementById('task-priority').value,
+			start_date: document.getElementById('task-start_date').value,
+			due_date: document.getElementById('task-due_date').value,
+			completed_date: document.getElementById('task-completed_date').value,
+			description: document.getElementById('task-description').value,
+			attachments: []
+		};
+
+		if('indexedDB' in window) {
+			var tx = TasksDB.db.transaction(["Tasks"], IDBTransaction.READ_WRITE, 0); // Initiate transaction
+			var objStore = tx.objectStore("Tasks");
+			var request = objStore.add(Task); // Add task
+			request.onsuccess = TasksDB.addSuccess;
+			request.onerror = TasksDB.onerror;
+		} else if('openDatabase' in window) {
+			TasksDB.db.transaction(function(tx) {
+				tx.executeSql('INSERT INTO Tasks(title, status, progress, priority, start_date, due_date, completed_date, description, attachments) VALUES(?, ?, ?)',
+					[Task.title, Task.status, Task.progress, Task.priority, Task.start_date, Task.due_date, Task.completed_date, Task.description, Task.attachments],
+					TasksDB.addSuccess, TasksDB.onerror);
+			});
+		}
+		return false;
+	},
+
+	addSuccess: function() {
+		TasksDB.load(); // Reload tasks
+		alert("Your task was successfully added!", "Task added!");
+		document.getElementById('task-title').value = "";
+		document.getElementById('task-status').value = "";
+		document.getElementById('task-progress').value = "";
+		document.getElementById('task-priority').value = "";
+		document.getElementById('task-start_date').value = "";
+		document.getElementById('task-due_date').value = "";
+		document.getElementById('task-completed_date').value = "";
+		document.getElementById('task-description').value = "";
+		//location.hash = "#list"; // Not needed
+	}
 };
+TasksDB.open();
+TasksDB.newTask();

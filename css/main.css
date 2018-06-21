@@ -740,9 +740,9 @@ input[type=checkbox]:checked {
 	visibility: hidden;
 	opacity: 0;
 	pointer-events: none;
-	-webkit-transition: 0.3s ease;
-	-moz-transition: 0.3s ease;
-	transition: 0.3s ease;
+	-webkit-transition: 0.1s ease-in-out;
+	-moz-transition: 0.1s ease-in-out;
+	transition: 0.1s ease-in-out;
 }
 
 .hint:hover:before, .hint:hover:after, [data-hint]:hover:before, [data-hint]:hover:after {
@@ -762,6 +762,7 @@ input[type=checkbox]:checked {
 .hint:after, [data-hint]:after {
 	content: attr(data-hint);
 	background: #111;
+	border-radius: 3px;
 	color: #ccc;
 	padding: 6px 8px;
 	font-size: 12px;

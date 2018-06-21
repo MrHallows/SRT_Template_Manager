@@ -1312,21 +1312,21 @@ Tree.getActiveElement = function() {
             var element = {
                 type: activeElement.attributes['item-type'].nodeValue, //item.type, // YOU WERE HERE!!! Assign attributes as you did with activeElement.type on line 1301
                 label: activeElement.attributes['tree-label'].nodeValue, //item.label,
-                id: activeElement.attributes['tree-label'].nodeValue, //item.id,
-                expanded: activeElement.attributes['tree-label'].nodeValue, //item.expanded,
-                selected: activeElement.attributes['tree-label'].nodeValue, //item.selected
+                id: activeElement.attributes['id'].nodeValue, //item.id,
+                expanded: activeElement.attributes['expanded'].nodeValue, //item.expanded,
+                selected: activeElement.attributes['select'].nodeValue, //item.selected
             };
             break;
             
         case 'note':
             var element = {
-                type: item.type,
-                label: item.label,
-                id: item.id,
-                selected: item.selected,
+                type: activeElement.attributes['item-type'].nodeValue, //item.type,
+                label: activeElement.attributes['tree-label'].nodeValue, //item.label,
+                id: activeElement.attributes['id'].nodeValue, //item.id,
+                selected: activeElement.attributes['select'].nodeValue, //item.selected,
                 content: {
-                    name: item.content.name,
-                    body: item.content.body
+                    name: activeElement.attributes['tree-label'].nodeValue, //item.content.name,
+                    body: activeElement.attributes['tree-label'].nodeValue, //item.content.body
                 }
             };
             break;

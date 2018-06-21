@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+
+</head>
+
+<body onload="start()">
+</body>
+
+<script type="text/javascript">
+
+	function start() {
+		var mybody = document.getElementsByTagName("body")[0];
+		mytable = document.createElement("table");
+		mytablebody = document.createElement("tbody");
+
+		for (var j = 0; j < 2; j++) {
+			mycurrent_row = document.createElement("tr");
+			for (var i = 0; i < 2; i++) {
+				mycurrent_cell = document.createElement("td");
+				currenttext = document.createTextNode("cell is:" + i + j);
+				mycurrent_cell.appendChild(currenttext);
+				mycurrent_row.appendChild(mycurrent_cell);
+				// set the cell background color
+				// if the column is 0. If the column is 1 hide the cell
+				if (i === 0) {
+					mycurrent_cell.style.background = "rgb(255,0,0)";
+				} else {
+					mycurrent_cell.style.display = "none";
+				}
+			}
+			mytablebody.appendChild(mycurrent_row);
+		}
+		mytable.appendChild(mytablebody);
+		mybody.appendChild(mytable);
+	}
+
+</script>
+
+</html>
