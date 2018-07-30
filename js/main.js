@@ -232,6 +232,26 @@ if (!ls.get("Contacts:Index")) {
     }));
 });*/
 
+
+
+/**
+ * Right Shelf Menu Hover Glow
+ */
+$('.right-shelf').on('mouseover', function(e) {
+	if (!$(this).hasClass('glow')) {
+		$(this).addClass('glow');
+	}
+});
+$('.right-shelf').on('mouseout', function (e) {
+	if ($(this).hasClass('glow')) {
+		$(this).removeClass('glow');
+	}
+});
+
+
+
+
+
 /* *
  * Resize
  */

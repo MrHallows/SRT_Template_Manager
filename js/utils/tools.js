@@ -52,6 +52,56 @@ Follow these easy steps to calculate dim weight:
 */
 
 
+
+/* *
+ * Freight Density Calculator
+ * 
+ * Code:
+    function get_density() {
+        var length = $("#length").val();
+        var width = $("#width").val();
+        var height = $("#height").val();
+        var weight = $("#weight").val();
+
+        var density;
+        var cubicFeet;
+        var cla = 0;
+        var innerHtml;
+
+        cubicFeet = (length * width * height) / 1728;
+        var displayDensity = roundTo(weight / cubicFeet, 2);
+        density = roundTo(Math.round((weight / cubicFeet) * 100) / 100, 2);
+        if (isNaN(density) || !isFinite(density)) density = 0;
+
+        $('.js-density-classification').each(function() {
+            var min = $(this).data('min-density');
+            var max = $(this).data('max-density');
+
+            if (min === '' || isNaN(min)) min = -100000;
+            else min = parseFloat(min);
+
+            if (max === '' || isNaN(max) || max === 0) max = 99999999;
+            else max = parseFloat(max);
+
+            if (density >= min && density < max) {
+                cla = $(this).html();
+                return;
+            }
+        });
+
+        innerHtml = "<p><strong>Freight Density (in lbs per cubic foot): " + displayDensity + "<br />Recommended Freight Class: " + cla.toString() + "</strong></p>";
+        if (density > 0) {
+            innerHtml += '<input type="submit" onclick="submitCalculation()" value="Get A Quote Now" />'; 
+            $("#freightclass").val(cla.toString());
+            checkSubmit = true;
+        }
+        $('#density_results').html(innerHtml);
+
+    }
+
+*/
+
+
 /**
  * Tools
  */
@@ -62,7 +112,7 @@ $('#rs-tools').on('click', function(e) {
 
     modal.open({
         title: 'Tools',
-        content: '<div class="row"><div id="tools-dim-calc" class="modal-input tools-tile" name="tools_dim_calc"><div>Dimensional Weight Calculator</div></div><div id="tools-1" class="modal-input tools-tile" name="tools_1"><div>Another Tool</div></div><div id="tools-2" class="modal-input tools-tile" name="tools_2"><div>Another Tool</div></div></div><div class="row"><div id="tools-3" class="modal-input tools-tile" name="tools_3"><div>Another Tool</div></div><div id="tools-4" class="modal-input tools-tile" name="tools_4"><div>Another Tool</div></div><div id="tools-5" class="modal-input tools-tile" name="tools_5"><div>Another Tool</div></div></div>'
+        content: '<div class="row"><div id="tools-dim-calc" class="modal-input tools-tile" name="tools_dim_calc"><div>Dimensional Weight Calculator</div></div><div id="tools-density-calc" class="modal-input tools-tile" name="tools_density_calc"><div>Freight Density Calculator</div></div><div id="tools-2" class="modal-input tools-tile" name="tools_2"><div>Another Tool</div></div></div><div class="row"><div id="tools-3" class="modal-input tools-tile" name="tools_3"><div>Another Tool</div></div><div id="tools-4" class="modal-input tools-tile" name="tools_4"><div>Another Tool</div></div><div id="tools-5" class="modal-input tools-tile" name="tools_5"><div>Another Tool</div></div></div>'
     });
 
     /**
@@ -73,7 +123,87 @@ $('#rs-tools').on('click', function(e) {
         //
         modal.open({
             title: 'Dimensional Weight Calculator',
-            content: '<div id="calcBox"><p>L: <input type="text" id="length" class="calc-input" size="2"/> W: <input type="text" id="width" class="calc-input" size="2"/> H: <input type="text" id="height" class="calc-input" size="2"/> <button id="btnCalculate" class="button btn-submit">Calculate</button><button type="reset" id="btnClear" class="button btn-x"></button></p><p><div class="data">Girth &#8674; <span id="girth" class="result"></span></div><div class="data">Length + Girth &#8674; <span id="lGirth" class="result"></span></div><div class="data">Dim Weight &#8674; <span id="dimWeight" class="result"></span></div><div class="data">Intl Dim Weight &#8674; <span id="intlDimWeight" class="result"></span></div><div class="data"><span id="error"></span></div></p></div>'
+            content: '<div id="calcBox"><p><span>L: <input type="text" id="length" class="calc-input" size="6"/></span> <span style="margin-left: 10px;">W: <input type="text" id="width" class="calc-input" size="6"/></span> <span style="margin-left: 10px;">H: <input type="text" id="height" class="calc-input" size="6"/></span></p><p><div class="data">Girth &#8674; <span id="girth" class="result"></span></div><div class="data">Length + Girth &#8674; <span id="lGirth" class="result"></span></div><div class="data">Dim Weight &#8674; <span id="dimWeight" class="result"></span></div><div class="data">Intl Dim Weight &#8674; <span id="intlDimWeight" class="result"></span></div><div class="data"><span id="error"></span></div></p></div><div class="actionbar"><button id="btnCalculate" class="button btn-submit">Calculate</button><button type="reset" id="btnClear" class="button btn-x"></button></div>'
+        });
+
+        document.getElementById('length').focus();
+
+        /**
+         * @function Calculate
+         */
+        $('#btnCalculate').on('click', function(e) {
+            var l = document.getElementById('length').value;
+            var w = document.getElementById('width').value;
+            var h = document.getElementById('height').value;
+
+            //log('length: ' + l);
+            //log('width: ' + w);
+            //log('height: ' + h);
+
+            if(l == "" || w == "" || h == "") {
+                alert("Error: All dimensions must be entered.");
+                document.getElementById('length').focus();
+
+                e.preventDefault();
+            }
+
+            var a = eval('(' + w + ' + ' + h + ') * 2');
+            var b = eval('(' + w + ' * 2) + (' + h + ' * 2) + ' + l);
+            var c = eval('(' + l + ' * ' + w + ' * ' + h + ') / 139');
+            var d = eval('(' + l + ' * ' + w + ' * ' + h + ') / 139');
+
+            //log(a);
+            //log(b);
+            //log(c);
+            //log(d);
+
+            if(isNaN(l) | isNaN(w) | isNaN(h)) {
+                document.getElementById('error').innerHTML = "Error: [0-9] only";
+            } else {
+                document.getElementById('girth').innerHTML = a;
+                document.getElementById('lGirth').innerHTML = b;
+                document.getElementById('dimWeight').innerHTML = Math.ceil(c) + " lbs.";
+                document.getElementById('intlDimWeight').innerHTML = Math.ceil(d) + " lbs.";
+            }
+
+            e.preventDefault();
+        });
+
+        $('#btnClear').on('click', function(e) {
+            document.getElementById('length').value = "";
+            document.getElementById('width').value = "";
+            document.getElementById('height').value = "";
+            document.getElementById('girth').innerHTML = "";
+            document.getElementById('lGirth').innerHTML = "";
+            document.getElementById('dimWeight').innerHTML = "";
+            document.getElementById('intlDimWeight').innerHTML = "";
+            document.getElementById('error').innerHTML = "";
+            document.getElementById('length').focus();
+
+            e.preventDefault();
+        });
+
+        $('#back').on('click', function(e) {
+            modal.close();
+
+            modal.open({
+                title: 'Tools',
+                content: '<div class="row"><div id="tools-dim-calc" class="modal-input tools-tile" name="tools_dim_calc"><div>Dimensional Weight Calculator</div></div><div id="tools-density-calc" class="modal-input tools-tile" name="tools_density_calc"><div>Freight Density Calculator</div></div><div id="tools-2" class="modal-input tools-tile" name="tools_2"><div>Another Tool</div></div></div><div class="row"><div id="tools-3" class="modal-input tools-tile" name="tools_3"><div>Another Tool</div></div><div id="tools-4" class="modal-input tools-tile" name="tools_4"><div>Another Tool</div></div><div id="tools-5" class="modal-input tools-tile" name="tools_5"><div>Another Tool</div></div></div>'
+            });
+        });
+        e.preventDefault();
+    });
+
+
+    /**
+     * Freight Density Calculator
+     */
+    $('#tools-density-calc').on('click', function(e) {
+        modal.close();
+        //
+        modal.open({
+            title: 'Freight Density Calculator',
+            content: '<div id="calcBox"><p><span>L: <input type="text" id="length" class="calc-input" size="6"/></span> <span style="margin-left: 10px;">W: <input type="text" id="width" class="calc-input" size="6"/></span> <span style="margin-left: 10px;">H: <input type="text" id="height" class="calc-input" size="6"/></span></p><p><div class="data">Girth &#8674; <span id="girth" class="result"></span></div><div class="data">Length + Girth &#8674; <span id="lGirth" class="result"></span></div><div class="data">Dim Weight &#8674; <span id="dimWeight" class="result"></span></div><div class="data">Intl Dim Weight &#8674; <span id="intlDimWeight" class="result"></span></div><div class="data"><span id="error"></span></div></p></div><div class="actionbar"><button id="btnCalculate" class="button btn-submit">Calculate</button><button type="reset" id="btnClear" class="button btn-x"></button></div>'
         });
 
         document.getElementById('length').focus();
@@ -102,10 +232,10 @@ $('#rs-tools').on('click', function(e) {
             var c = eval('(' + l + ' * ' + w + ' * ' + h + ') / 139');
             var d = eval('(' + l + ' * ' + w + ' * ' + h + ') / 139');
 
-            log(a);
-            log(b);
-            log(c);
-            log(d);
+            //log(a);
+            //log(b);
+            //log(c);
+            //log(d);
 
             if(isNaN(l) | isNaN(w) | isNaN(h)) {
                 document.getElementById('error').innerHTML = "Error: [0-9] only";

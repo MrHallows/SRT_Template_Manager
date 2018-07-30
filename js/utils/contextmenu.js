@@ -754,7 +754,7 @@ $('.context-menu').on('click', '#cm-new-item', function(e) {
 			break;
 
 
-			case "task":
+			/*case "task":
 				//
 				modal.open({
 					title: parentFolder + ' → New Task', // → ' + path,
@@ -798,7 +798,10 @@ $('.context-menu').on('click', '#cm-new-item', function(e) {
 	
 					modal.close();
 				});
-				break;
+				break;*/
+	
+		default:
+			break;
 	}
 
 	$('.button.btn-cancel.cancel').on('click', function(e) {
@@ -808,6 +811,56 @@ $('.context-menu').on('click', '#cm-new-item', function(e) {
 
 	e.preventDefault();
 });
+
+
+/**
+ * TEMPORARY: FOR TESTING ONLY
+ */
+if(document.getElementById('menu-search').value == "task" && document.getElementById('btnSearch').clicked) {
+	//
+	modal.open({
+		title: parentFolder + ' → New Task', // → ' + path,
+		content: '<input type="search" id="task-title" class="modal-input" name="task_title" placeholder="Title"/><input type="search" id="task-status" class="modal-input" name="task_status" placeholder="Status"/><input type="search" id="task-progress" class="modal-input" name="task_progress" placeholder="Full Name"/><input type="search" id="task-priority" class="modal-input" name="task_priority" placeholder="Priority" onkeydown="javascript:backspacerDOWN(this,event);" onkeyup="javascript:backspacerUP(this,event);"/><input type="search" id="task-start_date" class="modal-input" name="task_start_date" placeholder="Start Date"/><input type="search" id="task-due_date" class="modal-input" name="task_due_date" placeholder="Due Date"/><input type="search" id="task-completed_date" class="modal-input" name="task_completed_date" placeholder="Completed Date"/><textarea id="task-description" class="modal-input" name="task_description" placeholder="Description"></textarea><div class="actionbar"><button class="button btn-cancel">Cancel</button><button class="button btn-submit">Save</button></div>'
+	});
+	$('.modal-input:first').focus();
+
+	$('.button.btn-submit').on('click', function(e) {
+		e.preventDefault();
+
+		//ls.set("Notes:Index", ++Notes.index);
+
+		var $this = $('.tree-row[select=true]').parent('.tree-item');
+		var $tree_item = $('<div class="tree-item" item-type="' + $item_type + '" id="' + $item_id + '" has-children="false"></div>');
+		var $tree_row = $('<div class="tree-row" has-children="false"></div>');
+		var $exp_icon = $('<span class="expand-icon"></span>');
+		var $tree_label = $('<span class="tree-label"></span>');
+		var $options_menu = $('<span class="tree-item-options"></span>');
+		var $tree_children = $('<div class="tree-children" expanded="false"></div>');
+
+		//$form.new_contact_full_name.value = $form.new_contact_first_name.value + " " + $form.new_contact_last_name.value;
+
+		var add_item = function() {
+			if (!$this.find('.tree-children:first')) {
+				// Create .tree-children
+				$this.append($tree_children);
+			}
+
+			// Add new task to .tree-children
+			$this.find('.tree-children:first').append( //.prepend() to place at the top
+				$tree_item.append(
+					$tree_row.append(
+						$exp_icon,
+						$tree_label.text($form.new_contact_fullname.value),
+						$options_menu
+					)
+				)
+			);
+		};
+		add_item();
+
+		modal.close();
+	});
+}
 
 
 /* *

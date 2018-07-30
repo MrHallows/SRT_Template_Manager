@@ -54,7 +54,7 @@
 
 		<div class="menubar-middle">
 			<input type="search" id="menu-search" class="textbox" placeholder="Search..">
-			<span class="ui-icon ui-search" tip="Search here for file_tree items."></span>
+			<span id="btnSearch" class="ui-icon ui-search" tip="Search here for file_tree items."></span>
 		</div>
 
 		<div class="menubar-right">
@@ -410,6 +410,31 @@
 			</div>
 
 
+			<!-- New Task Modal (TESTING) -->
+			<!--<div id="modal" class="glow" style="top: 73px; left: 395px;">
+				<div class="titlebar unselectable">
+					<span class="modal-title">Edit Email Template → Submitted Documents</span>
+					<span class="close"></span>
+					<span class="maximize"></span>
+					<span class="minimize"></span>
+				</div>
+				<form id="content" method="post">
+					<input type="search" id="task-title" class="modal-input" name="task_title" placeholder="Title" />
+					<input type="search" id="task-status" class="modal-input" name="task_status" placeholder="Status" />
+					<input type="search" id="task-progress" class="modal-input" name="task_progress" placeholder="Full Name" />
+					<input type="search" id="task-priority" class="modal-input" name="task_priority" placeholder="Priority" onkeydown="javascript:backspacerDOWN(this,event);" onkeyup="javascript:backspacerUP(this,event);" />
+					<input type="search" id="task-start_date" class="modal-input" name="task_start_date" placeholder="Start Date" />
+					<input type="search" id="task-due_date" class="modal-input" name="task_due_date" placeholder="Due Date" />
+					<input type="search" id="task-completed_date" class="modal-input" name="task_completed_date" placeholder="Completed Date" />
+					<textarea id="task-description" class="modal-input" name="task_description" placeholder="Description"></textarea>
+					<div class="actionbar">
+						<button class="button btn-cancel">Cancel</button>
+						<button class="button btn-submit">Save</button>
+					</div>
+				</form>
+			</div>-->
+
+
 			<!-- ANSI Keyboard -->
 			<!--
 			<div>
@@ -641,7 +666,8 @@
 
 
 			<!-- Right Shelf Menu -->
-			<div class="right-shelf-cage unselectable">
+			<!--<div class="right-shelf-cage unselectable">-->
+				<div>
 				<div id="rs-tools" class="right-shelf">
 					<ul>
 						<li>
@@ -685,7 +711,8 @@
 						</li>
 					</ul>
 				</div>
-			</div>
+				</div>
+			<!--</div>-->
 
 
 			<!-- Dynamic Sort/Filter Table -->
@@ -726,6 +753,7 @@
 					<div id="" class="cp-tile" tip="#4d90fe" style="background-color: #4d90fe;"></div>
 					<div id="" class="cp-tile" tip="#3778c7" style="background-color: #3778c7;"></div>
 					<div id="" class="cp-tile" tip="#b88cff" style="background-color: #b88cff;"></div>
+					<div id="" class="cp-tile" tip="#2e3338" style="background-color: #2e3338;"></div>
 				</div>
 			</div>
 

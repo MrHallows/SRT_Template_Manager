@@ -34,7 +34,7 @@ var $get_this = (function() {
 function getOffset(element) {
     var _x = 0;
     var _y = 0;
-    while( element && !isNaN( element.offsetLeft ) && !isNaN( element.offsetTop ) ) {
+    while(element && !isNaN(element.offsetLeft) && !isNaN(element.offsetTop)) {
         _x += element.offsetLeft - element.scrollLeft;
         _y += element.offsetTop - element.scrollTop;
         element = element.offsetParent;
