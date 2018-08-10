@@ -1,2 +1,2 @@
 # SRT_Template_Manager
-A template manager to organize my team's commonly used templates
+A template manager to organize my team's commonly used templates and other utilities.
