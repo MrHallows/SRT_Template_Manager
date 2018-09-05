@@ -2574,3 +2574,38 @@
 }
 
 /* * * * * * * * * * * * * * * * * * * END Noto Sans * * * * * * * * * * * * * * * * * * */
+
+
+/* *
+ * Whitney
+ */
+
+@font-face {
+	font-family: Whitney;
+	font-style: light;
+	font-weight: 300;
+	src: url("//theme.zdassets.com/theme_assets/678183/d03ef235d80b668f3a70a5a771e73b69a44eaa6f.woff") format('woff');
+}
+
+@font-face {
+	font-family: Whitney;
+	font-style: normal;
+	font-weight: 500;
+	src: url("//theme.zdassets.com/theme_assets/678183/cd4d4b3e547f43685185e98c2b216339f5e505e9.woff") format('woff');
+}
+
+@font-face {
+	font-family: Whitney;
+	font-style: medium;
+	font-weight: 600;
+	src: url("//theme.zdassets.com/theme_assets/678183/12fccd2efa3ae13f7d1a0310c89f480ac0816313.woff") format('woff');
+}
+
+@font-face {
+	font-family: Whitney;
+	font-style: bold;
+	font-weight: 700;
+	src: url("//theme.zdassets.com/theme_assets/678183/6b9c2af64c431cab68aab717d155276b57ff0c39.woff") format('woff');
+}
+
+/* * * * * * * * * * * * * * * * * * * END Whitney * * * * * * * * * * * * * * * * * * */

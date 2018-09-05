@@ -1289,7 +1289,9 @@ Tree.getActiveItem = function() {
     var activeTree = Tree.getActiveTree();
     var activeItemId = Tree.getActiveId();
     var activeItem = activeTree.find(item => item.id == activeItemId);
-    log("TreeData.js:1287 - Tree.getActiveItem(): ", activeItem);
+    log("TreeData.js:1288 - Tree.getActiveItem(activeItem): ", activeItem);
+    log("TreeData.js:1288 - Tree.getActiveItem(activeTree): ", activeTree);
+    log("TreeData.js:1288 - Tree.getActiveItem(activeItemId): ", activeItemId);
     
     return activeItem;
 };
@@ -1306,11 +1308,15 @@ Tree.getActiveElement = function() {
     var activeElement = document.getElementById(state.item);
     var item = Tree.getActiveItem();
     activeElement.type = activeElement.attributes['item-type'].nodeValue;
+    activeElement.label = activeElement.attributes['tree-label'].nodeValue;
+    activeElement.id = activeElement.attributes['id'].nodeValue;
+    activeElement.selected = activeElement.attributes['select'].nodeValue;
+    activeElement.type = activeElement.attributes['item-type'].nodeValue;
 
     switch(activeElement.type) {
         case 'folder':
             var element = {
-                type: activeElement.attributes['item-type'].nodeValue, //item.type, // YOU WERE HERE!!! Assign attributes as you did with activeElement.type on line 1301
+                type: activeElement.attributes['item-type'].nodeValue, //item.type, // YOU WERE HERE!!! Assign attributes as you did with activeElement.type on line 1308
                 label: activeElement.attributes['tree-label'].nodeValue, //item.label,
                 id: activeElement.attributes['id'].nodeValue, //item.id,
                 expanded: activeElement.attributes['expanded'].nodeValue, //item.expanded,
@@ -1333,17 +1339,17 @@ Tree.getActiveElement = function() {
 
         case 'email':
             var element = {
-                type: item.type,
-                label: item.label,
-                id: item.id,
-                selected: item.selected,
+                type: activeElement.attributes['item-type'].nodeValue, //item.type,
+                label: activeElement.attributes['tree-label'].nodeValue, //item.label,
+                id: activeElement.attributes['id'].nodeValue, //item.id,
+                selected: activeElement.attributes['select'].nodeValue, //item.selected,
                 content: {
-                    name: item.content.name,
+                    name: activeElement.attributes['tree-label'].nodeValue, //item.content.name,
                     to: item.content.to,
                     cc: item.content.cc,
                     subject: item.content.subject,
                     attachments: item.content.attachments,
-                    body: item.content.body
+                    body: activeElement.attributes['tree-label'].nodeValue, //item.content.body
                 }
             };
             break;

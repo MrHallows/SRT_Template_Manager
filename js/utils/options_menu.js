@@ -88,38 +88,19 @@ $(document).on('click', '.tree-row', function(e) {
 	// var options_menu_y = getOffset( document.querySelectorAll('.tree-item-options') ).top;
 
 	log("[Options Menu] this: ", e.target);
-	var options_menu_x = e.target.style.left + 20;
-	var options_menu_y = e.target.style.top;
+	let coords = e.target.getBoundingClientRect();
+	var options_menu_x = coords.left + 24;
+	var options_menu_y = coords.top - 3;
 
 	// Display menu
 	$('.options-menu').css({
-		display: "block",
+		position: 'absolute',
+		display: 'block',
 		// left: getOffset( document.querySelectorAll('.tree-item-options') ).left, //e.pageX,
 		left: options_menu_x + 'px', //e.pageX,
 		// top: getOffset( document.querySelectorAll('.tree-item-options') ).top //e.pageY
 		top: options_menu_y + 'px' //e.pageY
 	});
-	/*
-		left: 239px;
-		top: 121px;
-	*/
-
-	// Keep menu in viewport left
-	/*if(e.pageX + options_menu_w > viewport_w) {
-		$('.options-menu').css({
-			left: e.pageX - options_menu_w
-		});
-	}*/
-
-	// Keep menu in viewport top
-	/*if(e.pageY + options_menu_h > viewport_h) {
-		$('.options-menu').css({
-			top: e.pageY - options_menu_h - 3
-		});
-	}*/
-
-	//log("options_menu width: " + options_menu_w + "px\n" + "options_menu height: " + options_menu_h + "px");
-	//log("viewport width: " + viewport_w + "px\n" + "viewport height: " + viewport_h + "px");
 
 	e.preventDefault();
 });
