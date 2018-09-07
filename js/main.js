@@ -113,15 +113,15 @@ $(document).on('click', '.tree-row', function() {
 
 		case "note":
 			log("You have selected a note!");
-			$('#note-view').show();
 			$('#email-view').hide();
 			$('#contact-view').hide();
+			$('#note-view').show();
 
 			var note = note || {};
 			note.key = $tree_item_id;
 			//var _this = JSON.parse(ls.get(note.key));
 
-			if(item == null || undefined) {
+			if(item == null || item == undefined) {
 				notification.open({
 					severity: 'error',
 					content: 'Note has not been defined!'
@@ -133,7 +133,7 @@ $(document).on('click', '.tree-row', function() {
 				});
 			}
 
-			if(item.name == '' || null || undefined) {
+			if(item.name == '' || item.name == null || item.name == undefined) {
 				notification.open({
 					severity: 'error',
 					content: 'No name defined for this note!'
@@ -142,7 +142,7 @@ $(document).on('click', '.tree-row', function() {
 				$('#note-view .name > span').text(item.name);
 			}
 
-			if(item.body == '' || null || undefined) {
+			if(item.body == '' || item.body == null || item.body == undefined) {
 				notification.open({
 					severity: 'error',
 					content: 'No body defined for this note!'
@@ -155,8 +155,8 @@ $(document).on('click', '.tree-row', function() {
 		case "email":
 			log("You have selected a email!");
 			$('#note-view').hide();
-			$('#email-view').show();
 			$('#contact-view').hide();
+			$('#email-view').show();
 
 			var email = email || {};
 			email.key = $tree_item_id;
@@ -247,8 +247,6 @@ $('.right-shelf').on('mouseout', function (e) {
 		$(this).removeClass('glow');
 	}
 });
-
-
 
 
 

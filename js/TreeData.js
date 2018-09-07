@@ -1288,7 +1288,8 @@ Tree.getActiveId = function() {
 Tree.getActiveItem = function() {
     var activeTree = Tree.getActiveTree();
     var activeItemId = Tree.getActiveId();
-    var activeItem = activeTree.find(item => item.id == activeItemId);
+	var activeItem = activeTree.find(item => item.id == activeItemId);
+	
     log("TreeData.js:1288 - Tree.getActiveItem(activeItem): ", activeItem);
     log("TreeData.js:1288 - Tree.getActiveItem(activeTree): ", activeTree);
     log("TreeData.js:1288 - Tree.getActiveItem(activeItemId): ", activeItemId);
@@ -1345,10 +1346,10 @@ Tree.getActiveElement = function() {
                 selected: activeElement.attributes['select'].nodeValue, //item.selected,
                 content: {
                     name: activeElement.attributes['tree-label'].nodeValue, //item.content.name,
-                    to: item.content.to,
-                    cc: item.content.cc,
-                    subject: item.content.subject,
-                    attachments: item.content.attachments,
+                    to: activeElement.attributes['tree-label'].nodeValue, //item.content.to,
+                    cc: activeElement.attributes['tree-label'].nodeValue, //item.content.cc,
+                    subject: activeElement.attributes['tree-label'].nodeValue, //item.content.subject,
+                    attachments: activeElement.attributes['tree-label'].nodeValue, //item.content.attachments,
                     body: activeElement.attributes['tree-label'].nodeValue, //item.content.body
                 }
             };
@@ -1356,19 +1357,19 @@ Tree.getActiveElement = function() {
 
         case 'contact':
             var element = {
-                type: item.type,
-                label: item.label,
-                id: item.id,
-                selected: item.selected,
+                type: activeElement.attributes['item-type'].nodeValue, //item.type,
+                label: activeElement.attributes['tree-label'].nodeValue, //item.label,
+                id: activeElement.attributes['id'].nodeValue, //item.id,
+                selected: activeElement.attributes['select'].nodeValue, //item.selected,
                 content: {
-                    firstName: item.content.firstName,
-                    lastName: item.content.lastName,
-                    fullName: item.content.fullName,
-                    phone: item.content.phone,
-                    email: item.content.email,
-                    business: item.content.business,
-                    ean: item.content.ean,
-                    comments: item.content.comments
+                    firstName: activeElement.attributes['tree-label'].nodeValue, //item.content.firstName,
+                    lastName: activeElement.attributes['tree-label'].nodeValue, //item.content.lastName,
+                    fullName: activeElement.attributes['tree-label'].nodeValue, //item.content.fullName,
+                    phone: activeElement.attributes['tree-label'].nodeValue, //item.content.phone,
+                    email: activeElement.attributes['tree-label'].nodeValue, //item.content.email,
+                    business: activeElement.attributes['tree-label'].nodeValue, //item.content.business,
+                    ean: activeElement.attributes['tree-label'].nodeValue, //item.content.ean,
+                    comments: activeElement.attributes['tree-label'].nodeValue, //item.content.comments
                 }
             };
             break;

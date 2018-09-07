@@ -195,7 +195,7 @@ request.onsuccess = function(e) {
  * URL: https://dzone.com/articles/adding-indexeddb-functionality
  */
 // Ensure that 'window.indexedDB' refers to all browsers
-window.indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
+/*window.indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
 
 // Ensure that indexedDB is supported
 if(!window.indexedDB) {
@@ -214,7 +214,7 @@ if('indexedDB' in window || 'mozIndexedDB' in window || 'webkitIndexedDB' in win
  	db: null
 };*/
 
-var TasksDB = {
+/*var TasksDB = {
 	db: null,
 
 	open: function() {

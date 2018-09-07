@@ -71,7 +71,7 @@ ol, ul {
     border-left: none;*/
     min-width: 240px;
     width: 100%;
-    height: 100%;
+    height: 100% !important;
     padding: 0;
     margin: 0;
     outline: none;
@@ -188,7 +188,7 @@ ol, ul {
  * Tree body
  */
 .tree-body {
-    display: block;
+    display: contents;
     /*background-color: #282828;
     border: 2px solid #555;*/
     background: #212122;
@@ -231,15 +231,16 @@ ol, ul {
 .expand-icon {
     display: inline-block;
     position: relative;
-    background-image: url(../images/ui-icons_light-grey_256x240.png);
-    background-position: -32px -16px;
+    background-image: url(../images/tree_icons.png);
+    background-position: 0px -208px;
     width: 16px;
     height: 16px;
     margin: 1px;
     vertical-align: top;
 }
 .expand-icon:hover {
-    background-image: url(../images/ui-icons_2e83ff_256x240.png);
+    background-image: url(../images/tree_icons.png);
+    background-position: 0px -224px;
     cursor: pointer;
 }
 
@@ -266,12 +267,12 @@ ol, ul {
     height: auto;
 }
 .tree-item[expanded=true] > .tree-row > .expand-icon {
-    /*background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxMSIgdmlld2JveD0iMCAwIDE2IDExIiBmaWxsPSIjN2E3YTdhIj4KICA8cGF0aCBkPSJNMCAwIEwwIDIgTDcgOSBMMTQgMiBMMTQgMCBMMCAwIiBzdHJva2U9ImJsYWNrIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo=);*/
-    background-image: url(../images/ui-icons_2e83ff_256x240.png);
-    background-position: -48px -16px;
+    background-image: url(../images/tree_icons.png);
+    background-position: 0px -240px;
 }
 .tree-item[expanded=true] > .tree-row > .expand-icon:hover {
-    background-image: url(../images/ui-icons_cc0000_256x240.png);
+    background-image: url(../images/tree_icons.png);
+    background-position: 0px -256px;
 }
 .tree-row > .expand-icon {
     visibility: hidden;
@@ -332,22 +333,22 @@ html[dir=rtl] .tree-label {
     background-position: 100% 50%;
 }
 .tree-label, .tree-row[may-have-children] > .tree-label {
-    background: url(../images/tree_icons.png) no-repeat 0px -1px;
+    background: url(../images/tree_icons.png) no-repeat 0px 0px;
 }
 .tree-item[item-type=folder] .tree-label {
-    background: url(../images/tree_icons.png) no-repeat 0px -1px;
+    background: url(../images/tree_icons.png) no-repeat 0px 0px;
 }
 .tree-item[expanded=true] > .tree-row > .tree-label {
-    background: url(../images/tree_icons.png) no-repeat 0px -18px;
+    background: url(../images/tree_icons.png) no-repeat 0px -16px;
 }
 .tree-item[item-type=note] .tree-label {
-    background: url(../images/tree_icons.png) no-repeat 0px -35px;
+    background: url(../images/tree_icons.png) no-repeat 0px -32px;
 }
 .tree-item[item-type=email] .tree-label {
-    background: url(../images/tree_icons.png) no-repeat 0px -52px;
+    background: url(../images/tree_icons.png) no-repeat 0px -48px;
 }
 .tree-item[item-type=contact] .tree-label {
-    background: url(../images/tree_icons.png) no-repeat 0px -69px;
+    background: url(../images/tree_icons.png) no-repeat 0px -64px;
 }
 
 .tree-rename {

@@ -75,7 +75,7 @@
 /* Minimize Button */
 .minimize {
     position: relative;
-    background: url(../images/tree_icons.png) no-repeat 0px -86px;
+    background: url(../images/tree_icons.png) no-repeat 0px -80px;
     width: 16px;
     height: 16px;
     margin-left: 2px;
@@ -83,7 +83,7 @@
     opacity: 1;
 }
 .minimize:hover {
-    background: url(../images/tree_icons.png) no-repeat 0px -103px;
+    background: url(../images/tree_icons.png) no-repeat 0px -96px;
     cursor: default;
     opacity: 1;
 }
@@ -91,7 +91,7 @@
 /* Restore Button */
 .restore {
     position: relative;
-    background: url(../images/tree_icons.png) no-repeat 0px -120px;
+    background: url(../images/tree_icons.png) no-repeat 0px -112px;
     width: 16px;
     height: 16px;
     margin-left: 2px;
@@ -99,7 +99,7 @@
     opacity: 1;
 }
 .restore:hover {
-    background: url(../images/tree_icons.png) no-repeat 0px -137px;
+    background: url(../images/tree_icons.png) no-repeat 0px -128px;
     cursor: default;
     opacity: 1;
 }
@@ -107,7 +107,7 @@
 /* Maximize Button */
 .maximize {
     position: relative;
-    background: url(../images/tree_icons.png) no-repeat 0px -154px;
+    background: url(../images/tree_icons.png) no-repeat 0px -144px;
     width: 16px;
     height: 16px;
     margin-left: 2px;
@@ -115,7 +115,7 @@
     opacity: 1;
 }
 .maximize:hover {
-    background: url(../images/tree_icons.png) no-repeat 0px -171px;
+    background: url(../images/tree_icons.png) no-repeat 0px -160px;
     cursor: default;
     opacity: 1;
 }
@@ -123,7 +123,7 @@
 /* Close Button */
 .close {
     position: relative;
-    background: url(../images/tree_icons.png) no-repeat 0px -188px;
+    background: url(../images/tree_icons.png) no-repeat 0px -176px;
     width: 16px;
     height: 16px;
     margin-left: 2px;
@@ -131,7 +131,7 @@
     opacity: 1;
 }
 .close:hover {
-    background: url(../images/tree_icons.png) no-repeat 0px -205px;
+    background: url(../images/tree_icons.png) no-repeat 0px -192px;
     cursor: default;
     opacity: 1;
 }
