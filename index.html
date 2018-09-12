@@ -3,136 +3,136 @@
 
 <head>
 
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title> SRT Template Manager </title>
+    <title> SRT Template Manager </title>
 
-	<!-- Favicon -->
-	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
 
-	<!-- Fonts -->
-	<link type="text/css" rel="stylesheet" href="css/fonts.css">
+    <!-- Fonts -->
+    <link type="text/css" rel="stylesheet" href="css/fonts.css">
 
-	<!-- Libraries: CSS -->
-	<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <!-- Libraries: CSS -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 
-	<!-- CSS -->
-	<link type="text/css" rel="stylesheet" href="css/animations.css">
-	<link type="text/css" rel="stylesheet" href="css/modal.css">
-	<link type="text/css" rel="stylesheet" href="css/dialog.css">
-	<link type="text/css" rel="stylesheet" href="css/notification.css">
-	<link type="text/css" rel="stylesheet" href="css/tree.css">
-	<link type="text/css" rel="stylesheet" href="css/tooltip.css">
-	<link type="text/css" rel="stylesheet" href="css/contextmenu.css">
-	<link type="text/css" rel="stylesheet" href="css/options_menu.css">
-	<link type="text/css" rel="stylesheet" href="css/settings.css">
-	<link type="text/css" rel="stylesheet" href="css/tools.css">
-	<link type="text/css" rel="stylesheet" href="css/main.css">
-	<!--<link type="text/css" rel="stylesheet" href="css/.css">-->
+    <!-- CSS -->
+    <link type="text/css" rel="stylesheet" href="css/animations.css">
+    <link type="text/css" rel="stylesheet" href="css/modal.css">
+    <link type="text/css" rel="stylesheet" href="css/dialog.css">
+    <link type="text/css" rel="stylesheet" href="css/notification.css">
+    <link type="text/css" rel="stylesheet" href="css/tree.css">
+    <link type="text/css" rel="stylesheet" href="css/tooltip.css">
+    <link type="text/css" rel="stylesheet" href="css/contextmenu.css">
+    <link type="text/css" rel="stylesheet" href="css/options_menu.css">
+    <link type="text/css" rel="stylesheet" href="css/settings.css">
+    <link type="text/css" rel="stylesheet" href="css/tools.css">
+    <link type="text/css" rel="stylesheet" href="css/main.css">
+    <!--<link type="text/css" rel="stylesheet" href="css/.css">-->
 
-	<!-- Libraries: JavaScript -->
-	<script src="js/lib/jquery-3.3.1.min.js"></script>
+    <!-- Libraries: JavaScript -->
+    <script src="js/lib/jquery-3.3.1.min.js"></script>
 
-	<!-- JavaScript -->
-	<script type="text/javascript" src="js/opal.js"></script>
-	<!--<script type="text/javascript" src="js/.js"></script>-->
+    <!-- JavaScript -->
+    <script type="text/javascript" src="js/opal.js"></script>
+    <!--<script type="text/javascript" src="js/.js"></script>-->
 
 </head>
 
 <body>
 
-	<!-- Navbar -->
-	
-	<nav class="menubar panel-top unselectable" role="navigation">
+    <!-- Navbar -->
 
-		<div class="menubar-left">
-			<span id="menu-title" class="">
+    <nav class="menubar panel-top unselectable" role="navigation">
+
+        <div class="menubar-left">
+            <span id="menu-title" class="">
 				<a href="https://mrhallows.github.io/SRT_Template_Manager/"> SRT Template Manager </a>
 			</span>
-		</div>
+        </div>
 
-		<div class="menubar-middle">
-			<input type="search" id="menu-search" class="textbox" placeholder="Search..">
-			<span id="btnSearch" class="ui-icon ui-search" tip="Search here for file_tree items."></span>
-		</div>
+        <div class="menubar-middle">
+            <input type="search" id="menu-search" class="textbox" placeholder="Search..">
+            <span id="btnSearch" class="ui-icon ui-search" tip="Search here for file_tree items."></span>
+        </div>
 
-		<div class="menubar-right">
-			<!--<span style="color: #7fffd4; line-height: 26px; float: right;">Check out the source code on 
+        <div class="menubar-right">
+            <!--<span style="color: #7fffd4; line-height: 26px; float: right;">Check out the source code on 
 				<a href="https://mrhallows.github.io/SRT_Template_Manager/">GitHub</a>!
 			</span>-->
-			<!--<span class="hint--bottom" data-hint="Check out the source code on GitHub!">
+            <!--<span class="hint--bottom" data-hint="Check out the source code on GitHub!">
 				<i class="icon-info"></i>
 			</span>-->
 
-			<span style="float: right; margin: 6px;">
+            <span style="float: right; margin: 6px;">
 				<span class="hint--bottom-left" data-hint="Application Status: In Development">
 					<svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" width="16" height="16" style="fill: #40a8ff; pointer-events: none; display: block;"><g><path fill-rule="evenodd" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"></path></g></svg>
 					<!--<svg class="check-icon check-icon--u-success" viewBox="0 0 16 16" width="16" height="16" style="position: relative;"><g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" style="fill: #32dba3;"><g><circle class="circle" cx="8" cy="8" r="8"></circle><polyline class="check" stroke-width="1" points="4 8.26341443 6.71493556 10.97835 11.4602904 5" style="stroke: #fff;"></polyline></g></g></svg>-->
 				</span>
-			</span>
+            </span>
 
-			<span style="float: right; margin: 6px;">
+            <span style="float: right; margin: 6px;">
 				<span class="hint--bottom-left" data-hint="Check out the source code on GitHub!">
 					<a class="octicon" target="_blank" href="https://github.com/MrHallows/SRT_Template_Manager">
 						<svg class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
 					</a>
 				</span>
-			</span>
+            </span>
 
-			<!-- <span style="color: #4d90fe;">Press <kbd>Ctrl+S</kbd> to save!</span>
+            <!-- <span style="color: #4d90fe;">Press <kbd>Ctrl+S</kbd> to save!</span>
 			<button id="btnClearCookies" class="button btn-cancel">Clear Cookies</button>
 			<button id="btnSettings" class="button btn-std">Settings</button>
 			<button id="btnTools" class="button btn-std tooltip tooltip-sw" aria-label="Helpful tools!">Tools</button> -->
-		</div>
+        </div>
 
-	</nav>
+    </nav>
 
-	<!-- Main -->
+    <!-- Main -->
 
-	<main>
-		<div class="page-content">
-
-
-			<!-- Left Panel -->
-			<aside class="panel-left unselectable">
-
-				<!-- Tree -->
-
-				<div class="tree">
+    <main>
+        <div class="page-content">
 
 
-					<!-- Header -->
+            <!-- Left Panel -->
+            <aside class="panel-left unselectable">
 
-					<div class="tree-header unselectable">
-						<span class="label"> Template Files </span>
-					</div>
+                <!-- Tree -->
 
-
-					<!-- Tabs -->
-
-					<ul class="tree-tabs unselectable">
-
-						<li class="tree-tab"><a href="#tab-notes"> Notes </a>
-						</li>
-						<li class="tree-tab"><a href="#tab-email"> Email </a>
-						</li>
-						<li class="tree-tab"><a href="#tab-contacts"> Contacts </a>
-						</li>
-
-					</ul>
+                <div class="tree">
 
 
-					<!-- Tree: Notes -->
+                    <!-- Header -->
 
-					<div id="tab-notes" class="tree-tab-content" item-type="note">
+                    <div class="tree-header unselectable">
+                        <span class="label"> Template Files </span>
+                    </div>
 
 
-						<!-- Tree Body -->
+                    <!-- Tabs -->
 
-						<div id="tree-body-notes" class="tree-body">
+                    <ul class="tree-tabs unselectable">
 
-							<!--<div class="tree-item" item-type="folder" expanded="false" has-children="true">
+                        <li class="tree-tab"><a href="#tab-notes"> Notes </a>
+                        </li>
+                        <li class="tree-tab"><a href="#tab-email"> Email </a>
+                        </li>
+                        <li class="tree-tab"><a href="#tab-contacts"> Contacts </a>
+                        </li>
+
+                    </ul>
+
+
+                    <!-- Tree: Notes -->
+
+                    <div id="tab-notes" class="tree-tab-content" item-type="note">
+
+
+                        <!-- Tree Body -->
+
+                        <div id="tree-body-notes" class="tree-body">
+
+                            <!--<div class="tree-item" item-type="folder" expanded="false" has-children="true">
 
 								<div class="tree-row" has-children="true" may-have-children="" select="false">
 									<span class="expand-icon"></span>
@@ -157,21 +157,21 @@
 
 							</div>-->
 
-						</div>
+                        </div>
 
-					</div>
-
-
-					<!-- Tree: Email -->
-
-					<div id="tab-email" class="tree-tab-content" item-type="email">
+                    </div>
 
 
-						<!-- Tree Body -->
+                    <!-- Tree: Email -->
 
-						<div id="tree-body-email" class="tree-body">
+                    <div id="tab-email" class="tree-tab-content" item-type="email">
 
-							<!--<div class="tree-item" item-type="folder" expanded="false">
+
+                        <!-- Tree Body -->
+
+                        <div id="tree-body-email" class="tree-body">
+
+                            <!--<div class="tree-item" item-type="folder" expanded="false">
 								<div class="tree-row" has-children="true" may-have-children="" select="false">
 									<span class="expand-icon"></span>
 									<span class="tree-label">_root</span>
@@ -211,21 +211,21 @@
 
 							</div>-->
 
-						</div>
+                        </div>
 
-					</div>
-
-
-					<!-- Tree: Contacts -->
-
-					<div id="tab-contacts" class="tree-tab-content" item-type="contact">
+                    </div>
 
 
-						<!-- Tree Body -->
+                    <!-- Tree: Contacts -->
 
-						<div id="tree-body-contacts" class="tree-body">
+                    <div id="tab-contacts" class="tree-tab-content" item-type="contact">
 
-							<!--<div class="tree-item" item-type="folder" expanded="false">
+
+                        <!-- Tree Body -->
+
+                        <div id="tree-body-contacts" class="tree-body">
+
+                            <!--<div class="tree-item" item-type="folder" expanded="false">
 
 								<div class="tree-row" has-children="true" may-have-children="" select="false">
 									<span class="expand-icon"></span>
@@ -307,116 +307,116 @@
 
 							</div>-->
 
-						</div>
+                        </div>
 
-					</div>
-
-					
+                    </div>
 
 
-					<!-- Tree: Contacts -->
-
-					<div id="tab-tasks" class="tree-tab-content" item-type="task">
 
 
-						<!-- Tree Body -->
+                    <!-- Tree: Contacts -->
 
-						<div id="tree-body-tasks" class="tree-body">
-
-							<!--  -->
-
-						</div>
-
-					</div>
-
-				</div>
-
-			</aside>
+                    <div id="tab-tasks" class="tree-tab-content" item-type="task">
 
 
-			<!-- Mid Panel -->
-			<article class="panel-mid">
+                        <!-- Tree Body -->
 
-				<div id="template-view" class="">
+                        <div id="tree-body-tasks" class="tree-body">
 
-					<div id="note-view" class="" style="display: none;">
-						<div class="name">
-							<label>Name: </label>
-							<span></span>
-						</div>
-						<div class="body">
-							<label>Body: </label>
-							<pre></pre>
-						</div>
-					</div>
+                            <!--  -->
 
-					<div id="email-view" class="" style="display: none;">
-						<div class="name">
-							<label>Name: </label>
-							<span></span>
-						</div>
-						<div class="to">
-							<label>To: </label>
-							<span></span>
-						</div>
-						<div class="cc">
-							<label>Cc: </label>
-							<span></span>
-						</div>
-						<div class="subject">
-							<label>Subject: </label>
-							<span></span>
-						</div>
-						<div class="attachments">
-							<label>Attachments: </label>
-							<span></span>
-						</div>
-						<div class="body">
-							<label>Body: </label>
-							<pre></pre>
-						</div>
-					</div>
+                        </div>
 
-					<div id="contact-view" class="" style="display: none;">
-						<div class="firstname">
-							<label>First Name: </label>
-							<span></span>
-						</div>
-						<div class="lastname">
-							<label>Last Name: </label>
-							<span></span>
-						</div>
-						<div class="fullname">
-							<label>Full Name: </label>
-							<span></span>
-						</div>
-						<div class="phone">
-							<label>Phone: </label>
-							<span></span>
-						</div>
-						<div class="email">
-							<label>Email: </label>
-							<span></span>
-						</div>
-						<div class="business">
-							<label>Business: </label>
-							<span></span>
-						</div>
-						<div class="ean">
-							<label>EAN: </label>
-							<span></span>
-						</div>
-						<div class="comments">
-							<label>Comments: </label>
-							<pre></pre>
-						</div>
-					</div>
+                    </div>
 
-				</div>
+                </div>
+
+            </aside>
 
 
-				<!-- New Task Modal (TESTING) -->
-				<!--<div id="modal" class="glow" style="top: 73px; left: 395px;">
+            <!-- Mid Panel -->
+            <article class="panel-mid">
+
+                <div id="template-view" class="">
+
+                    <div id="note-view" class="" style="display: none;">
+                        <div class="name">
+                            <label>Name: </label>
+                            <span></span>
+                        </div>
+                        <div class="body">
+                            <label>Body: </label>
+                            <pre></pre>
+                        </div>
+                    </div>
+
+                    <div id="email-view" class="" style="display: none;">
+                        <div class="name">
+                            <label>Name: </label>
+                            <span></span>
+                        </div>
+                        <div class="to">
+                            <label>To: </label>
+                            <span></span>
+                        </div>
+                        <div class="cc">
+                            <label>Cc: </label>
+                            <span></span>
+                        </div>
+                        <div class="subject">
+                            <label>Subject: </label>
+                            <span></span>
+                        </div>
+                        <div class="attachments">
+                            <label>Attachments: </label>
+                            <span></span>
+                        </div>
+                        <div class="body">
+                            <label>Body: </label>
+                            <pre></pre>
+                        </div>
+                    </div>
+
+                    <div id="contact-view" class="" style="display: none;">
+                        <div class="firstname">
+                            <label>First Name: </label>
+                            <span></span>
+                        </div>
+                        <div class="lastname">
+                            <label>Last Name: </label>
+                            <span></span>
+                        </div>
+                        <div class="fullname">
+                            <label>Full Name: </label>
+                            <span></span>
+                        </div>
+                        <div class="phone">
+                            <label>Phone: </label>
+                            <span></span>
+                        </div>
+                        <div class="email">
+                            <label>Email: </label>
+                            <span></span>
+                        </div>
+                        <div class="business">
+                            <label>Business: </label>
+                            <span></span>
+                        </div>
+                        <div class="ean">
+                            <label>EAN: </label>
+                            <span></span>
+                        </div>
+                        <div class="comments">
+                            <label>Comments: </label>
+                            <pre></pre>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- New Task Modal (TESTING) -->
+                <!--<div id="modal" class="glow" style="top: 73px; left: 395px;">
 					<div class="titlebar unselectable">
 						<span class="modal-title">Edit Email Template → Submitted Documents</span>
 						<span class="close"></span>
@@ -440,285 +440,285 @@
 				</div>-->
 
 
-				<!-- Right Shelf Menu -->
-				<div class="right-shelf-cage unselectable">
-					<div id="rs-tools" class="right-shelf">
-						<ul>
-							<li>
-								<div>
-									<img src="images/tools.png" alt="Tools" class="right-shelf-icon">
-									<span>Tools</span>
-								</div>
-							</li>
-						</ul>
-					</div>
-					
-					<div id="rs-utilities" class="right-shelf">
-						<ul>
-							<li>
-								<div>
-									<img src="images/print.png" alt="Utilities" class="right-shelf-icon">
-									<span>Utilities</span>
-								</div>
-							</li>
-						</ul>
-					</div>
+                <!-- Right Shelf Menu -->
+                <div class="right-shelf-cage unselectable">
+                    <div id="rs-tools" class="right-shelf">
+                        <ul>
+                            <li>
+                                <div>
+                                    <img src="images/tools.png" alt="Tools" class="right-shelf-icon">
+                                    <span>Tools</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
 
-					<div id="rs-cookies" class="right-shelf">
-						<ul>
-							<li>
-								<div>
-									<img src="images/import.png" alt="Clear Cookies" class="right-shelf-icon">
-									<span>Clear Cookies</span>
-								</div>
-							</li>
-						</ul>
-					</div>
+                    <div id="rs-utilities" class="right-shelf">
+                        <ul>
+                            <li>
+                                <div>
+                                    <img src="images/print.png" alt="Utilities" class="right-shelf-icon">
+                                    <span>Utilities</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
 
-					<div id="rs-settings" class="right-shelf">
-						<ul>
-							<li>
-								<div>
-									<img src="images/settings.png" alt="Settings" class="right-shelf-icon">
-									<span>Settings</span>
-								</div>
-							</li>
-						</ul>
-					</div>
-				</div>
+                    <div id="rs-cookies" class="right-shelf">
+                        <ul>
+                            <li>
+                                <div>
+                                    <img src="images/import.png" alt="Clear Cookies" class="right-shelf-icon">
+                                    <span>Clear Cookies</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div id="rs-settings" class="right-shelf">
+                        <ul>
+                            <li>
+                                <div>
+                                    <img src="images/settings.png" alt="Settings" class="right-shelf-icon">
+                                    <span>Settings</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
 
 
-				<!-- Dynamic Sort/Filter Table -->
-				<!--
+                <!-- Dynamic Sort/Filter Table -->
+                <!--
 				<div>
 					<input type="button" value="Generate Table" onclick="generate_table();">
 					<div class="gen-table"></div>
 				</div>
 				-->
 
-			</article>
+            </article>
 
 
-			<!-- Right Panel -->
-			<aside class="panel-right unselectable">
+            <!-- Right Panel -->
+            <aside class="panel-right unselectable">
 
-				<!-- Tree -->
+                <!-- Tree -->
 
-				<div class="tree">
-
-
-					<!-- Header -->
-
-					<div class="tree-header unselectable">
-						<span class="label"> Utilities </span>
-					</div>
+                <div class="tree">
 
 
-					<!-- Tabs -->
+                    <!-- Header -->
 
-					<ul class="tree-tabs unselectable">
-
-						<li class="tree-tab"><a href="#tab-colours"> Colours </a>
-						</li>
-						<li class="tree-tab"><a href="#tab-stats"> Stats </a>
-						</li>
-						<li class="tree-tab"><a href="#tab-dev-log"> Dev Log </a>
-						</li>
-
-					</ul>
+                    <div class="tree-header unselectable">
+                        <span class="label"> Utilities </span>
+                    </div>
 
 
-					<!-- Colours Tab -->
+                    <!-- Tabs -->
 
-					<div id="tab-colours" class="tree-tab-content">
+                    <ul class="tree-tabs unselectable">
 
+                        <li class="tree-tab"><a href="#tab-colours"> Colours </a>
+                        </li>
+                        <li class="tree-tab"><a href="#tab-stats"> Stats </a>
+                        </li>
+                        <li class="tree-tab"><a href="#tab-dev-log"> Dev Log </a>
+                        </li>
 
-						<!-- Colours Body -->
-
-						<div id="colour-pallette">
-							<div id="cp-gradient" class="cp-panel">
-								<p>#cp-gradient</p>
-							</div>
-
-							<div class="divider"></div>
-
-							<div id="cp-settings" class="cp-panel">
-								<p>#cp-settings</p>
-							</div>
-
-							<div class="divider"></div>
-
-							<div id="cp-tiles" class="cp-panel">
-								<div id="" class="cp-tile" tip="#e93060" style="background-color: #e93060;"></div>
-								<div id="" class="cp-tile" tip="#ed174b" style="background-color: #ed174b;"></div>
-								<div id="" class="cp-tile" tip="#990000" style="background-color: #990000;"></div>
-								<div id="" class="cp-tile" tip="#ffeb8c" style="background-color: #ffeb8c;"></div>
-								<div id="" class="cp-tile" tip="#ebf5e4" style="background-color: #ebf5e4;"></div>
-								<div id="" class="cp-tile" tip="#7fffd4" style="background-color: #7fffd4;"></div>
-								<div id="" class="cp-tile" tip="#99dc62" style="background-color: #99dc62;"></div>
-								<div id="" class="cp-tile" tip="#42f485" style="background-color: #42f485;"></div>
-								<div id="" class="cp-tile" tip="#4dc398" style="background-color: #4dc398;"></div>
-								<div id="" class="cp-tile" tip="#2ba463" style="background-color: #2ba463;"></div>
-								<div id="" class="cp-tile" tip="#2ea664" style="background-color: #2ea664;"></div>
-								<div id="" class="cp-tile" tip="#40a8ff" style="background-color: #40a8ff;"></div>
-								<div id="" class="cp-tile" tip="#4d90fe" style="background-color: #4d90fe;"></div>
-								<div id="" class="cp-tile" tip="#3778c7" style="background-color: #3778c7;"></div>
-								<div id="" class="cp-tile" tip="#b88cff" style="background-color: #b88cff;"></div>
-								<div id="" class="cp-tile" tip="#2e3338" style="background-color: #2e3338;"></div>
-							</div>
-						</div>
-
-					</div>
+                    </ul>
 
 
-					<!-- Stats Tab -->
+                    <!-- Colours Tab -->
 
-					<div id="tab-stats" class="tree-tab-content">
-
-
-						<!-- Stats Body -->
-
-						<div id="stats">
-							<ul>
-								<li>
-									<div>Completed <span class="pull-right">20%</span></div>
-									<div class="progress">
-										<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%;">
-											<span class="sr-only">20%</span>
-										</div>
-									</div>
-								</li>
-								<li>
-									<div>In Progress <span class="pull-right">50%</span></div>
-									<div class="progress">
-										<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">
-											<span class="sr-only">50%</span>
-										</div>
-									</div>
-								</li>
-								<li>
-									<div>Not Started <span class="pull-right">30%</span></div>
-									<div class="progress">
-										<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%;">
-											<span class="sr-only">30%</span>
-										</div>
-									</div>
-								</li>
-							</ul>
-						</div>
-
-					</div>
+                    <div id="tab-colours" class="tree-tab-content">
 
 
-					<!-- Dev Log Tab -->
+                        <!-- Colours Body -->
 
-					<div id="tab-dev-log" class="tree-tab-content">
+                        <div id="colour-pallette">
+                            <div id="cp-gradient" class="cp-panel">
+                                <p>#cp-gradient</p>
+                            </div>
 
+                            <div class="divider"></div>
 
-						<!-- Dev Log Body -->
+                            <div id="cp-settings" class="cp-panel">
+                                <p>#cp-settings</p>
+                            </div>
 
-						<div id="dev-log" class="cp-panel">
-							<!-- -->
-							<p>#dev-log</p>
-						</div>
+                            <div class="divider"></div>
 
-					</div>
+                            <div id="cp-tiles" class="cp-panel">
+                                <div id="" class="cp-tile" tip="#e93060" style="background-color: #e93060;"></div>
+                                <div id="" class="cp-tile" tip="#ed174b" style="background-color: #ed174b;"></div>
+                                <div id="" class="cp-tile" tip="#990000" style="background-color: #990000;"></div>
+                                <div id="" class="cp-tile" tip="#ffeb8c" style="background-color: #ffeb8c;"></div>
+                                <div id="" class="cp-tile" tip="#ebf5e4" style="background-color: #ebf5e4;"></div>
+                                <div id="" class="cp-tile" tip="#7fffd4" style="background-color: #7fffd4;"></div>
+                                <div id="" class="cp-tile" tip="#99dc62" style="background-color: #99dc62;"></div>
+                                <div id="" class="cp-tile" tip="#42f485" style="background-color: #42f485;"></div>
+                                <div id="" class="cp-tile" tip="#4dc398" style="background-color: #4dc398;"></div>
+                                <div id="" class="cp-tile" tip="#2ba463" style="background-color: #2ba463;"></div>
+                                <div id="" class="cp-tile" tip="#2ea664" style="background-color: #2ea664;"></div>
+                                <div id="" class="cp-tile" tip="#40a8ff" style="background-color: #40a8ff;"></div>
+                                <div id="" class="cp-tile" tip="#4d90fe" style="background-color: #4d90fe;"></div>
+                                <div id="" class="cp-tile" tip="#3778c7" style="background-color: #3778c7;"></div>
+                                <div id="" class="cp-tile" tip="#b88cff" style="background-color: #b88cff;"></div>
+                                <div id="" class="cp-tile" tip="#2e3338" style="background-color: #2e3338;"></div>
+                            </div>
+                        </div>
 
-					
-
-
-					<!-- Tree: Contacts -->
-
-					<div id="tab-tasks" class="tree-tab-content" item-type="task">
-
-
-						<!-- Tree Body -->
-
-						<div id="tree-body-tasks" class="tree-body">
-
-							<!--  -->
-
-						</div>
-
-					</div>
-
-				</div>
-
-			</aside>
-		</div>
-	</main>
-
-
-	<!-- Custom Tree Context Menu -->
-
-	<div class="context-menu unselectable">
-		<div id="cm-rename" class="menu-item">
-			<img src="images/rename.png" class="cm-icon">
-			<span>Rename</span>
-		</div>
-		<div id="cm-edit" class="menu-item">
-			<img src="images/message.png" class="cm-icon">
-			<span>Edit</span>
-		</div>
-		<div id="cm-delete" class="menu-item">
-			<img src="images/delete.png" class="cm-icon">
-			<span>Delete</span>
-		</div>
-		<div id="cm-new-item" class="menu-item">
-			<img src="images/new_item.png" class="cm-icon">
-			<span>New Item</span>
-		</div>
-		<div id="cm-new-folder" class="menu-item">
-			<img src="images/new_folder.png" class="cm-icon">
-			<span>New Folder</span>
-		</div>
-	</div>
+                    </div>
 
 
-	<!-- Custom Tree Options Menu -->
+                    <!-- Stats Tab -->
 
-	<div class="options-menu unselectable">
-		<div id="om-rename" class="menu-item">
-			<img src="images/rename.png" class="om-icon">
-			<span>Rename</span>
-		</div>
-		<div id="om-edit" class="menu-item">
-			<img src="images/message.png" class="om-icon">
-			<span>Edit</span>
-		</div>
-		<div id="om-delete" class="menu-item">
-			<img src="images/delete.png" class="om-icon">
-			<span>Delete</span>
-		</div>
-		<div id="om-new-item" class="menu-item">
-			<img src="images/new_item.png" class="om-icon">
-			<span>New Item</span>
-		</div>
-		<div id="om-new-folder" class="menu-item">
-			<img src="images/new_folder.png" class="om-icon">
-			<span>New Folder</span>
-		</div>
-	</div>
+                    <div id="tab-stats" class="tree-tab-content">
 
 
-	<script type="text/javascript" src="js/utils/debug.js"></script>
-	<script type="text/javascript" src="js/utils/persist.js"></script>
-	<script type="text/javascript" src="js/utils/utils.js"></script>
-	<script type="text/javascript" src="js/TreeDB.js"></script>
-	<script type="text/javascript" src="js/TreeData.js"></script>
-	<script type="text/javascript" src="js/tree_structure.js"></script>
-	<script type="text/javascript" src="js/utils/phone_formatter.js"></script>
-	<script type="text/javascript" src="js/utils/tooltip.js"></script>
-	<script type="text/javascript" src="js/utils/modal.js"></script>
-	<script type="text/javascript" src="js/utils/dialog.js"></script>
-	<script type="text/javascript" src="js/utils/contextmenu.js"></script>
-	<script type="text/javascript" src="js/utils/options_menu.js"></script>
-	<script type="text/javascript" src="js/utils/notification.js"></script>
-	<script type="text/javascript" src="js/utils/settings.js"></script>
-	<script type="text/javascript" src="js/utils/tools.js"></script>
-	<script type="text/javascript" src="js/main.js"></script>
-	<script type="text/javascript" src="js/init.js"></script>
-	<!--<script type="text/javascript" src="js/.js"></script>-->
+                        <!-- Stats Body -->
+
+                        <div id="stats">
+                            <ul>
+                                <li>
+                                    <div>Completed <span class="pull-right">20%</span></div>
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%;">
+                                            <span class="sr-only">20%</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>In Progress <span class="pull-right">50%</span></div>
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">
+                                            <span class="sr-only">50%</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>Not Started <span class="pull-right">30%</span></div>
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%;">
+                                            <span class="sr-only">30%</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Dev Log Tab -->
+
+                    <div id="tab-dev-log" class="tree-tab-content">
+
+
+                        <!-- Dev Log Body -->
+
+                        <div id="dev-log" class="cp-panel">
+                            <!-- -->
+                            <p>#dev-log</p>
+                        </div>
+
+                    </div>
+
+
+
+
+                    <!-- Tree: Contacts -->
+
+                    <div id="tab-tasks" class="tree-tab-content" item-type="task">
+
+
+                        <!-- Tree Body -->
+
+                        <div id="tree-body-tasks" class="tree-body">
+
+                            <!--  -->
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </aside>
+        </div>
+    </main>
+
+
+    <!-- Custom Tree Context Menu -->
+
+    <div class="context-menu unselectable">
+        <div id="cm-rename" class="menu-item">
+            <img src="images/rename.png" class="cm-icon">
+            <span>Rename</span>
+        </div>
+        <div id="cm-edit" class="menu-item">
+            <img src="images/message.png" class="cm-icon">
+            <span>Edit</span>
+        </div>
+        <div id="cm-delete" class="menu-item">
+            <img src="images/delete.png" class="cm-icon">
+            <span>Delete</span>
+        </div>
+        <div id="cm-new-item" class="menu-item">
+            <img src="images/new_item.png" class="cm-icon">
+            <span>New Item</span>
+        </div>
+        <div id="cm-new-folder" class="menu-item">
+            <img src="images/new_folder.png" class="cm-icon">
+            <span>New Folder</span>
+        </div>
+    </div>
+
+
+    <!-- Custom Tree Options Menu -->
+
+    <div class="options-menu unselectable">
+        <div id="om-rename" class="menu-item">
+            <img src="images/rename.png" class="om-icon">
+            <span>Rename</span>
+        </div>
+        <div id="om-edit" class="menu-item">
+            <img src="images/message.png" class="om-icon">
+            <span>Edit</span>
+        </div>
+        <div id="om-delete" class="menu-item">
+            <img src="images/delete.png" class="om-icon">
+            <span>Delete</span>
+        </div>
+        <div id="om-new-item" class="menu-item">
+            <img src="images/new_item.png" class="om-icon">
+            <span>New Item</span>
+        </div>
+        <div id="om-new-folder" class="menu-item">
+            <img src="images/new_folder.png" class="om-icon">
+            <span>New Folder</span>
+        </div>
+    </div>
+
+
+    <script type="text/javascript" src="js/utils/debug.js"></script>
+    <script type="text/javascript" src="js/utils/persist.js"></script>
+    <script type="text/javascript" src="js/utils/utils.js"></script>
+    <script type="text/javascript" src="js/TreeDB.js"></script>
+    <script type="text/javascript" src="js/TreeData.js"></script>
+    <script type="text/javascript" src="js/tree_structure.js"></script>
+    <script type="text/javascript" src="js/utils/phone_formatter.js"></script>
+    <script type="text/javascript" src="js/utils/tooltip.js"></script>
+    <script type="text/javascript" src="js/utils/modal.js"></script>
+    <script type="text/javascript" src="js/utils/dialog.js"></script>
+    <script type="text/javascript" src="js/utils/contextmenu.js"></script>
+    <script type="text/javascript" src="js/utils/options_menu.js"></script>
+    <script type="text/javascript" src="js/utils/notification.js"></script>
+    <script type="text/javascript" src="js/utils/settings.js"></script>
+    <script type="text/javascript" src="js/utils/tools.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/init.js"></script>
+    <!--<script type="text/javascript" src="js/.js"></script>-->
 
 </body>
 

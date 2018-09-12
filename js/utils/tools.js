@@ -112,8 +112,18 @@ $('#rs-tools').on('click', function(e) {
 
     modal.open({
         title: 'Tools',
-        content: '<div class="row"><div id="tools-dim-calc" class="modal-input tools-tile" name="tools_dim_calc"><div>Dimensional Weight Calculator</div></div><div id="tools-density-calc" class="modal-input tools-tile" name="tools_density_calc"><div>Freight Density Calculator</div></div><div id="tools-2" class="modal-input tools-tile" name="tools_2"><div>Another Tool</div></div></div><div class="row"><div id="tools-3" class="modal-input tools-tile" name="tools_3"><div>Another Tool</div></div><div id="tools-4" class="modal-input tools-tile" name="tools_4"><div>Another Tool</div></div><div id="tools-5" class="modal-input tools-tile" name="tools_5"><div>Another Tool</div></div></div>'
-    });
+		content: '<div class="row">' +
+					'<div id="tools-dim-calc" class="modal-input tools-tile" name="tools_dim_calc"><div>Dimensional Weight Calculator</div></div>' +
+				 	'<div id="tools-density-calc" class="modal-input tools-tile" name="tools_density_calc"><div>Freight Density Calculator</div></div>' +
+					 '<div id="tools-2" class="modal-input tools-tile" name="tools_2"><div>Another Tool</div></div>' +
+				 '</div>' +
+				 '<div class="row">' +
+				 	'<div id="tools-webhook-generator" class="modal-input tools-tile" name="tools_webhook_generator"><div>Discord Webhook Generator</div></div>' +
+				 	'<div id="tools-4" class="modal-input tools-tile" name="tools_4"><div>Another Tool</div></div>' +
+					 '<div id="tools-5" class="modal-input tools-tile" name="tools_5"><div>Another Tool</div></div>' +
+				 '</div>'
+	});
+	
 
     /**
      * Dimensional Weight Calculator
@@ -273,6 +283,167 @@ $('#rs-tools').on('click', function(e) {
         });
         e.preventDefault();
     });
+
+
+    /**
+     * Unit Converter
+     */
+    $('#tools-dim-calc').on('click', function(e) {
+        modal.close();
+        //
+        modal.open({
+            title: 'Dimensional Weight Calculator',
+            content: '<div id="calcBox"><p><span>L: <input type="text" id="length" class="calc-input" size="6"/></span> <span style="margin-left: 10px;">W: <input type="text" id="width" class="calc-input" size="6"/></span> <span style="margin-left: 10px;">H: <input type="text" id="height" class="calc-input" size="6"/></span></p><p><div class="data">Girth &#8674; <span id="girth" class="result"></span></div><div class="data">Length + Girth &#8674; <span id="lGirth" class="result"></span></div><div class="data">Dim Weight &#8674; <span id="dimWeight" class="result"></span></div><div class="data">Intl Dim Weight &#8674; <span id="intlDimWeight" class="result"></span></div><div class="data"><span id="error"></span></div></p></div><div class="actionbar"><button id="btnCalculate" class="button btn-submit">Calculate</button><button type="reset" id="btnClear" class="button btn-x"></button></div>'
+        });
+
+        document.getElementById('length').focus();
+
+        /**
+         * @function Calculate
+         */
+        $('#btnCalculate').on('click', function(e) {
+            var l = document.getElementById('length').value;
+            var w = document.getElementById('width').value;
+            var h = document.getElementById('height').value;
+
+            //log('length: ' + l);
+            //log('width: ' + w);
+            //log('height: ' + h);
+
+            if(l == "" || w == "" || h == "") {
+                alert("Error: All dimensions must be entered.");
+                document.getElementById('length').focus();
+
+                e.preventDefault();
+            }
+
+            var a = eval('(' + w + ' + ' + h + ') * 2');
+            var b = eval('(' + w + ' * 2) + (' + h + ' * 2) + ' + l);
+            var c = eval('(' + l + ' * ' + w + ' * ' + h + ') / 139');
+            var d = eval('(' + l + ' * ' + w + ' * ' + h + ') / 139');
+
+            //log(a);
+            //log(b);
+            //log(c);
+            //log(d);
+
+            if(isNaN(l) | isNaN(w) | isNaN(h)) {
+                document.getElementById('error').innerHTML = "Error: [0-9] only";
+            } else {
+                document.getElementById('girth').innerHTML = a;
+                document.getElementById('lGirth').innerHTML = b;
+                document.getElementById('dimWeight').innerHTML = Math.ceil(c) + " lbs.";
+                document.getElementById('intlDimWeight').innerHTML = Math.ceil(d) + " lbs.";
+            }
+
+            e.preventDefault();
+        });
+
+        $('#btnClear').on('click', function(e) {
+            document.getElementById('length').value = "";
+            document.getElementById('width').value = "";
+            document.getElementById('height').value = "";
+            document.getElementById('girth').innerHTML = "";
+            document.getElementById('lGirth').innerHTML = "";
+            document.getElementById('dimWeight').innerHTML = "";
+            document.getElementById('intlDimWeight').innerHTML = "";
+            document.getElementById('error').innerHTML = "";
+            document.getElementById('length').focus();
+
+            e.preventDefault();
+        });
+
+        $('#back').on('click', function(e) {
+            modal.close();
+
+            modal.open({
+                title: 'Tools',
+                content: '<div class="row"><div id="tools-dim-calc" class="modal-input tools-tile" name="tools_dim_calc"><div>Dimensional Weight Calculator</div></div><div id="tools-density-calc" class="modal-input tools-tile" name="tools_density_calc"><div>Freight Density Calculator</div></div><div id="tools-2" class="modal-input tools-tile" name="tools_2"><div>Another Tool</div></div></div><div class="row"><div id="tools-3" class="modal-input tools-tile" name="tools_3"><div>Another Tool</div></div><div id="tools-4" class="modal-input tools-tile" name="tools_4"><div>Another Tool</div></div><div id="tools-5" class="modal-input tools-tile" name="tools_5"><div>Another Tool</div></div></div>'
+            });
+        });
+        e.preventDefault();
+	});
+
+
+    /**
+     * Discord --> Bitbucket Webnook URL Generator
+     */
+    $('#tools-webhook-generator').on('click', function(e) {
+        modal.close();
+        //
+        modal.open({
+            title: 'Discord Webhook Generator',
+			content: '<div id="calcBox">' +
+						'<p>' +
+							'<span><input type="text" id="webhook-url" class="calc-input" size="30" placeholder="Discord webhook URL"/></span>' +
+						'</p>' +
+						'<p>' +
+							'<span><input type="text" id="new-url" class="calc-input" size="30" placeholder="Bitbucket webhook URL"/></span>' +
+							'<div class="data"><span id="error"></span></div>' +
+						'</p>' +
+					 '</div>' +
+					 '<div class="actionbar">' +
+						'<button id="btnGenerate" class="button btn-submit">Generate</button>' +
+						'<button type="reset" id="btnClear" class="button btn-x"></button>' +
+					 '</div>'
+        });
+
+        document.getElementById('webhook-url').focus();
+
+        /**
+         * @function Generate
+         */
+        $('#btnGenerate').click(function(e) {
+			let discordHookUrl = document.getElementById('webhook-url').value;
+			let bitbucketHookUrl = document.getElementById('new-url').value;
+			let error = false;
+
+			if(discordHookUrl && discordHookUrl.includes('discordapp.com')) {
+				const endSpacialPart = discordHookUrl.indexOf('discordapp.com');
+				const startSpacialPart = (discordHookUrl.indexOf(':') + 3);// + :// 3 chars:)
+		
+				discordHookUrl = discordHookUrl.replace(discordHookUrl.substring(startSpacialPart, endSpacialPart), '');
+				discordHookUrl = discordHookUrl.replace('https://discordapp.com', 'https://skyhook.glitch.me');
+		
+				//const provider = $('input[name=ex2]:checked').val();
+				const provider = "bitbucket";
+				document.getElementById('new-url').value = discordHookUrl + '/' + provider;
+			} else {
+				error = true;
+			}
+		
+			if(!error) {
+				document.getElementById('error').value = "URL Generated. Copied to Clipboard";
+				//window.copyToClipboard(discordHookUrl);
+				//show(snackbar, 'URL Generated. Copied to Clipboard');
+			} else {
+				document.getElementById('error').value = "Unable to create URL. Make sure your Discord URL is valid";
+				//show(snackbar, 'Unable to create URL. Make sure your Discord URL is valid');
+			}
+
+			e.preventDefault();
+		});
+
+        $('#btnClear').on('click', function(e) {
+            document.getElementById('webhook-url').value = "";
+            document.getElementById('new-url').value = "";
+            document.getElementById('error').innerHTML = "";
+            document.getElementById('webhook-url').focus();
+
+            e.preventDefault();
+        });
+
+        $('#back').on('click', function(e) {
+            modal.close();
+
+            modal.open({
+                title: 'Tools',
+                content: '<div class="row"><div id="tools-dim-calc" class="modal-input tools-tile" name="tools_dim_calc"><div>Dimensional Weight Calculator</div></div><div id="tools-density-calc" class="modal-input tools-tile" name="tools_density_calc"><div>Freight Density Calculator</div></div><div id="tools-2" class="modal-input tools-tile" name="tools_2"><div>Another Tool</div></div></div><div class="row"><div id="tools-3" class="modal-input tools-tile" name="tools_3"><div>Another Tool</div></div><div id="tools-4" class="modal-input tools-tile" name="tools_4"><div>Another Tool</div></div><div id="tools-5" class="modal-input tools-tile" name="tools_5"><div>Another Tool</div></div></div>'
+            });
+        });
+        e.preventDefault();
+	});
+	
 
     $('.button.btn-submit').on('click', function(e) {
         modal.close();
